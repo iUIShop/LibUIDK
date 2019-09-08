@@ -1,0 +1,1356 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#ifndef APSTUDIO_INVOKED
+#include "targetver.h"
+#endif
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (Simplified, PRC) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 9,0,0,0
+ PRODUCTVERSION 9,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "Comments", "http://www.iuishop.com"
+            VALUE "CompanyName", "北京优艾斯普科技有限公司"
+            VALUE "FileDescription", "LibUIDK 界面编辑器"
+            VALUE "FileVersion", "9.0"
+            VALUE "InternalName", "UIShop.exe"
+            VALUE "LegalCopyright", "北京优艾斯普科技有限公司 2005-2018  All rights reserved."
+            VALUE "OriginalFilename", "UIShop.exe"
+            VALUE "ProductName", "UIShop"
+            VALUE "ProductVersion", "9.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ALPHAICON           ICON                    "res\\AlphaIcon.ico"
+#endif    // Chinese (Simplified, PRC) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\UIShop.ico"
+IDR_UIShopTYPE          ICON                    "res\\UIShopDoc.ico"
+IDI_FILE_VIEW           ICON                    "res\\file_view.ico"
+IDI_FILE_VIEW_HC        ICON                    "res\\file_view_hc.ico"
+IDI_PROPERTIES_WND      ICON                    "res\\properties_wnd.ico"
+IDI_PROPERTIES_WND_HC   ICON                    "res\\properties_wnd_hc.ico"
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#ifndef APSTUDIO_INVOKED\r\n"
+    "#include ""targetver.h""\r\n"
+    "#endif\r\n"
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""res\\UIShop.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#if !defined(_AFXDLL)\r\n"
+    "#include ""afxprint.rc""               // printing/print preview resources\r\n"
+    "#include ""afxribbon.rc""              // MFC ribbon and control bar resources\r\n"
+    "#endif\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME_256       BITMAP                  "res\\Toolbar256.bmp"
+IDR_SORT                BITMAP                  "res\\sort.bmp"
+IDB_SORT_24             BITMAP                  "res\\sort_hc.bmp"
+IDB_FILE_VIEW           BITMAP                  "res\\fileview.bmp"
+IDB_FILE_VIEW_24        BITMAP                  "res\\fileview_hc.bmp"
+IDR_EXPLORER            BITMAP                  "res\\explorer.bmp"
+IDB_EXPLORER_24         BITMAP                  "res\\explorer_hc.bmp"
+IDR_MENU_IMAGES         BITMAP                  "res\\menuimages.bmp"
+IDB_MENU_IMAGES_24      BITMAP                  "res\\menuimages_hc.bmp"
+IDR_PROPERTIES          BITMAP                  "res\\properties.bmp"
+IDB_PROPERTIES_HC       BITMAP                  "res\\properties_hc.bmp"
+IDR_LAYOUT              BITMAP                  "res\\TB_Layout.bmp"
+IDR_CONTROLBAR          BITMAP                  "res\\tb_ControlBar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME_256 TOOLBAR 16, 16
+BEGIN
+    BUTTON      ID_FILE_NEW_LIBUIDK_PROJECT
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_DESIGN_SIZE_TO_CONTENT
+    BUTTON      ID_DESIGN_SIZE_TO_FOREGROUND_CONTENT
+    BUTTON      ID_DESIGN_FORMAT_BRUSH
+    BUTTON      ID_DESIGN_BACKGROUND_SHOW
+    BUTTON      ID_APP_ABOUT
+END
+
+IDR_SORT TOOLBAR 16, 16
+BEGIN
+    BUTTON      ID_SORT_MENU
+    BUTTON      ID_NEW_FOLDER
+END
+
+IDR_EXPLORER TOOLBAR 16, 16
+BEGIN
+    BUTTON      ID_PROPERTIES
+END
+
+IDR_MENU_IMAGES TOOLBAR 16, 16
+BEGIN
+    BUTTON      ID_WINDOW_MANAGER
+    SEPARATOR
+    BUTTON      ID_WINDOW_CASCADE
+    BUTTON      ID_WINDOW_TILE_HORZ
+    BUTTON      ID_TOOLS_MACRO
+    BUTTON      ID_SORTING_SORTALPHABETIC
+    BUTTON      ID_SORTING_SORTBYTYPE
+    BUTTON      ID_SORTING_SORTBYACCESS
+    BUTTON      ID_SORTING_GROUPBYTYPE
+END
+
+IDR_PROPERTIES TOOLBAR 16, 16
+BEGIN
+    BUTTON      ID_EXPAND_ALL
+    BUTTON      ID_SORTPROPERTIES
+    BUTTON      ID_PROPERTIES1
+    BUTTON      ID_PROPERTIES2
+END
+
+IDR_LAYOUT TOOLBAR 16, 16
+BEGIN
+    BUTTON      ID_LAYOUT_ALIGN_LEFT
+    BUTTON      ID_LAYOUT_ALIGN_RIGHT
+    BUTTON      ID_LAYOUT_ALIGN_TOP
+    BUTTON      ID_LAYOUT_ALIGN_BOTTOM
+    SEPARATOR
+    BUTTON      ID_LAYOUT_CENTER_VERTICAL
+    BUTTON      ID_LAYOUT_CENTER_HORIZONTAL
+    SEPARATOR
+    BUTTON      ID_LAYOUT_SPACE_ACROSS
+    BUTTON      ID_LAYOUT_SPACE_DOWN
+    SEPARATOR
+    BUTTON      ID_LAYOUT_SAMESIZE_WIDTH
+    BUTTON      ID_LAYOUT_SAMESIZE_HEIGHT
+    BUTTON      ID_LAYOUT_SAMESIZE_SIZE
+END
+
+IDR_CONTROLBAR TOOLBAR 16, 16
+BEGIN
+    BUTTON      ID_CONTROL_SELECT
+    BUTTON      ID_CONTROL_BUTTON
+    BUTTON      ID_CONTROL_CHECKBOX
+    BUTTON      ID_CONTROL_RADIOBUTTON
+    BUTTON      ID_CONTROL_STATIC
+    BUTTON      ID_CONTROL_EDIT
+    BUTTON      ID_CONTROL_COMBOBOX
+    BUTTON      ID_CONTROL_SLIDER
+    BUTTON      ID_CONTROL_SPIN
+    BUTTON      ID_CONTROL_PROGRESS
+    BUTTON      ID_CONTROL_HOTKEY
+    BUTTON      ID_CONTROL_IPADDRESS
+    BUTTON      ID_CONTROL_LISTCTRL
+    BUTTON      ID_CONTROL_TREECTRL
+    BUTTON      ID_CONTROL_DATETIMECTRL
+    BUTTON      ID_CONTROL_RICHEDIT
+    BUTTON      ID_CONTROL_RICHEDIT_IM
+    BUTTON      ID_CONTROL_HTMLCTRL
+    SEPARATOR
+    BUTTON      ID_CONTROL_SLIDEREX
+    BUTTON      ID_CONTROL_SCROLLBAREX
+    BUTTON      ID_CONTROL_THUMBNAIL
+    BUTTON      ID_CONTROL_TREELIST
+    BUTTON      ID_CONTROL_WAVECTRL
+    BUTTON      ID_CONTROL_PICCTRL
+    BUTTON      ID_CONTROL_MENUBAR
+    BUTTON      ID_CONTROL_SPLITTER
+    SEPARATOR
+    BUTTON      ID_CONTROL_RECT
+    BUTTON      ID_CONTROL_SPLITTERWL
+    BUTTON      ID_CONTROL_LINE
+    BUTTON      ID_CONTROL_TEXT
+    BUTTON      ID_CONTROL_BUTTONWL
+    BUTTON      ID_CONTROL_CHECKBOXWL
+    BUTTON      ID_CONTROL_RADIOWL
+    BUTTON      ID_CONTROL_SLIDERWL
+    BUTTON      ID_CONTROL_PIC
+    BUTTON      ID_CONTROL_RICHEDITWL
+    BUTTON      ID_CONTROL_IMWL
+    BUTTON      ID_CONTROL_TASK_WND_MGR
+    SEPARATOR
+    BUTTON      ID_CONTROL_DOCK_PANEL
+    BUTTON      ID_CONTROL_UNIFORM_GRID_PANEL
+    BUTTON      ID_CONTROL_STACK_PANEL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW, INACTIVE
+        MENUITEM "New LibUIDK Project...",      ID_FILE_NEW_LIBUIDK_PROJECT
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM "&Close",                      ID_FILE_CLOSE
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&View"
+    BEGIN
+        POPUP "&Toolbars and Docking Windows"
+        BEGIN
+            MENUITEM "<placeholder>",               ID_VIEW_TOOLBAR
+        END
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Tools"
+    BEGIN
+        MENUITEM "Transform Dialog",            ID_TOOLS_TRANSFORM_DIALOG
+        MENUITEM "Create Class Info File...",   ID_TOOLS_CREATE_CLASS_INFO_FILE
+        MENUITEM "Sync Skin Tab Order...",      ID_TOOLS_SYNC_SKIN_TAB_ORDER
+        MENUITEM "Rename Template File...",     ID_TOOLS_RENAME_TEMPLATE_FILE
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About UIShop...",            ID_APP_ABOUT
+        MENUITEM "UIShop Help",                 ID_HELP_UISHOP
+        MENUITEM "LibUIDK Help",                ID_HELP_LIBUIDK
+        MENUITEM "Video of Making a Project",   ID_HELP_VIDEO
+        MENUITEM "Web Link",                    ID_HELP_WEB_LINK
+    END
+END
+
+IDR_UIShopTYPE MENU
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "New LibUIDK Project...",      ID_FILE_NEW_LIBUIDK_PROJECT
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM "&Close",                      ID_FILE_CLOSE
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo\tCtrl+Z",               ID_EDIT_UNDO
+        MENUITEM "&Redo\tCtrl+Y",               ID_EDIT_REDO
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_CUT
+        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY
+        MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE
+        MENUITEM SEPARATOR
+        MENUITEM "Unused Image Symbols",        ID_EDIT_UNUSED_IMAGE_SYMBOLS
+        MENUITEM "Unfound Image Symbols",       ID_EDIT_UNFOUND_IMAGE_SYMBOLS
+    END
+    POPUP "&View"
+    BEGIN
+        POPUP "&Toolbars and Docking Windows"
+        BEGIN
+            MENUITEM "<placeholder>",               ID_VIEW_TOOLBAR
+            MENUITEM "Control Bar",                 ID_VIEW_CONTROLBAR
+            MENUITEM "Layout Bar",                  ID_VIEW_LAYOUTBAR
+        END
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+        MENUITEM "Show Control Type",           ID_VIEW_SHOW_CONTROL_TYPE
+        MENUITEM "Show Control ID",             ID_VIEW_SHOW_CONTROL_ID
+        MENUITEM "Show Control Index",          ID_VIEW_SHOW_CONTROL_INDEX
+    END
+    POPUP "&Design"
+    BEGIN
+        MENUITEM "Size to Content",             ID_DESIGN_SIZE_TO_CONTENT
+        MENUITEM "Format Brush",                ID_DESIGN_FORMAT_BRUSH
+        MENUITEM "Background Show",             ID_DESIGN_BACKGROUND_SHOW
+    END
+    POPUP "&Tools"
+    BEGIN
+        MENUITEM "Create Language File...",     ID_TOOLS_CREATE_LANGUAGE_FILE
+        MENUITEM "Create Resource File...",     ID_TOOLS_CREATE_RESOURCE_FILE
+        MENUITEM "Generate Resource.h file",    ID_TOOLS_GENERATE_RESOURCE_H
+        MENUITEM SEPARATOR
+        MENUITEM "Transform Dialog",            ID_TOOLS_TRANSFORM_DIALOG
+        MENUITEM "Create Class Info File...",   ID_TOOLS_CREATE_CLASS_INFO_FILE
+        MENUITEM "Sync Skin Tab Order...",      ID_TOOLS_SYNC_SKIN_TAB_ORDER
+        MENUITEM "Rename Template File...",     ID_TOOLS_RENAME_TEMPLATE_FILE
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&New Window",                 ID_WINDOW_NEW
+        MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+        MENUITEM "&Tile",                       ID_WINDOW_TILE_HORZ
+        MENUITEM "&Arrange Icons",              ID_WINDOW_ARRANGE
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About UIShop...",            ID_APP_ABOUT
+        MENUITEM "UIShop Help",                 ID_HELP_UISHOP
+        MENUITEM "LibUIDK Help",                ID_HELP_LIBUIDK
+        MENUITEM "Video of Making a Project",   ID_HELP_VIDEO
+        MENUITEM "Web Link",                    ID_HELP_WEB_LINK
+    END
+END
+
+IDR_POPUP_EDIT MENU
+BEGIN
+    POPUP "Edit"
+    BEGIN
+        MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_CUT
+        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY
+        MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE
+    END
+END
+
+IDR_POPUP_SORT MENU
+BEGIN
+    POPUP "Sorting"
+    BEGIN
+        MENUITEM "&Sort Alphabeticaly",         ID_SORTING_SORTALPHABETIC
+        MENUITEM "Sort by &Type",               ID_SORTING_SORTBYTYPE
+        MENUITEM "Sort by Acc&ess",             ID_SORTING_SORTBYACCESS
+        MENUITEM "Group by t&ype",              ID_SORTING_GROUPBYTYPE
+    END
+END
+
+IDR_POPUP_EXPLORER MENU
+BEGIN
+    POPUP "OnWindowsItem"
+    BEGIN
+        MENUITEM "Insert Window",               IDSM_INSERT
+        MENUITEM "Delete",                      IDSM_DELETEWINDOW
+        MENUITEM "Find in HD",                  IDSM_FINDINHD
+        MENUITEM SEPARATOR
+        MENUITEM "Tab Order",                   IDSM_TABORDER
+        MENUITEM "Test",                        IDSM_TEST
+        MENUITEM "Test High DPI",               IDSM_TEST_HIGH_DPI
+        MENUITEM "Test Current Frame",          IDSM_TEST_CUR_FRAME
+        MENUITEM "Properties",                  IDSM_PROPERTIES
+        MENUITEM SEPARATOR
+        MENUITEM "Add Class",                   IDSM_ADD_CLASS
+        MENUITEM "Add All Classes",             IDSM_ADD_ALL_CLASSES
+        MENUITEM "Add Event Handler Class",     IDSM_ADD_EVENT_HANDLER_CLASS
+        MENUITEM "Add All Event Handler Classes", IDSM_ADD_ALL_EVENT_HANDLER_CLASSES
+    END
+END
+
+IDR_CONTROL_PROPERTIES MENU
+BEGIN
+    POPUP "Control Properties"
+    BEGIN
+        MENUITEM "Properties",                  IDSM_CTRL_PROPERTIES
+        MENUITEM "Add Handler",                 IDSM_CTRL_ADD_HANDLER
+    END
+END
+
+IDR_CLOSETESTWINDOW MENU
+BEGIN
+    POPUP "Close Test Window"
+    BEGIN
+        MENUITEM "Close",                       IDSM_CLOSE
+    END
+END
+
+IDR_POPUP_RESOURCE MENU
+BEGIN
+    POPUP "OnResourceItem"
+    BEGIN
+        MENUITEM "Insert General Font",         IDSM_INSERT_GENERAL_FONT
+        MENUITEM "Insert Condition Font",       IDSM_INSERT_CONDITION_FONT_CHILD
+        MENUITEM "Convert to Condition Font",   IDSM_CONVERT_TO_CONDITION_FONT
+        MENUITEM "Insert Text Color",           IDSM_INSERT_RES_COLOR
+        MENUITEM "Delete",                      IDSM_DELETE_RESOURCE
+        MENUITEM SEPARATOR
+        MENUITEM "Find in HD",                  IDSM_FINDINHD
+        MENUITEM "Properties",                  IDSM_PROPERTIES
+    END
+END
+
+IDR_POPUP_STYLE MENU
+BEGIN
+    POPUP "OnStyleItem"
+    BEGIN
+        MENUITEM "Insert",                      IDSM_INSERT_STYLE_ITEM
+        MENUITEM "Delete",                      IDSM_DELETE_STYLE
+        MENUITEM SEPARATOR
+        MENUITEM "Find in HD",                  IDSM_FINDINHD
+        MENUITEM "Properties",                  IDSM_PROPERTIES
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS
+BEGIN
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    "Y",            ID_EDIT_REDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 228, 66
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About UIShop"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,14,14,20,20
+    LTEXT           "UIShop, Version 9.0",IDC_STA_VERSION,42,14,179,8,SS_NOPREFIX | SS_ENDELLIPSIS
+    LTEXT           "Copyright (C) 2005-2018 iUIShop",IDC_STA_COPYRIGHT,42,26,179,8
+    DEFPUSHBUTTON   "OK",IDOK,171,45,50,14,WS_GROUP
+END
+
+IDD_NEWPROJECT DIALOGEX 0, 0, 341, 270
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "New LibUIDK Project Wizard"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,227,248,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,284,248,50,14
+    GROUPBOX        "Select Visual Studio Edition",IDC_STATIC,7,5,326,48
+    CONTROL         "Visual C++ 6.0",IDC_RAD_VC60,"Button",BS_AUTORADIOBUTTON,13,18,64,10
+    CONTROL         "Visual C++ 2003",IDC_RAD_VC71,"Button",BS_AUTORADIOBUTTON,87,18,69,10
+    CONTROL         "Visual C++ 2005",IDC_RAD_VC80,"Button",BS_AUTORADIOBUTTON,166,18,69,10
+    CONTROL         "Visual C++ 2008",IDC_RAD_VC90,"Button",BS_AUTORADIOBUTTON,245,18,69,10
+    CONTROL         "Visual C++ 2010",IDC_RAD_VC100,"Button",BS_AUTORADIOBUTTON,13,35,69,10
+    CONTROL         "Visual C++ 2012",IDC_RAD_VC110,"Button",BS_AUTORADIOBUTTON,87,35,69,10
+    CONTROL         "Visual C++ 2013",IDC_RAD_VC120,"Button",BS_AUTORADIOBUTTON,166,35,69,10
+    CONTROL         "Visual C++ 2015",IDC_RAD_VC140,"Button",BS_AUTORADIOBUTTON,245,35,69,10
+    LTEXT           "Select Project Type",IDC_STATIC,12,55,63,8
+    CONTROL         "General",IDC_RAD_PROJECT_GENERAL,"Button",BS_AUTORADIOBUTTON | WS_GROUP,22,67,41,10
+    CONTROL         "Multiple documents",IDC_RAD_PROJECT_MDI,"Button",BS_AUTORADIOBUTTON,87,67,77,10
+    CONTROL         "IM",IDC_RAD_PROJECT_IM,"Button",BS_AUTORADIOBUTTON | WS_DISABLED,179,67,36,10
+    CONTROL         "Security Software",IDC_RAD_PROJECT_WEISHI,"Button",BS_AUTORADIOBUTTON | WS_DISABLED,245,67,75,10
+    LTEXT           "What database support would you like to include?",IDC_STATIC,12,80,266,10
+    CONTROL         "none",IDC_RAD_NONE,"Button",BS_AUTORADIOBUTTON,22,90,32,10
+    CONTROL         "Header files only",IDC_RAD_HEADER,"Button",BS_AUTORADIOBUTTON,22,101,84,10
+    LTEXT           "What other support would you like to include?",IDC_STATIC,12,114,181,8
+    CONTROL         "ActiveX controls",IDC_CHK_ACTIVEX,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,22,124,80,10
+    LTEXT           "What features would you like to include?",IDC_STATIC,12,135,161,8
+    CONTROL         "Windows Sockets",IDC_CHK_SOCKET,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,22,146,82,10
+    LTEXT           "Would you like to generate source file comments?",IDC_STATIC,12,157,193,8
+    CONTROL         "Yes, please",IDC_RAD_YES,"Button",BS_AUTORADIOBUTTON,22,167,60,10
+    CONTROL         "No, thank you",IDC_RAD_NO,"Button",BS_AUTORADIOBUTTON,22,178,68,10
+    LTEXT           "Project Name:",IDC_STATIC,12,190,46,8
+    EDITTEXT        IDC_EDT_PROJECTNAME,22,199,311,14,ES_AUTOHSCROLL
+    LTEXT           "Location:",IDC_STATIC,12,216,30,8
+    EDITTEXT        IDC_EDT_LOCATION,22,226,235,14,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "...",IDC_BTN_BROWSER,268,226,28,14
+    PUSHBUTTON      "Go to",IDC_BTN_GOTO,306,226,28,14
+END
+
+IDD_TABORDER DIALOGEX 0, 0, 405, 289
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Tab Order"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_LST_TABORDER,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,7,7,335,275
+    PUSHBUTTON      "Move &Up",IDC_BTN_MOVEUP,348,7,50,14
+    PUSHBUTTON      "Move &Down",IDC_BTN_MOVEDOWN,348,30,50,14
+    DEFPUSHBUTTON   "OK",IDOK,348,215,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,348,232,50,14
+    PUSHBUTTON      "Auto Adjust \n&& Exist",IDC_BTN_AUTO_ADJUST,348,75,50,29,BS_MULTILINE
+    PUSHBUTTON      "Highlight",IDC_BTN_HIGHLIGHT,348,172,50,14
+END
+
+IDD_CLASS_WIZARD DIALOGEX 0, 0, 366, 215
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "LibUIDK Class Wizard"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "OK",IDOK,246,194,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,309,194,50,14
+    LTEXT           "Class Name:",IDC_STATIC,7,7,40,8
+    EDITTEXT        IDC_EDT_CLASS_NAME,7,20,162,14,ES_AUTOHSCROLL
+    LTEXT           "Window ID:",IDC_STATIC,197,7,38,8,WS_DISABLED
+    EDITTEXT        IDC_EDT_WINDOW_ID,197,20,162,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           ".h file:",IDC_STATIC,7,40,162,14
+    EDITTEXT        IDC_EDT_H_FILE,7,54,162,14,ES_AUTOHSCROLL
+    LTEXT           ".cpp file:",IDC_STATIC,197,40,29,8
+    EDITTEXT        IDC_EDT_CPP_FILE,197,54,162,14,ES_AUTOHSCROLL
+    LTEXT           ".h, .cpp File Path",IDC_STATIC,7,75,56,8
+    EDITTEXT        IDC_EDT_LOCATION,7,86,246,14,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "Browse...",IDC_BTN_BROWSE,256,86,50,14
+    PUSHBUTTON      "Goto",IDC_BTN_GOTO,309,86,50,14
+    GROUPBOX        "Code Style",IDC_STATIC,7,119,352,28
+    CONTROL         "Visual Studio 6.0",IDC_RAD_VC6,"Button",BS_AUTORADIOBUTTON,18,131,69,10
+    CONTROL         "Visual Studio.Net",IDC_RAD_VC_NET,"Button",BS_AUTORADIOBUTTON,179,131,70,10
+    CONTROL         "Generate Control Event Handler",IDC_CHK_GEN_HANDLER,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,156,119,10
+    CONTROL         "Generate Control Variable",IDC_CHK_GEN_VARIABLE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,193,153,99,10
+    CONTROL         "Generate DoDataExchange",IDC_CHK_GEN_DO_DATA_EXCHANGE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,172,103,10
+    LTEXT           "Merge Tool Path:",IDC_STATIC,7,106,56,8
+    COMBOBOX        IDC_CMB_MERGE_TOOL_PATH,73,103,179,14,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Browse...",IDC_BTN_BROWSE_MERGE_TOOL,256,103,50,14
+    PUSHBUTTON      "Merge...",IDC_BTN_MERGE,309,103,50,14
+END
+
+IDD_IMAGE_SYMBOLS DIALOGEX 0, 0, 316, 185
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Image Symbols"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_TREE_IMAGE_SYMBOLS,"SysTreeView32",TVS_SHOWSELALWAYS | WS_BORDER | WS_HSCROLL | WS_TABSTOP,7,7,302,146
+    PUSHBUTTON      "Move themes to 'Unused' folder",IDC_BTN_MOVE_TO_UNUSED,171,159,138,14
+END
+
+IDD_ADD_HANDLER DIALOGEX 0, 0, 421, 333
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "New Windows Message and Event Handlers"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_RICHEDIT_CODE,"RichEdit20W",WS_BORDER | WS_VSCROLL | WS_TABSTOP | 0x1884,135,7,279,319
+    CONTROL         "",IDC_TREE_MESSAGE,"SysTreeView32",TVS_SHOWSELALWAYS | TVS_FULLROWSELECT | WS_BORDER | WS_HSCROLL | WS_TABSTOP,7,7,122,319
+END
+
+IDD_TRANSFORM_DIALOG DIALOGEX 0, 0, 340, 85
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Transform Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Transform",IDC_BTN_TRANSFORM,228,64,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,283,64,50,14
+    LTEXT           "Source:",IDC_STATIC,7,7,26,8
+    EDITTEXT        IDC_EDT_RES_SOURCE,49,7,204,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BTN_BROWSE_RES,257,7,35,14
+    PUSHBUTTON      "Go",IDC_BTN_GO_SOURCE,298,7,35,14
+    LTEXT           "Target:",IDC_STATIC,7,33,25,8
+    EDITTEXT        IDC_EDT_XUI_TARGET,49,33,204,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BTN_BROWSE_XUI,257,33,35,14
+    PUSHBUTTON      "Go",IDC_BTN_GO_TARGET,298,33,35,14
+END
+
+IDD_GENERATE_RESOURCE DIALOGEX 0, 0, 370, 159
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Create LibUIDK Resource File"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDT_SKIN_PATH,55,7,275,14,ES_AUTOHSCROLL | ES_READONLY
+    DEFPUSHBUTTON   "Generate",IDOK,220,138,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,283,138,50,14
+    LTEXT           "Skin Path:",IDC_STATIC,7,9,33,8
+    LTEXT           "Save Path:",IDC_STATIC,7,28,36,8
+    EDITTEXT        IDC_EDT_SAVE_PATH,55,27,275,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BTN_BROWSE,339,27,24,14
+    LTEXT           "Language:",IDC_STATIC,7,48,35,8
+    COMBOBOX        IDC_CMB_LANGUAGE,55,48,275,98,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Relative Path",IDC_STATIC,7,69,325,66
+    CONTROL         "Base on save path",IDC_RAD_RELATE_SAVE_PATH,"Button",BS_AUTORADIOBUTTON,21,85,75,10
+    EDITTEXT        IDC_EDT_RELATE_BASE_ON_SAVE_PATH,104,83,226,14,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Custom:",IDC_RAD_RElATE_CUSTOM,"Button",BS_AUTORADIOBUTTON,21,104,43,10
+    EDITTEXT        IDC_EDT_RELATE_CUSTOM,104,101,226,14,ES_AUTOHSCROLL
+    LTEXT           "Use '\\' character to split path.",IDC_STATIC,104,118,98,8
+END
+
+IDD_FORMAT_BRUSH DIALOGEX 0, 0, 317, 183
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,205,162,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,260,162,50,14
+    CONTROL         "",IDC_LIST_FORMAT_BRUSH,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,7,303,147
+END
+
+IDD_EVENT_HANDLER_WIZARD DIALOGEX 0, 0, 366, 153
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "LibUIDK Event Handler Wizard"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "OK",IDOK,246,132,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,309,132,50,14
+    LTEXT           "Class Name:",IDC_STATIC,7,7,40,8
+    EDITTEXT        IDC_EDT_CLASS_NAME,7,20,162,14,ES_AUTOHSCROLL
+    LTEXT           "Window ID:",IDC_STATIC,197,7,38,8,WS_DISABLED
+    EDITTEXT        IDC_EDT_WINDOW_ID,197,20,162,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           ".h file:",IDC_STATIC,7,40,162,14
+    EDITTEXT        IDC_EDT_H_FILE,7,54,162,14,ES_AUTOHSCROLL | WS_DISABLED
+    LTEXT           ".cpp file:",IDC_STATIC,197,40,29,8
+    EDITTEXT        IDC_EDT_CPP_FILE,197,54,162,14,ES_AUTOHSCROLL | WS_DISABLED
+    LTEXT           ".h, .cpp File Path",IDC_STATIC,7,75,56,8
+    EDITTEXT        IDC_EDT_LOCATION,7,86,246,14,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "Browse...",IDC_BTN_BROWSE,256,86,50,14
+    PUSHBUTTON      "Goto",IDC_BTN_GOTO,309,86,50,14
+    LTEXT           "Merge Tool Path:",IDC_STATIC,7,106,56,8
+    COMBOBOX        IDC_CMB_MERGE_TOOL_PATH,61,103,191,30,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Browse...",IDC_BTN_BROWSE_MERGE_TOOL,256,103,50,14
+    PUSHBUTTON      "Merge...",IDC_BTN_MERGE,309,103,50,14
+END
+
+IDD_ADD_ALL_CLASS DIALOGEX 0, 0, 316, 65
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Add all classes"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,205,44,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,259,44,50,14
+    LTEXT           "Save Path:",IDC_STATIC,7,7,41,8
+    EDITTEXT        IDC_EDT_ALL_CLASSED_SAVE_PATH,60,7,220,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BTN_BROWSE,288,7,21,14
+END
+
+IDD_GENERATE_CLASS_INFO_FILE DIALOGEX 0, 0, 316, 83
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Generate Class Info File"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,205,62,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,259,62,50,14
+    LTEXT           "Code Folder:",IDC_STATIC,7,7,42,8
+    EDITTEXT        IDC_EDT_CODE_FOLDER,77,7,187,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BTN_BROWSE_CODE_FOLDER,276,7,33,14
+    LTEXT           "Class  Info File:",IDC_STATIC,7,38,50,8
+    EDITTEXT        IDC_EDT_CLASS_INFO_FILE,77,33,187,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BTN_BROWSE_CLASS_INFO_FILE,276,33,33,14
+END
+
+IDD_SYNC_SKIN_TAB_ORDER DIALOGEX 0, 0, 316, 75
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Sync Skin Tab Order"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,205,54,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,259,54,50,14
+    LTEXT           "Source:",IDC_STATIC,7,7,26,8
+    EDITTEXT        IDC_EDT_SKIN_SOURCE,62,7,183,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BTN_BROWSE_SOURCE,259,7,50,14
+    LTEXT           "Target:",IDC_STATIC,7,31,25,8
+    EDITTEXT        IDC_EDT_SKIN_TARGET,62,27,183,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BTN_BROWSE_TARGET,259,28,50,14
+END
+
+IDD_TEMPLATE_NAME DIALOGEX 0, 0, 316, 105
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,205,84,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,259,84,50,14
+    LTEXT           "Template files:",IDC_STATIC,7,11,48,8
+    EDITTEXT        IDC_EDT_TEMPLATE_PATH,69,7,202,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BTN_BROWSE_TEMPLATE,281,7,28,14
+    LTEXT           "Prefix:",IDC_STATIC,9,36,22,8
+    EDITTEXT        IDC_EDT_PREFIX,69,32,40,14,ES_AUTOHSCROLL
+    LTEXT           "Target Path:",IDC_STATIC,7,61,42,8
+    EDITTEXT        IDC_EDT_TARGET,69,57,202,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BTN_BROWSE_TARGET,281,56,28,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 221
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 59
+    END
+
+    IDD_NEWPROJECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 334
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 263
+    END
+
+    IDD_TABORDER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 398
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 282
+    END
+
+    IDD_CLASS_WIZARD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 359
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 208
+    END
+
+    IDD_IMAGE_SYMBOLS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 309
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 178
+    END
+
+    IDD_ADD_HANDLER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 414
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 326
+    END
+
+    IDD_TRANSFORM_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 333
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 78
+    END
+
+    IDD_GENERATE_RESOURCE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 363
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 152
+    END
+
+    IDD_FORMAT_BRUSH, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 310
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 176
+    END
+
+    IDD_EVENT_HANDLER_WIZARD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 359
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 146
+    END
+
+    IDD_ADD_ALL_CLASS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 309
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 58
+    END
+
+    IDD_GENERATE_CLASS_INFO_FILE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 309
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 76
+    END
+
+    IDD_SYNC_SKIN_TAB_ORDER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 309
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 68
+    END
+
+    IDD_TEMPLATE_NAME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 309
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 98
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEMPLATE
+//
+
+FRAME.CPP               TEMPLATE                "Template\\Frame.cpp"
+FRAME.H                 TEMPLATE                "Template\\Frame.h"
+MAINWNDHANDLER.CPP      TEMPLATE                "Template\\MainWndHandler.cpp"
+MAINWNDHANDLER.H        TEMPLATE                "Template\\MainWndHandler.h"
+CHILDWNDHANDLER.CPP     TEMPLATE                "Template\\ChildWndHandler.cpp"
+CHILDWNDHANDLER.H       TEMPLATE                "Template\\ChildWndHandler.h"
+MAIN.BMP                TEMPLATE                "Template\\Main.bmp"
+BTNMIN.PNG              TEMPLATE                "Template\\BtnMin.png"
+BTNMAX.PNG              TEMPLATE                "Template\\BtnMax.png"
+BTNCLOSE.PNG            TEMPLATE                "Template\\BtnClose.png"
+MDI_CHILDFRM.CPP        TEMPLATE                "Template\\MDI_ChildFrm.cpp"
+MDI_CHILDFRM.H          TEMPLATE                "Template\\MDI_ChildFrm.h"
+MDI_CLASSVIEWICON.BMP   TEMPLATE                "Template\\MDI_classviewicon.bmp"
+MDI_CLASSVIEWWND.CPP    TEMPLATE                "Template\\MDI_ClassViewWnd.cpp"
+MDI_CLASSVIEWWND.H      TEMPLATE                "Template\\MDI_ClassViewWnd.h"
+MDI_CLOSE.BMP           TEMPLATE                "Template\\MDI_Close.bmp"
+MDI_HORSCROLLBAR.BMP    TEMPLATE                "Template\\MDI_HorScrollBar.bmp"
+MDI_HORSCROLLBARTHUMB.BMP TEMPLATE                "Template\\MDI_HorScrollBarThumb.bmp"
+MDI_ROOT.REG            TEMPLATE                "Template\\MDI_Root.reg"
+MDI_ROOTDOC.CPP         TEMPLATE                "Template\\MDI_RootDoc.cpp"
+MDI_ROOTDOC.H           TEMPLATE                "Template\\MDI_RootDoc.h"
+MDI_ROOTDOC.ICO         TEMPLATE                "Template\\MDI_RootDoc.ico"
+MDI_ROOTVIEW.CPP        TEMPLATE                "Template\\MDI_RootView.cpp"
+MDI_ROOTVIEW.H          TEMPLATE                "Template\\MDI_RootView.h"
+MDI_FILEVIEWWND.CPP     TEMPLATE                "Template\\MDI_FileViewWnd.cpp"
+MDI_FILEVIEWWND.H       TEMPLATE                "Template\\MDI_FileViewWnd.h"
+MDI_MAIN.BMP            TEMPLATE                "Template\\MDI_Main.bmp"
+MDI_MAX.BMP             TEMPLATE                "Template\\MDI_Max.bmp"
+MDI_MDIBTN_CLOSEDOCUMENT.BMP TEMPLATE                "Template\\MDI_MDIBtn_CloseDocument.bmp"
+MDI_MDIBTN_SWITCHDOCUMENT.BMP TEMPLATE                "Template\\MDI_MDIBtn_SwitchDocument.bmp"
+MDI_MDIBTN_TAB.BMP      TEMPLATE                "Template\\MDI_MDIBtn_Tab.bmp"
+MDI_MDICLIENT.BMP       TEMPLATE                "Template\\MDI_MDIClient.bmp"
+MDI_MENUBAR.BMP         TEMPLATE                "Template\\MDI_MenuBar.bmp"
+MDI_MIN.BMP             TEMPLATE                "Template\\MDI_Min.bmp"
+MDI_TAB.BMP             TEMPLATE                "Template\\MDI_Tab.bmp"
+MDI_THE.XUI             TEMPLATE                "Template\\MDI_the.xui"
+MDI_TOOLBAR_DOWN.BMP    TEMPLATE                "Template\\MDI_Toolbar_Down.bmp"
+MDI_TOOLBAR_EDIT.BMP    TEMPLATE                "Template\\MDI_Toolbar_Edit.bmp"
+MDI_TOOLBAR_LEFT.BMP    TEMPLATE                "Template\\MDI_Toolbar_Left.bmp"
+MDI_TOOLBAR_PROJECT.BMP TEMPLATE                "Template\\MDI_Toolbar_Project.bmp"
+MDI_TOOLBAR_RIGHT.BMP   TEMPLATE                "Template\\MDI_Toolbar_Right.bmp"
+MDI_TOOLBAR_UP.BMP      TEMPLATE                "Template\\MDI_Toolbar_Up.bmp"
+MDI_TOOLBAR_VIEW.BMP    TEMPLATE                "Template\\MDI_Toolbar_View.bmp"
+MDI_VIEW.BMP            TEMPLATE                "Template\\MDI_View.bmp"
+MDI_VERSCROLLBAR.BMP    TEMPLATE                "Template\\MDI_VerScrollBar.bmp"
+MDI_VERSCROLLBARTHUMB.BMP TEMPLATE                "Template\\MDI_VerScrollBarThumb.bmp"
+NEWPROJ.INF             TEMPLATE                "Template\\NewProj.inf"
+RESOURCE.H              TEMPLATE                "Template\\Resource.h"
+ROOT.CPP                TEMPLATE                "Template\\Root.cpp"
+ROOT.H                  TEMPLATE                "Template\\Root.h"
+ROOT.ICO                TEMPLATE                "Template\\Root.ico"
+ROOT.RC2                TEMPLATE                "Template\\Root.rc2"
+SKID.H                  TEMPLATE                "Template\\SKID.h"
+STDAFX.CPP              TEMPLATE                "Template\\StdAfx.cpp"
+STDAFX.H                TEMPLATE                "Template\\StdAfx.h"
+THE.XUI                 TEMPLATE                "Template\\the.xui"
+ROOT.DSP                TEMPLATE                "Template\\Root.dsp"
+ROOT.DSW                TEMPLATE                "Template\\Root.dsw"
+LOC_ENU.RCF             TEMPLATE                "Template\\Loc_enu.rcf"
+ROOT_80.SLN             TEMPLATE                "Template\\Root_80.sln"
+ROOT_80.VCPROJ          TEMPLATE                "Template\\Root_80.vcproj"
+ROOT_71.SLN             TEMPLATE                "Template\\Root_71.sln"
+ROOT_71.VCPROJ          TEMPLATE                "Template\\Root_71.vcproj"
+ROOT_90.VCPROJ          TEMPLATE                "Template\\Root_90.vcproj"
+ROOT_100.SLN            TEMPLATE                "Template\\Root_100.sln"
+ROOT_100.VCXPROJ        TEMPLATE                "Template\\Root_100.vcxproj"
+TARGETVER.H             TEMPLATE                "Template\\targetver.h"
+TARGETVER_100.H         TEMPLATE                "Template\\targetver_100.h"
+STDAFX_71.H             TEMPLATE                "Template\\stdafx_71.h"
+STDAFX_80.H             TEMPLATE                "Template\\stdafx_80.h"
+NEWCLASS.INF            TEMPLATE                "Template\\NewClass.inf"
+CLASSWIZARD_UIWND.CPP   TEMPLATE                "Template\\ClassWizard_UIWnd.cpp"
+CLASSWIZARD_UIWND.H     TEMPLATE                "Template\\ClassWizard_UIWnd.h"
+BTNBK.PNG               TEMPLATE                "Template\\BtnBk.png"
+IM_LOGINDLG.CPP         TEMPLATE                "Template\\Im_LoginDlg.cpp"
+IM_LOGINDLG.H           TEMPLATE                "Template\\Im_LoginDlg.h"
+IM_RECENTPAGE.CPP       TEMPLATE                "Template\\Im_RecentPage.cpp"
+IM_RECENTPAGE.H         TEMPLATE                "Template\\Im_RecentPage.h"
+IM_CHATFRAME.CPP        TEMPLATE                "Template\\Im_ChatFrame.cpp"
+IM_CHATFRAME.H          TEMPLATE                "Template\\Im_ChatFrame.h"
+IM_FRIENDPAGE.CPP       TEMPLATE                "Template\\Im_FriendPage.cpp"
+IM_FRIENDPAGE.H         TEMPLATE                "Template\\Im_FriendPage.h"
+IM_FRIENDSTREE.CPP      TEMPLATE                "Template\\Im_FriendsTree.cpp"
+IM_FRIENDSTREE.H        TEMPLATE                "Template\\Im_FriendsTree.h"
+IM_GROUPPAGE.CPP        TEMPLATE                "Template\\Im_GroupPage.cpp"
+IM_GROUPPAGE.H          TEMPLATE                "Template\\Im_GroupPage.h"
+IM_STARTMENU.CPP        TEMPLATE                "Template\\Im_StartMenu.cpp"
+IM_STARTMENU.H          TEMPLATE                "Template\\Im_StartMenu.h"
+IM_THE.XUI              TEMPLATE                "Template\\IM_the.xui"
+IM_RESOURCE.H           TEMPLATE                "Template\\IM_Resource.h"
+IM_1.PNG                TEMPLATE                "Template\\IM_1.png"
+IM_AIO_TOOLBAR_DOWN.PNG TEMPLATE                "Template\\IM_aio_toolbar_down.png"
+IM_ALLBTN_DOWN.PNG      TEMPLATE                "Template\\IM_allbtn_down.png"
+IM_ALLBTN_DOWN_20.PNG   TEMPLATE                "Template\\IM_allbtn_down_20.png"
+IM_ALLBTN_HIGHLIGHT.PNG TEMPLATE                "Template\\IM_allbtn_highlight.png"
+IM_ALLBTN_HIGHLIGHT_20.PNG TEMPLATE                "Template\\IM_allbtn_highlight_20.png"
+IM_APPBOX_MGR_BTN.PNG   TEMPLATE                "Template\\IM_appbox_mgr_btn.png"
+IM_BIG_2.PNG            TEMPLATE                "Template\\IM_Big_2.png"
+IM_BTN_CLOSE_DOWN.PNG   TEMPLATE                "Template\\IM_btn_close_down.png"
+IM_BTN_CLOSE_HIGHLIGHT.PNG TEMPLATE                "Template\\IM_btn_close_highlight.png"
+IM_BTN_CLOSE_NORMAL.PNG TEMPLATE                "Template\\IM_btn_close_normal.png"
+IM_BTN_MAX_DOWN.PNG     TEMPLATE                "Template\\IM_btn_max_down.png"
+IM_BTN_MAX_HIGHLIGHT.PNG TEMPLATE                "Template\\IM_btn_max_highlight.png"
+IM_BTN_MAX_NORMAL.PNG   TEMPLATE                "Template\\IM_btn_max_normal.png"
+IM_BTN_MINI_DOWN.PNG    TEMPLATE                "Template\\IM_btn_mini_down.png"
+IM_BTN_MINI_HIGHLIGHT.PNG TEMPLATE                "Template\\IM_btn_mini_highlight.png"
+IM_BTN_MINI_NORMAL.PNG  TEMPLATE                "Template\\IM_btn_mini_normal.png"
+IM_BTN_RESTORE_DOWN.PNG TEMPLATE                "Template\\IM_btn_restore_down.png"
+IM_BTN_RESTORE_HIGHLIGHT.PNG TEMPLATE                "Template\\IM_btn_restore_highlight.png"
+IM_BTN_RESTORE_NORMAL.PNG TEMPLATE                "Template\\IM_btn_restore_normal.png"
+IM_BTN_SKIN_DOWN.PNG    TEMPLATE                "Template\\IM_btn_Skin_down.png"
+IM_BTN_SKIN_HIGHLIGHT.PNG TEMPLATE                "Template\\IM_btn_Skin_highlight.png"
+IM_BTN_SKIN_NORMAL.PNG  TEMPLATE                "Template\\IM_btn_Skin_normal.png"
+IM_COLLAPSE.PNG         TEMPLATE                "Template\\IM_Collapse.png"
+IM_EXPANDED.PNG         TEMPLATE                "Template\\IM_Expanded.png"
+IM_FINGER_ACTIVE.PNG    TEMPLATE                "Template\\IM_Finger_Active.png"
+IM_ICON_CONTACTS_NORMAL.PNG TEMPLATE                "Template\\IM_icon_contacts_normal.png"
+IM_ICON_CONTACTS_SELECTED.PNG TEMPLATE                "Template\\IM_icon_contacts_selected.png"
+IM_ICON_GROUP_NORMAL.PNG TEMPLATE                "Template\\IM_icon_group_normal.png"
+IM_ICON_GROUP_SELECTED.PNG TEMPLATE                "Template\\IM_icon_group_selected.png"
+IM_ICON_LAST_NORMAL.PNG TEMPLATE                "Template\\IM_icon_last_normal.png"
+IM_ICON_LAST_SELECTED.PNG TEMPLATE                "Template\\IM_icon_last_selected.png"
+IM_IMONLINE.PNG         TEMPLATE                "Template\\IM_imonline.png"
+IM_LISTITEM_EVEN.PNG    TEMPLATE                "Template\\IM_listitem_even.png"
+IM_LISTITEM_HIGHLIGHT.PNG TEMPLATE                "Template\\IM_listitem_highlight.png"
+IM_MAIL16.PNG           TEMPLATE                "Template\\IM_mail16.png"
+IM_MAIN_GAMEBTN20_GAME.PNG TEMPLATE                "Template\\IM_main_gamebtn20_game.png"
+IM_MAIN_SEARCH_NORMAL.PNG TEMPLATE                "Template\\IM_main_search_normal.png"
+IM_MAIN_TABBTN_HIGHLIGHT.PNG TEMPLATE                "Template\\IM_main_tabbtn_highlight.png"
+IM_MAIN_TAB_CHECK.PNG   TEMPLATE                "Template\\IM_main_tab_check.png"
+IM_MENU_BTN_HIGHLIGHT.PNG TEMPLATE                "Template\\IM_menu_btn_highlight.png"
+IM_MENU_BTN_NORMAL.PNG  TEMPLATE                "Template\\IM_menu_btn_normal.png"
+IM_MENU_TOPRIGHT_BKG.PNG TEMPLATE                "Template\\IM_menu_topright_bkg.png"
+IM_MESSAGE.PNG          TEMPLATE                "Template\\IM_message.png"
+IM_MESSAGEBOX16.PNG     TEMPLATE                "Template\\IM_Messagebox16.png"
+IM_PADDING4HOT.PNG      TEMPLATE                "Template\\IM_Padding4Hot.png"
+IM_PADDING4SELECT.PNG   TEMPLATE                "Template\\IM_Padding4Select.png"
+IM_QQSAFE.PNG           TEMPLATE                "Template\\IM_QQSafe.png"
+IM_STATUS_DOWN.PNG      TEMPLATE                "Template\\IM_status_down.png"
+IM_STATUS_HIGHLIGHT.PNG TEMPLATE                "Template\\IM_status_highlight.png"
+IM_STATUS_NORMAL.PNG    TEMPLATE                "Template\\IM_status_normal.png"
+IM_TABNORMAL.PNG        TEMPLATE                "Template\\IM_TabNormal.png"
+IM_TOOLS.PNG            TEMPLATE                "Template\\IM_Tools.png"
+IM_ZONE_12.PNG          TEMPLATE                "Template\\IM_zone_12.png"
+IMICON_1.PNG            TEMPLATE                "Template\\IMICON_1.png"
+IMICON_10.PNG           TEMPLATE                "Template\\IMICON_10.png"
+IMICON_11.PNG           TEMPLATE                "Template\\IMICON_11.png"
+IMICON_12.PNG           TEMPLATE                "Template\\IMICON_12.png"
+IMICON_2.PNG            TEMPLATE                "Template\\IMICON_2.png"
+IMICON_3.PNG            TEMPLATE                "Template\\IMICON_3.png"
+IMICON_4.PNG            TEMPLATE                "Template\\IMICON_4.png"
+IMICON_5.PNG            TEMPLATE                "Template\\IMICON_5.png"
+IMICON_6.PNG            TEMPLATE                "Template\\IMICON_6.png"
+IMICON_7.PNG            TEMPLATE                "Template\\IMICON_7.png"
+IMICON_8.PNG            TEMPLATE                "Template\\IMICON_8.png"
+IMICON_9.PNG            TEMPLATE                "Template\\IMICON_9.png"
+IMICON_EMAILTRAY.PNG    TEMPLATE                "Template\\IMICON_EmailTray.png"
+IMICON_FACEBORDER.PNG   TEMPLATE                "Template\\IMICON_FaceBorder.png"
+IMICON_MOBILETRAY.PNG   TEMPLATE                "Template\\IMICON_MobileTray.png"
+IMICON_ONLINESTATE_AWAY.PNG TEMPLATE                "Template\\IMICON_OnlineState_Away.png"
+IMICON_ONLINESTATE_AWAY_BIG.PNG TEMPLATE                "Template\\IMICON_OnlineState_Away_Big.png"
+IMICON_ONLINESTATE_BUSY.PNG TEMPLATE                "Template\\IMICON_OnlineState_Busy.png"
+IMICON_ONLINESTATE_BUSY_BIG.PNG TEMPLATE                "Template\\IMICON_OnlineState_Busy_big.png"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// WINUSER
+//
+
+WINUSER_H               WINUSER                 "res\\WinUser_h"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// LIBUIDKSKIN
+//
+
+LibUIDKSkinRcTop        LIBUIDKSKIN             "LibUIDKRcSkin\\LibUIDKSkinRcTop"
+LibUIDKSkinRcBottom     LIBUIDKSKIN             "LibUIDKRcSkin\\LibUIDKSkinRcBottom"
+LibUIDKSkinRcTop_Chs    LIBUIDKSKIN             "LibUIDKRcSkin\\LibUIDKSkinRcTop_Chs"
+LibUIDKSkinRcBottom_Chs LIBUIDKSKIN             "LibUIDKRcSkin\\LibUIDKSkinRcBottom_Chs"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_GENERATE_RESOURCE DLGINIT
+BEGIN
+    IDC_CMB_LANGUAGE, 0x403, 24, 0
+0x6e45, 0x6c67, 0x7369, 0x2068, 0x5528, 0x696e, 0x6574, 0x2064, 0x7453, 
+0x7461, 0x7365, 0x0029, 
+    IDC_CMB_LANGUAGE, 0x403, 14, 0
+0x6843, 0x6e69, 0x7365, 0x2065, 0x5228, 0x4350, 0x0029, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// PNG
+//
+
+IDB_STORYPANELSLIDERBK  PNG                     "res\\StoryPanelSliderBk.png"
+IDB_STORYPANELSLIDERBKD PNG                     "res\\StoryPanelSliderBkD.png"
+IDB_STORYPANELRAMEFLAG  PNG                     "res\\StoryPanelFrameFlag.png"
+IDB_STORYPANELSLIDERTHUMB PNG                     "res\\StoryPanelSliderThumb.png"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDR_MAINFRAME           "UIShop"
+    IDR_UIShopTYPE          "\nUIShop\nUIShop\nUIShop Files (*.xui)\n.xui\nUIShop.Document\nUIShop.Document"
+    IDS_WINDOWS_MANAGER     "&Windows..."
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_APP_TITLE       "UIShop"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+    ID_INDICATOR_POS        "POS"
+END
+
+STRINGTABLE
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+END
+
+STRINGTABLE
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE
+BEGIN
+    ID_WINDOW_NEW           "Open another window for the active document\nNew Window"
+    ID_WINDOW_ARRANGE       "Arrange icons at the bottom of the window\nArrange Icons"
+    ID_WINDOW_CASCADE       "Arrange windows so they overlap\nCascade Windows"
+    ID_WINDOW_TILE_HORZ     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_TILE_VERT     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE
+BEGIN
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle Status Bar"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+    AFX_IDS_MDICHILD        "Activate this window"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_STATUS_PANE1        "Pane 1"
+    IDS_STATUS_PANE2        "Pane 2"
+    IDS_TOOLBAR_STANDARD    "Standard"
+    IDS_TOOLBAR_CUSTOMIZE   "Customize..."
+END
+
+STRINGTABLE
+BEGIN
+    IDS_FILE_VIEW           "File View"
+    IDS_PROPERTIES_WND      "Properties"
+    IDS_CONTACT_WND         "Contact"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_STORYBOARD_WND      "Storyboard"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_EXPLORER            "Explorer"
+    IDS_EDIT_MENU           "Edit"
+    IDR_PROJECT_FILTEREXT   ".xui"
+    IDR_PROJECT_FILTERNAME  "UIShop 7.0 Project Files (*.xui)"
+END
+
+STRINGTABLE
+BEGIN
+    IDP_OLE_INIT_FAILED     "OLE initialization failed.  Make sure that the OLE libraries are the correct version."
+    IDS_VERSION             "UIShop Version: 9.0.B%05d"
+    IDS_VERSION_CHAINLINK   "ChainLink Design Tools Version: 9.0.B%05d"
+END
+
+STRINGTABLE
+BEGIN
+    ID_LAYOUT_ALIGN_LEFT    "Align Lefts\nAlign Lefts"
+    ID_LAYOUT_ALIGN_RIGHT   "Align Rights\nAlign Rights"
+    ID_LAYOUT_ALIGN_TOP     "Align Tops\nAlign Tops"
+    ID_LAYOUT_ALIGN_BOTTOM  "Align Bottoms\nAlign Bottoms"
+    ID_LAYOUT_CENTER_VERTICAL "Vertical\nVertical"
+    ID_LAYOUT_CENTER_HORIZONTAL "Horizontal\nHorizontal"
+    ID_LAYOUT_SPACE_ACROSS  "Across\nAcross"
+    ID_LAYOUT_SPACE_DOWN    "Down\nDown"
+    ID_LAYOUT_SAMESIZE_WIDTH "Make Same Width\nMake Same Width"
+    ID_LAYOUT_SAMESIZE_HEIGHT "Make Same Height\nMake Same Height"
+    ID_LAYOUT_SAMESIZE_SIZE "Make Same Size\nMake Same Size"
+    ID_DESIGN_SIZE_TO_CONTENT 
+                            "Sizes the control to accommodate the background image\nSize To Background Content"
+    ID_DESIGN_BACKGROUND_SHOW "Background Show\nBackground Show"
+END
+
+STRINGTABLE
+BEGIN
+    ID_CONTROL_SELECT       "Pointer\nPointer"
+    ID_CONTROL_BUTTON       "Push Button\nPush Button"
+    ID_CONTROL_CHECKBOX     "Check Box\nCheck Box"
+    ID_CONTROL_RADIOBUTTON  "Radio Button\nRadio Button"
+    ID_CONTROL_STATIC       "Static Text\nStatic Text"
+    ID_CONTROL_EDIT         "Edit Control\nEdit Control"
+    ID_CONTROL_COMBOBOX     "Combo Box\nCombo Box"
+    ID_CONTROL_SLIDER       "Slider Control\nSlider Control"
+    ID_CONTROL_SPIN         "Spin Control\nSpin Control"
+    ID_CONTROL_PROGRESS     "Progress Control\nProgress Control"
+    ID_CONTROL_HOTKEY       "Hot Key\nHot Key"
+    ID_CONTROL_IPADDRESS    "IP Address Control\nIP Address Control"
+    ID_CONTROL_SLIDEREX     "Extended Slider Control\nExtended Slider Control"
+END
+
+STRINGTABLE
+BEGIN
+    ID_CONTROL_LISTCTRL     "List Control\nList Control"
+    ID_CONTROL_TREECTRL     "Tree Control\nTree Control"
+    ID_CONTROL_SCROLLBAREX  "Extended Scroll Bar\nExtended Scroll Bar"
+    ID_CONTROL_THUMBNAIL    "Thumbnail Control\nThumbnail Control"
+    ID_CONTROL_TREELIST     "Tree List Control\nTree List Control"
+    ID_CONTROL_RICHEDIT     "Rich Edit Control\nRich Edit Control"
+    ID_CONTROL_RICHEDIT_IM  "IM Rich Edit Control\nIM Rich Edit Control"
+    ID_CONTROL_HTMLCTRL     "Html Control\nHtml Control"
+    ID_CONTROL_DATETIMECTRL "Date Time Picker\nDate Time Picker"
+    ID_CONTROL_WAVECTRL     "Wave Control\nWave Control"
+    ID_CONTROL_PICCTRL      "Picture Control\nPicture Control"
+    ID_CONTROL_MENUBAR      "Menu Bar\nMenu Bar"
+    ID_CONTROL_SPLITTER     "SplitterBar\nSplitterBar"
+    ID_CONTROL_RECT         "Rectangle(Not a control)\nRectangle"
+    ID_CONTROL_SPLITTERWL   "SplitterBar(Not a control)\nSplitterBar"
+    ID_CONTROL_LINE         "Line(Not a control)\nLine"
+END
+
+STRINGTABLE
+BEGIN
+    ID_CONTROL_TEXT         "Text(Not a control)\nText"
+    ID_CONTROL_BUTTONWL     "Button(windowless)\nButton(windowless)"
+    ID_CONTROL_CHECKBOXWL   "CheckBox(windowless)\nCheckBox(windowless)"
+    ID_CONTROL_RADIOWL      "Radio(windowless)\nRadio(windowless)"
+    ID_CONTROL_SLIDERWL     "Slider(windowless)\nSlider(windowless)"
+    ID_CONTROL_PIC          "Picture(Not a control)\nPicture"
+    ID_CONTROL_RICHEDITWL   "Rich Edit(Not a control)\nRich Edit"
+    ID_CONTROL_IMWL         "IM Rich Edit(not a control)\nIM Rich Edit"
+    ID_CONTROL_TASK_WND_MGR "Tab Client Area(Not a control)\nTab Client Area"
+    ID_CONTROL_DOCK_PANEL   "Dock Panel(Not a control)\nDock Panel"
+    ID_CONTROL_UNIFORM_GRID_PANEL 
+                            "Uniform Grid Panel(Not a control)\nUniform Grid Panel"
+    ID_CONTROL_STACK_PANEL  "Stack Panel(Not a control)\nStack Panel"
+END
+
+STRINGTABLE
+BEGIN
+    ID_DESIGN_FORMAT_BRUSH  "Format Bursh\nFormat Brush"
+    ID_DESIGN_SIZE_TO_FOREGROUND_CONTENT 
+                            "Sizes the control to accommodate the foreground image\nSize To Foreground Content"
+END
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#include "res\UIShop.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#if !defined(_AFXDLL)
+#include "afxprint.rc"               // printing/print preview resources
+#include "afxribbon.rc"              // MFC ribbon and control bar resources
+#endif
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

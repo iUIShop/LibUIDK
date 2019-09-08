@@ -1,0 +1,402 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--DO NOT EDIT OR DELETE THIS LIBUIDK UI FILE!-->
+<!--www.iuishop.com-->
+<!--iuishop@iuishop.com-->
+<!--LibUIDK-->
+<LibUIDKUI>
+	<Configuration OpenProgram="UIShop.exe"/>
+	<Version Version="0700" Build="7723" ChangeList="7728"/>
+	<Windows>
+		<Window>
+			<ID Value="IDW_MAIN"/>
+			<Rect Size="1024,200" Location="0,0"/>
+			<LayoutMode Horizontal="Left"/>
+			<BackgroundNormal RelativePath="Main.bmp"/>
+			<ResizingPoint X="950" Y="140"/>
+			<IsLayeredWindow Value="false"/>
+			<TitleBarHeight Value="90"/>
+			<BackgroundHide RelativePath="Main.bmp"/>
+			<MaskColorResID Value="IDR_COLOR_MASK"/>
+			<IsResizing Value="true"/>
+			<IsResizingBorder Value="true"/>
+			<WindowResizingPoint X="0" Y="0"/>
+			<WindowType Value="MDI Frame"/>
+			<ClientArea Size="680,75" Location="340,100"/>
+			<Controls>
+				<PUSHBUTTON>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_BTN_MIN"/>
+					<Rect Size="21,21" Location="953,1"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="Min.bmp"/>
+					<ResizingPoint X="0" Y="0"/>
+					<ToolTip Enable="true" ToolTip="Minimize"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+					<ButtonType Value="MinimizeBox"/>
+				</PUSHBUTTON>
+				<CHECK>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_CHK_MAX"/>
+					<Rect Size="21,21" Location="975,1"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="Max.bmp"/>
+					<ResizingPoint X="0" Y="0"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+					<CheckBoxType Value="MaximizeBox"/>
+				</CHECK>
+				<PUSHBUTTON>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_BTN_CLOSE"/>
+					<Rect Size="21,21" Location="997,1"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="Close.bmp"/>
+					<ResizingPoint X="0" Y="0"/>
+					<ToolTip Enable="true" ToolTip="Close"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+					<ButtonType Value="CloseBox"/>
+				</PUSHBUTTON>
+				<MENUBAR>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_MENUBAR_MAIN"/>
+					<Rect Size="270,24" Location="670,1"/>
+					<LayoutMode Horizontal="Right" Vertical="Top"/>
+					<IsButtonCombineImages Value="true"/>
+					<ButtonBkCombine RelativePath="MenuBar.bmp"/>
+					<ButtonFontResN Value="IDR_FONT_DEFAULT"/>
+					<ButtonColorResN Value="IDR_COLOR_DEFAULT"/>
+					<MenuStyle Value="IDR_MENU_DEFAULT"/>
+				</MENUBAR>
+				<PUSHBUTTON>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_BTN_PROJECT"/>
+					<Rect Size="120,40" Location="306,27"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="Toolbar_Project.bmp"/>
+					<ResizingPoint X="0" Y="0"/>
+					<FontResN Value="IDR_FONT_DEFAULT"/>
+					<ColorResN Value="IDR_COLOR_DEFAULT"/>
+					<Caption Value="项目"/>
+					<TextMarginN Left="40" Top="0" Right="0" Bottom="0"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+				</PUSHBUTTON>
+				<PUSHBUTTON>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_BTN_EDIT"/>
+					<Rect Size="120,40" Location="425,27"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="Toolbar_Edit.bmp"/>
+					<ResizingPoint X="0" Y="0"/>
+					<FontResN Value="IDR_FONT_DEFAULT"/>
+					<ColorResN Value="IDR_COLOR_DEFAULT"/>
+					<Caption Value="编辑"/>
+					<TextMarginN Left="40" Top="0" Right="0" Bottom="0"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+				</PUSHBUTTON>
+				<PUSHBUTTON>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_BTN_VIEW"/>
+					<Rect Size="120,40" Location="544,27"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="Toolbar_View.bmp"/>
+					<ResizingPoint X="0" Y="0"/>
+					<FontResN Value="IDR_FONT_DEFAULT"/>
+					<ColorResN Value="IDR_COLOR_DEFAULT"/>
+					<Caption Value="查看"/>
+					<TextMarginN Left="40" Top="0" Right="0" Bottom="0"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+				</PUSHBUTTON>
+				<PUSHBUTTON>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_BTN_LEFT"/>
+					<Rect Size="23,22" Location="224,68"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="Toolbar_Left.bmp"/>
+					<ResizingPoint X="0" Y="0"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+				</PUSHBUTTON>
+				<PUSHBUTTON>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_BTN_RIGHT"/>
+					<Rect Size="23,22" Location="249,68"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="Toolbar_Right.bmp"/>
+					<ResizingPoint X="0" Y="0"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+				</PUSHBUTTON>
+				<PUSHBUTTON>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_BTN_UP"/>
+					<Rect Size="23,22" Location="274,68"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="Toolbar_Up.bmp"/>
+					<ResizingPoint X="0" Y="0"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+				</PUSHBUTTON>
+				<PUSHBUTTON>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_BTN_DOWN"/>
+					<Rect Size="23,22" Location="299,68"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="Toolbar_Down.bmp"/>
+					<ResizingPoint X="0" Y="0"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+				</PUSHBUTTON>
+				<RADIO>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_RAD_CLASS_VIEW"/>
+					<Rect Size="100,22" Location="6,153"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="Tab.bmp"/>
+					<ResizingPoint X="0" Y="0"/>
+					<FontResN Value="IDR_FONT_DEFAULT"/>
+					<ColorResN Value="IDR_COLOR_DEFAULT"/>
+					<Caption Value="Class View"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+					<IsGroup Value="true"/>
+				</RADIO>
+				<RADIO>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_RAD_FILE_VIEW"/>
+					<Rect Size="100,22" Location="107,153"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="Tab.bmp"/>
+					<ResizingPoint X="0" Y="0"/>
+					<FontResN Value="IDR_FONT_DEFAULT"/>
+					<ColorResN Value="IDR_COLOR_DEFAULT"/>
+					<Caption Value="File View"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+				</RADIO>
+				<TWMGR>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_TWMGR_LEFT"/>
+					<Rect Size="325,54" Location="6,100"/>
+				</TWMGR>
+			</Controls>
+		</Window>
+		<Window>
+			<ID Value="IDW_MDI_CLIENT"/>
+			<Rect Size="80,40" Location="0,0"/>
+			<BackgroundNormal RelativePath="MDIClient.bmp"/>
+			<ResizingPoint X="30" Y="30"/>
+			<BackgroundHide RelativePath="MDIClient.bmp"/>
+			<MaskColorResID Value="IDR_COLOR_MASK"/>
+			<IsResizing Value="true"/>
+			<WindowResizingPoint X="0" Y="0"/>
+			<WindowType Value="MDI Client"/>
+			<ClientArea Size="79,13" Location="0,25"/>
+			<Controls>
+				<CHECK>
+					<Parent ID="IDW_MDI_CLIENT"/>
+					<ID Value="IDC_CHK_SWITCH_DOCUMENT"/>
+					<Rect Size="14,13" Location="48,3"/>
+					<LayoutMode Horizontal="Right" Vertical="Top"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="MDIBtn_SwitchDocument.bmp"/>
+					<ResizingPoint X="0" Y="0"/>
+					<FontResN Value="IDR_FONT_DEFAULT"/>
+					<ColorResN Value="IDR_COLOR_DEFAULT"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+				</CHECK>
+				<PUSHBUTTON>
+					<Parent ID="IDW_MDI_CLIENT"/>
+					<ID Value="IDC_BTN_CLOSE_DOCUMENT"/>
+					<Rect Size="14,13" Location="64,3"/>
+					<LayoutMode Horizontal="Right" Vertical="Top"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="MDIBtn_CloseDocument.bmp"/>
+					<ResizingPoint X="0" Y="0"/>
+					<FontResN Value="IDR_FONT_DEFAULT"/>
+					<ColorResN Value="IDR_COLOR_DEFAULT"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+				</PUSHBUTTON>
+			</Controls>
+		</Window>
+		<Window>
+			<ID Value="IDW_MDI_CHILD_FRAME"/>
+			<Rect Size="80,40" Location="0,0"/>
+			<BackgroundNormal RelativePath="MDIClient.bmp"/>
+			<ResizingPoint X="30" Y="30"/>
+			<IsAppWindow Value="false"/>
+			<BackgroundHide RelativePath="MDIClient.bmp"/>
+			<MaskColorResID Value="IDR_COLOR_MASK"/>
+			<IsResizing Value="true"/>
+			<WindowResizingPoint X="0" Y="0"/>
+			<WindowType Value="MDI Child Frame"/>
+			<ClientArea Size="79,37" Location="0,1"/>
+			<Controls/>
+		</Window>
+		<Window>
+			<ID Value="IDW_VIEW"/>
+			<Rect Size="80,40" Location="0,0"/>
+			<BackgroundNormal RelativePath="View.bmp"/>
+			<ResizingPoint X="10" Y="10"/>
+			<IsNoActivate Value="true"/>
+			<TitleBarHeight Value="30"/>
+			<BackgroundHide RelativePath="View.bmp"/>
+			<MaskColorResID Value="IDR_COLOR_MASK"/>
+			<IsResizing Value="true"/>
+			<WindowResizingPoint X="0" Y="0"/>
+			<WindowType Value="MDI View"/>
+			<Controls/>
+		</Window>
+		<Window>
+			<ID Value="IDW_CLASS_VIEW"/>
+			<Rect Size="80,40" Location="0,0"/>
+			<BackgroundNormal RelativePath="View.bmp"/>
+			<ResizingPoint X="10" Y="10"/>
+			<BackgroundHide RelativePath="View.bmp"/>
+			<MaskColorResID Value="IDR_COLOR_MASK"/>
+			<IsResizing Value="true"/>
+			<WindowResizingPoint X="0" Y="0"/>
+			<Controls>
+				<TREECTRL>
+					<Parent ID="IDW_CLASS_VIEW"/>
+					<ID Value="IDC_TREECTRL_CLASS"/>
+					<Rect Size="78,38" Location="1,1"/>
+					<ResizingPoint X="0" Y="0"/>
+					<FontResN Value="IDR_FONT_DEFAULT"/>
+					<ColorResN Value="IDR_COLOR_DEFAULT"/>
+					<IsHasButtons Value="true"/>
+					<IsHasLines Value="true"/>
+					<IsLineAtRoot Value="true"/>
+					<ItemLine Enable="false"/>
+					<SelectedItemBackground ColorResID="IDR_COLOR_TREE_SELITEM_BK"/>
+					<SelectedBkResizePoint X="2" Y="2"/>
+					<HighlightItemBackground Enable="false" Type="Color" ColorResID="IDR_COLOR_TREE_HLITEM_BK"/>
+					<HighlightBkResizePoint X="2" Y="2"/>
+					<RootItemBackground Effect="false" Type="Color"/>
+					<RootItemBkImageResizePoint X="2" Y="2"/>
+					<EnableCustomScrollBar Value="true"/>
+					<HorizontalScrollbarStyleID Value="IDR_HOR_SB_DEFAULT"/>
+					<VerticalScrollbarStyleID Value="IDR_VER_SB_DEFAULT"/>
+				</TREECTRL>
+			</Controls>
+		</Window>
+		<Window>
+			<ID Value="IDW_FILE_VIEW"/>
+			<Rect Size="80,40" Location="0,0"/>
+			<BackgroundNormal RelativePath="View.bmp"/>
+			<ResizingPoint X="10" Y="10"/>
+			<BackgroundHide RelativePath="View.bmp"/>
+			<MaskColorResID Value="IDR_COLOR_MASK"/>
+			<IsResizing Value="true"/>
+			<WindowResizingPoint X="0" Y="0"/>
+			<Controls>
+				<STATIC>
+					<Parent ID="IDW_FILE_VIEW"/>
+					<ID Value="IDC_STA_1"/>
+					<Rect Size="74,24" Location="3,10"/>
+					<LayoutMode Horizontal="Center" Vertical="Center"/>
+					<ResizingPoint X="0" Y="0"/>
+					<FontResN Value="IDR_FONT_DEFAULT"/>
+					<ColorResN Value="IDR_COLOR_DEFAULT"/>
+					<Nowrap Value="false"/>
+					<Caption Value="File View"/>
+					<TextAlignment Vertical="Default"/>
+					<ShadowText ShadowColor="#00C0C0C0"/>
+				</STATIC>
+			</Controls>
+		</Window>
+	</Windows>
+	<Resources>
+		<DefaultFont>
+			<FONT>
+				<Font Height="-12" Width="0" lfEscapement="0" Orientation="0" Weight="400" Italic="0" Underline="0" StrikeOut="0" CharSet="0" OutPrecision="3" ClipPrecision="2" Quality="1" PitchAndFamily="34" FaceName="Tahoma"/>
+			</FONT>
+		</DefaultFont>
+		<Fonts>
+			<FONT>
+				<ID Value="IDR_FONT_DEFAULT"/>
+				<Font Height="-12" Width="0" lfEscapement="0" Orientation="0" Weight="400" Italic="0" Underline="0" StrikeOut="0" CharSet="0" OutPrecision="3" ClipPrecision="2" Quality="1" PitchAndFamily="34" FaceName="Tahoma"/>
+			</FONT>
+		</Fonts>
+		<DefaultColor>
+			<COLOR>
+				<Color Value="#00000000"/>
+			</COLOR>
+		</DefaultColor>
+		<Colors>
+			<COLOR>
+				<ID Value="IDR_COLOR_DEFAULT"/>
+				<Color Value="#00000000"/>
+			</COLOR>
+			<COLOR>
+				<ID Value="IDR_COLOR_MASK"/>
+				<Color Value="#00FF00FF"/>
+			</COLOR>
+			<COLOR>
+				<ID Value="IDR_COLOR_TREE_SELITEM_BK"/>
+				<Color Value="#00800000"/>
+			</COLOR>
+			<COLOR>
+				<ID Value="IDR_COLOR_TREE_HLITEM_BK"/>
+				<Color Value="#00F1F1F1"/>
+			</COLOR>
+		</Colors>
+	</Resources>
+	<Styles>
+		<PushButtons/>
+		<CheckBoxes/>
+		<RadioButtons/>
+		<ComboBoxes/>
+		<Statics/>
+		<Edits/>
+		<Sliders/>
+		<Progresses/>
+		<Spins/>
+		<HotKeys/>
+		<IPAdresses/>
+		<SliderExes/>
+		<ListControls/>
+		<TreeControls/>
+		<TreeLists/>
+		<RichEdits/>
+		<IMRichEdits/>
+		<HtmlControls/>
+		<DateTimes/>
+		<WaveControls/>
+		<Menus>
+			<STYLE_MENU>
+				<ID Value="IDR_MENU_DEFAULT"/>
+				<NormalMenuItem TextColor="#00000000" Height="-12" Width="0" lfEscapement="0" Orientation="0" Weight="400" Italic="0" Underline="0" StrikeOut="0" CharSet="0" OutPrecision="3" ClipPrecision="2" Quality="1" PitchAndFamily="34" FaceName="Tahoma" BackgroundColor="#00F7F8F9" X="22" Y="2"/>
+				<HighlightMenuItem TextColor="#00FFFFFF" Height="-12" Width="0" lfEscapement="0" Orientation="0" Weight="400" Italic="0" Underline="0" StrikeOut="0" CharSet="0" OutPrecision="3" ClipPrecision="2" Quality="1" PitchAndFamily="34" FaceName="Tahoma" BackgroundColor="#006A240A" X="22" Y="2"/>
+				<DisabledMenuItem TextColor="#00A6A6A6" Height="-12" Width="0" lfEscapement="0" Orientation="0" Weight="400" Italic="0" Underline="0" StrikeOut="0" CharSet="0" OutPrecision="3" ClipPrecision="2" Quality="1" PitchAndFamily="34" FaceName="Tahoma" BackgroundColor="#00F7F8F9" X="22" Y="2"/>
+				<Separator BackgroundType="Color" LineColor="#00A6A6A6" X="22" Y="2"/>
+				<IconArea StartColor="#00F7F8F9" EndColor="#00CCD4D7"/>
+				<MenuBorder FlatBorderColor="#00666666"/>
+			</STYLE_MENU>
+		</Menus>
+		<Menubars/>
+		<Headers/>
+		<HorScrollbars>
+			<STYLE_HORSCROLLBAR>
+				<ID Value="IDR_HOR_SB_DEFAULT"/>
+				<IsCombineBackgroundImages Value="true"/>
+				<BkCombine RelativePath="HorScrollBar.bmp"/>
+				<ResizingPoint X="20" Y="10"/>
+				<IsCombineThumbImages Value="true"/>
+				<ThumbCombine RelativePath="HorScrollBarThumb.bmp"/>
+				<ThumbResizingPoint X="3" Y="3"/>
+				<LeftUpButtonSize Value="19"/>
+				<RightDownButtonSize Value="19"/>
+			</STYLE_HORSCROLLBAR>
+		</HorScrollbars>
+		<VerScrollbars>
+			<STYLE_VERSCROLLBAR>
+				<ID Value="IDR_VER_SB_DEFAULT"/>
+				<IsCombineBackgroundImages Value="true"/>
+				<BkCombine RelativePath="VerScrollBar.bmp"/>
+				<ResizingPoint X="10" Y="20"/>
+				<IsCombineThumbImages Value="true"/>
+				<ThumbCombine RelativePath="VerScrollBarThumb.bmp"/>
+				<ThumbResizingPoint X="3" Y="3"/>
+				<LeftUpButtonSize Value="19"/>
+				<RightDownButtonSize Value="19"/>
+			</STYLE_VERSCROLLBAR>
+		</VerScrollbars>
+		<Splitterbars/>
+		<StackPanel/>
+		<WindowlessLine/>
+		<WindowlessPicture/>
+	</Styles>
+</LibUIDKUI>

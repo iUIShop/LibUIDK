@@ -1,0 +1,3 @@
+LibUIDK界面库的界面编辑器工程。
+
+>> CUIDesignWnd相当于Tree的父Item。CControlWnd相当于父Item的子Item。所以，处理CUIDesignWnd和CControlWnd的焦点切换（用来更新PropertiesWnd），做成类似于CTreeCtrl的Select changed消息，CUIDesignWnd的父窗口CUIShopView相当于Tree控件，由CUIShopView发出WM_NOTIFY消息，由CUIShopView的父窗口CChildFrame处理。

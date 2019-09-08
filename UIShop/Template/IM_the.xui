@@ -1,0 +1,781 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--DO NOT EDIT OR DELETE THIS LIBUIDK UI FILE!-->
+<!--www.iuishop.com-->
+<!--iuishop@iuishop.com-->
+<!--LibUIDK-->
+<LibUIDKUI>
+	<Configuration OpenProgram="UIShop.exe"/>
+	<Version Version="0700" Build="5542" ChangeList="5669"/>
+	<DPI LogPixelsX="96" LogPixelsY="96"/>
+	<Windows>
+		<Window>
+			<ID Value="IDW_LOGIN"/>
+			<Rect Size="268,585" Location="0,0"/>
+			<BackgroundHide RelativePath="IDW_LOGIN.png"/>
+			<WindowResizingPoint X="0" Y="0"/>
+			<Controls>
+				<PUSHBUTTON>
+					<Parent ID="IDW_LOGIN"/>
+					<ID Value="IDC_BTN_MIN"/>
+					<Rect Size="28,20" Location="198,1"/>
+					<IsSpecifyImages Value="true"/>
+					<BackgroundNormal RelativePath="btn_mini_normal.png"/>
+					<BackgroundHighlight RelativePath="btn_mini_highlight.png"/>
+					<BackgroundSelected RelativePath="btn_mini_down.png"/>
+					<ButtonType Value="MinimizeBox"/>
+				</PUSHBUTTON>
+				<PUSHBUTTON>
+					<Parent ID="IDW_LOGIN"/>
+					<ID Value="IDC_BTN_CLOSE"/>
+					<Rect Size="39,20" Location="226,1"/>
+					<IsSpecifyImages Value="true"/>
+					<BackgroundNormal RelativePath="btn_close_normal.png"/>
+					<BackgroundHighlight RelativePath="btn_close_highlight.png"/>
+					<BackgroundSelected RelativePath="btn_close_down.png"/>
+				</PUSHBUTTON>
+				<EDIT>
+					<Parent ID="IDW_LOGIN"/>
+					<ID Value="IDC_EDT_NAME"/>
+					<Rect Size="229,31" Location="18,173"/>
+					<IsTabStop Value="true"/>
+				</EDIT>
+				<EDIT>
+					<Parent ID="IDW_LOGIN"/>
+					<ID Value="IDC_EDT_PASSWORD"/>
+					<Rect Size="229,31" Location="18,222"/>
+					<IsTabStop Value="true"/>
+					<IsPassword Value="true"/>
+				</EDIT>
+				<CHECK>
+					<Parent ID="IDW_LOGIN"/>
+					<ID Value="IDC_CHK_REMEMBER_PASSWORD"/>
+					<Rect Size="106,24" Location="18,273"/>
+					<Caption Value="记住密码"/>
+				</CHECK>
+				<CHECK>
+					<Parent ID="IDW_LOGIN"/>
+					<ID Value="IDC_CHK_AUTO_LOGIN"/>
+					<Rect Size="106,24" Location="141,273"/>
+					<Caption Value="下次自动登录"/>
+				</CHECK>
+				<PUSHBUTTON>
+					<Parent ID="IDW_LOGIN"/>
+					<ID Value="IDC_BTN_LOGIN"/>
+					<Rect Size="229,31" Location="18,313"/>
+					<Caption Value="登录"/>
+				</PUSHBUTTON>
+				<PUSHBUTTON>
+					<Parent ID="IDW_LOGIN"/>
+					<ID Value="IDC_BTN_FORGET_PASSWORD"/>
+					<Rect Size="74,24" Location="18,558"/>
+					<Caption Value="忘记密码"/>
+				</PUSHBUTTON>
+				<PUSHBUTTON>
+					<Parent ID="IDW_LOGIN"/>
+					<ID Value="IDC_BTN_REGISTER"/>
+					<Rect Size="74,24" Location="173,558"/>
+					<Caption Value="新用户注册"/>
+				</PUSHBUTTON>
+			</Controls>
+		</Window>
+		<Window>
+			<ID Value="IDW_MAIN"/>
+			<Rect Size="285,530" Location="0,0"/>
+			<ResizingPoint X="20" Y="150"/>
+			<TitleBarHeight Value="-1"/>
+			<IsDrawBKColor Value="true"/>
+			<BackgroundColorID Value="IDR_COLOR_BACKGROUND"/>
+			<BackgroundHide RelativePath="aio_toolbar_down.png"/>
+			<MaskColorResID Value="IDR_COLOR_MASK"/>
+			<IsResizing Value="true"/>
+			<IsResizingBorder Value="true"/>
+			<WinResizePtSameImgResizePt Value="false"/>
+			<WindowResizingPoint X="150" Y="200"/>
+			<ClientArea Size="281,31" Location="1,133"/>
+			<Controls>
+				<PUSHBUTTON>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_BTN_SKIN"/>
+					<Rect Size="28,20" Location="164,-1"/>
+					<LayoutMode Horizontal="Right Even Zoom Out" Vertical="Top"/>
+					<IsSpecifyImages Value="true"/>
+					<BackgroundNormal RelativePath="btn_Skin_normal.png"/>
+					<BackgroundHighlight RelativePath="btn_Skin_highlight.png"/>
+					<BackgroundSelected RelativePath="btn_Skin_down.png"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+				</PUSHBUTTON>
+				<PUSHBUTTON>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_BTN_MIN"/>
+					<Rect Size="28,20" Location="192,-1"/>
+					<LayoutMode Horizontal="Right Even Zoom Out" Vertical="Top"/>
+					<IsSpecifyImages Value="true"/>
+					<BackgroundNormal RelativePath="btn_mini_normal.png"/>
+					<BackgroundHighlight RelativePath="btn_mini_highlight.png"/>
+					<BackgroundSelected RelativePath="btn_mini_down.png"/>
+					<ResizingPoint X="0" Y="0"/>
+					<ToolTip Enable="true" ToolTip="Minimize"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+					<ButtonType Value="MinimizeBox"/>
+				</PUSHBUTTON>
+				<CHECK>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_CHK_MAX"/>
+					<Rect Size="28,20" Location="220,-1"/>
+					<LayoutMode Horizontal="Right Even Zoom Out" Vertical="Top"/>
+					<IsSpecifyImages Value="true"/>
+					<BackgroundNormal RelativePath="btn_max_normal.png"/>
+					<BackgroundHighlight RelativePath="btn_max_highlight.png"/>
+					<BackgroundSelected RelativePath="btn_max_down.png"/>
+					<ResizingPoint X="0" Y="0"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+					<BackgroundCheckedNormal RelativePath="btn_restore_normal.png"/>
+					<BackgroundCheckedHighlight RelativePath="btn_restore_highlight.png"/>
+					<BackgroundCheckedSelected RelativePath="btn_restore_down.png"/>
+					<CheckBoxType Value="MaximizeBox"/>
+				</CHECK>
+				<PUSHBUTTON>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_BTN_CLOSE"/>
+					<Rect Size="34,19" Location="248,-1"/>
+					<LayoutMode Horizontal="Right Even Zoom Out" Vertical="Top"/>
+					<IsSpecifyImages Value="true"/>
+					<BackgroundNormal RelativePath="btn_close_normal.png"/>
+					<BackgroundHighlight RelativePath="btn_close_highlight.png"/>
+					<BackgroundSelected RelativePath="btn_close_down.png"/>
+					<ResizingPoint X="0" Y="0"/>
+					<ToolTip Enable="true" ToolTip="Close"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+					<ButtonType Value="CloseBox"/>
+				</PUSHBUTTON>
+				<PUSHBUTTON>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_BTN_HEADER"/>
+					<Rect Size="64,64" Location="6,30"/>
+					<LayoutMode Horizontal="Left" Vertical="Top"/>
+					<IsSpecifyImages Value="true"/>
+					<BackgroundNormal RelativePath="1.png"/>
+					<BackgroundHighlight RelativePath="1.png"/>
+					<BackgroundSelected RelativePath="1.png"/>
+					<BkImageResizeMode Value="Stretch"/>
+					<IsSpecifyForegroundImages Value="true"/>
+					<ForegroundNormal Value="Padding4Select.png"/>
+					<ForegroundHighlight Value="Padding4Hot.png"/>
+					<ForegroundSelected Value="Padding4Select.png"/>
+					<ForegroundAlignMode Horizontal="Stretch" Vertical="Stretch"/>
+				</PUSHBUTTON>
+				<CHECK>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_CHK_STATUS"/>
+					<Rect Size="35,22" Location="73,27"/>
+					<LayoutMode Horizontal="Left" Vertical="Top"/>
+					<IsSpecifyImages Value="true"/>
+					<BackgroundNormal RelativePath="status_normal.png"/>
+					<BackgroundHighlight RelativePath="status_highlight.png"/>
+					<BackgroundSelected RelativePath="status_down.png"/>
+					<IsSpecifyForegroundImages Value="true"/>
+					<ForegroundNormal Value="imonline.png"/>
+					<ForegroundHighlight Value="imonline.png"/>
+					<ForegroundSelected Value="imonline.png"/>
+					<ForegroundDisabled Value="imonline.png"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+					<BackgroundCheckedNormal RelativePath="status_normal.png"/>
+					<BackgroundCheckedHighlight RelativePath="status_normal.png"/>
+					<BackgroundCheckedSelected RelativePath="status_normal.png"/>
+					<ForegroundCheckedNormal RelativePath="imonline.png"/>
+					<ForegroundCheckedHighlight RelativePath="imonline.png"/>
+					<ForegroundCheckedSelected RelativePath="imonline.png"/>
+					<ForegroundCheckedDisabled RelativePath="imonline.png"/>
+				</CHECK>
+				<PUSHBUTTON>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_BTN_MAIL"/>
+					<Rect Size="27,20" Location="95,73"/>
+					<LayoutMode Horizontal="Left" Vertical="Top"/>
+					<IsSpecifyImages Value="true"/>
+					<BackgroundHighlight RelativePath="allbtn_highlight_20.png"/>
+					<BackgroundSelected RelativePath="allbtn_down_20.png"/>
+					<Caption Value="5"/>
+					<TextAlignment Horizontal="Center"/>
+					<TextMarginN Left="17" Top="0" Right="0" Bottom="0"/>
+					<IsSpecifyForegroundImages Value="true"/>
+					<ForegroundNormal Value="mail16.png"/>
+					<ForegroundHighlight Value="mail16.png"/>
+					<ForegroundSelected Value="mail16.png"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+				</PUSHBUTTON>
+				<PUSHBUTTON>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_BTN_ZONE"/>
+					<Rect Size="20,20" Location="75,73"/>
+					<LayoutMode Horizontal="Left" Vertical="Top"/>
+					<IsSpecifyImages Value="true"/>
+					<BackgroundHighlight RelativePath="allbtn_highlight_20.png"/>
+					<BackgroundSelected RelativePath="allbtn_down_20.png"/>
+					<IsSpecifyForegroundImages Value="true"/>
+					<ForegroundNormal Value="zone_12.png"/>
+					<ForegroundHighlight Value="zone_12.png"/>
+					<ForegroundSelected Value="zone_12.png"/>
+				</PUSHBUTTON>
+				<PUSHBUTTON>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_BTN_MESSAGE"/>
+					<Rect Size="22,20" Location="259,73"/>
+					<LayoutMode Horizontal="Right" Vertical="Top"/>
+					<IsSpecifyImages Value="true"/>
+					<BackgroundHighlight RelativePath="allbtn_highlight_20.png"/>
+					<BackgroundSelected RelativePath="allbtn_down_20.png"/>
+					<IsSpecifyForegroundImages Value="true"/>
+					<ForegroundNormal Value="Messagebox16.png"/>
+					<ForegroundHighlight Value="Messagebox16.png"/>
+					<ForegroundSelected Value="Messagebox16.png"/>
+				</PUSHBUTTON>
+				<EDIT>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_EDT_SEARCH"/>
+					<Rect Size="212,19" Location="9,105"/>
+					<IsVisible Value="false"/>
+					<IsTabStop Value="true"/>
+					<LayoutMode Vertical="Top"/>
+					<IsSpecifyImages Value="true"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="Edit.bmp"/>
+					<ResizingPoint X="1" Y="1"/>
+				</EDIT>
+				<PUSHBUTTON>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_BTN_SEARCH_WEB"/>
+					<Rect Size="31,28" Location="250,100"/>
+					<LayoutMode Horizontal="Right" Vertical="Top"/>
+					<IsSpecifyImages Value="true"/>
+					<BackgroundNormal RelativePath="main_search_normal.png"/>
+					<BackgroundHighlight RelativePath="main_search_normal.png"/>
+					<BackgroundSelected RelativePath="main_search_normal.png"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+				</PUSHBUTTON>
+				<RADIO>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_RAD_FRIEND"/>
+					<Rect Size="92,34" Location="288,133"/>
+					<LayoutMode Horizontal="Free" Vertical="Free"/>
+					<IsSpecifyImages Value="true"/>
+					<BackgroundNormal RelativePath="TabNormal.png"/>
+					<BackgroundHighlight RelativePath="main_tabbtn_highlight.png"/>
+					<BackgroundSelected RelativePath="main_tabbtn_highlight.png"/>
+					<IsSpecifyForegroundImages Value="true"/>
+					<ForegroundNormal Value="icon_contacts_normal.png"/>
+					<ForegroundHighlight Value="icon_contacts_normal.png"/>
+					<ForegroundSelected Value="icon_contacts_normal.png"/>
+					<BackgroundCheckedNormal RelativePath="main_tab_check.png"/>
+					<BackgroundCheckedHighlight RelativePath="main_tab_check.png"/>
+					<BackgroundCheckedSelected RelativePath="main_tab_check.png"/>
+					<ForegroundCheckedNormal RelativePath="icon_contacts_selected.png"/>
+					<ForegroundCheckedHighlight RelativePath="icon_contacts_selected.png"/>
+					<ForegroundCheckedSelected RelativePath="icon_contacts_selected.png"/>
+				</RADIO>
+				<RADIO>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_RAD_GROUP"/>
+					<Rect Size="92,34" Location="380,133"/>
+					<LayoutMode Horizontal="Free" Vertical="Free"/>
+					<IsSpecifyImages Value="true"/>
+					<BackgroundNormal RelativePath="TabNormal.png"/>
+					<BackgroundHighlight RelativePath="main_tabbtn_highlight.png"/>
+					<BackgroundSelected RelativePath="main_tabbtn_highlight.png"/>
+					<IsSpecifyForegroundImages Value="true"/>
+					<ForegroundNormal Value="icon_group_normal.png"/>
+					<ForegroundHighlight Value="icon_group_normal.png"/>
+					<ForegroundSelected Value="icon_group_normal.png"/>
+					<BackgroundCheckedNormal RelativePath="main_tab_check.png"/>
+					<BackgroundCheckedHighlight RelativePath="main_tab_check.png"/>
+					<BackgroundCheckedSelected RelativePath="main_tab_check.png"/>
+					<ForegroundCheckedNormal RelativePath="icon_group_selected.png"/>
+					<ForegroundCheckedHighlight RelativePath="icon_group_selected.png"/>
+					<ForegroundCheckedSelected RelativePath="icon_group_selected.png"/>
+				</RADIO>
+				<RADIO>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_RAD_RECENT"/>
+					<Rect Size="97,34" Location="472,133"/>
+					<LayoutMode Horizontal="Free" Vertical="Free"/>
+					<IsSpecifyImages Value="true"/>
+					<BackgroundNormal RelativePath="TabNormal.png"/>
+					<BackgroundHighlight RelativePath="main_tabbtn_highlight.png"/>
+					<BackgroundSelected RelativePath="main_tabbtn_highlight.png"/>
+					<IsSpecifyForegroundImages Value="true"/>
+					<ForegroundNormal Value="icon_last_normal.png"/>
+					<ForegroundHighlight Value="icon_last_normal.png"/>
+					<ForegroundSelected Value="icon_last_normal.png"/>
+					<BackgroundCheckedNormal RelativePath="main_tab_check.png"/>
+					<BackgroundCheckedHighlight RelativePath="main_tab_check.png"/>
+					<BackgroundCheckedSelected RelativePath="main_tab_check.png"/>
+					<ForegroundCheckedNormal RelativePath="icon_last_selected.png"/>
+					<ForegroundCheckedHighlight RelativePath="icon_last_selected.png"/>
+					<ForegroundCheckedSelected RelativePath="icon_last_selected.png"/>
+				</RADIO>
+				<CHECK>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_CHK_START"/>
+					<Rect Size="47,47" Location="6,475"/>
+					<LayoutMode Horizontal="Left" Vertical="Bottom"/>
+					<IsSpecifyImages Value="true"/>
+					<BackgroundNormal RelativePath="menu_btn_normal.png"/>
+					<BackgroundHighlight RelativePath="menu_btn_highlight.png"/>
+					<BackgroundSelected RelativePath="menu_btn_highlight.png"/>
+					<MaskBitmap RelativePath="StartButtonMask.bmp"/>
+					<IsSpecifyForegroundImages Value="true"/>
+					<ForegroundAlignMode Horizontal="Left" Vertical="Bottom"/>
+					<ForegroundCheckedNormal RelativePath="menu_topright_bkg.png"/>
+					<ForegroundCheckedHighlight RelativePath="menu_topright_bkg.png"/>
+					<ForegroundCheckedSelected RelativePath="menu_topright_bkg.png"/>
+				</CHECK>
+				<PUSHBUTTON>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_BTN_GAME"/>
+					<Rect Size="22,22" Location="56,473"/>
+					<LayoutMode Horizontal="Left" Vertical="Bottom"/>
+					<IsSpecifyImages Value="true"/>
+					<BackgroundHighlight RelativePath="allbtn_highlight.png"/>
+					<BackgroundSelected RelativePath="allbtn_down.png"/>
+					<IsSpecifyForegroundImages Value="true"/>
+					<ForegroundNormal Value="main_gamebtn20_game.png"/>
+					<ForegroundHighlight Value="main_gamebtn20_game.png"/>
+					<ForegroundSelected Value="main_gamebtn20_game.png"/>
+				</PUSHBUTTON>
+				<PUSHBUTTON>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_BTN_SETTING"/>
+					<Rect Size="22,22" Location="56,501"/>
+					<LayoutMode Horizontal="Left" Vertical="Bottom"/>
+					<IsSpecifyImages Value="true"/>
+					<BackgroundHighlight RelativePath="allbtn_highlight.png"/>
+					<BackgroundSelected RelativePath="allbtn_down.png"/>
+					<IsSpecifyForegroundImages Value="true"/>
+					<ForegroundNormal Value="Tools.png"/>
+					<ForegroundHighlight Value="Tools.png"/>
+					<ForegroundSelected Value="Tools.png"/>
+				</PUSHBUTTON>
+				<PUSHBUTTON>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_BTN_MSG"/>
+					<Rect Size="22,22" Location="80,501"/>
+					<LayoutMode Horizontal="Left" Vertical="Bottom"/>
+					<IsSpecifyImages Value="true"/>
+					<BackgroundHighlight RelativePath="allbtn_highlight.png"/>
+					<BackgroundSelected RelativePath="allbtn_down.png"/>
+					<IsSpecifyForegroundImages Value="true"/>
+					<ForegroundNormal Value="message.png"/>
+					<ForegroundHighlight Value="message.png"/>
+					<ForegroundSelected Value="message.png"/>
+				</PUSHBUTTON>
+				<PUSHBUTTON>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_BTN_SECURE"/>
+					<Rect Size="22,22" Location="105,501"/>
+					<LayoutMode Horizontal="Left" Vertical="Bottom"/>
+					<IsSpecifyImages Value="true"/>
+					<BackgroundHighlight RelativePath="allbtn_highlight.png"/>
+					<BackgroundSelected RelativePath="allbtn_down.png"/>
+					<IsSpecifyForegroundImages Value="true"/>
+					<ForegroundNormal Value="QQSafe.png"/>
+					<ForegroundHighlight Value="QQSafe.png"/>
+					<ForegroundSelected Value="QQSafe.png"/>
+				</PUSHBUTTON>
+				<PUSHBUTTON>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_BTN_SEARCH"/>
+					<Rect Size="61,22" Location="130,501"/>
+					<LayoutMode Horizontal="Left" Vertical="Bottom"/>
+					<IsSpecifyImages Value="true"/>
+					<BackgroundHighlight RelativePath="allbtn_highlight.png"/>
+					<BackgroundSelected RelativePath="allbtn_down.png"/>
+					<FontResN Value="IDR_FONT_DEFAULT"/>
+					<Caption Value="查找"/>
+					<TextAlignment Horizontal="Center"/>
+					<TextMarginN Left="28" Top="0" Right="0" Bottom="0"/>
+					<IsSpecifyForegroundImages Value="true"/>
+					<ForegroundNormal Value="Finger_Active.png"/>
+					<ForegroundHighlight Value="Finger_Active.png"/>
+					<ForegroundSelected Value="Finger_Active.png"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+				</PUSHBUTTON>
+				<PUSHBUTTON>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_BTN_APP_MGR"/>
+					<Rect Size="22,22" Location="260,473"/>
+					<LayoutMode Horizontal="Right" Vertical="Bottom"/>
+					<IsSpecifyImages Value="true"/>
+					<BackgroundHighlight RelativePath="allbtn_highlight.png"/>
+					<BackgroundSelected RelativePath="allbtn_down.png"/>
+					<IsSpecifyForegroundImages Value="true"/>
+					<ForegroundNormal Value="appbox_mgr_btn.png"/>
+					<ForegroundHighlight Value="appbox_mgr_btn.png"/>
+					<ForegroundSelected Value="appbox_mgr_btn.png"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+				</PUSHBUTTON>
+				<PUSHBUTTON>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_BTN_WEATHER"/>
+					<Rect Size="60,50" Location="223,22"/>
+					<LayoutMode Horizontal="Right" Vertical="Top"/>
+					<IsSpecifyImages Value="true"/>
+					<BackgroundNormal RelativePath="Big_2.png"/>
+					<BackgroundHighlight RelativePath="Big_2.png"/>
+					<BackgroundSelected RelativePath="Big_2.png"/>
+					<BackgroundDisabled RelativePath="Big_2.png"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+				</PUSHBUTTON>
+				<STATIC>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_STA_NAME"/>
+					<Rect Size="103,24" Location="114,27"/>
+					<LayoutMode Vertical="Top"/>
+					<FontResN Value="IDR_FONT_BOLD"/>
+					<Caption Value="LibUIDK界面库"/>
+					<TextAlignment Horizontal="Left"/>
+					<ShadowText Enable="true" ShadowColor="#00C0C0C0"/>
+				</STATIC>
+				<PUSHBUTTON>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_BTN_SIGN"/>
+					<Rect Size="142,20" Location="75,51"/>
+					<LayoutMode Vertical="Top"/>
+					<IsSpecifyImages Value="true"/>
+					<BackgroundHighlight RelativePath="allbtn_highlight_20.png"/>
+					<BackgroundSelected RelativePath="allbtn_down_20.png"/>
+					<Caption Value="最强大的VC界面库"/>
+					<TextAlignment Horizontal="Left"/>
+					<TextMarginN Left="4" Top="0" Right="0" Bottom="0"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+				</PUSHBUTTON>
+				<STATIC>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_STA_TITLE"/>
+					<Rect Size="70,20" Location="6,2"/>
+					<IsDisabled Value="true"/>
+					<FontResN Value="IDR_FONT_BOLD"/>
+					<Caption Value="QQ2012"/>
+					<ShadowText Enable="true" ShadowColor="#00C0C0C0"/>
+				</STATIC>
+				<TWMGR>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_TWMGR_MAIN"/>
+					<Rect Size="281,300" Location="2,165"/>
+					<ImageResizePoint X="2" Y="2"/>
+				</TWMGR>
+				<UGRIDPANEL>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_PNL_UGRID_TAB"/>
+					<Rect Size="281,34" Location="1,132"/>
+					<ImageResizePoint X="2" Y="2"/>
+				</UGRIDPANEL>
+			</Controls>
+		</Window>
+		<Window>
+			<ID Value="IDW_FRIEND_PAGE"/>
+			<Rect Size="100,100" Location="0,0"/>
+			<ResizingPoint X="10" Y="10"/>
+			<IsDrawBKColor Value="true"/>
+			<BackgroundColorID Value="IDR_COLOR_WHITE"/>
+			<IsResizing Value="true"/>
+			<WindowResizingPoint X="0" Y="0"/>
+			<ClientArea Size="100,100" Location="0,0"/>
+			<Controls/>
+		</Window>
+		<Window>
+			<ID Value="IDW_GROUP_PAGE"/>
+			<Rect Size="90,82" Location="0,0"/>
+			<ResizingPoint X="10" Y="10"/>
+			<IsDrawBKColor Value="true"/>
+			<BackgroundColorID Value="IDR_COLOR_WHITE"/>
+			<IsResizing Value="true"/>
+			<WindowResizingPoint X="0" Y="0"/>
+			<Controls>
+				<STATIC>
+					<Parent ID="IDW_GROUP_PAGE"/>
+					<ID Value="IDC_STA_GROUP"/>
+					<Rect Size="60,24" Location="20,38"/>
+					<LayoutMode Horizontal="Center" Vertical="Center"/>
+					<Caption Value="组/群"/>
+					<TextAlignment Horizontal="Center"/>
+					<ShadowText ShadowColor="#00C0C0C0"/>
+				</STATIC>
+			</Controls>
+		</Window>
+		<Window>
+			<ID Value="IDW_RECENT_PAGE"/>
+			<Rect Size="93,94" Location="0,0"/>
+			<ResizingPoint X="10" Y="10"/>
+			<IsDrawBKColor Value="true"/>
+			<BackgroundColorID Value="IDR_COLOR_WHITE"/>
+			<IsResizing Value="true"/>
+			<WindowResizingPoint X="0" Y="0"/>
+			<Controls>
+				<STATIC>
+					<Parent ID="IDW_RECENT_PAGE"/>
+					<ID Value="IDC_STA_RECENT"/>
+					<Rect Size="60,24" Location="20,38"/>
+					<LayoutMode Horizontal="Center" Vertical="Center"/>
+					<Caption Value="最近联系"/>
+					<TextAlignment Horizontal="Center"/>
+					<ShadowText ShadowColor="#00C0C0C0"/>
+				</STATIC>
+			</Controls>
+		</Window>
+		<Window>
+			<ID Value="IDW_START_MENU"/>
+			<Rect Size="137,338" Location="0,0"/>
+			<ResizingPoint X="0" Y="0"/>
+			<IsAppWindow Value="false"/>
+			<BackgroundHide RelativePath="StartMenu.bmp"/>
+			<IsUseMaskColor Value="true"/>
+			<MaskColorResID Value="IDR_COLOR_MASK"/>
+			<WindowResizingPoint X="0" Y="0"/>
+			<Controls/>
+		</Window>
+		<Window>
+			<ID Value="IDW_CHAT_FRAME"/>
+			<Rect Size="548,520" Location="0,0"/>
+			<ResizingPoint X="370" Y="340"/>
+			<TitleBarHeight Value="-1"/>
+			<BackgroundHide RelativePath="ChatFrame.bmp"/>
+			<IsUseMaskColor Value="true"/>
+			<MaskColorResID Value="IDR_COLOR_MASK"/>
+			<IsResizing Value="true"/>
+			<IsResizingBorder Value="true"/>
+			<WindowResizingPoint X="0" Y="0"/>
+			<Controls>
+				<PUSHBUTTON>
+					<Parent ID="IDW_CHAT_FRAME"/>
+					<ID Value="IDC_BTN_MIN"/>
+					<Rect Size="28,19" Location="450,1"/>
+					<LayoutMode Horizontal="Right Even Zoom Out" Vertical="Top"/>
+					<IsSpecifyImages Value="true"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="Min.bmp"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+					<ButtonType Value="MinimizeBox"/>
+				</PUSHBUTTON>
+				<CHECK>
+					<Parent ID="IDW_CHAT_FRAME"/>
+					<ID Value="IDC_CHK_MAX"/>
+					<Rect Size="28,19" Location="478,1"/>
+					<IsSpecifyImages Value="true"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="Max.bmp"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+				</CHECK>
+				<PUSHBUTTON>
+					<Parent ID="IDW_CHAT_FRAME"/>
+					<ID Value="IDC_BTN_EXIT"/>
+					<Rect Size="34,19" Location="506,1"/>
+					<IsSpecifyImages Value="true"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="Close.bmp"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+					<ButtonType Value="CloseBox"/>
+				</PUSHBUTTON>
+				<PUSHBUTTON>
+					<Parent ID="IDW_CHAT_FRAME"/>
+					<ID Value="IDC_BTN_VIDEO"/>
+					<Rect Size="50,34" Location="77,44"/>
+					<IsSpecifyImages Value="true"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="ChatButton_Video.bmp"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+				</PUSHBUTTON>
+				<PUSHBUTTON>
+					<Parent ID="IDW_CHAT_FRAME"/>
+					<ID Value="IDC_BTN_AUDIO"/>
+					<Rect Size="50,34" Location="128,44"/>
+					<IsSpecifyImages Value="true"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="ChatButton_Audio.bmp"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+				</PUSHBUTTON>
+				<PUSHBUTTON>
+					<Parent ID="IDW_CHAT_FRAME"/>
+					<ID Value="IDC_BTN_TRANS_FILE"/>
+					<Rect Size="50,34" Location="179,44"/>
+					<IsSpecifyImages Value="true"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="ChatButton_TransFile.bmp"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+				</PUSHBUTTON>
+				<PUSHBUTTON>
+					<Parent ID="IDW_CHAT_FRAME"/>
+					<ID Value="IDC_BTN_CREATE_GROUP"/>
+					<Rect Size="41,34" Location="230,44"/>
+					<IsSpecifyImages Value="true"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="ChatButton_CreateGroup.bmp"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+				</PUSHBUTTON>
+				<PUSHBUTTON>
+					<Parent ID="IDW_CHAT_FRAME"/>
+					<ID Value="IDC_BTN_REMOTE"/>
+					<Rect Size="41,34" Location="273,44"/>
+					<IsSpecifyImages Value="true"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="ChatButton_Remote.bmp"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+				</PUSHBUTTON>
+				<PUSHBUTTON>
+					<Parent ID="IDW_CHAT_FRAME"/>
+					<ID Value="IDC_BTN_MORE"/>
+					<Rect Size="52,34" Location="316,44"/>
+					<IsSpecifyImages Value="true"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="ChatButton_More.bmp"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+				</PUSHBUTTON>
+				<CHECK>
+					<Parent ID="IDW_CHAT_FRAME"/>
+					<ID Value="IDC_CHK_FONT"/>
+					<Rect Size="24,22" Location="5,359"/>
+					<IsSpecifyImages Value="true"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="ChatButton_Font.bmp"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+				</CHECK>
+				<CHECK>
+					<Parent ID="IDW_CHAT_FRAME"/>
+					<ID Value="IDC_CHK_FACE"/>
+					<Rect Size="24,22" Location="32,359"/>
+					<IsSpecifyImages Value="true"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="ChatButton_Face.bmp"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+				</CHECK>
+				<PUSHBUTTON>
+					<Parent ID="IDW_CHAT_FRAME"/>
+					<ID Value="IDC_BTN_CLOSE"/>
+					<Rect Size="73,26" Location="228,479"/>
+					<LayoutMode Horizontal="Right" Vertical="Bottom"/>
+					<IsSpecifyImages Value="true"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="ChatButton_Close.bmp"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+					<ButtonType Value="CloseBox"/>
+				</PUSHBUTTON>
+				<PUSHBUTTON>
+					<Parent ID="IDW_CHAT_FRAME"/>
+					<ID Value="IDC_BTN_SEND"/>
+					<Rect Size="64,26" Location="307,479"/>
+					<LayoutMode Horizontal="Right" Vertical="Bottom"/>
+					<IsSpecifyImages Value="true"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="ChatButton_Send.bmp"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+				</PUSHBUTTON>
+				<PUSHBUTTON>
+					<Parent ID="IDW_CHAT_FRAME"/>
+					<ID Value="IDC_BTN_SEND2"/>
+					<Rect Size="21,26" Location="371,479"/>
+					<LayoutMode Horizontal="Right" Vertical="Bottom"/>
+					<IsSpecifyImages Value="true"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="ChatButton_Send2.bmp"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+				</PUSHBUTTON>
+			</Controls>
+		</Window>
+	</Windows>
+	<Resources>
+		<DefaultFont>
+			<FONT>
+				<Font Height="-12" Width="0" lfEscapement="0" Orientation="0" Weight="400" Italic="0" Underline="0" StrikeOut="0" CharSet="0" OutPrecision="3" ClipPrecision="2" Quality="1" PitchAndFamily="34" FaceName="Tahoma"/>
+			</FONT>
+		</DefaultFont>
+		<Fonts>
+			<FONT>
+				<ID Value="IDR_FONT_DEFAULT"/>
+				<Font Height="-12" Width="0" lfEscapement="0" Orientation="0" Weight="400" Italic="0" Underline="0" StrikeOut="0" CharSet="0" OutPrecision="3" ClipPrecision="2" Quality="1" PitchAndFamily="34" FaceName="Tahoma"/>
+			</FONT>
+			<FONT>
+				<ID Value="IDR_FONT_TITLE"/>
+				<Font Height="-14" Width="0" lfEscapement="0" Orientation="0" Weight="700" Italic="0" Underline="0" StrikeOut="0" CharSet="0" OutPrecision="3" ClipPrecision="2" Quality="1" PitchAndFamily="34" FaceName="Tahoma"/>
+			</FONT>
+			<FONT>
+				<ID Value="IDR_FONT_BOLD"/>
+				<Font Height="-12" Width="0" lfEscapement="0" Orientation="0" Weight="700" Italic="0" Underline="0" StrikeOut="0" CharSet="0" OutPrecision="3" ClipPrecision="2" Quality="1" PitchAndFamily="34" FaceName="Tahoma"/>
+			</FONT>
+		</Fonts>
+		<DefaultColor>
+			<COLOR>
+				<Color Value="#00010000"/>
+			</COLOR>
+		</DefaultColor>
+		<Colors>
+			<COLOR>
+				<ID Value="IDR_COLOR_DEFAULT"/>
+				<Color Value="#00000000"/>
+			</COLOR>
+			<COLOR>
+				<ID Value="IDR_COLOR_TITLE"/>
+				<Color Value="#00804000"/>
+			</COLOR>
+			<COLOR>
+				<ID Value="IDR_COLOR_MASK"/>
+				<Color Value="#00FF00FF"/>
+			</COLOR>
+			<COLOR>
+				<ID Value="IDR_COLOR_BACKGROUND"/>
+				<Color Value="#0001E4FF"/>
+			</COLOR>
+			<COLOR>
+				<ID Value="IDR_COLOR_WHITE"/>
+				<Color Value="#00FFFFFF"/>
+			</COLOR>
+		</Colors>
+	</Resources>
+	<Styles>
+		<PushButtons/>
+		<CheckBoxes/>
+		<RadioButtons/>
+		<ComboBoxes/>
+		<Statics/>
+		<Edits/>
+		<Sliders/>
+		<Progresses/>
+		<Spins/>
+		<HotKeys/>
+		<IPAdresses/>
+		<SliderExes/>
+		<ListControls/>
+		<TreeControls>
+			<STYLE_TREECTRL>
+				<ID Value="IDC_TREECTRL_FRIEND"/>
+				<Rect Size="0,0" Location="-1,-1"/>
+				<IsHasButtons Value="true"/>
+				<IsLineAtRoot Value="true"/>
+				<IsFullRowSel Value="true"/>
+				<DefaultItemHeight Value="false"/>
+				<ItemHeight Value="29"/>
+				<ItemLine Enable="false"/>
+				<CollapseImage Value="Collapse.png"/>
+				<ExpandedImage Value="Expanded.png"/>
+				<SelectedItemBackground Type="Image" NormalImage="listitem_highlight.png" DisabledImage="listitem_highlight.png"/>
+				<SelectedBkResizePoint X="2" Y="2"/>
+				<HighlightItemBackground Enable="true" Type="Image" NormalImage="listitem_even.png"/>
+				<HighlightBkResizePoint X="2" Y="2"/>
+				<RootItemBackground Effect="false" Type="Color"/>
+				<RootItemBkImageResizePoint X="2" Y="2"/>
+				<HorizontalScrollbarStyleID Value=""/>
+				<VerticalScrollbarStyleID Value=""/>
+			</STYLE_TREECTRL>
+		</TreeControls>
+		<TreeLists/>
+		<RichEdits/>
+		<HtmlControls/>
+		<DateTimes/>
+		<WaveControls/>
+		<Menus/>
+		<Menubars/>
+		<Headers/>
+		<HorScrollbars/>
+		<VerScrollbars/>
+		<WindowlessLine/>
+		<WindowlessPicture/>
+	</Styles>
+</LibUIDKUI>

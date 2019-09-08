@@ -1,0 +1,27 @@
+﻿
+$$IF(PROJECT_VC80)
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("$$SOLUTION_GUID$$") = "$$root$$", "$$root$$_vs2005.vcproj", "$$PROJECT_GUID$$"
+$$ENDIF
+$$IF(PROJECT_VC90)
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("$$SOLUTION_GUID$$") = "$$root$$", "$$root$$_vs2008.vcproj", "$$PROJECT_GUID$$"
+$$ENDIF
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		$$PROJECT_GUID$$.Debug|Win32.ActiveCfg = Debug|Win32
+		$$PROJECT_GUID$$.Debug|Win32.Build.0 = Debug|Win32
+		$$PROJECT_GUID$$.Release|Win32.ActiveCfg = Release|Win32
+		$$PROJECT_GUID$$.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

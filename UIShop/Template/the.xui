@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--DO NOT EDIT OR DELETE THIS LIBUIDK UI FILE!-->
+<!--www.iuishop.com-->
+<!--iuishop@iuishop.com-->
+<!--LibUIDK-->
+<LibUIDKUI>
+	<Configuration OpenProgram="UIShop.exe"/>
+	<Version Version="0700" Build="6962" ChangeList="7143"/>
+	<DPI LogPixelsX="96" LogPixelsY="96"/>
+	<Windows>
+		<Window>
+			<ID Value="IDW_MAIN"/>
+			<Rect Size="427,320" Location="0,0"/>
+			<ResizingPoint X="200" Y="200"/>
+			<TitleBarHeight Value="28"/>
+			<BackgroundHide RelativePath="Main.bmp"/>
+			<IsUseMaskColor Value="true"/>
+			<MaskColorResID Value="IDR_COLOR_MASK"/>
+			<IsResizing Value="true"/>
+			<IsResizingBorder Value="true"/>
+			<WindowResizingPoint X="0" Y="0"/>
+			<Controls>
+				<STATIC>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_STA_TITLE"/>
+					<Rect Size="188,17" Location="10,7"/>
+					<IsDisabled Value="true"/>
+					<LayoutMode Horizontal="Left"/>
+					<ResizingPoint X="0" Y="0"/>
+					<FontResN Value="IDR_FONT_TITLE"/>
+					<ColorResN Value="IDR_COLOR_TITLE"/>
+					<Nowrap Value="false"/>
+					<IsEndEllipsis Value="true"/>
+					<Caption Value="LibUIDK Demo application"/>
+					<TextAlignment Vertical="Default"/>
+				</STATIC>
+				<PUSHBUTTON>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_BTN_MIN"/>
+					<Rect Size="26,19" Location="327,0"/>
+					<LayoutMode Horizontal="Right"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="BtnMin.png"/>
+					<ResizingPoint X="0" Y="0"/>
+					<ToolTip Enable="true" ToolTip="Minimize"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+					<ButtonType Value="MinimizeBox"/>
+				</PUSHBUTTON>
+				<CHECK>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_CHK_MAX"/>
+					<Rect Size="25,19" Location="353,0"/>
+					<LayoutMode Horizontal="Right"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="BtnMax.png"/>
+					<ResizingPoint X="0" Y="0"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+					<CheckBoxType Value="MaximizeBox"/>
+				</CHECK>
+				<PUSHBUTTON>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_BTN_CLOSE"/>
+					<Rect Size="44,19" Location="378,0"/>
+					<LayoutMode Horizontal="Right"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="BtnClose.png"/>
+					<ResizingPoint X="0" Y="0"/>
+					<ToolTip Enable="true" ToolTip="Close"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+					<ButtonType Value="CloseBox"/>
+				</PUSHBUTTON>
+				<STATIC>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_STA_MSG"/>
+					<Rect Size="340,16" Location="40,248"/>
+					<ResizingPoint X="0" Y="0"/>
+					<FontResN Value="IDR_FONT_DEFAULT"/>
+					<ColorResN Value="IDR_COLOR_DEFAULT"/>
+					<Nowrap Value="false"/>
+					<IsEndEllipsis Value="true"/>
+					<Caption Value="TODO: Place dialog controls here."/>
+					<ToolTip Enable="true"/>
+					<TextAlignment Horizontal="Center" Vertical="Default"/>
+				</STATIC>
+				<PUSHBUTTON>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_BTN_OK"/>
+					<Rect Size="70,32" Location="340,272"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="BtnBk.png"/>
+					<Caption Value="OK"/>
+				</PUSHBUTTON>
+				<WL_RECTCTRL>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_WL_RECT_1"/>
+					<Rect Size="222,146" Location="93,83"/>
+					<BindWindowID Value="IDW_CHILD"/>
+				</WL_RECTCTRL>
+			</Controls>
+		</Window>
+		<Window>
+			<ID Value="IDW_CHILD"/>
+			<Rect Size="86,90" Location="0,0"/>
+			<IsDrawBKColor Value="true"/>
+			<BackgroundColorID Value="IDR_COLOR_TITLE"/>
+			<WindowResizingPoint X="0" Y="0"/>
+			<Controls>
+				<PUSHBUTTON>
+					<Parent ID="IDW_CHILD"/>
+					<ID Value="IDC_BTN_CHILD"/>
+					<Rect Size="57,32" Location="14,23"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="BtnBk.png"/>
+				</PUSHBUTTON>
+			</Controls>
+		</Window>
+	</Windows>
+	<Resources>
+		<DefaultFont>
+			<FONT>
+				<Font Height="-12" Width="0" lfEscapement="0" Orientation="0" Weight="400" Italic="0" Underline="0" StrikeOut="0" CharSet="0" OutPrecision="3" ClipPrecision="2" Quality="1" PitchAndFamily="34" FaceName="Tahoma"/>
+			</FONT>
+		</DefaultFont>
+		<Fonts>
+			<FONT>
+				<ID Value="IDR_FONT_DEFAULT"/>
+				<Font Height="-12" Width="0" lfEscapement="0" Orientation="0" Weight="400" Italic="0" Underline="0" StrikeOut="0" CharSet="0" OutPrecision="3" ClipPrecision="2" Quality="1" PitchAndFamily="34" FaceName="Tahoma"/>
+			</FONT>
+			<FONT>
+				<ID Value="IDR_FONT_TITLE"/>
+				<Font Height="-14" Width="0" lfEscapement="0" Orientation="0" Weight="700" Italic="0" Underline="0" StrikeOut="0" CharSet="0" OutPrecision="3" ClipPrecision="2" Quality="1" PitchAndFamily="34" FaceName="Tahoma"/>
+			</FONT>
+		</Fonts>
+		<DefaultColor>
+			<COLOR>
+				<Color Value="#00000000"/>
+			</COLOR>
+		</DefaultColor>
+		<Colors>
+			<COLOR>
+				<ID Value="IDR_COLOR_DEFAULT"/>
+				<Color Value="#00000000"/>
+			</COLOR>
+			<COLOR>
+				<ID Value="IDR_COLOR_TITLE"/>
+				<Color Value="#00804000"/>
+			</COLOR>
+			<COLOR>
+				<ID Value="IDR_COLOR_MASK"/>
+				<Color Value="#00FF00FF"/>
+			</COLOR>
+		</Colors>
+	</Resources>
+	<Styles>
+		<PushButtons/>
+		<CheckBoxes/>
+		<RadioButtons/>
+		<ComboBoxes/>
+		<Statics/>
+		<Edits/>
+		<Sliders/>
+		<Progresses/>
+		<Spins/>
+		<HotKeys/>
+		<IPAdresses/>
+		<SliderExes/>
+		<ListControls/>
+		<TreeControls/>
+		<TreeLists/>
+		<RichEdits/>
+		<HtmlControls/>
+		<DateTimes/>
+		<WaveControls/>
+		<Menus/>
+		<Menubars/>
+		<Headers/>
+		<HorScrollbars/>
+		<VerScrollbars/>
+		<Splitterbars/>
+		<StackPanel/>
+		<WindowlessLine/>
+		<WindowlessPicture/>
+	</Styles>
+</LibUIDKUI>

@@ -1,0 +1,893 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Template">
+      <UniqueIdentifier>{3490c2ae-7c7b-4a4b-8504-a56dfdeb885c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LibUIDKRcSkin">
+      <UniqueIdentifier>{442c39fe-d5d0-4edd-91a4-ce74b467f588}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Action.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AddAllClassDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildFrm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ClassWizardDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ContactWnd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ControlWnd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EventHandlerWizardDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FileDialogEx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FileView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FontDialogEx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FormatBrushDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FullPathRecentFileList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GenClassInfoFileDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GenerateResource.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GenerateResourceDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Global.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IDMgr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageSymbolsDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IUIMFCPropertyGridCtrl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IUIMFCToolBar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IUIPropertyGridFontProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MainFrm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MsgWizardDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NewProjectDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectGen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PromptDocManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PropertiesWnd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RenameTemplateFileDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StoryboardPane.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StoryboardSldCtrl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SyncSkinTabOrderDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TabOrderDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TestWnd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TransformDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TransformDialogDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UIDesignWnd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UIShop.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UIShopDoc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UIShopView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewTree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Template\ClassWizard_UIWnd.cpp">
+      <Filter>Template</Filter>
+    </ClCompile>
+    <ClCompile Include="Template\Frame.cpp">
+      <Filter>Template</Filter>
+    </ClCompile>
+    <ClCompile Include="Template\IM_ChatFrame.cpp">
+      <Filter>Template</Filter>
+    </ClCompile>
+    <ClCompile Include="Template\IM_FriendPage.cpp">
+      <Filter>Template</Filter>
+    </ClCompile>
+    <ClCompile Include="Template\IM_FriendsTree.cpp">
+      <Filter>Template</Filter>
+    </ClCompile>
+    <ClCompile Include="Template\IM_GroupPage.cpp">
+      <Filter>Template</Filter>
+    </ClCompile>
+    <ClCompile Include="Template\IM_LoginDlg.cpp">
+      <Filter>Template</Filter>
+    </ClCompile>
+    <ClCompile Include="Template\IM_RecentPage.cpp">
+      <Filter>Template</Filter>
+    </ClCompile>
+    <ClCompile Include="Template\IM_StartMenu.cpp">
+      <Filter>Template</Filter>
+    </ClCompile>
+    <ClCompile Include="Template\MDI_ChildFrm.cpp">
+      <Filter>Template</Filter>
+    </ClCompile>
+    <ClCompile Include="Template\MDI_ClassViewWnd.cpp">
+      <Filter>Template</Filter>
+    </ClCompile>
+    <ClCompile Include="Template\MDI_FileViewWnd.cpp">
+      <Filter>Template</Filter>
+    </ClCompile>
+    <ClCompile Include="Template\MDI_RootDoc.cpp">
+      <Filter>Template</Filter>
+    </ClCompile>
+    <ClCompile Include="Template\MDI_RootView.cpp">
+      <Filter>Template</Filter>
+    </ClCompile>
+    <ClCompile Include="Template\Root.cpp">
+      <Filter>Template</Filter>
+    </ClCompile>
+    <ClCompile Include="Template\StdAfx.cpp">
+      <Filter>Template</Filter>
+    </ClCompile>
+    <ClCompile Include="Template\ChildWndHandler.cpp">
+      <Filter>Template</Filter>
+    </ClCompile>
+    <ClCompile Include="Template\MainWndHandler.cpp">
+      <Filter>Template</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Action.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AddAllClassDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildFrm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ClassWizardDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ContactWnd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ControlWnd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EventHandlerWizardDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FileDialogEx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FileView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FontDialogEx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FormatBrushDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FullPathRecentFileList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GenClassInfoFileDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GenerateResource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GenerateResourceDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Global.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IDMgr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageSymbolsDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IUIMFCPropertyGridCtrl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IUIMFCToolBar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IUIPropertyGridFontProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MainFrm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MsgWizardDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NewProjectDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProjectGen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PromptDocManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PropertiesWnd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RenameTemplateFileDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StoryboardPane.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StoryboardSldCtrl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SyncSkinTabOrderDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TabOrderDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TestWnd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TransformDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TransformDialogDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UIDesignWnd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UIShop.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UIShopDoc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UIShopView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Template\WinUser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Template\ChildWndHandler.h">
+      <Filter>Template</Filter>
+    </ClInclude>
+    <ClInclude Include="Template\MainWndHandler.h">
+      <Filter>Template</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\AlphaIcon.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Template\BtnBk.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\explorer.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\explorer_hc.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\file_view.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\file_view_hc.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\fileview.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\fileview_hc.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\menuimages.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\menuimages_hc.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\properties.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\properties_hc.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\properties_wnd.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\properties_wnd_hc.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\sort.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\sort_hc.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\StoryPanelSliderBk.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\StoryPanelFrameFlag.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\StoryPanelSliderThumb.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\tb_ControlBar.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\TB_Layout.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Toolbar256.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\UIShop.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\UIShop.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\UIShopDoc.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="LibUIDKRcSkin\LibUIDKSkinRcBottom" />
+    <None Include="LibUIDKRcSkin\LibUIDKSkinRcBottom_Chs" />
+    <None Include="LibUIDKRcSkin\LibUIDKSkinRcTop_Chs" />
+    <None Include="UIShop.reg" />
+    <None Include="res\WinUser_h" />
+    <None Include="res\StoryPanelSliderBkD.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Template\BtnMin.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Template\BtnMax.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Template\BtnClose.png">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="UIShop.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="Template\Loc_enu.rc">
+      <Filter>Template</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuildStep Include="Template\ClassWizard_UIWnd.h">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\Frame.h">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_1.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_aio_toolbar_down.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_allbtn_down.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_allbtn_down_20.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_allbtn_highlight.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_allbtn_highlight_20.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_appbox_mgr_btn.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_Big_2.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_btn_close_down.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_btn_close_highlight.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_btn_close_normal.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_btn_max_down.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_btn_max_highlight.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_btn_max_normal.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_btn_mini_down.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_btn_mini_highlight.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_btn_mini_normal.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_btn_restore_down.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_btn_restore_highlight.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_btn_restore_normal.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_btn_Skin_down.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_btn_Skin_highlight.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_btn_Skin_normal.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_ChatFrame.h">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_Collapse.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_Expanded.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_Finger_Active.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_FriendPage.h">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_FriendsTree.h">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_GroupPage.h">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_icon_contacts_normal.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_icon_contacts_selected.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_icon_group_normal.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_icon_group_selected.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_icon_last_normal.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_icon_last_selected.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_imonline.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_listitem_even.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_listitem_highlight.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_LoginDlg.h">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_mail16.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_main_gamebtn20_game.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_main_search_normal.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_main_tab_check.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_main_tabbtn_highlight.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_menu_btn_highlight.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_menu_btn_normal.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_menu_topright_bkg.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_message.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_Messagebox16.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_Padding4Hot.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_Padding4Select.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_QQSafe.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_RecentPage.h">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_Resource.h">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_StartMenu.h">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_status_down.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_status_highlight.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_status_normal.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_TabNormal.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_the.xui">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_Tools.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IM_zone_12.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IMICON_1.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IMICON_10.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IMICON_11.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IMICON_12.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IMICON_2.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IMICON_3.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IMICON_4.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IMICON_5.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IMICON_6.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IMICON_7.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IMICON_8.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IMICON_9.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IMICON_EmailTray.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IMICON_FaceBorder.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IMICON_MobileTray.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IMICON_OnlineState_Away.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IMICON_OnlineState_Away_Big.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IMICON_OnlineState_Busy.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\IMICON_OnlineState_Busy_big.png">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\Main.bmp">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\Main_D.bmp">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\Main_H.bmp">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\Main_N.bmp">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\Main_S.bmp">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\MDI_ChildFrm.h">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\MDI_classviewicon.bmp">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\MDI_ClassViewWnd.h">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\MDI_Close.bmp">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\MDI_FileViewWnd.h">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\MDI_HorScrollBar.bmp">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\MDI_HorScrollBarThumb.bmp">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\MDI_Main.bmp">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\MDI_Max.bmp">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\MDI_MDIBtn_CloseDocument.bmp">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\MDI_MDIBtn_SwitchDocument.bmp">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\MDI_MDIBtn_Tab.bmp">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\MDI_MDIClient.bmp">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\MDI_MenuBar.bmp">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\MDI_Min.bmp">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\MDI_Resource.h">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\MDI_Root.reg">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\MDI_RootDoc.h">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\MDI_RootDoc.ico">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\MDI_RootView.h">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\MDI_Tab.bmp">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\MDI_the.xui">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\MDI_Toolbar_Down.bmp">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\MDI_Toolbar_Edit.bmp">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\MDI_Toolbar_Left.bmp">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\MDI_Toolbar_Project.bmp">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\MDI_Toolbar_Right.bmp">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\MDI_Toolbar_Up.bmp">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\MDI_Toolbar_View.bmp">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\MDI_VerScrollBar.bmp">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\MDI_VerScrollBarThumb.bmp">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\MDI_View.bmp">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\NewClass.inf">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\NewProj.inf">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\ReadMe.txt">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\Resource.h">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\Restore_H.bmp">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\Restore_N.bmp">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\Restore_S.bmp">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\Root.clw">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\Root.dsp">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\Root.dsw">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\Root.h">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\Root.ico">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\Root.rc2">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\Root_100.sln">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\Root_100.vcxproj">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\Root_71.sln">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\Root_71.vcproj">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\Root_80.sln">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\Root_80.vcproj">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\Root_90.vcproj">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\SKID.h">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\StdAfx.h">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\stdafx_71.h">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\stdafx_80.h">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\targetver.h">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\targetver_100.h">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Template\the.xui">
+      <Filter>Template</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="LibUIDKRcSkin\LibUIDKSkinRcTop">
+      <Filter>LibUIDKRcSkin</Filter>
+    </CustomBuildStep>
+  </ItemGroup>
+</Project>

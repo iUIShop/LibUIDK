@@ -1,0 +1,253 @@
+$$// newproj.inf = template for list of template files
+$$//  format is 'sourceResName' \t 'destFileName'
+$$//    The source res name may be preceded by any combination of '=', '-',  '!', '?', ':', '#', and/or '*'
+$$//       '=' => the resource is binary
+$$//       '-' => the file should not be added to the project (all files are added to the project by default)
+$$//       '!' => the file should be marked exclude from build
+$$//       '?' => the file should be treated as a help file
+$$//       ':' => the file should be treated as a resource
+$$//       '#' => the file should be treated as a template (implies '!')
+$$//       '*' => bypass the custom AppWizard's resources when loading
+$$//	if name starts with / => create new subdir
+
+
+$$IF(VERBOSE)
+$$ENDIF
+
+$$// App and main frame
+
+root.h	$$root$$.h
+root.cpp	$$root$$.cpp
+
+$$// Canned parts, with canned names
+
+stdafx.cpp	StdAfx.cpp
+
+$$IF(DLG)
+MainWndHandler.h	MainWndHandler.h
+MainWndHandler.cpp	MainWndHandler.cpp
+ChildWndHandler.h	ChildWndHandler.h
+ChildWndHandler.cpp	ChildWndHandler.cpp
+$$ENDIF // DLG
+
+$$IF(MDI)
+frame.h	MainFrm.h
+frame.cpp	MainFrm.cpp
+MDI_ChildFrm.cpp	ChildFrm.cpp
+MDI_ChildFrm.h	ChildFrm.h
+MDI_ClassViewWnd.cpp	ClassViewWnd.cpp
+MDI_ClassViewWnd.h	ClassViewWnd.h
+MDI_Root.reg	$$root$$.reg
+MDI_RootDoc.cpp	$$root$$Doc.cpp
+MDI_RootDoc.h	$$root$$Doc.h
+MDI_RootView.cpp	$$root$$View.cpp
+MDI_RootView.h	$$root$$View.h
+MDI_FileViewWnd.cpp	FileViewWnd.cpp
+MDI_FileViewWnd.h	FileViewWnd.h
+$$ENDIF // MDI
+
+$$IF(IM)
+frame.h	MainFrm.h
+frame.cpp	MainFrm.cpp
+IM_LoginDlg.cpp	LoginDlg.cpp
+IM_LoginDlg.h	LoginDlg.h
+IM_MainFrm.cpp	MainFrm.cpp
+IM_MainFrm.h	MainFrm.h
+IM_RecentPage.cpp	RecentPage.cpp
+IM_RecentPage.h	RecentPage.h
+IM_ChatFrame.cpp	ChatFrame.cpp
+IM_ChatFrame.h	ChatFrame.h
+IM_FriendPage.cpp	FriendPage.cpp
+IM_FriendPage.h	FriendPage.h
+IM_FriendsTree.cpp	FriendsTree.cpp
+IM_FriendsTree.h	FriendsTree.h
+IM_GroupPage.cpp	GroupPage.cpp
+IM_GroupPage.h	GroupPage.h
+IM_StartMenu.cpp	StartMenu.cpp
+IM_StartMenu.h	StartMenu.h
+$$ENDIF // IM
+
+$$// Resources
+
+resource.h	Resource.h
+Loc_enu.rcf	$$root$$.rc
+/res
+root.rc2	res\$$root$$.rc2
+=root.ico	res\$$root$$.ico
+$$IF(MDI)
+=MDI_RootDoc.ico	res\$$root$$Doc.ico
+=MDI_classviewicon.bmp	res\classview.bmp
+$$ENDIF
+
+$$// Project files
+
+root.dsp	$$root$$.dsp
+root.dsw	$$root$$.dsw
+$$IF(PROJECT_VC60)
+stdafx.h	StdAfx.h
+$$ENDIF //PROJECT_VC60
+
+Root_71.sln	$$root$$_vs2003.sln
+Root_71.vcproj	$$root$$_vs2003.vcproj
+$$IF(PROJECT_VC71)
+stdafx_71.h	stdafx.h
+$$ENDIF //PROJECT_VC71
+
+Root_80.sln	$$root$$_vs2005.sln
+Root_80.vcproj	$$root$$_vs2005.vcproj
+targetver.h	targetver.h
+$$IF(PROJECT_VC80)
+stdafx_80.h	stdafx.h
+$$ENDIF //PROJECT_VC80
+
+Root_80.sln	$$root$$_vs2008.sln
+Root_90.vcproj	$$root$$_vs2008.vcproj
+$$IF(PROJECT_VC90)
+stdafx_80.h	stdafx.h
+$$ENDIF //PROJECT_VC90
+
+Root_100.sln	$$root$$_vs2010.sln
+Root_100.vcxproj	$$root$$_vs2010.vcxproj
+$$IF(PROJECT_VC100)
+stdafx_80.h	stdafx.h
+$$//targetver_100.h	targetver.h
+$$ENDIF //PROJECT_VC100
+
+Root_100.sln	$$root$$_vs2012.sln
+Root_100.vcxproj	$$root$$_vs2012.vcxproj
+$$IF(PROJECT_VC110)
+stdafx_80.h	stdafx.h
+targetver_100.h	targetver.h
+$$ENDIF //PROJECT_VC110
+
+Root_100.sln	$$root$$_vs2013.sln
+Root_100.vcxproj	$$root$$_vs2013.vcxproj
+$$IF(PROJECT_VC120)
+stdafx_80.h	stdafx.h
+$$//targetver_100.h	targetver.h
+$$ENDIF //PROJECT_VC120
+
+Root_100.sln	$$root$$_vs2015.sln
+Root_100.vcxproj	$$root$$_vs2015.vcxproj
+$$IF(PROJECT_VC140)
+stdafx_80.h	stdafx.h
+$$//targetver_100.h	targetver.h
+$$ENDIF //PROJECT_VC140
+
+$$// binary and skins file
+
+/Bin
+/Bin/skins
+/Bin/skins/$$root$$
+$$IF(DLG)
+=the.xui	Bin\skins\$$root$$\the.xui
+=SKID.h	Bin\skins\$$root$$\Resource.h
+=BtnBk.png	Bin\skins\$$root$$\BtnBk.png
+=Main.bmp	Bin\skins\$$root$$\Main.bmp
+=BtnMin.png	Bin\skins\$$root$$\BtnMin.png
+=BtnMax.png	Bin\skins\$$root$$\BtnMax.png
+=BtnClose.png	Bin\skins\$$root$$\BtnClose.png
+$$ENDIF // DLG
+$$IF(MDI)
+=MDI_Close.bmp	Bin\skins\$$root$$\Close.bmp
+=MDI_Main.bmp	Bin\skins\$$root$$\Main.bmp
+=MDI_Max.bmp	Bin\skins\$$root$$\Max.bmp
+=MDI_MDIBtn_CloseDocument.bmp	Bin\skins\$$root$$\MDIBtn_CloseDocument.bmp
+=MDI_MDIBtn_SwitchDocument.bmp	Bin\skins\$$root$$\MDIBtn_SwitchDocument.bmp
+=MDI_MDIBtn_Tab.bmp	Bin\skins\$$root$$\MDIBtn_Tab.bmp
+=MDI_MDIClient.bmp	Bin\skins\$$root$$\MDIClient.bmp
+=MDI_MenuBar.bmp	Bin\skins\$$root$$\MenuBar.bmp
+=MDI_Min.bmp	Bin\skins\$$root$$\Min.bmp
+=MDI_Tab.bmp	Bin\skins\$$root$$\Tab.bmp
+=MDI_the.xui	Bin\skins\$$root$$\the.xui
+=MDI_Toolbar_Down.bmp	Bin\skins\$$root$$\Toolbar_Down.bmp
+=MDI_Toolbar_Edit.bmp	Bin\skins\$$root$$\Toolbar_Edit.bmp
+=MDI_Toolbar_Left.bmp	Bin\skins\$$root$$\Toolbar_Left.bmp
+=MDI_Toolbar_Project.bmp	Bin\skins\$$root$$\Toolbar_Project.bmp
+=MDI_Toolbar_Right.bmp	Bin\skins\$$root$$\Toolbar_Right.bmp
+=MDI_Toolbar_Up.bmp	Bin\skins\$$root$$\Toolbar_Up.bmp
+=MDI_Toolbar_View.bmp	Bin\skins\$$root$$\Toolbar_View.bmp
+=MDI_View.bmp	Bin\skins\$$root$$\View.bmp
+=MDI_HorScrollBar.bmp	Bin\skins\$$root$$\HorScrollBar.bmp
+=MDI_HorScrollBarThumb.bmp	Bin\skins\$$root$$\HorScrollBarThumb.bmp
+=MDI_VerScrollBar.bmp	Bin\skins\$$root$$\VerScrollBar.bmp
+=MDI_VerScrollBarThumb.bmp	Bin\skins\$$root$$\VerScrollBarThumb.bmp
+$$ENDIF // MDI
+$$IF(IM)
+=IM_the.xui	Bin\skins\$$root$$\the.xui
+=IM_Resource.h	Bin\skins\$$root$$\Resource.h
+=IM_1.png	Bin\skins\$$root$$\1.png
+=IM_aio_toolbar_down.png	Bin\skins\$$root$$\aio_toolbar_down.png
+=IM_allbtn_down.png	Bin\skins\$$root$$\allbtn_down.png
+=IM_allbtn_down_20.png	Bin\skins\$$root$$\allbtn_down_20.png
+=IM_allbtn_highlight.png	Bin\skins\$$root$$\allbtn_highlight.png
+=IM_allbtn_highlight_20.png	Bin\skins\$$root$$\allbtn_highlight_20.png
+=IM_appbox_mgr_btn.png	Bin\skins\$$root$$\appbox_mgr_btn.png
+=IM_Big_2.png	Bin\skins\$$root$$\Big_2.png
+=IM_btn_close_down.png	Bin\skins\$$root$$\btn_close_down.png
+=IM_btn_close_highlight.png	Bin\skins\$$root$$\btn_close_highlight.png
+=IM_btn_close_normal.png	Bin\skins\$$root$$\btn_close_normal.png
+=IM_btn_max_down.png	Bin\skins\$$root$$\btn_max_down.png
+=IM_btn_max_highlight.png	Bin\skins\$$root$$\btn_max_highlight.png
+=IM_btn_max_normal.png	Bin\skins\$$root$$\btn_max_normal.png
+=IM_btn_mini_down.png	Bin\skins\$$root$$\btn_mini_down.png
+=IM_btn_mini_highlight.png	Bin\skins\$$root$$\btn_mini_highlight.png
+=IM_btn_mini_normal.png	Bin\skins\$$root$$\btn_mini_normal.png
+=IM_btn_restore_down.png	Bin\skins\$$root$$\btn_restore_down.png
+=IM_btn_restore_highlight.png	Bin\skins\$$root$$\btn_restore_highlight.png
+=IM_btn_restore_normal.png	Bin\skins\$$root$$\btn_restore_normal.png
+=IM_btn_Skin_down.png	Bin\skins\$$root$$\btn_Skin_down.png
+=IM_btn_Skin_highlight.png	Bin\skins\$$root$$\btn_Skin_highlight.png
+=IM_btn_Skin_normal.png	Bin\skins\$$root$$\btn_Skin_normal.png
+=IM_Collapse.png	Bin\skins\$$root$$\Collapse.png
+=IM_Expanded.png	Bin\skins\$$root$$\Expanded.png
+=IM_Finger_Active.png	Bin\skins\$$root$$\Finger_Active.png
+=IM_icon_contacts_normal.png	Bin\skins\$$root$$\icon_contacts_normal.png
+=IM_icon_contacts_selected.png	Bin\skins\$$root$$\icon_contacts_selected.png
+=IM_icon_group_normal.png	Bin\skins\$$root$$\icon_group_normal.png
+=IM_icon_group_selected.png	Bin\skins\$$root$$\icon_group_selected.png
+=IM_icon_last_normal.png	Bin\skins\$$root$$\icon_last_normal.png
+=IM_icon_last_selected.png	Bin\skins\$$root$$\icon_last_selected.png
+=IM_imonline.png	Bin\skins\$$root$$\imonline.png
+=IM_listitem_even.png	Bin\skins\$$root$$\listitem_even.png
+=IM_listitem_highlight.png	Bin\skins\$$root$$\listitem_highlight.png
+=IM_mail16.png	Bin\skins\$$root$$\mail16.png
+=IM_main_gamebtn20_game.png	Bin\skins\$$root$$\main_gamebtn20_game.png
+=IM_main_search_normal.png	Bin\skins\$$root$$\main_search_normal.png
+=IM_main_tabbtn_highlight.png	Bin\skins\$$root$$\main_tabbtn_highlight.png
+=IM_main_tab_check.png	Bin\skins\$$root$$\main_tab_check.png
+=IM_menu_btn_highlight.png	Bin\skins\$$root$$\menu_btn_highlight.png
+=IM_menu_btn_normal.png	Bin\skins\$$root$$\menu_btn_normal.png
+=IM_menu_topright_bkg.png	Bin\skins\$$root$$\menu_topright_bkg.png
+=IM_message.png	Bin\skins\$$root$$\message.png
+=IM_Messagebox16.png	Bin\skins\$$root$$\Messagebox16.png
+=IM_Padding4Hot.png	Bin\skins\$$root$$\Padding4Hot.png
+=IM_Padding4Select.png	Bin\skins\$$root$$\Padding4Select.png
+=IM_QQSafe.png	Bin\skins\$$root$$\QQSafe.png
+=IM_status_down.png	Bin\skins\$$root$$\status_down.png
+=IM_status_highlight.png	Bin\skins\$$root$$\status_highlight.png
+=IM_status_normal.png	Bin\skins\$$root$$\status_normal.png
+=IM_TabNormal.png	Bin\skins\$$root$$\TabNormal.png
+=IM_Tools.png	Bin\skins\$$root$$\Tools.png
+=IM_zone_12.png	Bin\skins\$$root$$\zone_12.png
+/Bin/skins/$$root$$/Icon
+=IMICON_1.png	Bin\skins\$$root$$\Icon\1.png
+=IMICON_10.png	Bin\skins\$$root$$\Icon\10.png
+=IMICON_11.png	Bin\skins\$$root$$\Icon\11.png
+=IMICON_12.png	Bin\skins\$$root$$\Icon\12.png
+=IMICON_2.png	Bin\skins\$$root$$\Icon\2.png
+=IMICON_3.png	Bin\skins\$$root$$\Icon\3.png
+=IMICON_4.png	Bin\skins\$$root$$\Icon\4.png
+=IMICON_5.png	Bin\skins\$$root$$\Icon\5.png
+=IMICON_6.png	Bin\skins\$$root$$\Icon\6.png
+=IMICON_7.png	Bin\skins\$$root$$\Icon\7.png
+=IMICON_8.png	Bin\skins\$$root$$\Icon\8.png
+=IMICON_9.png	Bin\skins\$$root$$\Icon\9.png
+=IMICON_EmailTray.png	Bin\skins\$$root$$\Icon\EmailTray.png
+=IMICON_FaceBorder.png	Bin\skins\$$root$$\Icon\FaceBorder.png
+=IMICON_MobileTray.png	Bin\skins\$$root$$\Icon\MobileTray.png
+=IMICON_OnlineState_Away.png	Bin\skins\$$root$$\Icon\OnlineState_Away.png
+=IMICON_OnlineState_Away_Big.png	Bin\skins\$$root$$\Icon\OnlineState_Away_Big.png
+=IMICON_OnlineState_Busy.png	Bin\skins\$$root$$\Icon\OnlineState_Busy.png
+=IMICON_OnlineState_Busy_big.png	Bin\skins\$$root$$\Icon\OnlineState_Busy_big.png
+$$ENDIF // IM
