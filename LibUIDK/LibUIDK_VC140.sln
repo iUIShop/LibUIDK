@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LibUIDK_VC140", "LibUIDK_VC140.vcxproj", "{318E827E-602E-498B-8026-6DC1F04ED168}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug Static|x64 = Debug Static|x64
+		Debug Static|x86 = Debug Static|x86
+		Debug Unicode Static|x64 = Debug Unicode Static|x64
+		Debug Unicode Static|x86 = Debug Unicode Static|x86
+		Debug Unicode|x64 = Debug Unicode|x64
+		Debug Unicode|x86 = Debug Unicode|x86
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release Static|x64 = Release Static|x64
+		Release Static|x86 = Release Static|x86
+		Release Unicode Static|x64 = Release Unicode Static|x64
+		Release Unicode Static|x86 = Release Unicode Static|x86
+		Release Unicode|x64 = Release Unicode|x64
+		Release Unicode|x86 = Release Unicode|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{318E827E-602E-498B-8026-6DC1F04ED168}.Debug Static|x64.ActiveCfg = Debug Static|x64
+		{318E827E-602E-498B-8026-6DC1F04ED168}.Debug Static|x64.Build.0 = Debug Static|x64
+		{318E827E-602E-498B-8026-6DC1F04ED168}.Debug Static|x86.ActiveCfg = Debug Static|Win32
+		{318E827E-602E-498B-8026-6DC1F04ED168}.Debug Static|x86.Build.0 = Debug Static|Win32
+		{318E827E-602E-498B-8026-6DC1F04ED168}.Debug Unicode Static|x64.ActiveCfg = Debug Unicode Static|x64
+		{318E827E-602E-498B-8026-6DC1F04ED168}.Debug Unicode Static|x64.Build.0 = Debug Unicode Static|x64
+		{318E827E-602E-498B-8026-6DC1F04ED168}.Debug Unicode Static|x86.ActiveCfg = Debug Unicode Static|Win32
+		{318E827E-602E-498B-8026-6DC1F04ED168}.Debug Unicode Static|x86.Build.0 = Debug Unicode Static|Win32
+		{318E827E-602E-498B-8026-6DC1F04ED168}.Debug Unicode|x64.ActiveCfg = Debug Unicode|x64
+		{318E827E-602E-498B-8026-6DC1F04ED168}.Debug Unicode|x64.Build.0 = Debug Unicode|x64
+		{318E827E-602E-498B-8026-6DC1F04ED168}.Debug Unicode|x86.ActiveCfg = Debug Unicode|Win32
+		{318E827E-602E-498B-8026-6DC1F04ED168}.Debug Unicode|x86.Build.0 = Debug Unicode|Win32
+		{318E827E-602E-498B-8026-6DC1F04ED168}.Debug|x64.ActiveCfg = Debug|x64
+		{318E827E-602E-498B-8026-6DC1F04ED168}.Debug|x64.Build.0 = Debug|x64
+		{318E827E-602E-498B-8026-6DC1F04ED168}.Debug|x86.ActiveCfg = Debug|Win32
+		{318E827E-602E-498B-8026-6DC1F04ED168}.Debug|x86.Build.0 = Debug|Win32
+		{318E827E-602E-498B-8026-6DC1F04ED168}.Release Static|x64.ActiveCfg = Release Static|x64
+		{318E827E-602E-498B-8026-6DC1F04ED168}.Release Static|x64.Build.0 = Release Static|x64
+		{318E827E-602E-498B-8026-6DC1F04ED168}.Release Static|x86.ActiveCfg = Release Static|Win32
+		{318E827E-602E-498B-8026-6DC1F04ED168}.Release Static|x86.Build.0 = Release Static|Win32
+		{318E827E-602E-498B-8026-6DC1F04ED168}.Release Unicode Static|x64.ActiveCfg = Release Unicode Static|x64
+		{318E827E-602E-498B-8026-6DC1F04ED168}.Release Unicode Static|x64.Build.0 = Release Unicode Static|x64
+		{318E827E-602E-498B-8026-6DC1F04ED168}.Release Unicode Static|x86.ActiveCfg = Release Unicode Static|Win32
+		{318E827E-602E-498B-8026-6DC1F04ED168}.Release Unicode Static|x86.Build.0 = Release Unicode Static|Win32
+		{318E827E-602E-498B-8026-6DC1F04ED168}.Release Unicode|x64.ActiveCfg = Release Unicode|x64
+		{318E827E-602E-498B-8026-6DC1F04ED168}.Release Unicode|x64.Build.0 = Release Unicode|x64
+		{318E827E-602E-498B-8026-6DC1F04ED168}.Release Unicode|x86.ActiveCfg = Release Unicode|Win32
+		{318E827E-602E-498B-8026-6DC1F04ED168}.Release Unicode|x86.Build.0 = Release Unicode|Win32
+		{318E827E-602E-498B-8026-6DC1F04ED168}.Release|x64.ActiveCfg = Release|x64
+		{318E827E-602E-498B-8026-6DC1F04ED168}.Release|x64.Build.0 = Release|x64
+		{318E827E-602E-498B-8026-6DC1F04ED168}.Release|x86.ActiveCfg = Release|Win32
+		{318E827E-602E-498B-8026-6DC1F04ED168}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="License">
+      <UniqueIdentifier>{b6aaebf2-0fe6-407c-934d-53aea2b4b7f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ControlBase">
+      <UniqueIdentifier>{af385d77-beb6-41ef-a8ab-dbcbc0849e14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RichEdit">
+      <UniqueIdentifier>{b3ca3576-d49d-4030-b031-7652894297df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="treeview">
+      <UniqueIdentifier>{5c2b50b5-eb20-42c3-9959-9a7feca8f9b8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="License\global.h">
+      <Filter>License</Filter>
+    </ClInclude>
+    <ClInclude Include="License\License.h">
+      <Filter>License</Filter>
+    </ClInclude>
+    <ClInclude Include="License\MD5.h">
+      <Filter>License</Filter>
+    </ClInclude>
+    <ClInclude Include="License\MD5h.h">
+      <Filter>License</Filter>
+    </ClInclude>
+    <ClInclude Include="ControlMember.h">
+      <Filter>ControlBase</Filter>
+    </ClInclude>
+    <ClInclude Include="TextHost.h">
+      <Filter>RichEdit</Filter>
+    </ClInclude>
+    <ClInclude Include="treeview.h">
+      <Filter>treeview</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h" />
+    <ClInclude Include="LibUIDK.h" />
+    <ClInclude Include="ResourceMgr.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="License\License.cpp">
+      <Filter>License</Filter>
+    </ClCompile>
+    <ClCompile Include="License\MD5.cpp">
+      <Filter>License</Filter>
+    </ClCompile>
+    <ClCompile Include="License\md5c.cpp">
+      <Filter>License</Filter>
+    </ClCompile>
+    <ClCompile Include="ButtonBase.cpp">
+      <Filter>ControlBase</Filter>
+    </ClCompile>
+    <ClCompile Include="IMRichEditCtrl.cpp">
+      <Filter>RichEdit</Filter>
+    </ClCompile>
+    <ClCompile Include="IMRichEditCtrlBase.cpp">
+      <Filter>RichEdit</Filter>
+    </ClCompile>
+    <ClCompile Include="SkinRichEditCtrlBase.cpp">
+      <Filter>RichEdit</Filter>
+    </ClCompile>
+    <ClCompile Include="WLIMRichEditCtrl.cpp">
+      <Filter>RichEdit</Filter>
+    </ClCompile>
+    <ClCompile Include="WLRichEditCtrl.cpp">
+      <Filter>RichEdit</Filter>
+    </ClCompile>
+    <ClCompile Include="SkinRichEditCtrl.cpp">
+      <Filter>RichEdit</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageOleCtrl.cpp">
+      <Filter>RichEdit</Filter>
+    </ClCompile>
+    <ClCompile Include="OleCtrlBase.cpp">
+      <Filter>RichEdit</Filter>
+    </ClCompile>
+    <ClCompile Include="treeview.cpp">
+      <Filter>treeview</Filter>
+    </ClCompile>
+    <ClCompile Include="tvmem.cpp">
+      <Filter>treeview</Filter>
+    </ClCompile>
+    <ClCompile Include="tvpaint.cpp">
+      <Filter>treeview</Filter>
+    </ClCompile>
+    <ClCompile Include="tvscroll.cpp">
+      <Filter>treeview</Filter>
+    </ClCompile>
+    <ClCompile Include="ControlBase.cpp" />
+    <ClCompile Include="CreateControls.cpp" />
+    <ClCompile Include="CtrlProperties.cpp" />
+    <ClCompile Include="DataType.cpp" />
+    <ClCompile Include="Debug.cpp" />
+    <ClCompile Include="DockPanel.cpp" />
+    <ClCompile Include="DragDrop.cpp" />
+    <ClCompile Include="Global.cpp" />
+    <ClCompile Include="GridPanel.cpp" />
+    <ClCompile Include="HtmlCtrl.cpp" />
+    <ClCompile Include="IUIDocManager.cpp" />
+    <ClCompile Include="IUIDocument.cpp" />
+    <ClCompile Include="IUIFrameWnd.cpp" />
+    <ClCompile Include="IUIImage.cpp" />
+    <ClCompile Include="IUIMDIChildWnd.cpp" />
+    <ClCompile Include="IUIMDIClientWnd.cpp" />
+    <ClCompile Include="IUIMDIFrameWnd.cpp" />
+    <ClCompile Include="IUIMultiDocTemplate.cpp" />
+    <ClCompile Include="IUIView.cpp" />
+    <ClCompile Include="IUIWinApp.cpp" />
+    <ClCompile Include="MemStdioFile.cpp" />
+    <ClCompile Include="MenuBar.cpp" />
+    <ClCompile Include="MenuWnd.cpp" />
+    <ClCompile Include="NewWindowsUIPanel.cpp" />
+    <ClCompile Include="OleDropTargetEx.cpp" />
+    <ClCompile Include="Panel.cpp" />
+    <ClCompile Include="PicCharacterCtrl.cpp" />
+    <ClCompile Include="PictureCtrl.cpp" />
+    <ClCompile Include="RectCtrl.cpp" />
+    <ClCompile Include="Render.cpp" />
+    <ClCompile Include="ResMgr.cpp" />
+    <ClCompile Include="ScrollBarEx.cpp" />
+    <ClCompile Include="ScrollWnd.cpp" />
+    <ClCompile Include="SearchLightProgressCtrl.cpp" />
+    <ClCompile Include="SkinButton.cpp" />
+    <ClCompile Include="SkinComboBox.cpp" />
+    <ClCompile Include="SkinDateTimeCtrl.cpp" />
+    <ClCompile Include="SkinEdit.cpp" />
+    <ClCompile Include="SkinHeaderCtrl.cpp" />
+    <ClCompile Include="SkinHotKeyCtrl.cpp" />
+    <ClCompile Include="SkinIPAddressCtrl.cpp" />
+    <ClCompile Include="SkinListCtrl.cpp" />
+    <ClCompile Include="SkinMenu.cpp" />
+    <ClCompile Include="SkinProgressCtrl.cpp" />
+    <ClCompile Include="SkinSliderCtrl.cpp" />
+    <ClCompile Include="SkinSpinButtonCtrl.cpp" />
+    <ClCompile Include="SkinStatic.cpp" />
+    <ClCompile Include="SkinTreeCtrl.cpp" />
+    <ClCompile Include="SliderCtrlEx.cpp" />
+    <ClCompile Include="SplitterBar.cpp" />
+    <ClCompile Include="StackPanel.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="SubtitleWnd.cpp" />
+    <ClCompile Include="TaskWndMgr.cpp" />
+    <ClCompile Include="ThumbnailCtrl.cpp" />
+    <ClCompile Include="TreeCtrlEx.cpp" />
+    <ClCompile Include="TreeListCtrl.cpp" />
+    <ClCompile Include="UIMgr.cpp" />
+    <ClCompile Include="UIWnd.cpp" />
+    <ClCompile Include="UIWndBase.cpp" />
+    <ClCompile Include="UniformGridPanel.cpp" />
+    <ClCompile Include="Utils.cpp" />
+    <ClCompile Include="WaveCtrl.cpp" />
+    <ClCompile Include="WLButton.cpp" />
+    <ClCompile Include="WLLine.cpp" />
+    <ClCompile Include="WLPicture.cpp" />
+    <ClCompile Include="WLSliderCtrl.cpp" />
+    <ClCompile Include="WLSplitterBar.cpp" />
+    <ClCompile Include="WLText.cpp" />
+    <ClCompile Include="WLWnd.cpp" />
+  </ItemGroup>
+</Project>

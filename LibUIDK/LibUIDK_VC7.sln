@@ -1,0 +1,41 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LibUIDK", "LibUIDK_VC7.vcproj", "{FF2F0EC6-12DA-408B-B44B-0C41B16DE963}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Debug Static = Debug Static
+		Debug Unicode = Debug Unicode
+		Debug Unicode Static = Debug Unicode Static
+		Release = Release
+		Release Static = Release Static
+		Release Unicode = Release Unicode
+		Release Unicode Static = Release Unicode Static
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{FF2F0EC6-12DA-408B-B44B-0C41B16DE963}.Debug.ActiveCfg = Debug|Win32
+		{FF2F0EC6-12DA-408B-B44B-0C41B16DE963}.Debug.Build.0 = Debug|Win32
+		{FF2F0EC6-12DA-408B-B44B-0C41B16DE963}.Debug Static.ActiveCfg = Debug Static|Win32
+		{FF2F0EC6-12DA-408B-B44B-0C41B16DE963}.Debug Static.Build.0 = Debug Static|Win32
+		{FF2F0EC6-12DA-408B-B44B-0C41B16DE963}.Debug Unicode.ActiveCfg = Debug Unicode|Win32
+		{FF2F0EC6-12DA-408B-B44B-0C41B16DE963}.Debug Unicode.Build.0 = Debug Unicode|Win32
+		{FF2F0EC6-12DA-408B-B44B-0C41B16DE963}.Debug Unicode Static.ActiveCfg = Debug Unicode Static|Win32
+		{FF2F0EC6-12DA-408B-B44B-0C41B16DE963}.Debug Unicode Static.Build.0 = Debug Unicode Static|Win32
+		{FF2F0EC6-12DA-408B-B44B-0C41B16DE963}.Release.ActiveCfg = Release|Win32
+		{FF2F0EC6-12DA-408B-B44B-0C41B16DE963}.Release.Build.0 = Release|Win32
+		{FF2F0EC6-12DA-408B-B44B-0C41B16DE963}.Release Static.ActiveCfg = Release Static|Win32
+		{FF2F0EC6-12DA-408B-B44B-0C41B16DE963}.Release Static.Build.0 = Release Static|Win32
+		{FF2F0EC6-12DA-408B-B44B-0C41B16DE963}.Release Unicode.ActiveCfg = Release Unicode|Win32
+		{FF2F0EC6-12DA-408B-B44B-0C41B16DE963}.Release Unicode.Build.0 = Release Unicode|Win32
+		{FF2F0EC6-12DA-408B-B44B-0C41B16DE963}.Release Unicode Static.ActiveCfg = Release Unicode Static|Win32
+		{FF2F0EC6-12DA-408B-B44B-0C41B16DE963}.Release Unicode Static.Build.0 = Release Unicode Static|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

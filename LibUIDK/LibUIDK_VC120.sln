@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LibUIDK", "LibUIDK_VC120.vcxproj", "{07F218F9-FCA3-4183-A89D-5954AE174849}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug Static|Win32 = Debug Static|Win32
+		Debug Unicode Static|Win32 = Debug Unicode Static|Win32
+		Debug Unicode|Win32 = Debug Unicode|Win32
+		Debug|Win32 = Debug|Win32
+		Release Static|Win32 = Release Static|Win32
+		Release Unicode Static|Win32 = Release Unicode Static|Win32
+		Release Unicode|Win32 = Release Unicode|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{07F218F9-FCA3-4183-A89D-5954AE174849}.Debug Static|Win32.ActiveCfg = Debug Static|Win32
+		{07F218F9-FCA3-4183-A89D-5954AE174849}.Debug Static|Win32.Build.0 = Debug Static|Win32
+		{07F218F9-FCA3-4183-A89D-5954AE174849}.Debug Unicode Static|Win32.ActiveCfg = Debug Unicode Static|Win32
+		{07F218F9-FCA3-4183-A89D-5954AE174849}.Debug Unicode Static|Win32.Build.0 = Debug Unicode Static|Win32
+		{07F218F9-FCA3-4183-A89D-5954AE174849}.Debug Unicode|Win32.ActiveCfg = Debug Unicode|Win32
+		{07F218F9-FCA3-4183-A89D-5954AE174849}.Debug Unicode|Win32.Build.0 = Debug Unicode|Win32
+		{07F218F9-FCA3-4183-A89D-5954AE174849}.Debug|Win32.ActiveCfg = Debug|Win32
+		{07F218F9-FCA3-4183-A89D-5954AE174849}.Debug|Win32.Build.0 = Debug|Win32
+		{07F218F9-FCA3-4183-A89D-5954AE174849}.Release Static|Win32.ActiveCfg = Release Static|Win32
+		{07F218F9-FCA3-4183-A89D-5954AE174849}.Release Static|Win32.Build.0 = Release Static|Win32
+		{07F218F9-FCA3-4183-A89D-5954AE174849}.Release Unicode Static|Win32.ActiveCfg = Release Unicode Static|Win32
+		{07F218F9-FCA3-4183-A89D-5954AE174849}.Release Unicode Static|Win32.Build.0 = Release Unicode Static|Win32
+		{07F218F9-FCA3-4183-A89D-5954AE174849}.Release Unicode|Win32.ActiveCfg = Release Unicode|Win32
+		{07F218F9-FCA3-4183-A89D-5954AE174849}.Release Unicode|Win32.Build.0 = Release Unicode|Win32
+		{07F218F9-FCA3-4183-A89D-5954AE174849}.Release|Win32.ActiveCfg = Release|Win32
+		{07F218F9-FCA3-4183-A89D-5954AE174849}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
