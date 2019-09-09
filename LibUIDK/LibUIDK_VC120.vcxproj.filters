@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="License">
-      <UniqueIdentifier>{b6aaebf2-0fe6-407c-934d-53aea2b4b7f4}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ControlBase">
       <UniqueIdentifier>{af385d77-beb6-41ef-a8ab-dbcbc0849e14}</UniqueIdentifier>
     </Filter>
@@ -15,18 +12,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="License\global.h">
-      <Filter>License</Filter>
-    </ClInclude>
-    <ClInclude Include="License\License.h">
-      <Filter>License</Filter>
-    </ClInclude>
-    <ClInclude Include="License\MD5.h">
-      <Filter>License</Filter>
-    </ClInclude>
-    <ClInclude Include="License\MD5h.h">
-      <Filter>License</Filter>
-    </ClInclude>
     <ClInclude Include="ControlMember.h">
       <Filter>ControlBase</Filter>
     </ClInclude>
@@ -43,15 +28,6 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="License\License.cpp">
-      <Filter>License</Filter>
-    </ClCompile>
-    <ClCompile Include="License\MD5.cpp">
-      <Filter>License</Filter>
-    </ClCompile>
-    <ClCompile Include="License\md5c.cpp">
-      <Filter>License</Filter>
-    </ClCompile>
     <ClCompile Include="ButtonBase.cpp">
       <Filter>ControlBase</Filter>
     </ClCompile>

@@ -54,15 +54,6 @@
     <ClCompile Include="WLSplitterBar.cpp" />
     <ClCompile Include="WLText.cpp" />
     <ClCompile Include="WLWnd.cpp" />
-    <ClCompile Include="License\License.cpp">
-      <Filter>License</Filter>
-    </ClCompile>
-    <ClCompile Include="License\MD5.cpp">
-      <Filter>License</Filter>
-    </ClCompile>
-    <ClCompile Include="License\md5c.cpp">
-      <Filter>License</Filter>
-    </ClCompile>
     <ClCompile Include="DockPanel.cpp" />
     <ClCompile Include="UniformGridPanel.cpp" />
     <ClCompile Include="IUIImage.cpp" />
@@ -124,18 +115,6 @@
     <ClInclude Include="LibUIDK.h" />
     <ClInclude Include="StdAfx.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="License\global.h">
-      <Filter>License</Filter>
-    </ClInclude>
-    <ClInclude Include="License\License.h">
-      <Filter>License</Filter>
-    </ClInclude>
-    <ClInclude Include="License\MD5.h">
-      <Filter>License</Filter>
-    </ClInclude>
-    <ClInclude Include="License\MD5h.h">
-      <Filter>License</Filter>
-    </ClInclude>
     <ClInclude Include="ControlMember.h">
       <Filter>ControlBase</Filter>
     </ClInclude>
@@ -149,9 +128,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="License">
-      <UniqueIdentifier>{da3443b0-1ea6-4d78-8b84-b50a381ed7c3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ControlBase">
       <UniqueIdentifier>{d356f57e-acc5-475b-ba63-76740f99e0e9}</UniqueIdentifier>
     </Filter>

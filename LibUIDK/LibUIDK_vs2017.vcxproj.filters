@@ -8,9 +8,6 @@
     <Filter Include="ControlBase">
       <UniqueIdentifier>{9312c756-9586-47ac-9be4-f1cf81c8412f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="License">
-      <UniqueIdentifier>{3c062594-95a2-47d6-8281-c0ff2e515901}</UniqueIdentifier>
-    </Filter>
     <Filter Include="RichEdit">
       <UniqueIdentifier>{551e8605-d0b0-412a-92c7-1bddff764ff0}</UniqueIdentifier>
     </Filter>
@@ -31,18 +28,6 @@
     <ClInclude Include="ControlMember.h">
       <Filter>ControlBase</Filter>
     </ClInclude>
-    <ClInclude Include="License\global.h">
-      <Filter>License</Filter>
-    </ClInclude>
-    <ClInclude Include="License\License.h">
-      <Filter>License</Filter>
-    </ClInclude>
-    <ClInclude Include="License\MD5.h">
-      <Filter>License</Filter>
-    </ClInclude>
-    <ClInclude Include="License\MD5h.h">
-      <Filter>License</Filter>
-    </ClInclude>
     <ClInclude Include="TextHost.h">
       <Filter>RichEdit</Filter>
     </ClInclude>
@@ -62,15 +47,6 @@
   <ItemGroup>
     <ClCompile Include="ButtonBase.cpp">
       <Filter>ControlBase</Filter>
-    </ClCompile>
-    <ClCompile Include="License\License.cpp">
-      <Filter>License</Filter>
-    </ClCompile>
-    <ClCompile Include="License\MD5.cpp">
-      <Filter>License</Filter>
-    </ClCompile>
-    <ClCompile Include="License\md5c.cpp">
-      <Filter>License</Filter>
     </ClCompile>
     <ClCompile Include="ImageOleCtrl.cpp">
       <Filter>RichEdit</Filter>

@@ -48,15 +48,6 @@
     <ClCompile Include="UIWnd.cpp" />
     <ClCompile Include="UIWndBase.cpp" />
     <ClCompile Include="WaveCtrl.cpp" />
-    <ClCompile Include="License\License.cpp">
-      <Filter>License</Filter>
-    </ClCompile>
-    <ClCompile Include="License\MD5.cpp">
-      <Filter>License</Filter>
-    </ClCompile>
-    <ClCompile Include="License\md5c.cpp">
-      <Filter>License</Filter>
-    </ClCompile>
     <ClCompile Include="WLButton.cpp" />
     <ClCompile Include="WLLine.cpp" />
     <ClCompile Include="WLPicture.cpp" />
@@ -125,18 +116,6 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Version.h" />
-    <ClInclude Include="License\global.h">
-      <Filter>License</Filter>
-    </ClInclude>
-    <ClInclude Include="License\License.h">
-      <Filter>License</Filter>
-    </ClInclude>
-    <ClInclude Include="License\MD5.h">
-      <Filter>License</Filter>
-    </ClInclude>
-    <ClInclude Include="License\MD5h.h">
-      <Filter>License</Filter>
-    </ClInclude>
     <ClInclude Include="ControlMember.h">
       <Filter>ControlBase</Filter>
     </ClInclude>
@@ -150,9 +129,6 @@
     <ClInclude Include="Utils.h" />
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="License">
-      <UniqueIdentifier>{4c96b1ac-e61f-4e93-b647-7cb75608f25e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ControlBase">
       <UniqueIdentifier>{17d4bf64-559d-4750-bff6-767a9363d9d8}</UniqueIdentifier>
     </Filter>

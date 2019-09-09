@@ -356,10 +356,6 @@
   <ItemGroup>
     <ClInclude Include="ControlMember.h" />
     <ClInclude Include="LibUIDK.h" />
-    <ClInclude Include="License\global.h" />
-    <ClInclude Include="License\License.h" />
-    <ClInclude Include="License\MD5.h" />
-    <ClInclude Include="License\MD5h.h" />
     <ClInclude Include="ResourceMgr.h" />
     <ClInclude Include="StdAfx.h" />
     <ClInclude Include="targetver.h" />
@@ -392,9 +388,6 @@
     <ClCompile Include="IUIMultiDocTemplate.cpp" />
     <ClCompile Include="IUIView.cpp" />
     <ClCompile Include="IUIWinApp.cpp" />
-    <ClCompile Include="License\License.cpp" />
-    <ClCompile Include="License\MD5.cpp" />
-    <ClCompile Include="License\md5c.cpp" />
     <ClCompile Include="MemStdioFile.cpp" />
     <ClCompile Include="MenuBar.cpp" />
     <ClCompile Include="MenuWnd.cpp" />

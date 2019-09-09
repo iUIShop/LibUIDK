@@ -611,38 +611,6 @@ SOURCE=.\Utils.h
 SOURCE=.\Version.h
 # End Source File
 # End Group
-# Begin Group "License"
-
-# PROP Default_Filter ""
-# Begin Source File
-
-SOURCE=.\License\global.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\License\License.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\License\License.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\License\MD5.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\License\MD5.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\License\md5c.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\License\MD5h.h
-# End Source File
-# End Group
 # Begin Group "ControlBase"
 
 # PROP Default_Filter ""

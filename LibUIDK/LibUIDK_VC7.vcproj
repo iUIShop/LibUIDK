@@ -1902,31 +1902,6 @@
 			</File>
 		</Filter>
 		<Filter
-			Name="License"
-			Filter="">
-			<File
-				RelativePath=".\License\global.h">
-			</File>
-			<File
-				RelativePath=".\License\License.cpp">
-			</File>
-			<File
-				RelativePath=".\License\License.h">
-			</File>
-			<File
-				RelativePath=".\License\MD5.cpp">
-			</File>
-			<File
-				RelativePath=".\License\MD5.h">
-			</File>
-			<File
-				RelativePath=".\License\md5c.cpp">
-			</File>
-			<File
-				RelativePath=".\License\MD5h.h">
-			</File>
-		</Filter>
-		<Filter
 			Name="ControlBase"
 			Filter="">
 			<File
