@@ -135,6 +135,9 @@
 #define IDC_CMB_MERGE_TOOL_PATH         1057
 #define IDC_BTN_BROWSE_MERGE_TOOL       1058
 #define IDC_BTN_MERGE                   1059
+#define IDC_STA_HOME_PAGE               1060
+#define IDC_STA_SOURCE_CODE             1061
+#define IDC_STA_INFO                    1062
 #define IDC_LST_TABORDER                1078
 #define IDC_BTN_MOVEUP                  1079
 #define IDC_BTN_MOVEDOWN                1080
@@ -259,7 +262,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        337
 #define _APS_NEXT_COMMAND_VALUE         32901
-#define _APS_NEXT_CONTROL_VALUE         1060
+#define _APS_NEXT_CONTROL_VALUE         1063
 #define _APS_NEXT_SYMED_VALUE           333
 #endif
 #endif
