@@ -5,6 +5,7 @@
 #include "uishop.h"
 #include "NewProjectDlg.h"
 #include <shlwapi.h>
+#include <strsafe.h>
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -96,6 +97,17 @@ void CNewProjectDlg::OnOK()
 	m_uDBID = GetCheckedRadioButton(IDC_RAD_NONE, IDC_RAD_HEADER);
 	m_uCommentID = GetCheckedRadioButton(IDC_RAD_YES, IDC_RAD_NO);
 
+	//
+	// 保存 vs版本：m_uVSEdition和location：m_strLocation
+	//
+	CString strSettingsFile = GetExecutePath() + _T("Settings.ini");
+	TCHAR szBuf[MAX_PATH] = {0};
+
+	StringCchPrintf(szBuf, MAX_PATH, _T("%d"), m_uVSEdition);
+	WritePrivateProfileString(_T("NewProject"), _T("VSEdition"), szBuf, strSettingsFile);
+	
+	WritePrivateProfileString(_T("NewProject"), _T("Location"), m_strLocation, strSettingsFile);
+
 	CDialog::OnOK();
 }
 
@@ -160,21 +172,49 @@ BOOL CNewProjectDlg::OnInitDialog()
 	CDialog::OnInitDialog();
 
 	// TODO: Add extra initialization here
-#ifdef _DEBUG
-	m_strLocation = _T("D:\\myvc\\");
-#endif
-
-	CButton *pBtn = (CButton *)GetDlgItem(IDC_RAD_VC60);
-	pBtn->SetCheck(BST_CHECKED);
+	
+	//
+	// 读取 vs版本：m_uVSEdition和location：m_strLocation
+	//
+	CString strFile = GetExecutePath() + _T("Settings.ini");
+	
+	// Project type
+	CButton *pBtn = NULL;
+	int nID = GetPrivateProfileInt(_T("NewProject"), _T("VSEdition"), 0, strFile);
+	if (0 == nID)
+	{
+		pBtn = (CButton *)GetDlgItem(IDC_RAD_VC60);
+	}
+	else
+	{
+		pBtn = (CButton *)GetDlgItem(nID);
+	}
+	if (NULL != pBtn)
+	{
+		pBtn->SetCheck(BST_CHECKED);
+	}
+	
+	TCHAR szBuf[MAX_PATH] = {0};
+	GetPrivateProfileString(_T("NewProject"), _T("Location"), _T(""), szBuf, MAX_PATH, strFile);
+	m_strLocation = szBuf;
 
 	pBtn = (CButton *)GetDlgItem(IDC_RAD_PROJECT_GENERAL);
-	pBtn->SetCheck(BST_CHECKED);
+	if (NULL != pBtn)
+	{
+		pBtn->SetCheck(BST_CHECKED);
+	}
 
 	pBtn = (CButton *)GetDlgItem(IDC_RAD_NONE);
-	pBtn->SetCheck(BST_CHECKED);
+	if (NULL != pBtn)
+	{
+		pBtn->SetCheck(BST_CHECKED);
+	}
 
 	pBtn = (CButton *)GetDlgItem(IDC_RAD_YES);
-	pBtn->SetCheck(BST_CHECKED);
+	if (NULL != pBtn)
+	{
+		pBtn->SetCheck(BST_CHECKED);
+	}
 
 	UpdateData(FALSE);
 
