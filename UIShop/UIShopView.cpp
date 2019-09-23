@@ -610,6 +610,14 @@ void CUIShopView::SwitchWindow(CUIDesignWnd *pwndUIDesign)
 				CUIMgr::DelayLoadWindow(pUIWndProp);
 			}
 			SendFocusChangedNotify(m_hWnd, pOldCtrlProp, m_pFocusCtrlProp);
+
+			// 如果原来有选中的控件，切换焦点
+			CTRLPROPERTIES *pFocus = m_pWndUIDesign->GetFocusCtrl();
+			if (NULL != pFocus)
+			{
+				m_pFocusCtrlProp = pFocus;
+				SendFocusChangedNotify(m_hWnd, pOldCtrlProp, m_pFocusCtrlProp);
+			}
 		}
 	}
 	else

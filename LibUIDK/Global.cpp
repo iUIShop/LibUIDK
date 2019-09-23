@@ -901,13 +901,9 @@ CString LibUIDK::GetExecutePath()
 	TCHAR szPath[MAX_PATH] = {0};
 	GetModuleFileName(NULL, szPath, MAX_PATH);
 	PathRemoveFileSpec(szPath);
+	PathAddBackslash(szPath);
 
-	CString strPath(szPath);
-	if (strPath.Right(1) != '\\' && strPath.Right(1) != '/')
-	{
-		strPath += '\\';
-	}
-	return strPath;
+	return szPath;
 }
 
 BOOL LibUIDK::PathRemoveFileSpecEx(CString &rstrPath, BOOL bHasEndBackslash)
