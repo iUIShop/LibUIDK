@@ -277,7 +277,12 @@ INT_PTR CFontDialogEx::DoModal()
 	ASSERT(m_cf.lpfnHook != NULL); // can still be a user hook
 
 	m_cf.hwndOwner = PreModal();
+
+#if (_MSC_VER >= 1910)	// VC2017
+	INT_PTR nResult = ChooseFont(&m_cf);
+#else
 	INT_PTR nResult = ::AfxCtxChooseFont(&m_cf);
+#endif
 	PostModal();
 
 	if (nResult == IDOK)
