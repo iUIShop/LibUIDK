@@ -189,7 +189,6 @@
     <ClInclude Include="AddAllClassDlg.h" />
     <ClInclude Include="ChildFrm.h" />
     <ClInclude Include="ClassWizardDlg.h" />
-    <ClInclude Include="ContactWnd.h" />
     <ClInclude Include="ControlWnd.h" />
     <ClInclude Include="EventHandlerWizardDlg.h" />
     <ClInclude Include="FileDialogEx.h" />
@@ -235,7 +234,6 @@
     <ClCompile Include="AddAllClassDlg.cpp" />
     <ClCompile Include="ChildFrm.cpp" />
     <ClCompile Include="ClassWizardDlg.cpp" />
-    <ClCompile Include="ContactWnd.cpp" />
     <ClCompile Include="ControlWnd.cpp" />
     <ClCompile Include="EventHandlerWizardDlg.cpp" />
     <ClCompile Include="FileDialogEx.cpp" />

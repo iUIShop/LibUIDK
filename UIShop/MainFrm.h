@@ -4,7 +4,6 @@
 #pragma once
 #include "FileView.h"
 #include "PropertiesWnd.h"
-#include "ContactWnd.h"
 #include "StoryboardPane.h"
 #include "UIShopView.h"
 #include "ProjectGen.h"
@@ -198,7 +197,6 @@ protected:  // control bar embedded members
 	CMFCStatusBar     m_wndStatusBar;
 	CFileView         m_wndFileView;
 	CPropertiesWnd    m_wndProperties;
-	CContactWnd       m_wndContact;
 	CStoryboardPane	  m_wndStoryboard;
 	CUIShopView		 *m_pViewUIShop;
 	CProjectGen       m_ProjectGen;

@@ -33,9 +33,6 @@
     <ClCompile Include="ClassWizardDlg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ContactWnd.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ControlWnd.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -210,9 +207,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ClassWizardDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ContactWnd.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ControlWnd.h">

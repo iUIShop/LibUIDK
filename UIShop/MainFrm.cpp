@@ -428,8 +428,6 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	DockPane(&m_wndFileView);
 	m_wndProperties.EnableDocking(CBRS_ALIGN_ANY);
 	DockPane(&m_wndProperties);
-	m_wndContact.EnableDocking(CBRS_ALIGN_ANY);
-	DockPane(&m_wndContact);
 	m_wndStoryboard.EnableDocking(CBRS_ALIGN_ANY);
 	DockPane(&m_wndStoryboard);
 
@@ -500,16 +498,6 @@ BOOL CMainFrame::CreateDockingWindows()
 	if (!m_wndProperties.Create(strPropertiesWnd, this, CRect(0, 0, 200, 200), TRUE, ID_VIEW_PROPERTIESWND, WS_CHILD | WS_VISIBLE | WS_CLIPSIBLINGS | WS_CLIPCHILDREN | CBRS_RIGHT | CBRS_FLOAT_MULTI))
 	{
 		TRACE0("Failed to create Properties window\n");
-		return FALSE; // failed to create
-	}
-
-	// Create contact window
-	CString strContactWnd;
-	bNameValid = strContactWnd.LoadString(IDS_CONTACT_WND);
-	ASSERT(bNameValid);
-	if (!m_wndContact.Create(strContactWnd, this, CRect(0, 0, 200, 200), TRUE, ID_VIEW_CONTACTWND, WS_CHILD | WS_VISIBLE | WS_CLIPSIBLINGS | WS_CLIPCHILDREN | CBRS_BOTTOM | CBRS_FLOAT_MULTI))
-	{
-		TRACE0("Failed to create Contact window\n");
 		return FALSE; // failed to create
 	}
 

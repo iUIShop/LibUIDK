@@ -339,88 +339,6 @@
 				Name="VCPostBuildEventTool"
 			/>
 		</Configuration>
-		<Configuration
-			Name="Release Unicode Static ChainLink|x64"
-			OutputDirectory="$(SolutionDir)$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
-			ConfigurationType="1"
-			UseOfMFC="1"
-			CharacterSet="1"
-			WholeProgramOptimization="1"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-				PreprocessorDefinitions="NDEBUG"
-				MkTypLibCompatible="false"
-				TargetEnvironment="3"
-			/>
-			<Tool
-				Name="VCCLCompilerTool"
-				Optimization="2"
-				EnableIntrinsicFunctions="true"
-				PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG"
-				MinimalRebuild="false"
-				RuntimeLibrary="0"
-				EnableFunctionLevelLinking="true"
-				UsePrecompiledHeader="2"
-				WarningLevel="3"
-				DebugInformationFormat="3"
-			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="NDEBUG"
-				Culture="1033"
-				AdditionalIncludeDirectories="$(IntDir)"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
-			<Tool
-				Name="VCLinkerTool"
-				LinkIncremental="1"
-				GenerateDebugInformation="true"
-				SubSystem="2"
-				OptimizeReferences="2"
-				EnableCOMDATFolding="2"
-				TargetMachine="17"
-			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-			/>
-			<Tool
-				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
-		</Configuration>
 	</Configurations>
 	<References>
 	</References>
@@ -444,10 +362,6 @@
 			</File>
 			<File
 				RelativePath=".\ClassWizardDlg.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\ContactWnd.cpp"
 				>
 			</File>
 			<File
@@ -577,14 +491,6 @@
 						UsePrecompiledHeader="1"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						UsePrecompiledHeader="1"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\StoryboardPane.cpp"
@@ -654,10 +560,6 @@
 			</File>
 			<File
 				RelativePath=".\ClassWizardDlg.h"
-				>
-			</File>
-			<File
-				RelativePath=".\ContactWnd.h"
 				>
 			</File>
 			<File
@@ -1029,14 +931,6 @@
 						Name="VCCLCompilerTool"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Template\ChildWndHandler.h"
@@ -1067,14 +961,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release Unicode Static|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -1117,14 +1003,6 @@
 						Name="VCCLCompilerTool"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Template\ClassWizard_UIWnd.h"
@@ -1155,14 +1033,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release Unicode Static|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -1205,14 +1075,6 @@
 						Name="VCCLCompilerTool"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Template\Frame.h"
@@ -1243,14 +1105,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release Unicode Static|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -1753,14 +1607,6 @@
 						Name="VCCLCompilerTool"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Template\IM_ChatFrame.h"
@@ -1791,14 +1637,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release Unicode Static|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -2565,14 +2403,6 @@
 						Name="VCCLCompilerTool"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Template\IM_RecentPage.h"
@@ -2603,14 +2433,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release Unicode Static|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -2653,14 +2475,6 @@
 						Name="VCCustomBuildTool"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Template\IM_StartMenu.cpp"
@@ -2697,14 +2511,6 @@
 						Name="VCCLCompilerTool"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Template\IM_StartMenu.h"
@@ -2735,14 +2541,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release Unicode Static|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -3325,14 +3123,6 @@
 						Name="VCCustomBuildTool"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Template\MainWndHandler.cpp"
@@ -3363,14 +3153,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release Unicode Static|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -3413,14 +3195,6 @@
 						Name="VCCustomBuildTool"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Template\MDI_ChildFrm.cpp"
@@ -3451,14 +3225,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release Unicode Static|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -3501,14 +3267,6 @@
 						Name="VCCustomBuildTool"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Template\MDI_classviewicon.bmp"
@@ -3539,14 +3297,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release Unicode Static|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -3589,14 +3339,6 @@
 						Name="VCCLCompilerTool"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Template\MDI_ClassViewWnd.h"
@@ -3627,14 +3369,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release Unicode Static|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -3677,14 +3411,6 @@
 						Name="VCCustomBuildTool"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Template\MDI_FileViewWnd.cpp"
@@ -3715,14 +3441,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release Unicode Static|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -3765,14 +3483,6 @@
 						Name="VCCustomBuildTool"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Template\MDI_HorScrollBar.bmp"
@@ -3803,14 +3513,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release Unicode Static|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -3853,14 +3555,6 @@
 						Name="VCCustomBuildTool"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Template\MDI_Main.bmp"
@@ -3891,14 +3585,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release Unicode Static|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -3941,14 +3627,6 @@
 						Name="VCCustomBuildTool"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Template\MDI_MDIBtn_CloseDocument.bmp"
@@ -3979,14 +3657,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release Unicode Static|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -4029,14 +3699,6 @@
 						Name="VCCustomBuildTool"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Template\MDI_MDIBtn_Tab.bmp"
@@ -4067,14 +3729,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release Unicode Static|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -4117,14 +3771,6 @@
 						Name="VCCustomBuildTool"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Template\MDI_MenuBar.bmp"
@@ -4155,14 +3801,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release Unicode Static|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -4205,14 +3843,6 @@
 						Name="VCCustomBuildTool"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Template\MDI_Resource.h"
@@ -4243,14 +3873,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release Unicode Static|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -4293,14 +3915,6 @@
 						Name="VCCustomBuildTool"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Template\MDI_RootDoc.cpp"
@@ -4331,14 +3945,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release Unicode Static|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -4381,14 +3987,6 @@
 						Name="VCCustomBuildTool"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Template\MDI_RootDoc.ico"
@@ -4419,14 +4017,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release Unicode Static|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -4469,14 +4059,6 @@
 						Name="VCCLCompilerTool"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Template\MDI_RootView.h"
@@ -4507,14 +4089,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release Unicode Static|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -4557,14 +4131,6 @@
 						Name="VCCustomBuildTool"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Template\MDI_the.xui"
@@ -4595,14 +4161,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release Unicode Static|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -4645,14 +4203,6 @@
 						Name="VCCustomBuildTool"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Template\MDI_Toolbar_Edit.bmp"
@@ -4683,14 +4233,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release Unicode Static|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -4733,14 +4275,6 @@
 						Name="VCCustomBuildTool"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Template\MDI_Toolbar_Project.bmp"
@@ -4771,14 +4305,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release Unicode Static|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -4821,14 +4347,6 @@
 						Name="VCCustomBuildTool"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Template\MDI_Toolbar_Up.bmp"
@@ -4859,14 +4377,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release Unicode Static|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -4909,14 +4419,6 @@
 						Name="VCCustomBuildTool"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Template\MDI_VerScrollBar.bmp"
@@ -4947,14 +4449,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release Unicode Static|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -4997,14 +4491,6 @@
 						Name="VCCustomBuildTool"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Template\MDI_View.bmp"
@@ -5035,14 +4521,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release Unicode Static|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -5085,14 +4563,6 @@
 						Name="VCCustomBuildTool"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Template\NewProj.inf"
@@ -5123,14 +4593,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release Unicode Static|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -5173,14 +4635,6 @@
 						Name="VCCustomBuildTool"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Template\Resource.h"
@@ -5211,14 +4665,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release Unicode Static|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -5261,14 +4707,6 @@
 						Name="VCCustomBuildTool"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Template\Root.cpp"
@@ -5299,14 +4737,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release Unicode Static|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -5349,14 +4779,6 @@
 						Name="VCCustomBuildTool"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Template\Root.dsw"
@@ -5387,14 +4809,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release Unicode Static|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -5437,14 +4851,6 @@
 						Name="VCCustomBuildTool"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Template\Root.ico"
@@ -5475,14 +4881,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release Unicode Static|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -5525,14 +4923,6 @@
 						Name="VCCustomBuildTool"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Template\Root_100.sln"
@@ -5563,14 +4953,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release Unicode Static|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -5613,14 +4995,6 @@
 						Name="VCCustomBuildTool"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Template\Root_71.sln"
@@ -5651,14 +5025,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release Unicode Static|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -5701,14 +5067,6 @@
 						Name="VCCustomBuildTool"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Template\Root_80.sln"
@@ -5739,14 +5097,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release Unicode Static|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -5789,14 +5139,6 @@
 						Name="VCCustomBuildTool"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Template\Root_90.vcproj"
@@ -5827,14 +5169,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release Unicode Static|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -5877,14 +5211,6 @@
 						Name="VCCustomBuildTool"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Template\StdAfx.cpp"
@@ -5915,14 +5241,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release Unicode Static|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -5965,14 +5283,6 @@
 						Name="VCCustomBuildTool"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Template\stdafx_71.h"
@@ -6003,14 +5313,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release Unicode Static|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -6053,14 +5355,6 @@
 						Name="VCCustomBuildTool"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Template\targetver.h"
@@ -6091,14 +5385,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release Unicode Static|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool
@@ -6141,14 +5427,6 @@
 						Name="VCCustomBuildTool"
 					/>
 				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Template\the.xui"
@@ -6179,14 +5457,6 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release Unicode Static|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCustomBuildTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Unicode Static ChainLink|x64"
 					ExcludedFromBuild="true"
 					>
 					<Tool

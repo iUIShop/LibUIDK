@@ -5,8 +5,7 @@
 <!--LibUIDK-->
 <LibUIDKUI>
 	<Configuration OpenProgram="UIShop.exe"/>
-	<Version Version="0700" Build="6962" ChangeList="7143"/>
-	<DPI LogPixelsX="96" LogPixelsY="96"/>
+	<Version Version="0700" Build="7723" ChangeList="8543"/>
 	<Windows>
 		<Window>
 			<ID Value="IDW_MAIN"/>
@@ -16,7 +15,6 @@
 			<BackgroundHide RelativePath="Main.bmp"/>
 			<IsUseMaskColor Value="true"/>
 			<MaskColorResID Value="IDR_COLOR_MASK"/>
-			<IsResizing Value="true"/>
 			<IsResizingBorder Value="true"/>
 			<WindowResizingPoint X="0" Y="0"/>
 			<Controls>
@@ -33,6 +31,7 @@
 					<IsEndEllipsis Value="true"/>
 					<Caption Value="LibUIDK Demo application"/>
 					<TextAlignment Vertical="Default"/>
+					<ShadowText ShadowColor="#00C0C0C0"/>
 				</STATIC>
 				<PUSHBUTTON>
 					<Parent ID="IDW_MAIN"/>
@@ -81,6 +80,7 @@
 					<Caption Value="TODO: Place dialog controls here."/>
 					<ToolTip Enable="true"/>
 					<TextAlignment Horizontal="Center" Vertical="Default"/>
+					<ShadowText ShadowColor="#00C0C0C0"/>
 				</STATIC>
 				<PUSHBUTTON>
 					<Parent ID="IDW_MAIN"/>
@@ -168,6 +168,7 @@
 		<TreeControls/>
 		<TreeLists/>
 		<RichEdits/>
+		<IMRichEdits/>
 		<HtmlControls/>
 		<DateTimes/>
 		<WaveControls/>
