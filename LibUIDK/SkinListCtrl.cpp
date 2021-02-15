@@ -47,6 +47,12 @@ struct LV_ITEMPROPERTIES
 	{
 		ReleaseIUIImage(m_hItemBkBmp);
 		m_hItemBkBmp = NULL;
+
+		if (NULL != m_hIUIFont)
+		{
+			ReleaseIUIFontInternal(m_hIUIFont);
+			m_hIUIFont = NULL;
+		}
 	}
 
 	// Background
@@ -695,10 +701,6 @@ int CSkinListCtrl::BindStyle(const CTRLPROPERTIES *pCtrlProp)
 		else
 		{
 			SetImages(CONTROL_STATE_UNCHECKED_ND, strImageName[1], strImageName[2]);
-		}
-		for (int i = 0; i < 1 + COMBINEIMAGESIZE2; ++i)
-		{
-			ReleaseIUIImage(strImageName[i]);
 		}
 
 		SetBkImageResizeMode(pCtrlProp->m_eBkImageResizeMode);

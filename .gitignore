@@ -1,0 +1,19 @@
+/UIShop/Debug Unicode
+/UIShop/Release Unicode Static
+/LibUIDK/*.ncb
+/LibUIDK/*.opt
+/LibUIDK/*.plg
+*.sdf
+*.suo
+/LibUIDK/LibUIDK_VC140.VC.db
+/LibUIDK/LibUIDK_VC100.vcxproj.user
+*.aps
+/UIShop/UIShop_vs2010.opensdf
+/UIShop/UIShop_vs2010.vcxproj.user
+/UIShop/ipch/libuidk_vc100-bbcd57c9/libuidk100ud-c1e9d220.ipch
+/UIShop/ipch/uishop_vs2010-b27a1585/uishop_vs2010-4f852af6.ipch
+/LibUIDK/Debug100u
+/LibUIDK/Lib
+/UIShop/*.user
+/UIShop/ipch
+/UIShop/*.ncb

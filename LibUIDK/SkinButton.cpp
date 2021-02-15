@@ -815,7 +815,7 @@ LRESULT CSkinButton::WindowProc(UINT message, WPARAM wParam, LPARAM lParam)
 
 		AddCustomImage((LPCTSTR)_bstr_t(wszName), hBmp);
 		pMember->m_himgBk[0] = CreateIUIImage((LPCTSTR)_bstr_t(wszName));
-		ReleaseIUIImage((LPCTSTR)_bstr_t(wszName));
+		ReleaseIUIImage(pMember->m_himgBk[0]);
 
 		if (bRedraw)
 		{
@@ -836,7 +836,7 @@ LRESULT CSkinButton::WindowProc(UINT message, WPARAM wParam, LPARAM lParam)
 
 		AddCustomImage((LPCTSTR)_bstr_t(wszName), hBmp);
 		pMember->m_himgBk[1] = CreateIUIImage((LPCTSTR)_bstr_t(wszName));
-		ReleaseIUIImage((LPCTSTR)_bstr_t(wszName));
+		ReleaseIUIImage(pMember->m_himgBk[1]);
 
 		if (bRedraw)
 		{
@@ -857,7 +857,7 @@ LRESULT CSkinButton::WindowProc(UINT message, WPARAM wParam, LPARAM lParam)
 
 		AddCustomImage((LPCTSTR)_bstr_t(wszName), hBmp);
 		pMember->m_himgBk[2] = CreateIUIImage((LPCTSTR)_bstr_t(wszName));
-		ReleaseIUIImage((LPCTSTR)_bstr_t(wszName));
+		ReleaseIUIImage(pMember->m_himgBk[2]);
 
 		if (bRedraw)
 		{
@@ -878,7 +878,7 @@ LRESULT CSkinButton::WindowProc(UINT message, WPARAM wParam, LPARAM lParam)
 
 		AddCustomImage((LPCTSTR)_bstr_t(wszName), hBmp);
 		pMember->m_himgBk[3] = CreateIUIImage((LPCTSTR)_bstr_t(wszName));
-		ReleaseIUIImage((LPCTSTR)_bstr_t(wszName));
+		ReleaseIUIImage(pMember->m_himgBk[3]);
 
 		if (bRedraw)
 		{

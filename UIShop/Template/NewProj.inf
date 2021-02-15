@@ -24,10 +24,10 @@ $$// Canned parts, with canned names
 stdafx.cpp	StdAfx.cpp
 
 $$IF(DLG)
-MainWndHandler.h	MainWndHandler.h
-MainWndHandler.cpp	MainWndHandler.cpp
-ChildWndHandler.h	ChildWndHandler.h
-ChildWndHandler.cpp	ChildWndHandler.cpp
+MainWndHandler.h	MainWnd.h
+MainWndHandler.cpp	MainWnd.cpp
+ChildWndHandler.h	ChildWnd.h
+ChildWndHandler.cpp	ChildWnd.cpp
 $$ENDIF // DLG
 
 $$IF(MDI)

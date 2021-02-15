@@ -284,17 +284,7 @@ int LibUIDK::ImageManager::ReleaseIUIImage(HIUIIMAGE hIUIImage)
 
 	CString strFileName = hIUIImage->GetSafeImageName();
 
-	return ReleaseIUIImage(strFileName);
-}
-
-int LibUIDK::ImageManager::ReleaseIUIImage(LPCTSTR lpszImageFile)
-{
-	if (lpszImageFile == NULL || CString(lpszImageFile).IsEmpty() || g_ImageMgr.m_mapImages.empty())
-	{
-		return -1;
-	}
-
-	std::map<CString, HIUIIMAGE>::iterator it = g_ImageMgr.m_mapImages.find(lpszImageFile);
+	std::map<CString, HIUIIMAGE>::iterator it = g_ImageMgr.m_mapImages.find(strFileName);
 
 	// Not found the Image
 	if (it == g_ImageMgr.m_mapImages.end())

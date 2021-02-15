@@ -29,7 +29,9 @@ public:
 	CUIShopDoc *GetUIShopDoc();
 	CFileView *GetFileView();
 	CPropertiesWnd *GetPropertiesWnd();
+#ifdef ADV
 	CStoryboardPane *GetStoryboardPanel();
+#endif
 	int ShowTBControlBar(BOOL bShow);
 	int GetFileMRUMessage(UINT nID, CString *pstrMsg);
 
@@ -197,7 +199,9 @@ protected:  // control bar embedded members
 	CMFCStatusBar     m_wndStatusBar;
 	CFileView         m_wndFileView;
 	CPropertiesWnd    m_wndProperties;
+#ifdef ADV
 	CStoryboardPane	  m_wndStoryboard;
+#endif
 	CUIShopView		 *m_pViewUIShop;
 	CProjectGen       m_ProjectGen;
 

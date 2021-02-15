@@ -33,7 +33,6 @@ CClassWizardDlg::CClassWizardDlg(CWnd *pParent /*=NULL*/)
 {
 	//{{AFX_DATA_INIT(CClassWizardDlg)
 	//}}AFX_DATA_INIT
-	m_uCodeStyle = IDC_RAD_VC_NET;
 	memset(m_szBrowseRoot, 0, sizeof(TCHAR) * MAX_PATH);
 }
 
@@ -88,16 +87,6 @@ int CClassWizardDlg::SaveSettings()
 	// .Cpp file
 	WritePrivateProfileString(m_strWindowID, g_lpszClassCppFile, m_strCppFile, strFile);
 
-	// Code style
-	if (m_uCodeStyle == IDC_RAD_VC6)
-	{
-		WritePrivateProfileString(m_strWindowID, g_lpszCodeStyleVC6, _T("1"), strFile);
-	}
-	else
-	{
-		WritePrivateProfileString(m_strWindowID, g_lpszCodeStyleVC6, _T("0"), strFile);
-	}
-
 	return 0;
 }
 
@@ -135,19 +124,6 @@ BOOL CClassWizardDlg::OnInitDialog()
 	if (_tcslen(szClassCppFile) > 0)
 	{
 		m_strCppFile = szClassCppFile;
-	}
-
-	// Check code style
-	CButton *pBtnVC6 = (CButton *)GetDlgItem(IDC_RAD_VC6);
-	CButton *pBtnVCNET = (CButton *)GetDlgItem(IDC_RAD_VC_NET);
-	BOOL bCodeStyleVC6 = GetPrivateProfileInt(m_strWindowID, g_lpszCodeStyleVC6, 0, strFile);
-	if (bCodeStyleVC6)
-	{
-		pBtnVC6->SetCheck(BST_CHECKED);
-	}
-	else
-	{
-		pBtnVCNET->SetCheck(BST_CHECKED);
 	}
 
 	// Init location
@@ -222,8 +198,6 @@ void CClassWizardDlg::OnOK()
 		AfxMessageBox(_T("A .cpp file with the specified name already exists at the specified location."));
 		return;
 	}
-
-	m_uCodeStyle = GetCheckedRadioButton(IDC_RAD_VC6, IDC_RAD_VC_NET);
 
 	// Save to configuration file
 	SaveSettings();
@@ -405,19 +379,6 @@ void CClassWizardDlg::OnBnClickedBtnMerge()
 
 	// .cpp File
 	classGen.m_Dictionary[_T("CppFile")] = m_strCppFile;
-
-	// Code Style
-	switch (m_uCodeStyle)
-	{
-	case IDC_RAD_VC6:
-		classGen.m_Dictionary[_T("CODESTYLE_VC60")] = _T("1");
-		break;
-	case IDC_RAD_VC_NET:
-		classGen.m_Dictionary[_T("CODESTYLE_VCNET")] = _T("1");
-		break;
-	default:
-		break;
-	}
 
 	// Generate event handler
 	if (m_bGenEventHandler)

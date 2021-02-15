@@ -13,7 +13,7 @@ $$IF(MDI)
 #include "$$root$$View.h"
 $$ENDIF
 $$IF(DLG)
-#include "MainWndHandler.h"
+#include "MainWnd.h"
 $$ENDIF
 
 
@@ -58,9 +58,6 @@ $$IF(MDI)
 $$ENDIF
 	m_bCallLibUIDKMsgMap = TRUE;
 	m_pMainFrame = NULL;
-$$IF(!MDI)
-	m_pMainWndHandler = NULL;
-$$ENDIF
 }
 
 $$IF(ATL_SUPPORT)
@@ -217,10 +214,9 @@ $$IF(MDI)
 	m_pFrame->Update();
 $$ENDIF
 $$IF(!MDI)
-	m_pMainWndHandler = new CMainWndHandler(IDW_MAIN);
-	m_pMainFrame = CUIMgr::LoadFrame(IDR_MAINFRAME, WS_VISIBLE | WS_POPUP,
-			IDW_MAIN, m_pMainWndHandler);
-	if (m_pMainFrame == NULL)
+	m_pMainFrame = new CMainWnd;
+	m_pMainFrame->LoadFrame(IDR_MAINFRAME, WS_VISIBLE | WS_POPUP, NULL);
+	if (m_pMainFrame->GetSafeHwnd() == NULL)
 	{
 		// Search the error code in LibUIDK.h, the first error code is E_LOADBMPB.
 		DWORD dwLastError = m_pMainFrame->GetLastCreateError();
@@ -253,8 +249,6 @@ $$IF(!MDI)
 	{
 		SafeDelete(m_pMainFrame);
 	}
-
-	SafeDelete(m_pMainWndHandler);
 $$ENDIF
 
 	CUIMgr::ReleaseSkin();

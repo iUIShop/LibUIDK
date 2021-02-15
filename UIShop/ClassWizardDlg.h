@@ -25,7 +25,6 @@ public:
     BOOL m_bGenVariable;
     BOOL m_bGenDoDataExchange;
     //}}AFX_DATA
-    UINT m_uCodeStyle;
     TCHAR m_szBrowseRoot[MAX_PATH];
 
 protected:

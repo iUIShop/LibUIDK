@@ -25,7 +25,6 @@ public:
 	CString	m_strLocation;
 	//}}AFX_DATA
 	BOOL	m_bDatabase;
-	UINT	m_uVSEdition;
 	UINT	m_uProType;
 	UINT	m_uDBID;
 	UINT	m_uCommentID;

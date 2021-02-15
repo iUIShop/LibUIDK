@@ -102,7 +102,8 @@ CUIWndBase::~CUIWndBase()
 
 	if (m_himgBK != NULL)
 	{
-		ReleaseIUIImage(m_himgBK->GetSafeImageName());
+		ReleaseIUIImage(m_himgBK);
+		m_himgBK = NULL;
 	}
 
 	if (m_pMember != NULL)

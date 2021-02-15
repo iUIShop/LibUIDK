@@ -1558,18 +1558,12 @@ int CTRLPROPERTIES::IUIGetBackground2(const CTRLPROPERTIES *pCtrlProp,
 	if (bCombineImage)
 	{
 		*pstrImageName = (LPCTSTR)pCtrlProp->m_strBKCombine;
-
-		CreateEmptyIUIImage((LPCTSTR)pCtrlProp->m_strBKCombine);
 	}
 	else
 	{
 		int nIndex = 1;
 
 		*(pstrImageName + (nIndex++)) = (LPCTSTR)pCtrlProp->m_strBKN;
-
-		CreateEmptyIUIImage((LPCTSTR)pCtrlProp->m_strBKN);
-
-		CreateEmptyIUIImage((LPCTSTR)pCtrlProp->m_strBKD);
 		*(pstrImageName + (nIndex++)) = (LPCTSTR)pCtrlProp->m_strBKD;
 	}
 
@@ -1590,24 +1584,15 @@ int CTRLPROPERTIES::IUIGetBackground4(const CTRLPROPERTIES *pCtrlProp,
 	if (bCombineImage)
 	{
 		*pstrImageName = (LPCTSTR)pCtrlProp->m_strBKCombine;
-
-		CreateEmptyIUIImage((LPCTSTR)pCtrlProp->m_strBKCombine);
 	}
 	else
 	{
 		int nIndex = 1;
 
 		*(pstrImageName + (nIndex++)) = (LPCTSTR)pCtrlProp->m_strBKN;
-		CreateEmptyIUIImage((LPCTSTR)pCtrlProp->m_strBKN);
-
 		*(pstrImageName + (nIndex++)) = (LPCTSTR)pCtrlProp->m_strBKH;
-		CreateEmptyIUIImage((LPCTSTR)pCtrlProp->m_strBKH);
-
 		*(pstrImageName + (nIndex++)) = (LPCTSTR)pCtrlProp->m_strBKS;
-		CreateEmptyIUIImage((LPCTSTR)pCtrlProp->m_strBKS);
-
 		*(pstrImageName + (nIndex++)) = (LPCTSTR)pCtrlProp->m_strBKD;
-		CreateEmptyIUIImage((LPCTSTR)pCtrlProp->m_strBKD);
 	}
 
 	return 0;
@@ -1633,36 +1618,19 @@ int CTRLPROPERTIES::IUIGetToggleButtonBackground8(const TOGGLEBTNPROPERTIES *pCt
 	if (bCombineImage)
 	{
 		*pstrImageName = (LPCTSTR)pCtrlProp->m_strBKCombine;
-
-		CreateEmptyIUIImage((LPCTSTR)pCtrlProp->m_strBKCombine);
 	}
 	else
 	{
 		int nIndex = 1;
 
 		*(pstrImageName + (nIndex++)) = (LPCTSTR)pCtrlProp->m_strBKN;
-		CreateEmptyIUIImage((LPCTSTR)pCtrlProp->m_strBKN);
-
 		*(pstrImageName + (nIndex++)) = (LPCTSTR)pCtrlProp->m_strBKH;
-		CreateEmptyIUIImage((LPCTSTR)pCtrlProp->m_strBKH);
-
 		*(pstrImageName + (nIndex++)) = (LPCTSTR)pCtrlProp->m_strBKS;
-		CreateEmptyIUIImage((LPCTSTR)pCtrlProp->m_strBKS);
-
 		*(pstrImageName + (nIndex++)) = (LPCTSTR)pCtrlProp->m_strBKD;
-		CreateEmptyIUIImage((LPCTSTR)pCtrlProp->m_strBKD);
-
 		*(pstrImageName + (nIndex++)) = (LPCTSTR)pCtrlProp->m_strBKCN;
-		CreateEmptyIUIImage((LPCTSTR)pCtrlProp->m_strBKCN);
-
 		*(pstrImageName + (nIndex++)) = (LPCTSTR)pCtrlProp->m_strBKCH;
-		CreateEmptyIUIImage((LPCTSTR)pCtrlProp->m_strBKCH);
-
 		*(pstrImageName + (nIndex++)) = (LPCTSTR)pCtrlProp->m_strBKCS;
-		CreateEmptyIUIImage((LPCTSTR)pCtrlProp->m_strBKCS);
-
 		*(pstrImageName + (nIndex++)) = (LPCTSTR)pCtrlProp->m_strBKCD;
-		CreateEmptyIUIImage((LPCTSTR)pCtrlProp->m_strBKCD);
 	}
 
 	return 0;

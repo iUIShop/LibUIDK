@@ -19,9 +19,6 @@ $$ENDIF
 #include "resource.h"       // main symbols
 
 class CMainFrame;
-$$IF(!MDI)
-class CMainWndHandler;
-$$ENDIF
 
 /////////////////////////////////////////////////////////////////////////////
 // $$APP_CLASS$$:
@@ -72,9 +69,6 @@ $$IF(MDI)
 $$ENDIF
 	BOOL m_bCallLibUIDKMsgMap;
 	CUIWnd *m_pMainFrame;
-$$IF(!MDI)
-	CMainWndHandler *m_pMainWndHandler;
-$$ENDIF
 };
 
 $$IF(PROJECT_VC60)

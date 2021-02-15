@@ -140,11 +140,6 @@ int CButtonBase::BindPushButtonStyle(const BTNPROPERTIES *pCtrlProp)
 	SetBkImageRepeatX(pCtrlProp->m_uXRepeatPixel);
 	SetBkImageRepeatY(pCtrlProp->m_uYRepeatPixel);
 
-	for (int i = 0; i < 1 + COMBINEIMAGESIZE4; ++i)
-	{
-		ReleaseIUIImage(strImageName[i]);
-	}
-
 	SetBkImageTransparent(pCtrlProp->m_lBkImgTransparent);
 
 	// Set foreground bitmaps for control
@@ -280,11 +275,6 @@ int BindToggleButtonStyle(T *pButtonCtrl, const TOGGLEBTNPROPERTIES *pCtrlProp)
 	pButtonCtrl->SetBkImageResizePoint(pCtrlProp->m_ptImageResize);
 	pButtonCtrl->SetBkImageRepeatX(pCtrlProp->m_uXRepeatPixel);
 	pButtonCtrl->SetBkImageRepeatY(pCtrlProp->m_uYRepeatPixel);
-
-	for (int i = 0; i < 1 + COMBINEIMAGESIZE8; ++i)
-	{
-		ReleaseIUIImage(strImageName[i]);
-	}
 
 	pButtonCtrl->SetBkImageTransparent(pCtrlProp->m_lBkImgTransparent);
 

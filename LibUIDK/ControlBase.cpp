@@ -75,10 +75,16 @@ int CControlBase::BindStyle(const CTRLPROPERTIES *pCtrlProp)
 
 int CControlBase::ReleaseObject()
 {
-	ReleaseIUIImage(m_himgCombineBk);
-	m_himgCombineBk = NULL;
-	ReleaseIUIImage(m_himgCombineFg);
-	m_himgCombineFg = NULL;
+	if (NULL != m_himgCombineBk)
+	{
+		ReleaseIUIImage(m_himgCombineBk);
+		m_himgCombineBk = NULL;
+	}
+	if (NULL != m_himgCombineFg)
+	{
+		ReleaseIUIImage(m_himgCombineFg);
+		m_himgCombineFg = NULL;
+	}
 
 	return 0;
 }

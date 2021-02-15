@@ -44,6 +44,7 @@ protected:
 	afx_msg void OnRButtonUp(UINT nFlags, CPoint point);
 	afx_msg void OnCtrlProperties();
 	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
+	afx_msg void OnDestroy();
 	afx_msg void OnWindowPosChanged(WINDOWPOS FAR* lpwndpos);
 	afx_msg void OnMoving(UINT fwSide, LPRECT pRect);
 	afx_msg void OnGetMinMaxInfo(MINMAXINFO* lpMMI);
@@ -76,6 +77,8 @@ public:
 protected:
 	// control's properties
 	CTRLPROPERTIES *m_pCtrlProperties;
+	HIUIIMAGE m_hImgCombine;
+	HIUIIMAGE m_hImgNormal;
 
 public:
 	// General properties
