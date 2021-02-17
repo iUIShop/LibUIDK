@@ -40,6 +40,7 @@ CControlWnd::CControlWnd()
 	m_pCtrlProperties = NULL;
 	m_hImgCombine = NULL;
 	m_hImgNormal = NULL;
+	m_hForeground = NULL;
 	m_pMoveSender = NULL;
 	m_nXMove = 0;
 	m_nYMove = 0;
@@ -115,6 +116,11 @@ void CControlWnd::OnDestroy()
 	{
 		ReleaseIUIImage(m_hImgNormal);
 		m_hImgNormal = NULL;
+	}
+	if (NULL != m_hForeground)
+	{
+		ReleaseIUIImage(m_hForeground);
+		m_hForeground = NULL;
 	}
 }
 
@@ -359,7 +365,6 @@ int CControlWnd::DrawControlImage(
 		}
 
 		// Draw foreground image of the control
-		HIUIIMAGE hForeground;
 		BOOL bCombineFg = TRUE;
 		CString strFgImageName[9];
 		FOREGROUND_ALIGN_HOR eFah = FAH_CENTER;
@@ -403,16 +408,16 @@ int CControlWnd::DrawControlImage(
 
 		if (bCombineFg)
 		{
-			hForeground = CreateIUIImage(strFgImageName[0]);
-			IUIPartDrawForeground(pDC->GetSafeHdc(), rcClient, rcForegroundMargin, hForeground,
-				CRect(0, 0, hForeground->GetWidth() / nPartCount, hForeground->GetHeight()),
+			m_hForeground = CreateIUIImage(strFgImageName[0]);
+			IUIPartDrawForeground(pDC->GetSafeHdc(), rcClient, rcForegroundMargin, m_hForeground,
+				CRect(0, 0, m_hForeground->GetWidth() / nPartCount, m_hForeground->GetHeight()),
 				eFah, eFav, RGB(255, 0, 255), 255);
 		}
 		else
 		{
-			hForeground = CreateIUIImage(strFgImageName[1]);
+			m_hForeground = CreateIUIImage(strFgImageName[1]);
 			IUIDrawForeground(pDC->GetSafeHdc(),
-				rcClient, rcForegroundMargin, hForeground, eFah, eFav, RGB(255, 0, 255), 255);
+				rcClient, rcForegroundMargin, m_hForeground, eFah, eFav, RGB(255, 0, 255), 255);
 		}
 	}
 

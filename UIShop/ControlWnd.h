@@ -79,6 +79,7 @@ protected:
 	CTRLPROPERTIES *m_pCtrlProperties;
 	HIUIIMAGE m_hImgCombine;
 	HIUIIMAGE m_hImgNormal;
+	HIUIIMAGE m_hForeground;
 
 public:
 	// General properties
