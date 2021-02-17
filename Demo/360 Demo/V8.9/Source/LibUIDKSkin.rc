@@ -1,0 +1,107 @@
+//Microsoft Developer Studio generated resource script.
+//
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "LibUIDKSkinRc.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// LIBUIDKSKIN
+//
+
+THE.XUI                 LIBUIDKSKIN DISCARDABLE ".\\Bin\\skins\\SafeMgr\\the.xui"
+RESOURCE.H              LIBUIDKSKIN DISCARDABLE ".\\Bin\\skins\\SafeMgr\\Resource.h"
+I62746E6C6F67696E636C6F7365.PNG LIBUIDKSKIN DISCARDABLE ".\\Bin\\skins\\SafeMgr\\BtnLoginClose.png"
+I62746E6C6F67696E6D696E.PNG LIBUIDKSKIN DISCARDABLE ".\\Bin\\skins\\SafeMgr\\BtnLoginMin.png"
+I627574746F6E5F6D6964646C65.PNG LIBUIDKSKIN DISCARDABLE ".\\Bin\\skins\\SafeMgr\\button_middle.png"
+I6469616762746E5F6E6577.PNG LIBUIDKSKIN DISCARDABLE ".\\Bin\\skins\\SafeMgr\\diagbtn_new.png"
+I6672616D656D6F645F73696D.PNG LIBUIDKSKIN DISCARDABLE ".\\Bin\\skins\\SafeMgr\\framemod_sim.png"
+I69636F5F616476746F6F6C73.PNG LIBUIDKSKIN DISCARDABLE ".\\Bin\\skins\\SafeMgr\\ico_AdvTools.png"
+I69636F5F6469616E6E616F6D656E7A68656E.PNG LIBUIDKSKIN DISCARDABLE ".\\Bin\\skins\\SafeMgr\\ico_diannaomenzhen.png"
+I69636F5F64736D61696E.PNG LIBUIDKSKIN DISCARDABLE ".\\Bin\\skins\\SafeMgr\\ico_dsmain.png"
+I69636F5F6578616D696E65.PNG LIBUIDKSKIN DISCARDABLE ".\\Bin\\skins\\SafeMgr\\ico_Examine.png"
+I69636F5F736F66746D6772.PNG LIBUIDKSKIN DISCARDABLE ".\\Bin\\skins\\SafeMgr\\ico_softmgr.png"
+I69636F5F737065656475706F7074.PNG LIBUIDKSKIN DISCARDABLE ".\\Bin\\skins\\SafeMgr\\ico_SpeedupOpt.png"
+I69636F5F737973726570616972.PNG LIBUIDKSKIN DISCARDABLE ".\\Bin\\skins\\SafeMgr\\ico_SysRepair.png"
+I69636F5F7472616365636C65616E6572.PNG LIBUIDKSKIN DISCARDABLE ".\\Bin\\skins\\SafeMgr\\ico_TraceCleaner.png"
+I69636F5F76756C726570616972.PNG LIBUIDKSKIN DISCARDABLE ".\\Bin\\skins\\SafeMgr\\ico_VulRepair.png"
+I6964775F6578616D696E696E67.PNG LIBUIDKSKIN DISCARDABLE ".\\Bin\\skins\\SafeMgr\\IDW_EXAMINING.png"
+I6964775F6C6F67696E.PNG LIBUIDKSKIN DISCARDABLE ".\\Bin\\skins\\SafeMgr\\IDW_LOGIN.png"
+I6C6F676F.PNG           LIBUIDKSKIN DISCARDABLE ".\\Bin\\skins\\SafeMgr\\logo.png"
+I6E657473746174656F6B32.PNG LIBUIDKSKIN DISCARDABLE ".\\Bin\\skins\\SafeMgr\\netstateok2.png"
+I7363616E627574746F6E.PNG LIBUIDKSKIN DISCARDABLE ".\\Bin\\skins\\SafeMgr\\scanbutton.png"
+I7363616E627574746F6E735F6E6577.PNG LIBUIDKSKIN DISCARDABLE ".\\Bin\\skins\\SafeMgr\\scanbuttonS_new.png"
+I736B696E627574746F6D.PNG LIBUIDKSKIN DISCARDABLE ".\\Bin\\skins\\SafeMgr\\SkinButtom.png"
+I7379735F627574746F6E5F636C6F7365.PNG LIBUIDKSKIN DISCARDABLE ".\\Bin\\skins\\SafeMgr\\sys_button_close.png"
+I7379735F627574746F6E5F6D6178.PNG LIBUIDKSKIN DISCARDABLE ".\\Bin\\skins\\SafeMgr\\sys_button_max.png"
+I7379735F627574746F6E5F6D696E.PNG LIBUIDKSKIN DISCARDABLE ".\\Bin\\skins\\SafeMgr\\sys_button_min.png"
+I7469746C655F6261725F6D656E75.PNG LIBUIDKSKIN DISCARDABLE ".\\Bin\\skins\\SafeMgr\\title_bar_menu.png"
+I746F6F6C6261725F686F766572.PNG LIBUIDKSKIN DISCARDABLE ".\\Bin\\skins\\SafeMgr\\toolbar_hover.png"
+I746F6F6C6261725F707573686564.PNG LIBUIDKSKIN DISCARDABLE ".\\Bin\\skins\\SafeMgr\\toolbar_pushed.png"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+I65646974.BMP           BITMAP DISCARDABLE ".\\Bin\\skins\\SafeMgr\\Edit.bmp"
+I6964775F64736D61696E.BMP BITMAP DISCARDABLE ".\\Bin\\skins\\SafeMgr\\IDW_DSMAIN.bmp"
+I6964775F6578616D696E65.BMP BITMAP DISCARDABLE ".\\Bin\\skins\\SafeMgr\\IDW_EXAMINE.bmp"
+I776562.BMP             BITMAP DISCARDABLE ".\\Bin\\skins\\SafeMgr\\WEB.bmp"
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

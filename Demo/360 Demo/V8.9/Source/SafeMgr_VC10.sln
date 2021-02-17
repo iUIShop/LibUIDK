@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{A30A9037-1598-49B2-91A0-901E94FB8AE1}") = "SafeMgr", "SafeMgr_VC10.vcxproj", "{79851765-15FC-4F2B-A622-477AC2C436FA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79851765-15FC-4F2B-A622-477AC2C436FA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{79851765-15FC-4F2B-A622-477AC2C436FA}.Debug|Win32.Build.0 = Debug|Win32
+		{79851765-15FC-4F2B-A622-477AC2C436FA}.Release|Win32.ActiveCfg = Release|Win32
+		{79851765-15FC-4F2B-A622-477AC2C436FA}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

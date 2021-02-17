@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{007CA833-E319-4E26-A29E-260C0572101C}") = "SafeMgr", "SafeMgr.vcproj", "{98261698-4758-474C-BA65-79238B467E52}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{98261698-4758-474C-BA65-79238B467E52}.Debug|Win32.ActiveCfg = Debug|Win32
+		{98261698-4758-474C-BA65-79238B467E52}.Debug|Win32.Build.0 = Debug|Win32
+		{98261698-4758-474C-BA65-79238B467E52}.Release|Win32.ActiveCfg = Release|Win32
+		{98261698-4758-474C-BA65-79238B467E52}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
