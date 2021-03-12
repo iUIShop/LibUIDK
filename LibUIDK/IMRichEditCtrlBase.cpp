@@ -1416,7 +1416,7 @@ int CIMRichEditCtrlBase::OnDrawFace(CDC *pMemDCParent, int nMsgIndex, LPCRECT lp
 
 			GraphicsPath gp;
 			//gp.AddEllipse(0, 0, 40, 40);
-			gp.AddEllipse(rcNew.left, rcNew.top,
+			gp.AddEllipse((int)rcNew.left, rcNew.top,
 				rcNew.right - rcNew.left, rcNew.bottom - rcNew.top);
 
 			g.FillPath(&tBrush, &gp);

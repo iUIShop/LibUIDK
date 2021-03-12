@@ -788,7 +788,7 @@ int CSkinListCtrl::BindStyle(const CTRLPROPERTIES *pCtrlProp)
 	else
 	{
 		RESCOLORPROPERTIES *pColorPropSD = (RESCOLORPROPERTIES *)CUIMgr::GetColorResourceItem((LPCTSTR)pLstProp->m_strResColorIDSD);
-		crSD = (pColorPropSD == NULL) ? cr[0] : pColorPropSD->m_crColor;
+		crSD = (pColorPropSD == NULL) ? cr[0] : (long)pColorPropSD->m_crColor;
 	}
 	SetSelectedDisabledItemTextColor(crSD);
 

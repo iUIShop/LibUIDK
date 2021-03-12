@@ -6644,32 +6644,19 @@ int CUIMgr::SetUIPath(LPCTSTR lpszUIPath, BOOL bCheckVersion/* = TRUE*/)
 	ASSERT(lpszUIPath != NULL);
 	ASSERT(AfxIsValidString(lpszUIPath));
 
-	BOOL bIsAbsolutePath = FALSE;
-	int nLen = (int)_tcslen(lpszUIPath);
-	int i = 0;
-	for (i = 0; i < nLen; ++i)
-	{
-		if (lpszUIPath[i] == ':')
-		{
-			bIsAbsolutePath = TRUE;
-			break;
-		}
-	}
+	BOOL bIsRelativePath = PathIsRelative(lpszUIPath);
 
-	if (bIsAbsolutePath)
-	{
-		m_strUIPath = lpszUIPath;
-	}
-	else
+	if (bIsRelativePath)
 	{
 		TCHAR szFullName[MAX_PATH] = {0};
 		GetModuleFileName(NULL, szFullName, MAX_PATH - 1);
-		TCHAR szDisc[_MAX_PATH] = {0};
-		TCHAR szPath[_MAX_PATH] = {0};
-		TSPLITPATH(szFullName, szDisc, _MAX_PATH, szPath, _MAX_PATH, NULL, 0, NULL, 0);
-		TSTRCAT(szDisc, _MAX_PATH, szPath);
-		m_strUIPath = szDisc;
-		m_strUIPath += lpszUIPath;
+		PathRemoveFileSpec(szFullName);
+		PathAppend(szFullName, lpszUIPath);
+		m_strUIPath = szFullName;
+	}
+	else
+	{
+		m_strUIPath = lpszUIPath;
 	}
 
 	if (!PathFileExists(m_strUIPath))

@@ -110,7 +110,7 @@ CSkinButton *LibUIDK::CreateButton(BTNPROPERTIES *pBtn, CWnd *pParent,
 
 			if (nHas == DC_HASDEFID && pPreviousBtn->GetSafeHwnd() != NULL)
 			{
-				LONG lStyle = GetWindowLong(pChild->GetSafeHwnd(), GWL_STYLE);
+				LONG_PTR lStyle = GetWindowLongPtr(pChild->GetSafeHwnd(), GWL_STYLE);
 				lStyle &= ~BS_DEFPUSHBUTTON;
 				pPreviousBtn->SendMessage(BM_SETSTYLE, lStyle, MAKELPARAM(FALSE, 0));
 			}

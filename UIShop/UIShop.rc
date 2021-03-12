@@ -1037,6 +1037,8 @@ IMICON_ONLINESTATE_AWAY.PNG TEMPLATE                "Template\\IMICON_OnlineStat
 IMICON_ONLINESTATE_AWAY_BIG.PNG TEMPLATE                "Template\\IMICON_OnlineState_Away_Big.png"
 IMICON_ONLINESTATE_BUSY.PNG TEMPLATE                "Template\\IMICON_OnlineState_Busy.png"
 IMICON_ONLINESTATE_BUSY_BIG.PNG TEMPLATE                "Template\\IMICON_OnlineState_Busy_big.png"
+VS2019.SLN              TEMPLATE                "Template\\vs2019.sln"
+VS2019.VCXPROJ          TEMPLATE                "Template\\vs2019.vcxproj"
 
 /////////////////////////////////////////////////////////////////////////////
 //

@@ -323,7 +323,7 @@ BOOL LibUIDK::IsWindowVisibleEx(HWND hWnd)
 {
 	BOOL bRet = FALSE;
 
-	LONG lStyle = GetWindowLong(hWnd, GWL_STYLE);
+	LONG_PTR lStyle = GetWindowLongPtr(hWnd, GWL_STYLE);
 	if ((lStyle & WS_VISIBLE) == WS_VISIBLE)
 	{
 		bRet = TRUE;

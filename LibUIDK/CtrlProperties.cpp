@@ -1446,7 +1446,7 @@ int _InitOtherStateColor(COLORREF *pColor, bool bSameNColor, COLORREF crNormal, 
 		RESCOLORPROPERTIES *pColorProp = (RESCOLORPROPERTIES *)CUIMgr::GetColorResourceItem(
 				lpszColorID);
 
-		*pColor = (pColorProp == NULL) ? crNormal : pColorProp->m_crColor;
+		*pColor = (pColorProp == NULL) ? crNormal : (long)pColorProp->m_crColor;
 	}
 
 	return 0;
@@ -1464,7 +1464,7 @@ int CTRLPROPERTIES::IUIGetControlColor4(const CTRLPROPERTIES *pCtrlProp,
 
 	if (pcrN != NULL)
 	{
-		*pcrN = (pColorPropN == NULL) ? crDefault : pColorPropN->m_crColor;
+		*pcrN = (pColorPropN == NULL) ? crDefault : (long)pColorPropN->m_crColor;
 	}
 
 	if (pcrH != NULL)
@@ -1478,7 +1478,7 @@ int CTRLPROPERTIES::IUIGetControlColor4(const CTRLPROPERTIES *pCtrlProp,
 			RESCOLORPROPERTIES *pColorPropH = (RESCOLORPROPERTIES *)CUIMgr::GetColorResourceItem(
 					(LPCTSTR)pCtrlProp->m_strResColorIDH);
 
-			*pcrH = (pColorPropH == NULL) ? crDefault : pColorPropH->m_crColor;
+			*pcrH = (pColorPropH == NULL) ? crDefault : (long)pColorPropH->m_crColor;
 		}
 	}
 
@@ -1493,7 +1493,7 @@ int CTRLPROPERTIES::IUIGetControlColor4(const CTRLPROPERTIES *pCtrlProp,
 			RESCOLORPROPERTIES *pColorPropS = (RESCOLORPROPERTIES *)CUIMgr::GetColorResourceItem(
 					(LPCTSTR)pCtrlProp->m_strResColorIDS);
 
-			*pcrS = (pColorPropS == NULL) ? crDefault : pColorPropS->m_crColor;
+			*pcrS = (pColorPropS == NULL) ? crDefault : (long)pColorPropS->m_crColor;
 		}
 	}
 
@@ -1508,7 +1508,7 @@ int CTRLPROPERTIES::IUIGetControlColor4(const CTRLPROPERTIES *pCtrlProp,
 			RESCOLORPROPERTIES *pColorPropD = (RESCOLORPROPERTIES *)CUIMgr::GetColorResourceItem(
 					(LPCTSTR)pCtrlProp->m_strResColorIDD);
 
-			*pcrD = (pColorPropD == NULL) ? crDefault : pColorPropD->m_crColor;
+			*pcrD = (pColorPropD == NULL) ? crDefault : (long)pColorPropD->m_crColor;
 		}
 	}
 
@@ -1529,7 +1529,7 @@ int CTRLPROPERTIES::IUIGetControlColor8(const TOGGLEBTNPROPERTIES *pCtrlProp,
 	COLORREF crNormal = RGB(255, 255, 255);
 	if (pcrN != NULL)
 	{
-		*pcrN = (pColorPropN == NULL) ? crDefault : pColorPropN->m_crColor;
+		*pcrN = (pColorPropN == NULL) ? crDefault : (long)pColorPropN->m_crColor;
 		crNormal = *pcrN;
 	}
 

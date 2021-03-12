@@ -8,6 +8,7 @@
 #pragma warning (disable : 4786)
 
 #include <AFXCMN.H>
+#include <string>
 #include <vector>
 #include <map>
 #include <afxole.h>
@@ -9050,7 +9051,7 @@ return _messageEntries;\
 		int GetClientAreaRect(LPRECT lpRect);
 		int ResizeRect(LPCRECT lpRectSrc, LPRECT lpRectResized);
 		CRectCtrl *GetRectChild(int nRectID);
-		CWLWnd *CUIWnd::GetDlgWLItem(int nItemID);	// WL means windowless
+		CWLWnd *GetDlgWLItem(int nItemID);	// WL means windowless
 
 		int SetWindowResizePoint(const LPPOINT lpPt);
 		int GetWindowResizePoint(LPPOINT lpPt) const;
@@ -10539,10 +10540,10 @@ return _messageEntries;\
 	protected:
 		friend class CNWUIOverItemWnd;
 		friend LRESULT NWUIElementWndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
-		friend VOID CALLBACK CNewWindowsUIPanel_OnTimer(HWND hwnd, UINT uMsg, UINT_PTR idEvent, DWORD dwTime);
 
 		afx_msg virtual int OnDeletedItem(int nRow, int nColumn, CWnd *pWndDeleted);
 		// Only LibUIDK call.
+		static VOID CALLBACK CNewWindowsUIPanel_OnTimer(HWND hwnd, UINT uMsg, UINT_PTR idEvent, DWORD dwTime);
 		afx_msg void OnTimer(HWND hwnd, UINT uMsg, UINT_PTR idEvent, DWORD dwTime);
 		virtual BOOL OnNotify(WPARAM wParam, LPARAM lParam, LRESULT *pResult);
 

@@ -647,7 +647,7 @@ BOOL CHtmlCtrl::CallJScript(const CString strFunc, const CStringArray &paramArra
 
 	for (int i = 0; i < arraySize; i++)
 	{
-		CComBSTR bstr = paramArray.GetAt(arraySize - 1 - i); // back reading
+		CComBSTR bstr = (LPCTSTR)paramArray.GetAt(arraySize - 1 - i); // back reading
 		bstr.CopyTo(&dispparams.rgvarg[i].bstrVal);
 		dispparams.rgvarg[i].vt = VT_BSTR;
 	}

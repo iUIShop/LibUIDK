@@ -2510,7 +2510,7 @@ int CSkinTreeCtrl::SetItemHeightEx(HTREEITEM hItem, UINT cyItemHeight)
 	itemEx.mask = TVIF_INTEGRAL;
 	itemEx.hItem = hItem;
 	itemEx.iIntegral = cyItemHeight / nItemOldHeight;
-	BOOL bRet = ::SendMessage(m_hWnd, TVM_SETITEM, 0, LPARAM(&itemEx));
+	BOOL bRet = (BOOL)::SendMessage(m_hWnd, TVM_SETITEM, 0, LPARAM(&itemEx));
 
 	// Must call SetRedraw(TRUE) to refresh the tree to update item rect and scroll bar.
 	SetRedraw(TRUE);
@@ -2531,7 +2531,7 @@ UINT CSkinTreeCtrl::GetItemHeightEx(HTREEITEM hItem) const
 	TVITEMEX itemEx;
 	itemEx.mask = TVIF_INTEGRAL;
 	itemEx.hItem = hItem;
-	BOOL bRet = ::SendMessage(m_hWnd, TVM_GETITEM, 0, LPARAM(&itemEx));
+	BOOL bRet = (BOOL)::SendMessage(m_hWnd, TVM_GETITEM, 0, LPARAM(&itemEx));
 
 	_ASSERT(FALSE);
 	int nItemOldHeight = GetItemHeight();

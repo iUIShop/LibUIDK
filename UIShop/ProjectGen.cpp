@@ -522,6 +522,17 @@ int CProjectGen::InitProjectGUID()
 #endif
 	m_Dictionary[_T("SOLUTION_GUID")] = (LPCTSTR)_bstr_t(strGUID);
 
+	// solution2 guid
+	CoCreateGuid(&guid);
+	StringFromGUID2(guid, wszName, sizeof(wszName));
+	wcstombs_s(&nSizeConverted, szName, sizeof(szName), wszName, sizeof(szName));
+#ifdef _UNICODE
+	strGUID = wszName;
+#else
+	strGUID = szName;
+#endif
+	m_Dictionary[_T("SOLUTION_GUID2")] = (LPCTSTR)_bstr_t(strGUID);
+
 	return 0;
 }
 

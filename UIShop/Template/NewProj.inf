@@ -77,7 +77,7 @@ root.rc2	res\$$root$$.rc2
 $$IF(MDI)
 =MDI_RootDoc.ico	res\$$root$$Doc.ico
 =MDI_classviewicon.bmp	res\classview.bmp
-$$ENDIF
+$$ENDIF // MDI
 
 $$// Project files
 
@@ -130,6 +130,13 @@ $$ENDIF //PROJECT_VC120
 Root_100.sln	$$root$$_vs2015.sln
 Root_100.vcxproj	$$root$$_vs2015.vcxproj
 $$IF(PROJECT_VC140)
+stdafx_80.h	stdafx.h
+$$//targetver_100.h	targetver.h
+$$ENDIF //PROJECT_VC140
+
+vs2019.sln	$$root$$_vs2019.sln
+vs2019.vcxproj	$$root$$_vs2019.vcxproj
+$$IF(PROJECT_VC2019)
 stdafx_80.h	stdafx.h
 $$//targetver_100.h	targetver.h
 $$ENDIF //PROJECT_VC140

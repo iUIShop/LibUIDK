@@ -18,7 +18,7 @@ static char THIS_FILE[] = __FILE__;
 #define GWU_HFONT    4*sizeof(UINT)
 #define GWU_YFONT    5*sizeof(UINT)
 #define NUM_WND_EXTRA (GWU_YFONT+sizeof(UINT))
-#define GetWindowInt GetWindowLong
+#define GetWindowInt GetWindowLongPtr
 
 
 struct HOTKEYMEMBER
@@ -190,8 +190,8 @@ void NEAR PASCAL PaintHotKey(register HWND hwnd)
 	TSTRCPY(szPlus, ARRAYSIZE(szPlus), _T(" + "));
 	//LoadString(HINST_THISDLL, IDS_PLUS, szPlus, ARRAYSIZE(szPlus));
 
-	wVirtKey = GetWindowInt(hwnd, GWU_VIRTKEY);
-	wMods = GetWindowInt(hwnd, GWU_MODS);
+	wVirtKey = (UINT)GetWindowInt(hwnd, GWU_VIRTKEY);
+	wMods = (UINT)GetWindowInt(hwnd, GWU_MODS);
 	if (wVirtKey || wMods)
 	{
 		sz[0] = 0;
@@ -241,7 +241,7 @@ void NEAR PASCAL PaintHotKey(register HWND hwnd)
 	}
 	else
 	{
-		GrayString(hdc, NULL, NULL, (DWORD)(LPTSTR)sz, cch, x, y, 0, 0);
+		GrayString(hdc, NULL, NULL, (LPARAM)sz, cch, x, y, 0, 0);
 	}
 
 	MGetTextExtent(hdc, sz, cch, &x, NULL);

@@ -409,11 +409,7 @@
     <None Include="res\UIShopDoc.ico">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="LibUIDKRcSkin\LibUIDKSkinRcBottom" />
-    <None Include="LibUIDKRcSkin\LibUIDKSkinRcBottom_Chs" />
-    <None Include="LibUIDKRcSkin\LibUIDKSkinRcTop_Chs" />
     <None Include="UIShop.reg" />
-    <None Include="res\WinUser_h" />
     <None Include="res\StoryPanelSliderBkD.png">
       <Filter>Resource Files</Filter>
     </None>
@@ -426,7 +422,21 @@
     <None Include="Template\BtnClose.png">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="Template\Loc_enu.rcf" />
+    <None Include="LibUIDKRcSkin\LibUIDKSkinRcBottom">
+      <Filter>LibUIDKRcSkin</Filter>
+    </None>
+    <None Include="LibUIDKRcSkin\LibUIDKSkinRcTop_Chs">
+      <Filter>LibUIDKRcSkin</Filter>
+    </None>
+    <None Include="LibUIDKRcSkin\LibUIDKSkinRcBottom_Chs">
+      <Filter>LibUIDKRcSkin</Filter>
+    </None>
+    <None Include="Template\Loc_enu.rcf">
+      <Filter>Template</Filter>
+    </None>
+    <None Include="res\WinUser_h">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="UIShop.rc">
