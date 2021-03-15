@@ -40,7 +40,7 @@ CImageMgr::~CImageMgr()
 	// Release image
 	if (!m_mapImages.empty())
 	{
-		int nCount = m_mapImages.size();
+		size_t nCount = m_mapImages.size();
 
 		ATLASSERT(FALSE);
 

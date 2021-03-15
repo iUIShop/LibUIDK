@@ -89,13 +89,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|x64'">
     <LinkIncremental>true</LinkIncremental>
     <TargetName>$(ProjectName)ud</TargetName>
-    <IntDir>Debug2019u\</IntDir>
+    <IntDir>$(Platform)\Debug2019u\</IntDir>
     <OutDir>$(VCToolsInstallDir)atlmfc\lib\x64</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Unicode Static|x64'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(VCToolsInstallDir)atlmfc\lib\x64</OutDir>
-    <IntDir>Release2019su\</IntDir>
+    <IntDir>$(Platform)\Release2019su\</IntDir>
     <TargetName>$(ProjectName)su</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">

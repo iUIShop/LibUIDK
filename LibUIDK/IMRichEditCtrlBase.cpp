@@ -280,8 +280,8 @@ void CIMMsg::Copy(const CIMMsg &rSrc)
 	m_nMsgEndCp = rSrc.m_nMsgEndCp;
 	m_nMsgParagraphCount = rSrc.m_nMsgParagraphCount;
 
-	int nCount = rSrc.m_vpStrRichMsg.size();
-	for (int i = 0; i < nCount ; i++)
+	size_t nCount = rSrc.m_vpStrRichMsg.size();
+	for (size_t i = 0; i < nCount ; i++)
 	{
 		const CRichMsgItem *p = rSrc.m_vpStrRichMsg[i];
 
@@ -353,8 +353,8 @@ int CIMRichEditCtrlBase::ReleaseObject()
 	}
 
 	// 释放消息
-	int nMsgCount = m_vMsg.size();
-	for (i = 0; i < nMsgCount; ++i)
+	size_t nMsgCount = m_vMsg.size();
+	for (size_t i = 0; i < nMsgCount; ++i)
 	{
 		const CIMMsg *pMsg = m_vMsg[i];
 		delete pMsg;
@@ -1438,8 +1438,8 @@ int CIMRichEditCtrlBase::GetMsgPosInGroup(int nMsgIndex)
 	const CIMMsg *pMsg = m_vMsg[nMsgIndex];
 
 #ifdef _DEBUG
-	int nc = pMsg->m_vpStrRichMsg.size();
-	for (int j = 0; j < nc ; j++)
+	size_t nc = pMsg->m_vpStrRichMsg.size();
+	for (size_t j = 0; j < nc ; j++)
 	{
 		CRichMsgItem *pitem = pMsg->m_vpStrRichMsg[j];
 		if (pitem->m_strMsgContent.Find(_T("不够再说")) >= 0)
