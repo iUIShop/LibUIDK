@@ -872,7 +872,8 @@ int CMenuBar::GetNormalMenuItemFont(LOGFONT *plf) const
 		return -1;
 	}
 
-	memcpy(plf, &((LOGFONT)pMember->m_MenuStyleProp.m_lfNormalItemText), sizeof(LOGFONT));
+	LOGFONT logFont = (LOGFONT)pMember->m_MenuStyleProp.m_lfNormalItemText;
+	memcpy(plf, &logFont, sizeof(LOGFONT));
 
 	return 0;
 }
@@ -954,7 +955,8 @@ int CMenuBar::GetHighlightMenuItemFont(LOGFONT *plf) const
 		return -1;
 	}
 
-	memcpy(plf, &((LOGFONT)pMember->m_MenuStyleProp.m_lfHighlightItemText), sizeof(LOGFONT));
+	LOGFONT logFont = (LOGFONT)pMember->m_MenuStyleProp.m_lfHighlightItemText;
+	memcpy(plf, &logFont, sizeof(LOGFONT));
 
 	return 0;
 }
@@ -1036,7 +1038,8 @@ int CMenuBar::GetDisabledMenuItemFont(LOGFONT *plf) const
 		return -1;
 	}
 
-	memcpy(plf, &((LOGFONT)pMember->m_MenuStyleProp.m_lfDisabledItemText), sizeof(LOGFONT));
+	LOGFONT logFont = (LOGFONT)pMember->m_MenuStyleProp.m_lfDisabledItemText;
+	memcpy(plf, &logFont, sizeof(LOGFONT));
 
 	return 0;
 }

@@ -160,7 +160,8 @@ int CSkinEdit::BindStyle(const CTRLPROPERTIES *pCtrlProp)
 	SetTextFont(strResFontID);
 
 	// Alignment
-	SetTextMargin(&((RECT)pEdtProp->m_rcPadding));
+	RECT rect = (RECT)pEdtProp->m_rcPadding;
+	SetTextMargin(&rect);
 
 	// Set bitmaps for background
 	bool bSpecifyBackgroundImages = pEdtProp->m_bSpecifyBackgroundImages;
