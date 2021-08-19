@@ -36,3 +36,5 @@
 /LibUIDK/ipch
 /UIShop/x64/Debug Unicode
 /UIShop/x64/Release Unicode Static
+/LibUIDK/LibUIDK_vs2017.vcxproj.user
+/LibUIDK/LibUIDK_vs2019.vcxproj.user
