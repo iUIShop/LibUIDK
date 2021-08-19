@@ -1,0 +1,18 @@
+1. 与其它窗口和控件不同，LibUIDK不在UIShop界面编辑器中创建菜单，而是直接使用VC资源管理器中创建的菜单资源。最后通过CSkinMenu的BindStyle把VC资源管理器中创建的菜单资源绑定到UIShop界面编辑器创建的菜单Style上，达到美化菜单的目的。
+2. 在VC资源管理器中创建菜单；
+3. 在UIShop界面编辑器中创建菜单Style；
+4. 在App类的InitInstance中，调用AfxInitSkinMenu
+	if (!AfxInitSkinMenu())
+		return FALSE;
+5. 弹出菜单：
+	CSkinMenu menuSkin;
+	menuSkin.BindStyle(_T("IDR_MENU_DEFAULT"));
+	menuSkin.LoadMenu(IDR_MAINFRAME);
+
+	// Get sub skin menu
+	CSkinMenu *pSkinMenu = (CSkinMenu *)menuSkin.GetSubMenu(2);
+
+	// Pop-up skin menu
+	CRect rcButton;
+	m_pBtnPopupResourceMenu->GetWindowRect(rcButton);
+	pSkinMenu->TrackPopupMenu(TPM_LEFTALIGN|TPM_TOPALIGN, rcButton.right, rcButton.bottom, this);
