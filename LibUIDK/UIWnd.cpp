@@ -1958,7 +1958,12 @@ int CUIWnd::AlphaBlendBkImageAndColor()
 
 	if (pMember->m_himgOrigBk->GetSafeHBITMAP() == NULL)
 	{
-		return 1;
+		pMember->m_himgOrigBk->SafeLoadSavedImage();
+
+		if (pMember->m_himgOrigBk->GetSafeHBITMAP() == NULL)
+		{
+			return 1;
+		}
 	}
 
 	CClientDC dc(this);
@@ -1988,7 +1993,7 @@ int CUIWnd::AlphaBlendBkImageAndColor()
 	ReleaseIUIImage(pMember->m_himgBK);
 	AddCustomImage(_T("IDC_IMG_BK"), (HBITMAP)bmpDest.Detach());
 	pMember->m_himgBK = CreateIUIImage(_T("IDC_IMG_BK"));
-	ReleaseIUIImage(_T("IDC_IMG_BK"));
+	ReleaseIUIImage(pMember->m_himgBK);
 
 	if (hFontOld != NULL)
 	{

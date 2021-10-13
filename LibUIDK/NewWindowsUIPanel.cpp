@@ -162,7 +162,7 @@ protected:
 		return CWnd::PreCreateWindow(cs);
 	}
 
-	virtual LRESULT CNWUIOverItemWnd::WindowProc(UINT message, WPARAM wParam, LPARAM lParam)
+	virtual LRESULT WindowProc(UINT message, WPARAM wParam, LPARAM lParam)
 	{
 		if (message == WM_EXITSIZEMOVE)
 		{
@@ -270,7 +270,7 @@ int CNewWindowsUIPanel::HitTestItem(HWND hWndSender, const CRect &rcSender)
 	return DoCNewWindowsUIPanel_HitTestItem(&m_Data, nItemCount, GetColumnCount(), hWndSender, rcSender);
 }
 
-VOID CALLBACK LibUIDK::CNewWindowsUIPanel_OnTimer(HWND hwnd, UINT uMsg, UINT_PTR idEvent, DWORD dwTime)
+VOID CALLBACK CNewWindowsUIPanel::CNewWindowsUIPanel_OnTimer(HWND hwnd, UINT uMsg, UINT_PTR idEvent, DWORD dwTime)
 {
 	ASSERT(uMsg == WM_TIMER);
 

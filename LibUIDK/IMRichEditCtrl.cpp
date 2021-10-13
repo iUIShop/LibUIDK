@@ -63,7 +63,7 @@ LRESULT CIMRichEditCtrl::WindowProc(UINT message, WPARAM wParam, LPARAM lParam)
 	}
 	else if (message == WM_SIZE)
 	{
-		DoIMSize(wParam, LOWORD(lParam), HIWORD(lParam));
+		DoIMSize((UINT)wParam, LOWORD(lParam), HIWORD(lParam));
 	}
 	else if (message == WM_DESTROY)
 	{

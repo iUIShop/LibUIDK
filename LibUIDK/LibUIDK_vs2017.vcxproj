@@ -138,35 +138,35 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v141_xp</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
     <UseOfMfc>Dynamic</UseOfMfc>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Unicode Static|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v141_xp</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
     <UseOfMfc>Dynamic</UseOfMfc>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v141_xp</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
     <UseOfMfc>Dynamic</UseOfMfc>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Static|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v141_xp</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
     <UseOfMfc>Dynamic</UseOfMfc>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v141_xp</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
     <UseOfMfc>Dynamic</UseOfMfc>
@@ -174,7 +174,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Unicode Static|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v141_xp</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
     <UseOfMfc>Dynamic</UseOfMfc>
@@ -182,7 +182,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Unicode|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v141_xp</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
     <UseOfMfc>Dynamic</UseOfMfc>
@@ -190,7 +190,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Static|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v141_xp</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
     <UseOfMfc>Dynamic</UseOfMfc>
@@ -250,44 +250,84 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>Lib\</OutDir>
+    <OutDir>$(VCToolsInstallDir)atlmfc\lib\x86</OutDir>
     <IntDir>Debug_vs2017\</IntDir>
     <TargetName>$(ProjectName)d_vs2017</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Static|Win32'">
-    <OutDir>Lib\</OutDir>
+    <OutDir>$(VCToolsInstallDir)atlmfc\lib\x86</OutDir>
     <IntDir>Debugs_vs2017\</IntDir>
     <TargetName>$(ProjectName)sd_vs2017</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">
-    <OutDir>Lib\</OutDir>
+    <OutDir>$(VCToolsInstallDir)atlmfc\lib\x86</OutDir>
     <IntDir>Debugu_vs2017</IntDir>
     <TargetName>$(ProjectName)ud_vs2017</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Unicode Static|Win32'">
-    <OutDir>Lib\</OutDir>
+    <OutDir>$(VCToolsInstallDir)atlmfc\lib\x86</OutDir>
     <IntDir>Debugsud_vs2017</IntDir>
     <TargetName>$(ProjectName)sud_vs2017</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>Lib\</OutDir>
+    <OutDir>$(VCToolsInstallDir)atlmfc\lib\x86</OutDir>
     <IntDir>Release_vs2017</IntDir>
     <TargetName>$(ProjectName)_vs2017</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Static|Win32'">
-    <OutDir>Lib\</OutDir>
+    <OutDir>$(VCToolsInstallDir)atlmfc\lib\x86</OutDir>
     <IntDir>Releases_vs2017</IntDir>
     <TargetName>$(ProjectName)s_vs2017</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Unicode|Win32'">
-    <OutDir>Lib\</OutDir>
+    <OutDir>$(VCToolsInstallDir)atlmfc\lib\x86</OutDir>
     <IntDir>Releaseu_vs2017</IntDir>
     <TargetName>$(ProjectName)u_vs2017</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Unicode Static|Win32'">
-    <OutDir>Lib\</OutDir>
+    <OutDir>$(VCToolsInstallDir)atlmfc\lib\x86</OutDir>
     <IntDir>Releasesu_vs2017</IntDir>
     <TargetName>$(ProjectName)su_vs2017</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(VCToolsInstallDir)atlmfc\lib\x64</OutDir>
+    <IntDir>$(Platform)\Debug_vs2017\</IntDir>
+    <TargetName>$(ProjectName)d_vs2017</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Static|x64'">
+    <OutDir>$(VCToolsInstallDir)atlmfc\lib\x64</OutDir>
+    <TargetName>$(ProjectName)sd_vs2017</TargetName>
+    <IntDir>$(Platform)\Debugs_vs2017\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|x64'">
+    <OutDir>$(VCToolsInstallDir)atlmfc\lib\x64</OutDir>
+    <TargetName>$(ProjectName)ud_vs2017</TargetName>
+    <IntDir>$(Platform)\Debugu_vs2017</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Unicode Static|x64'">
+    <OutDir>$(VCToolsInstallDir)atlmfc\lib\x64</OutDir>
+    <TargetName>$(ProjectName)sud_vs2017</TargetName>
+    <IntDir>$(Platform)\Debugsud_vs2017</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(VCToolsInstallDir)atlmfc\lib\x64</OutDir>
+    <TargetName>$(ProjectName)_vs2017</TargetName>
+    <IntDir>$(Platform)\Release_vs2017</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Static|x64'">
+    <OutDir>$(VCToolsInstallDir)atlmfc\lib\x64</OutDir>
+    <TargetName>$(ProjectName)s_vs2017</TargetName>
+    <IntDir>$(Platform)\Releases_vs2017</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Unicode|x64'">
+    <OutDir>$(VCToolsInstallDir)atlmfc\lib\x64</OutDir>
+    <TargetName>$(ProjectName)u_vs2017</TargetName>
+    <IntDir>$(Platform)\Releaseu_vs2017</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Unicode Static|x64'">
+    <OutDir>$(VCToolsInstallDir)atlmfc\lib\x64</OutDir>
+    <TargetName>$(ProjectName)su_vs2017</TargetName>
+    <IntDir>$(Platform)\Releasesu_vs2017</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -610,6 +650,14 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release Static|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release Unicode|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug Static|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug Unicode Static|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release Static|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release Unicode|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release Unicode Static|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="SubtitleWnd.cpp" />
     <ClCompile Include="TaskWndMgr.cpp" />

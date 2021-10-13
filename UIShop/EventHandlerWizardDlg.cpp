@@ -27,7 +27,6 @@ CEventHandlerWizardDlg::CEventHandlerWizardDlg(CWnd *pParent /*=NULL*/)
 	, m_strLocation(_T(""))
 	, m_strMergeTool(_T(""))
 {
-	m_uCodeStyle = IDC_RAD_VC_NET;
 	memset(m_szBrowseRoot, 0, sizeof(TCHAR) * MAX_PATH);
 }
 
@@ -69,8 +68,6 @@ int CEventHandlerWizardDlg::SaveSettings()
 	CString strFile = CUIMgr::GetUIPathWithoutTitle() + _T("Settings.ini");
 	WritePrivateProfileString(g_lpszEventHandlerWizardSection,
 		g_lpszLocationKey, m_strLocation, strFile);
-	WritePrivateProfileString(g_lpszEventHandlerWizardSection,
-		g_lpszCodeStyleVC6, (m_uCodeStyle == IDC_RAD_VC6) ? _T("1") : _T("0"), strFile);
 	WritePrivateProfileString(g_lpszEventHandlerWizardSection,
 		g_lpszMergeToolPath, m_strMergeTool, strFile);
 
@@ -202,8 +199,6 @@ void CEventHandlerWizardDlg::OnOK()
 		AfxMessageBox(_T("A .cpp file with the specified name already exists at the specified location."));
 		return;
 	}
-
-	m_uCodeStyle = GetCheckedRadioButton(IDC_RAD_VC6, IDC_RAD_VC_NET);
 
 	// Save to configuration file
 	SaveSettings();

@@ -50,7 +50,52 @@ void CCustomOleControlSite::SetXDocHostUI_Flag(DWORD dwSet)
 	m_dwXDocHostUI_Flag = dwSet;
 }
 
+#undef BEGIN_INTERFACE_MAP
 
+#ifdef _AFXDLL
+	// shared link to mfc
+	#define BEGIN_INTERFACE_MAP(theClass, theBase) \
+		const AFX_INTERFACEMAP* PASCAL theClass::_GetBaseInterfaceMap() \
+	{ return &theBase::interfaceMap; } \
+		const AFX_INTERFACEMAP* theClass::GetInterfaceMap() const \
+	{ return &theClass::interfaceMap; } \
+		AFX_COMDAT const AFX_DATADEF AFX_INTERFACEMAP theClass::interfaceMap = \
+	{ &theClass::_GetBaseInterfaceMap, &theClass::_interfaceEntries[0], }; \
+		AFX_COMDAT const AFX_DATADEF AFX_INTERFACEMAP_ENTRY theClass::_interfaceEntries[] = \
+	{ \
+	
+#else
+	// static link to mfc
+	#define BEGIN_INTERFACE_MAP(theClass, theBase) \
+		const AFX_INTERFACEMAP* theClass::GetInterfaceMap() const \
+	{ return &theClass::interfaceMap; } \
+		const AFX_DATADEF AFX_INTERFACEMAP theClass::interfaceMap = \
+	{ &theBase::interfaceMap, &theClass::_interfaceEntries[0], }; \
+		AFX_COMDAT const AFX_DATADEF AFX_INTERFACEMAP_ENTRY theClass::_interfaceEntries[] = \
+	{ \
+	
+#endif
+#define BEGIN_INTERFACE_MAP(theClass, theBase) \
+	const AFX_INTERFACEMAP* PASCAL theClass::_GetBaseInterfaceMap() \
+{ return &theBase::interfaceMap; } \
+	const AFX_INTERFACEMAP* theClass::GetInterfaceMap() const \
+{ return &theClass::interfaceMap; } \
+	AFX_COMDAT const AFX_DATADEF AFX_INTERFACEMAP theClass::interfaceMap = \
+{ &theClass::_GetBaseInterfaceMap, &theClass::_interfaceEntries[0], }; \
+	AFX_COMDAT const AFX_DATADEF AFX_INTERFACEMAP_ENTRY theClass::_interfaceEntries[] = \
+{ \
+	
+#else
+// static
+#define BEGIN_INTERFACE_MAP(theClass, theBase) \
+	const AFX_INTERFACEMAP* theClass::GetInterfaceMap() const \
+{ return &theClass::interfaceMap; } \
+	const AFX_DATADEF AFX_INTERFACEMAP theClass::interfaceMap = \
+{ &theBase::interfaceMap, &theClass::_interfaceEntries[0], }; \
+	AFX_COMDAT const AFX_DATADEF AFX_INTERFACEMAP_ENTRY theClass::_interfaceEntries[] = \
+{ \
+	
+#endif
 
 BEGIN_INTERFACE_MAP(CCustomOleControlSite, COleControlSite)
 	INTERFACE_PART(CCustomOleControlSite, IID_IDocHostUIHandler, DocHostUIHandler)

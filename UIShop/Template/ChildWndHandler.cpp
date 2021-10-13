@@ -1,68 +1,66 @@
-#include "StdAfx.h"
-#include "ChildWndHandler.h"
+// ChildWnd.cpp : implementation of the CChildWnd class
+//
+
+#include "stdafx.h"
+#include "ChildWnd.h"
 
 #ifdef _DEBUG
-#define new	IUI_DEBUG_NEW
+#define new IUI_DEBUG_NEW
 #endif // _DEBUG
 
+// CChildWnd
 
-IUI_BEGIN_MESSAGE_MAP(CChildWndHandler)
-	IUI_ON_MESSAGE(WM_CREATE, &CChildWndHandler::OnCreate)
-	IUI_ON_MESSAGE(WM_DESTROY, &CChildWndHandler::OnDestroy)
-	IUI_ON_MESSAGE(WM_GETCHILDMSGHANDLER, &CChildWndHandler::OnGetChildMsgHandler)
-	IUI_ON_MESSAGE(WM_RELEASECHILDMSGHANDLER, &CChildWndHandler::OnReleaseChildMsgHandler)
-	IUI_ON_BN_CLICKED(IDC_BTN_CHILD, &CChildWndHandler::OnBtnChild)
-IUI_END_MESSAGE_MAP()
+BEGIN_MESSAGE_MAP(CChildWnd, CUIWnd)
+	ON_WM_CREATE()
+	ON_BN_CLICKED(IDC_BTN_CHILD, OnBtnChild)
+END_MESSAGE_MAP()
 
+// CChildWnd construction/destruction
 
-CChildWndHandler::CChildWndHandler(UINT uWinID)
-	: CUIWndHandler(uWinID)
+CChildWnd::CChildWnd()
+{
+	m_pBtnChild = NULL;
+
+}
+
+CChildWnd::~CChildWnd()
 {
 }
 
-CChildWndHandler::~CChildWndHandler()
+void CChildWnd::DoDataExchange(CDataExchange* pDX)
 {
+	CUIWnd::DoDataExchange(pDX);
+
 }
 
 
 //////////////////////////////////////////////////////////////////////////
-// Messages
+// protected
 
-LRESULT CChildWndHandler::OnCreate(CUIWnd *pUIWnd, WPARAM wParam, LPARAM lParam)
+int CChildWnd::InitControls()
 {
-	return 0;
-}
-
-LRESULT CChildWndHandler::OnDestroy(CUIWnd *pUIWnd, WPARAM wParam, LPARAM lParam)
-{
-	return 0;
-}
-
-// 为控件绑定的窗口指定消息映射类
-LRESULT CChildWndHandler::OnGetChildMsgHandler(CUIWnd *pUIWnd, WPARAM wParam, LPARAM lParam)
-{
-	UINT uWinID = (UINT)wParam;
-	CUIWndHandler **ppHandler = (CUIWndHandler **)lParam;
+	m_pBtnChild = (CSkinButton *)GetDlgItem(IDC_BTN_CHILD);
+	ASSERT(m_pBtnChild->GetSafeHwnd() != NULL);
 
 	return 0;
 }
 
-// 释放控件绑定的窗口对应的消息映射类, 释放后返回TRUE，否则返回FALSE
-LRESULT CChildWndHandler::OnReleaseChildMsgHandler(CUIWnd *pUIWnd, WPARAM wParam, LPARAM lParam)
-{
-	UINT uWinID = (UINT)wParam;
-	CHILDMSGHANDLER *pChildMsgHandler = (CHILDMSGHANDLER *)lParam;
-	if (pChildMsgHandler == NULL)
-	{
-		return (LRESULT)FALSE;
-	}
+/////////////////////////////////////////////////////////////////////////////
+// CChildWnd message handlers
 
-	return (LRESULT)FALSE;
+int CChildWnd::OnCreate(LPCREATESTRUCT lpCreateStruct)
+{
+	if (CUIWnd::OnCreate(lpCreateStruct) == -1)
+		return -1;
+
+	if (InitControls() != 0)
+		return -1;
+
+
+	return 0;
 }
 
-LRESULT CChildWndHandler::OnBtnChild(CUIWnd *pUIWnd, WPARAM wParam, LPARAM lParam)
+void CChildWnd::OnBtnChild()
 {
 	AfxMessageBox(_T("IDC_BTN_CHILD"));
-
-	return 0;
 }

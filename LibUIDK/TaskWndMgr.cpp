@@ -376,6 +376,12 @@ int CTaskWndMgr::AddTaskWindow(
 	LPCTSTR lpszWindowName/* = NULL*/,
 	DWORD dwStyle/* = WS_TASKSTYLE*/)
 {
+	if (NULL == pTaskPanel)
+	{
+		_ASSERT(FALSE);
+		return -1;
+	}
+
 	TASKWNDMGRMEMBER *pMember = (TASKWNDMGRMEMBER *)m_pMember;
 
 	CTaskWndInfo twi;

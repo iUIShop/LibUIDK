@@ -357,7 +357,7 @@ namespace LibUIDK
 #define NearSize(pb)        LocalSize(pb)
 
 	//L
-#define IncrementSearchFree(pis) ((pis)->pszCharBuf ? free((pis)->pszCharBuf) : 0)
+#define IncrementSearchFree(pis) ((pis)->pszCharBuf ? free((pis)->pszCharBuf) : (void)0)
 
 	//////////////////////////////////////////////////////////////////////////
 	// mem.h

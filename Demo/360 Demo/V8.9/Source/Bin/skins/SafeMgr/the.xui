@@ -1,0 +1,587 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--DO NOT EDIT OR DELETE THIS LIBUIDK UI FILE!-->
+<!--www.iuishop.com-->
+<!--iuishop@iuishop.com-->
+<!--LibUIDK-->
+<LibUIDKUI>
+	<Configuration OpenProgram="UIShop.exe"/>
+	<Version Version="0700" Build="7723" ChangeList="8543"/>
+	<Windows>
+		<Window>
+			<ID Value="IDW_LOGIN"/>
+			<Rect Size="550,370" Location="0,0"/>
+			<BackgroundHide RelativePath="IDW_LOGIN.png"/>
+			<IsUseMaskColor Value="true"/>
+			<MaskColorResID Value="IDR_COLOR_MASK"/>
+			<WindowResizingPoint X="0" Y="0"/>
+			<Controls>
+				<PUSHBUTTON>
+					<Parent ID="IDW_LOGIN"/>
+					<ID Value="IDC_BTN_MIN"/>
+					<Rect Size="32,23" Location="470,1"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="BtnLoginMin.png"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+					<ButtonType Value="MinimizeBox"/>
+				</PUSHBUTTON>
+				<PUSHBUTTON>
+					<Parent ID="IDW_LOGIN"/>
+					<ID Value="IDC_BTN_CLOSE"/>
+					<Rect Size="46,23" Location="502,1"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="BtnLoginClose.png"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+					<ButtonType Value="CloseBox"/>
+				</PUSHBUTTON>
+				<WL_TEXT>
+					<Parent ID="IDW_LOGIN"/>
+					<ID Value="IDC_WL_TXT_PASSWORD"/>
+					<Rect Size="60,24" Location="124,225"/>
+					<Caption Value="Password:"/>
+					<ShadowText ShadowColor="#00C0C0C0"/>
+				</WL_TEXT>
+				<EDIT>
+					<Parent ID="IDW_LOGIN"/>
+					<ID Value="IDC_EDT_NAME"/>
+					<Rect Size="269,26" Location="186,187"/>
+					<IsTabStop Value="true"/>
+					<BackgroundNormal RelativePath="Edit.bmp"/>
+					<ResizingPoint X="5" Y="5"/>
+					<TextMargin Left="2" Top="2" Right="0" Bottom="0"/>
+				</EDIT>
+				<WL_TEXT>
+					<Parent ID="IDW_LOGIN"/>
+					<ID Value="IDC_WL_TXT_NAME"/>
+					<Rect Size="60,24" Location="124,187"/>
+					<Caption Value="Name:"/>
+					<ShadowText ShadowColor="#00C0C0C0"/>
+				</WL_TEXT>
+				<EDIT>
+					<Parent ID="IDW_LOGIN"/>
+					<ID Value="IDC_EDT_PASSWORD"/>
+					<Rect Size="269,26" Location="186,225"/>
+					<IsTabStop Value="true"/>
+					<BackgroundNormal RelativePath="Edit.bmp"/>
+					<ResizingPoint X="5" Y="5"/>
+					<IsPassword Value="true"/>
+					<TextMargin Left="2" Top="2" Right="0" Bottom="0"/>
+				</EDIT>
+				<PUSHBUTTON>
+					<Parent ID="IDW_LOGIN"/>
+					<ID Value="IDC_BTN_LOGIN"/>
+					<Rect Size="110,36" Location="345,285"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="button_middle.png"/>
+					<Caption Value="Login"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+				</PUSHBUTTON>
+			</Controls>
+		</Window>
+		<Window>
+			<ID Value="IDW_MAIN"/>
+			<Rect Size="850,600" Location="0,0"/>
+			<ResizingPoint X="20" Y="150"/>
+			<IsLayeredWindow Value="false"/>
+			<TitleBarHeight Value="-1"/>
+			<IsDrawBKColor Value="true"/>
+			<BackgroundColorID Value="IDR_COLOR_BK"/>
+			<BackgroundHide RelativePath="framemod_sim.png"/>
+			<IsUseMaskColor Value="true"/>
+			<MaskColorResID Value="IDR_COLOR_MASK"/>
+			<IsResizingBorder Value="true"/>
+			<WindowResizingPoint X="0" Y="0"/>
+			<Controls>
+				<WL_TEXT>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_WL_TXT_TITLE"/>
+					<Rect Size="141,20" Location="8,4"/>
+					<FontResN Value="IDR_FONT_DEFAULT"/>
+					<ColorResN Value="IDR_COLOR_TITLE"/>
+					<Caption Value="360安全卫士 8.9"/>
+					<ShadowText ShadowColor="#00C0C0C0"/>
+				</WL_TEXT>
+				<PUSHBUTTON>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_BTN_SKIN"/>
+					<Rect Size="22,18" Location="672,2"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="SkinButtom.png"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+				</PUSHBUTTON>
+				<PUSHBUTTON>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_BTN_MENU"/>
+					<Rect Size="33,22" Location="699,0"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="title_bar_menu.png"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+				</PUSHBUTTON>
+				<PUSHBUTTON>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_BTN_MIN"/>
+					<Rect Size="33,22" Location="732,0"/>
+					<LayoutMode Horizontal="Right"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="sys_button_min.png"/>
+					<ResizingPoint X="0" Y="0"/>
+					<ToolTip Enable="true" ToolTip="Minimize"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+					<ButtonType Value="MinimizeBox"/>
+				</PUSHBUTTON>
+				<CHECK>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_CHK_MAX"/>
+					<Rect Size="33,22" Location="765,0"/>
+					<LayoutMode Horizontal="Right"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="sys_button_max.png"/>
+					<ResizingPoint X="0" Y="0"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+					<CheckBoxType Value="MaximizeBox"/>
+				</CHECK>
+				<PUSHBUTTON>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_BTN_CLOSE"/>
+					<Rect Size="47,22" Location="798,0"/>
+					<LayoutMode Horizontal="Right"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="sys_button_close.png"/>
+					<ResizingPoint X="0" Y="0"/>
+					<ToolTip Enable="true" ToolTip="Close"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+					<ButtonType Value="CloseBox"/>
+				</PUSHBUTTON>
+				<RADIO>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_RAD_EXAMINE"/>
+					<Rect Size="74,82" Location="5,28"/>
+					<LayoutMode Horizontal="Free" Vertical="Free"/>
+					<BackgroundHighlight RelativePath="toolbar_hover.png"/>
+					<BackgroundSelected RelativePath="toolbar_pushed.png"/>
+					<FontResN Value="IDR_FONT_DEFAULT"/>
+					<ColorResN Value="IDR_COLOR_WHITE"/>
+					<Caption Value="电脑体检"/>
+					<TextAlignment Vertical="Bottom"/>
+					<TextMarginN Left="0" Top="0" Right="0" Bottom="10"/>
+					<IsSpecifyForegroundImages Value="true"/>
+					<ForegroundNormal Value="ico_Examine.png"/>
+					<ForegroundHighlight Value="ico_Examine.png"/>
+					<ForegroundSelected Value="ico_Examine.png"/>
+					<ForegroundDisabled Value="ico_Examine.png"/>
+					<ForegroundAlignMode Vertical="Top"/>
+					<BackgroundCheckedNormal RelativePath="toolbar_pushed.png"/>
+					<BackgroundCheckedHighlight RelativePath="toolbar_pushed.png"/>
+					<BackgroundCheckedSelected RelativePath="toolbar_pushed.png"/>
+					<BackgroundCheckedDisabled RelativePath="toolbar_pushed.png"/>
+					<ForegroundCheckedNormal RelativePath="ico_Examine.png"/>
+					<ForegroundCheckedHighlight RelativePath="ico_Examine.png"/>
+					<ForegroundCheckedSelected RelativePath="ico_Examine.png"/>
+					<ForegroundCheckedDisabled RelativePath="ico_Examine.png"/>
+				</RADIO>
+				<RADIO>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_RAD_DSMAIN"/>
+					<Rect Size="74,82" Location="79,28"/>
+					<LayoutMode Horizontal="Free" Vertical="Free"/>
+					<BackgroundHighlight RelativePath="toolbar_hover.png"/>
+					<BackgroundSelected RelativePath="toolbar_pushed.png"/>
+					<FontResN Value="IDR_FONT_DEFAULT"/>
+					<ColorResN Value="IDR_COLOR_WHITE"/>
+					<Caption Value="木马查杀"/>
+					<TextAlignment Vertical="Bottom"/>
+					<TextMarginN Left="0" Top="0" Right="0" Bottom="10"/>
+					<IsSpecifyForegroundImages Value="true"/>
+					<ForegroundNormal Value="ico_dsmain.png"/>
+					<ForegroundHighlight Value="ico_dsmain.png"/>
+					<ForegroundSelected Value="ico_dsmain.png"/>
+					<ForegroundDisabled Value="ico_dsmain.png"/>
+					<ForegroundAlignMode Vertical="Top"/>
+					<BackgroundCheckedNormal RelativePath="toolbar_pushed.png"/>
+					<BackgroundCheckedHighlight RelativePath="toolbar_pushed.png"/>
+					<BackgroundCheckedSelected RelativePath="toolbar_pushed.png"/>
+					<BackgroundCheckedDisabled RelativePath="toolbar_pushed.png"/>
+					<ForegroundCheckedNormal RelativePath="ico_dsmain.png"/>
+					<ForegroundCheckedHighlight RelativePath="ico_dsmain.png"/>
+					<ForegroundCheckedSelected RelativePath="ico_dsmain.png"/>
+					<ForegroundCheckedDisabled RelativePath="ico_dsmain.png"/>
+				</RADIO>
+				<RADIO>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_RAD_VUL_REPAIR"/>
+					<Rect Size="74,82" Location="153,28"/>
+					<LayoutMode Horizontal="Free" Vertical="Free"/>
+					<BackgroundHighlight RelativePath="toolbar_hover.png"/>
+					<BackgroundSelected RelativePath="toolbar_pushed.png"/>
+					<FontResN Value="IDR_FONT_DEFAULT"/>
+					<ColorResN Value="IDR_COLOR_WHITE"/>
+					<Caption Value="漏洞修复"/>
+					<TextAlignment Vertical="Bottom"/>
+					<TextMarginN Left="0" Top="0" Right="0" Bottom="10"/>
+					<IsSpecifyForegroundImages Value="true"/>
+					<ForegroundNormal Value="ico_VulRepair.png"/>
+					<ForegroundHighlight Value="ico_VulRepair.png"/>
+					<ForegroundSelected Value="ico_VulRepair.png"/>
+					<ForegroundDisabled Value="ico_VulRepair.png"/>
+					<ForegroundAlignMode Vertical="Top"/>
+					<ForegroundCheckedNormal RelativePath="ico_VulRepair.png"/>
+					<ForegroundCheckedHighlight RelativePath="ico_VulRepair.png"/>
+					<ForegroundCheckedSelected RelativePath="ico_VulRepair.png"/>
+					<ForegroundCheckedDisabled RelativePath="ico_VulRepair.png"/>
+				</RADIO>
+				<RADIO>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_RAD_SYS_REPAIR"/>
+					<Rect Size="74,82" Location="227,28"/>
+					<LayoutMode Horizontal="Free" Vertical="Free"/>
+					<BackgroundHighlight RelativePath="toolbar_hover.png"/>
+					<BackgroundSelected RelativePath="toolbar_pushed.png"/>
+					<FontResN Value="IDR_FONT_DEFAULT"/>
+					<ColorResN Value="IDR_COLOR_WHITE"/>
+					<Caption Value="系统修复"/>
+					<TextAlignment Vertical="Bottom"/>
+					<TextMarginN Left="0" Top="0" Right="0" Bottom="10"/>
+					<IsSpecifyForegroundImages Value="true"/>
+					<ForegroundNormal Value="ico_SysRepair.png"/>
+					<ForegroundHighlight Value="ico_SysRepair.png"/>
+					<ForegroundSelected Value="ico_SysRepair.png"/>
+					<ForegroundDisabled Value="ico_SysRepair.png"/>
+					<ForegroundAlignMode Vertical="Top"/>
+					<ForegroundCheckedNormal RelativePath="ico_SysRepair.png"/>
+					<ForegroundCheckedHighlight RelativePath="ico_SysRepair.png"/>
+					<ForegroundCheckedSelected RelativePath="ico_SysRepair.png"/>
+					<ForegroundCheckedDisabled RelativePath="ico_SysRepair.png"/>
+				</RADIO>
+				<RADIO>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_RAD_TRACE_CLEANER"/>
+					<Rect Size="74,82" Location="301,28"/>
+					<LayoutMode Horizontal="Free" Vertical="Free"/>
+					<BackgroundHighlight RelativePath="toolbar_hover.png"/>
+					<BackgroundSelected RelativePath="toolbar_pushed.png"/>
+					<FontResN Value="IDR_FONT_DEFAULT"/>
+					<ColorResN Value="IDR_COLOR_WHITE"/>
+					<Caption Value="电脑清理"/>
+					<TextAlignment Vertical="Bottom"/>
+					<TextMarginN Left="0" Top="0" Right="0" Bottom="10"/>
+					<IsSpecifyForegroundImages Value="true"/>
+					<ForegroundNormal Value="ico_TraceCleaner.png"/>
+					<ForegroundHighlight Value="ico_TraceCleaner.png"/>
+					<ForegroundSelected Value="ico_TraceCleaner.png"/>
+					<ForegroundDisabled Value="ico_TraceCleaner.png"/>
+					<ForegroundAlignMode Vertical="Top"/>
+					<ForegroundCheckedNormal RelativePath="ico_TraceCleaner.png"/>
+					<ForegroundCheckedHighlight RelativePath="ico_TraceCleaner.png"/>
+					<ForegroundCheckedSelected RelativePath="ico_TraceCleaner.png"/>
+					<ForegroundCheckedDisabled RelativePath="ico_TraceCleaner.png"/>
+				</RADIO>
+				<RADIO>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_RAD_SPEEDUP"/>
+					<Rect Size="74,82" Location="375,28"/>
+					<LayoutMode Horizontal="Free" Vertical="Free"/>
+					<BackgroundHighlight RelativePath="toolbar_hover.png"/>
+					<BackgroundSelected RelativePath="toolbar_pushed.png"/>
+					<FontResN Value="IDR_FONT_DEFAULT"/>
+					<ColorResN Value="IDR_COLOR_WHITE"/>
+					<Caption Value="优化加速"/>
+					<TextAlignment Vertical="Bottom"/>
+					<TextMarginN Left="0" Top="0" Right="0" Bottom="10"/>
+					<IsSpecifyForegroundImages Value="true"/>
+					<ForegroundNormal Value="ico_SpeedupOpt.png"/>
+					<ForegroundHighlight Value="ico_SpeedupOpt.png"/>
+					<ForegroundSelected Value="ico_SpeedupOpt.png"/>
+					<ForegroundDisabled Value="ico_SpeedupOpt.png"/>
+					<ForegroundAlignMode Vertical="Top"/>
+					<ForegroundCheckedNormal RelativePath="ico_SpeedupOpt.png"/>
+					<ForegroundCheckedHighlight RelativePath="ico_SpeedupOpt.png"/>
+					<ForegroundCheckedSelected RelativePath="ico_SpeedupOpt.png"/>
+					<ForegroundCheckedDisabled RelativePath="ico_SpeedupOpt.png"/>
+				</RADIO>
+				<RADIO>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_RAD_DNMZ"/>
+					<Rect Size="74,82" Location="449,28"/>
+					<LayoutMode Horizontal="Free" Vertical="Free"/>
+					<BackgroundHighlight RelativePath="toolbar_hover.png"/>
+					<BackgroundSelected RelativePath="toolbar_pushed.png"/>
+					<FontResN Value="IDR_FONT_DEFAULT"/>
+					<ColorResN Value="IDR_COLOR_WHITE"/>
+					<Caption Value="电脑门诊"/>
+					<TextAlignment Vertical="Bottom"/>
+					<TextMarginN Left="0" Top="0" Right="0" Bottom="10"/>
+					<IsSpecifyForegroundImages Value="true"/>
+					<ForegroundNormal Value="ico_diannaomenzhen.png"/>
+					<ForegroundHighlight Value="ico_diannaomenzhen.png"/>
+					<ForegroundSelected Value="ico_diannaomenzhen.png"/>
+					<ForegroundDisabled Value="ico_diannaomenzhen.png"/>
+					<ForegroundAlignMode Vertical="Top"/>
+					<ForegroundCheckedNormal RelativePath="ico_diannaomenzhen.png"/>
+					<ForegroundCheckedHighlight RelativePath="ico_diannaomenzhen.png"/>
+					<ForegroundCheckedSelected RelativePath="ico_diannaomenzhen.png"/>
+					<ForegroundCheckedDisabled RelativePath="ico_diannaomenzhen.png"/>
+				</RADIO>
+				<RADIO>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_RAD_SOFT_MGR"/>
+					<Rect Size="74,82" Location="523,28"/>
+					<LayoutMode Horizontal="Free" Vertical="Free"/>
+					<BackgroundHighlight RelativePath="toolbar_hover.png"/>
+					<BackgroundSelected RelativePath="toolbar_pushed.png"/>
+					<FontResN Value="IDR_FONT_DEFAULT"/>
+					<ColorResN Value="IDR_COLOR_WHITE"/>
+					<Caption Value="软件管家"/>
+					<TextAlignment Vertical="Bottom"/>
+					<TextMarginN Left="0" Top="0" Right="0" Bottom="10"/>
+					<IsSpecifyForegroundImages Value="true"/>
+					<ForegroundNormal Value="ico_softmgr.png"/>
+					<ForegroundHighlight Value="ico_softmgr.png"/>
+					<ForegroundSelected Value="ico_softmgr.png"/>
+					<ForegroundDisabled Value="ico_softmgr.png"/>
+					<ForegroundAlignMode Vertical="Top"/>
+					<ForegroundCheckedNormal RelativePath="ico_softmgr.png"/>
+					<ForegroundCheckedHighlight RelativePath="ico_softmgr.png"/>
+					<ForegroundCheckedSelected RelativePath="ico_softmgr.png"/>
+					<ForegroundCheckedDisabled RelativePath="ico_softmgr.png"/>
+				</RADIO>
+				<RADIO>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_RAD_ADV_TOOLS"/>
+					<Rect Size="74,82" Location="597,28"/>
+					<LayoutMode Horizontal="Free" Vertical="Free"/>
+					<BackgroundHighlight RelativePath="toolbar_hover.png"/>
+					<BackgroundSelected RelativePath="toolbar_pushed.png"/>
+					<FontResN Value="IDR_FONT_DEFAULT"/>
+					<ColorResN Value="IDR_COLOR_WHITE"/>
+					<Caption Value="功能大全"/>
+					<TextAlignment Vertical="Bottom"/>
+					<TextMarginN Left="0" Top="0" Right="0" Bottom="10"/>
+					<IsSpecifyForegroundImages Value="true"/>
+					<ForegroundNormal Value="ico_AdvTools.png"/>
+					<ForegroundHighlight Value="ico_AdvTools.png"/>
+					<ForegroundSelected Value="ico_AdvTools.png"/>
+					<ForegroundDisabled Value="ico_AdvTools.png"/>
+					<ForegroundAlignMode Vertical="Top"/>
+					<ForegroundCheckedNormal RelativePath="ico_AdvTools.png"/>
+					<ForegroundCheckedHighlight RelativePath="ico_AdvTools.png"/>
+					<ForegroundCheckedSelected RelativePath="ico_AdvTools.png"/>
+					<ForegroundCheckedDisabled RelativePath="ico_AdvTools.png"/>
+				</RADIO>
+				<WL_TEXT>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_WL_TXT_VER"/>
+					<Rect Size="327,20" Location="5,576"/>
+					<ColorResN Value="IDR_COLOR_TITLE"/>
+					<Caption Value="主程序版本：8.9.0.2002    备用木马库：2013-01-10"/>
+					<ShadowText ShadowColor="#00C0C0C0"/>
+				</WL_TEXT>
+				<PUSHBUTTON>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_BTN_CHECK_UPDATE"/>
+					<Rect Size="60,20" Location="337,576"/>
+					<LayoutMode Horizontal="Left"/>
+					<ColorResN Value="IDR_COLOR_TITLE"/>
+					<Caption Value="检查更新"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+				</PUSHBUTTON>
+				<WL_TEXT>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_WL_TXT_CLOUD"/>
+					<Rect Size="190,20" Location="614,576"/>
+					<ColorResN Value="IDR_COLOR_TITLE"/>
+					<Caption Value="已成功连接至360云安全中心"/>
+					<IsSpecifyForegroundImages Value="true"/>
+					<ForegroundNormal Value="netstateok2.png"/>
+					<TextAlignment Horizontal="Left"/>
+					<TextMargin Left="22" Top="0" Right="0" Bottom="0"/>
+					<ShadowText ShadowColor="#00C0C0C0"/>
+				</WL_TEXT>
+				<PUSHBUTTON>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_BTN_LOGO"/>
+					<Rect Size="140,67" Location="706,34"/>
+					<BackgroundNormal RelativePath="logo.png"/>
+					<BackgroundHighlight RelativePath="logo.png"/>
+					<BackgroundSelected RelativePath="logo.png"/>
+					<BackgroundDisabled RelativePath="logo.png"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+				</PUSHBUTTON>
+				<TWMGR>
+					<Parent ID="IDW_MAIN"/>
+					<ID Value="IDC_TWMGR_MAIN"/>
+					<Rect Size="848,462" Location="1,111"/>
+				</TWMGR>
+			</Controls>
+		</Window>
+		<Window>
+			<ID Value="IDW_EXAMINE_FRM"/>
+			<Rect Size="100,100" Location="0,0"/>
+			<ResizingPoint X="30" Y="30"/>
+			<IsDrawBKColor Value="true"/>
+			<BackgroundColorID Value="IDR_COLOR_BK"/>
+			<WindowResizingPoint X="0" Y="0"/>
+			<Controls>
+				<TWMGR>
+					<Parent ID="IDW_EXAMINE_FRM"/>
+					<ID Value="IDC_TWMGR_EXAMINE"/>
+					<Rect Size="100,100" Location="0,0"/>
+				</TWMGR>
+			</Controls>
+		</Window>
+		<Window>
+			<ID Value="IDW_EXAMINE"/>
+			<Rect Size="848,462" Location="0,0"/>
+			<ResizingPoint X="550" Y="450"/>
+			<BackgroundHide RelativePath="IDW_EXAMINE.bmp"/>
+			<WindowResizingPoint X="0" Y="0"/>
+			<Controls>
+				<PUSHBUTTON>
+					<Parent ID="IDW_EXAMINE"/>
+					<ID Value="IDC_BTN_SCAN"/>
+					<Rect Size="166,66" Location="225,198"/>
+					<LayoutMode Horizontal="Center" Vertical="Center"/>
+					<ParentLayoutMargin Left="0" Top="0" Right="266" Bottom="0"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="scanbutton.png"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+				</PUSHBUTTON>
+			</Controls>
+		</Window>
+		<Window>
+			<ID Value="IDW_EXAMINING"/>
+			<Rect Size="848,461" Location="0,0"/>
+			<ResizingPoint X="420" Y="455"/>
+			<BackgroundHide RelativePath="IDW_EXAMINING.png"/>
+			<WindowResizingPoint X="0" Y="0"/>
+			<Controls>
+				<PUSHBUTTON>
+					<Parent ID="IDW_EXAMINING"/>
+					<ID Value="IDC_BTN_CANCEL"/>
+					<Rect Size="73,30" Location="463,57"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+				</PUSHBUTTON>
+			</Controls>
+		</Window>
+		<Window>
+			<ID Value="IDW_DSMAIN"/>
+			<Rect Size="848,462" Location="0,0"/>
+			<ResizingPoint X="500" Y="420"/>
+			<BackgroundHide RelativePath="IDW_DSMAIN.bmp"/>
+			<WindowResizingPoint X="0" Y="0"/>
+			<Controls>
+				<PUSHBUTTON>
+					<Parent ID="IDW_DSMAIN"/>
+					<ID Value="IDC_BTN_1"/>
+					<Rect Size="129,128" Location="130,163"/>
+					<LayoutMode Horizontal="Center" Vertical="Center"/>
+					<ParentLayoutMargin Left="0" Top="0" Right="400" Bottom="0"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="diagbtn_new.png"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+				</PUSHBUTTON>
+				<PUSHBUTTON>
+					<Parent ID="IDW_DSMAIN"/>
+					<ID Value="IDC_BTN_2"/>
+					<Rect Size="129,128" Location="320,163"/>
+					<LayoutMode Horizontal="Center" Vertical="Center"/>
+					<ParentLayoutMargin Left="0" Top="0" Right="100" Bottom="0"/>
+					<IsCombineImages Value="true"/>
+					<BkCombine RelativePath="scanbuttonS_new.png"/>
+					<ForegroundAlignMode Horizontal="Left"/>
+				</PUSHBUTTON>
+			</Controls>
+		</Window>
+		<Window>
+			<ID Value="IDW_WEB"/>
+			<Rect Size="100,100" Location="0,0"/>
+			<ResizingPoint X="50" Y="50"/>
+			<BackgroundHide RelativePath="WEB.bmp"/>
+			<WindowResizingPoint X="0" Y="0"/>
+			<Controls>
+				<HTMLCTRL>
+					<Parent ID="IDW_WEB"/>
+					<ID Value="IDC_HTMLCTRL_1"/>
+					<Rect Size="100,100" Location="0,0"/>
+					<IsHideBorder Value="true"/>
+					<IsHideScrollBar Value="true"/>
+					<IsHideContextMenu Value="true"/>
+					<StartPage Value="http://www.iuishop.com"/>
+				</HTMLCTRL>
+			</Controls>
+		</Window>
+	</Windows>
+	<Resources>
+		<DefaultFont>
+			<FONT>
+				<Font Height="-12" Width="0" lfEscapement="0" Orientation="0" Weight="400" Italic="0" Underline="0" StrikeOut="0" CharSet="0" OutPrecision="3" ClipPrecision="2" Quality="1" PitchAndFamily="34" FaceName="Tahoma"/>
+			</FONT>
+		</DefaultFont>
+		<Fonts>
+			<FONT>
+				<ID Value="IDR_FONT_DEFAULT"/>
+				<Font Height="-13" Width="0" lfEscapement="0" Orientation="0" Weight="400" Italic="0" Underline="0" StrikeOut="0" CharSet="0" OutPrecision="3" ClipPrecision="2" Quality="1" PitchAndFamily="34" FaceName="微软雅黑"/>
+			</FONT>
+			<FONT>
+				<ID Value="IDR_FONT_TITLE"/>
+				<Font Height="-15" Width="0" lfEscapement="0" Orientation="0" Weight="700" Italic="0" Underline="0" StrikeOut="0" CharSet="0" OutPrecision="3" ClipPrecision="2" Quality="1" PitchAndFamily="34" FaceName="微软雅黑"/>
+			</FONT>
+		</Fonts>
+		<DefaultColor>
+			<COLOR>
+				<Color Value="#00000000"/>
+			</COLOR>
+		</DefaultColor>
+		<Colors>
+			<COLOR>
+				<ID Value="IDR_COLOR_DEFAULT"/>
+				<Color Value="#00000000"/>
+			</COLOR>
+			<COLOR>
+				<ID Value="IDR_COLOR_TITLE"/>
+				<Color Value="#00F4C45F"/>
+			</COLOR>
+			<COLOR>
+				<ID Value="IDR_COLOR_MASK"/>
+				<Color Value="#00FF00FF"/>
+			</COLOR>
+			<COLOR>
+				<ID Value="IDR_COLOR_BK"/>
+				<Color Value="#0096560F"/>
+			</COLOR>
+			<COLOR>
+				<ID Value="IDR_COLOR_WHITE"/>
+				<Color Value="#00FFFFFF"/>
+			</COLOR>
+		</Colors>
+	</Resources>
+	<Styles>
+		<PushButtons/>
+		<CheckBoxes/>
+		<RadioButtons/>
+		<ComboBoxes/>
+		<Statics/>
+		<Edits/>
+		<Sliders/>
+		<Progresses/>
+		<Spins/>
+		<HotKeys/>
+		<IPAdresses/>
+		<SliderExes/>
+		<ListControls/>
+		<TreeControls/>
+		<TreeLists/>
+		<RichEdits/>
+		<IMRichEdits/>
+		<HtmlControls/>
+		<DateTimes/>
+		<WaveControls/>
+		<Menus/>
+		<Menubars/>
+		<Headers/>
+		<HorScrollbars/>
+		<VerScrollbars/>
+		<Splitterbars/>
+		<StackPanel/>
+		<WindowlessLine/>
+		<WindowlessPicture/>
+	</Styles>
+</LibUIDKUI>

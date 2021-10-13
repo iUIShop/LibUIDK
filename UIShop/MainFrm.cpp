@@ -220,37 +220,6 @@ int CMainFrame::CustomizeProject(CNewProjectDlg *pDlg)
 	strAppClass += _T("App");
 	m_ProjectGen.m_Dictionary[_T("APP_CLASS")] = strAppClass;
 
-	// Project type
-	switch (pDlg->m_uVSEdition)
-	{
-	case IDC_RAD_VC60:
-		m_ProjectGen.m_Dictionary[_T("PROJECT_VC60")] = _T("1");
-		break;
-	case IDC_RAD_VC71:
-		m_ProjectGen.m_Dictionary[_T("PROJECT_VC71")] = _T("1");
-		break;
-	case IDC_RAD_VC80:
-		m_ProjectGen.m_Dictionary[_T("PROJECT_VC80")] = _T("1");
-		break;
-	case IDC_RAD_VC90:
-		m_ProjectGen.m_Dictionary[_T("PROJECT_VC90")] = _T("1");
-		break;
-	case IDC_RAD_VC100:
-		m_ProjectGen.m_Dictionary[_T("PROJECT_VC100")] = _T("1");
-		break;
-	case IDC_RAD_VC110:
-		m_ProjectGen.m_Dictionary[_T("PROJECT_VC110")] = _T("1");
-		break;
-	case IDC_RAD_VC120:
-		m_ProjectGen.m_Dictionary[_T("PROJECT_VC120")] = _T("1");
-		break;
-	case IDC_RAD_VC140:
-		m_ProjectGen.m_Dictionary[_T("PROJECT_VC140")] = _T("1");
-		break;
-	default:
-		break;
-	}
-
 	// MDI, the key not same as it defined in MFC.
 	switch (pDlg->m_uProType)
 	{
@@ -415,6 +384,7 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	EnableAutoHidePanes(CBRS_ALIGN_ANY);
 
 	// Load menu item image (not placed on any standard toolbars):
+	// 如果工具栏背景图*.bmp中每个图标不是16*16,下面的代码在Win10上导致崩溃。
 	CMFCToolBar::AddToolBarForImageCollection(IDR_MENU_IMAGES, theApp.m_bHiColorIcons ? IDB_MENU_IMAGES_24 : 0);
 
 	// create docking windows
@@ -428,8 +398,10 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	DockPane(&m_wndFileView);
 	m_wndProperties.EnableDocking(CBRS_ALIGN_ANY);
 	DockPane(&m_wndProperties);
+#ifdef ADV
 	m_wndStoryboard.EnableDocking(CBRS_ALIGN_ANY);
 	DockPane(&m_wndStoryboard);
+#endif
 
 	// Enable enhanced windows management dialog
 	EnableWindowsDialog(ID_WINDOW_MANAGER, IDS_WINDOWS_MANAGER, TRUE);
@@ -501,6 +473,7 @@ BOOL CMainFrame::CreateDockingWindows()
 		return FALSE; // failed to create
 	}
 
+#ifdef ADV
 	// Create storyboard panel
 	CString strStoryboardWnd;
 	bNameValid = strStoryboardWnd.LoadString(IDS_STORYBOARD_WND);
@@ -510,7 +483,7 @@ BOOL CMainFrame::CreateDockingWindows()
 		TRACE0("Failed to create Storyboaed window\n");
 		return FALSE; // failed to create
 	}
-
+#endif
 
 	SetDockingWindowIcons(theApp.m_bHiColorIcons);
 	return TRUE;
@@ -709,10 +682,12 @@ CPropertiesWnd *CMainFrame::GetPropertiesWnd()
 	return &m_wndProperties;
 }
 
+#ifdef ADV
 CStoryboardPane *CMainFrame::GetStoryboardPanel()
 {
 	return &m_wndStoryboard;
 }
+#endif
 
 int CMainFrame::GetFileMRUMessage(UINT nID, CString *pstrMsg)
 {
@@ -767,6 +742,7 @@ const std::vector<int> *CMainFrame::GetFormatBrushPropIndex() const
 
 STORY_FRAME *CMainFrame::InsertFrame()
 {
+#ifdef ADV
 	int nFrame = m_wndStoryboard.GetCurFrame();
 	if (nFrame < 0)
 	{
@@ -813,6 +789,9 @@ STORY_FRAME *CMainFrame::InsertFrame()
 	GetUIShopDoc()->SetModifiedFlag(TRUE);
 
 	return pItem;
+#else
+	return NULL;
+#endif // ADV
 }
 
 LRESULT CMainFrame::OnSetMessageString(WPARAM wParam, LPARAM lParam)

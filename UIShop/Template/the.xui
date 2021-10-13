@@ -15,6 +15,7 @@
 			<BackgroundHide RelativePath="Main.bmp"/>
 			<IsUseMaskColor Value="true"/>
 			<MaskColorResID Value="IDR_COLOR_MASK"/>
+			<IsResizing Value="true"/>
 			<IsResizingBorder Value="true"/>
 			<WindowResizingPoint X="0" Y="0"/>
 			<Controls>
@@ -88,13 +89,13 @@
 					<Rect Size="70,32" Location="340,272"/>
 					<IsCombineImages Value="true"/>
 					<BkCombine RelativePath="BtnBk.png"/>
-					<Caption Value="OK"/>
+					<ResizingPoint X="12" Y="14"/>
+				<Caption Value="OK"/>
 				</PUSHBUTTON>
 				<WL_RECTCTRL>
 					<Parent ID="IDW_MAIN"/>
-					<ID Value="IDC_WL_RECT_1"/>
+					<ID Value="IDC_WL_RECT_CHILD"/>
 					<Rect Size="222,146" Location="93,83"/>
-					<BindWindowID Value="IDW_CHILD"/>
 				</WL_RECTCTRL>
 			</Controls>
 		</Window>
@@ -111,6 +112,7 @@
 					<Rect Size="57,32" Location="14,23"/>
 					<IsCombineImages Value="true"/>
 					<BkCombine RelativePath="BtnBk.png"/>
+					<ResizingPoint X="12" Y="14"/>
 				</PUSHBUTTON>
 			</Controls>
 		</Window>

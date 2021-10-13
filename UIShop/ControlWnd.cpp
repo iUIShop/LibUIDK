@@ -38,6 +38,9 @@ CControlWnd::CControlWnd()
 	m_nIndex = 0;
 
 	m_pCtrlProperties = NULL;
+	m_hImgCombine = NULL;
+	m_hImgNormal = NULL;
+	m_hForeground = NULL;
 	m_pMoveSender = NULL;
 	m_nXMove = 0;
 	m_nYMove = 0;
@@ -57,6 +60,7 @@ CControlWnd::~CControlWnd()
 BEGIN_MESSAGE_MAP(CControlWnd, CWnd)
 	//{{AFX_MSG_MAP(CControlWnd)
 	ON_WM_CREATE()
+	ON_WM_DESTROY()
 	ON_WM_PAINT()
 	ON_WM_NCHITTEST()
 	ON_WM_GETMINMAXINFO()
@@ -96,6 +100,28 @@ int CControlWnd::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	}
 
 	return 0;
+}
+
+void CControlWnd::OnDestroy()
+{
+	CWnd::OnDestroy();
+
+	// TODO: Add your message handler code here
+	if (NULL != m_hImgCombine)
+	{
+		ReleaseIUIImage(m_hImgCombine);
+		m_hImgCombine = NULL;
+	}
+	if (NULL != m_hImgNormal)
+	{
+		ReleaseIUIImage(m_hImgNormal);
+		m_hImgNormal = NULL;
+	}
+	if (NULL != m_hForeground)
+	{
+		ReleaseIUIImage(m_hForeground);
+		m_hForeground = NULL;
+	}
 }
 
 int GetControlPreviewFont(HFONT *phFont, const CTRLPROPERTIES *pCtrlProp)
@@ -277,34 +303,40 @@ int CControlWnd::DrawControlImage(
 
 			if (bCombineBk)
 			{
-				HIUIIMAGE hImgNormal = CreateIUIImage(strBmpNormal[0]);
+				if (NULL == m_hImgCombine)
+				{
+					m_hImgCombine = CreateIUIImage(strBmpNormal[0]);
+				}
 
-				if (hImgNormal->GetSafeHBITMAP() != NULL)
+				if (m_hImgCombine->GetSafeHBITMAP() != NULL)
 				{
 					if (eBkImgResizeMode == IRM_9GRID)
 					{
-						IUIPartNineGridBlt(pDC->GetSafeHdc(), rcDest, hImgNormal,
+						IUIPartNineGridBlt(pDC->GetSafeHdc(), rcDest, m_hImgCombine,
 							pCtrlProp->m_ptImageResize, pCtrlProp->m_uXRepeatPixel, pCtrlProp->m_uYRepeatPixel,
 							nPart, 0);
 					}
 					else if (eBkImgResizeMode == IRM_STRETCH
 						|| eBkImgResizeMode == IRM_STRETCH_HIGH_QUALITY)
 					{
-						IUIPartStretchBlt(pDC->GetSafeHdc(), rcDest, hImgNormal, nPart, 0,
+						IUIPartStretchBlt(pDC->GetSafeHdc(), rcDest, m_hImgCombine, nPart, 0,
 							eBkImgResizeMode);
 					}
 				}
 			}
 			else
 			{
-				HIUIIMAGE hImgNormal = CreateIUIImage(strBmpNormal[1]);
+				if (NULL == m_hImgNormal)
+				{
+					m_hImgNormal = CreateIUIImage(strBmpNormal[1]);
+				}
 
-				if (hImgNormal->GetSafeHBITMAP() != NULL)
+				if (m_hImgNormal->GetSafeHBITMAP() != NULL)
 				{
 					if (eBkImgResizeMode == IRM_9GRID)
 					{
 						IUINineGridBltEx(pDC->GetSafeHdc(), rcDest,
-							hImgNormal,
+							m_hImgNormal,
 							pCtrlProp->m_ptImageResize, pCtrlProp->m_uXRepeatPixel, pCtrlProp->m_uYRepeatPixel,
 							-1, (BYTE)(LONG)pCtrlProp->m_lBkImgTransparent);
 					}
@@ -312,18 +344,18 @@ int CControlWnd::DrawControlImage(
 						|| eBkImgResizeMode == IRM_STRETCH_HIGH_QUALITY)
 					{
 						IUIAlphaStretchBlt(pDC->GetSafeHdc(), rcDest,
-							hImgNormal, (BYTE)(LONG)pCtrlProp->m_lBkImgTransparent,
+							m_hImgNormal, (BYTE)(LONG)pCtrlProp->m_lBkImgTransparent,
 							eBkImgResizeMode);
 					}
 					else if (eBkImgResizeMode == IRM_CENTER)
 					{
 						IUIBitBlt(
 							pDC->GetSafeHdc(),
-							(rcWnd.Width() - hImgNormal->GetWidth()) / 2,
-							(rcWnd.Height() - hImgNormal->GetHeight()) / 2,
-							hImgNormal->GetWidth(),
-							hImgNormal->GetHeight(),
-							hImgNormal,
+							(rcWnd.Width() - m_hImgNormal->GetWidth()) / 2,
+							(rcWnd.Height() - m_hImgNormal->GetHeight()) / 2,
+							m_hImgNormal->GetWidth(),
+							m_hImgNormal->GetHeight(),
+							m_hImgNormal,
 							0,
 							0,
 							SRCCOPY);
@@ -333,7 +365,6 @@ int CControlWnd::DrawControlImage(
 		}
 
 		// Draw foreground image of the control
-		HIUIIMAGE hForeground;
 		BOOL bCombineFg = TRUE;
 		CString strFgImageName[9];
 		FOREGROUND_ALIGN_HOR eFah = FAH_CENTER;
@@ -377,16 +408,16 @@ int CControlWnd::DrawControlImage(
 
 		if (bCombineFg)
 		{
-			hForeground = CreateIUIImage(strFgImageName[0]);
-			IUIPartDrawForeground(pDC->GetSafeHdc(), rcClient, rcForegroundMargin, hForeground,
-				CRect(0, 0, hForeground->GetWidth() / nPartCount, hForeground->GetHeight()),
+			m_hForeground = CreateIUIImage(strFgImageName[0]);
+			IUIPartDrawForeground(pDC->GetSafeHdc(), rcClient, rcForegroundMargin, m_hForeground,
+				CRect(0, 0, m_hForeground->GetWidth() / nPartCount, m_hForeground->GetHeight()),
 				eFah, eFav, RGB(255, 0, 255), 255);
 		}
 		else
 		{
-			hForeground = CreateIUIImage(strFgImageName[1]);
+			m_hForeground = CreateIUIImage(strFgImageName[1]);
 			IUIDrawForeground(pDC->GetSafeHdc(),
-				rcClient, rcForegroundMargin, hForeground, eFah, eFav, RGB(255, 0, 255), 255);
+				rcClient, rcForegroundMargin, m_hForeground, eFah, eFav, RGB(255, 0, 255), 255);
 		}
 	}
 

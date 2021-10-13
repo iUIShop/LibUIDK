@@ -1,17 +1,29 @@
+// ChildWnd.h : interface of the CChildWnd class
+//
 #pragma once
 
-
-class CChildWndHandler : public CUIWndHandler
+class CChildWnd : public CUIWnd
 {
 public:
-	CChildWndHandler(UINT uWinID);
-	~CChildWndHandler();
+	CChildWnd();
+	virtual ~CChildWnd();
+	void WindowID() { IDD = IDW_CHILD; }
 
 protected:
-	afx_msg LRESULT OnCreate(CUIWnd *pUIWnd, WPARAM wParam, LPARAM lParam);
-	afx_msg LRESULT OnDestroy(CUIWnd *pUIWnd, WPARAM wParam, LPARAM lParam);
-	afx_msg LRESULT OnGetChildMsgHandler(CUIWnd *pUIWnd, WPARAM wParam, LPARAM lParam);
-	afx_msg LRESULT OnReleaseChildMsgHandler(CUIWnd *pUIWnd, WPARAM wParam, LPARAM lParam);
-	afx_msg LRESULT OnBtnChild(CUIWnd *pUIWnd, WPARAM wParam, LPARAM lParam);
-	IUI_DECLARE_MESSAGE_MAP()
+	int InitControls();
+
+public:
+
+protected:
+	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+	// Generated message map functions
+protected:
+	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
+	afx_msg void OnBtnChild();
+	DECLARE_MESSAGE_MAP()
+
+protected:
+	CSkinButton *m_pBtnChild;
+
+public:
 };

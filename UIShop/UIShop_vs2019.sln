@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UIShop_vs2019", "UIShop_vs2019.vcxproj", "{18517454-CCE0-415E-8247-9E0622480A4D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DC979C4F-ECB2-47FE-9721-EA973F964C4E} = {DC979C4F-ECB2-47FE-9721-EA973F964C4E}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LibUIDK_vs2019", "..\LibUIDK\LibUIDK_vs2019.vcxproj", "{DC979C4F-ECB2-47FE-9721-EA973F964C4E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug Unicode|x64 = Debug Unicode|x64
+		Debug Unicode|x86 = Debug Unicode|x86
+		Release Unicode Static|x64 = Release Unicode Static|x64
+		Release Unicode Static|x86 = Release Unicode Static|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{18517454-CCE0-415E-8247-9E0622480A4D}.Debug Unicode|x64.ActiveCfg = Debug Unicode|x64
+		{18517454-CCE0-415E-8247-9E0622480A4D}.Debug Unicode|x64.Build.0 = Debug Unicode|x64
+		{18517454-CCE0-415E-8247-9E0622480A4D}.Debug Unicode|x86.ActiveCfg = Debug Unicode|Win32
+		{18517454-CCE0-415E-8247-9E0622480A4D}.Debug Unicode|x86.Build.0 = Debug Unicode|Win32
+		{18517454-CCE0-415E-8247-9E0622480A4D}.Release Unicode Static|x64.ActiveCfg = Release Unicode Static|x64
+		{18517454-CCE0-415E-8247-9E0622480A4D}.Release Unicode Static|x64.Build.0 = Release Unicode Static|x64
+		{18517454-CCE0-415E-8247-9E0622480A4D}.Release Unicode Static|x86.ActiveCfg = Release Unicode Static|Win32
+		{18517454-CCE0-415E-8247-9E0622480A4D}.Release Unicode Static|x86.Build.0 = Release Unicode Static|Win32
+		{DC979C4F-ECB2-47FE-9721-EA973F964C4E}.Debug Unicode|x64.ActiveCfg = Debug Unicode|x64
+		{DC979C4F-ECB2-47FE-9721-EA973F964C4E}.Debug Unicode|x64.Build.0 = Debug Unicode|x64
+		{DC979C4F-ECB2-47FE-9721-EA973F964C4E}.Debug Unicode|x86.ActiveCfg = Debug Unicode|Win32
+		{DC979C4F-ECB2-47FE-9721-EA973F964C4E}.Debug Unicode|x86.Build.0 = Debug Unicode|Win32
+		{DC979C4F-ECB2-47FE-9721-EA973F964C4E}.Release Unicode Static|x64.ActiveCfg = Release Unicode Static|x64
+		{DC979C4F-ECB2-47FE-9721-EA973F964C4E}.Release Unicode Static|x64.Build.0 = Release Unicode Static|x64
+		{DC979C4F-ECB2-47FE-9721-EA973F964C4E}.Release Unicode Static|x86.ActiveCfg = Release Unicode Static|Win32
+		{DC979C4F-ECB2-47FE-9721-EA973F964C4E}.Release Unicode Static|x86.Build.0 = Release Unicode Static|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C9F6AAA1-014D-4983-BF32-B1F30EDF86F2}
+	EndGlobalSection
+EndGlobal

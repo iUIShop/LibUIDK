@@ -8,6 +8,7 @@
 #pragma warning (disable : 4786)
 
 #include <AFXCMN.H>
+#include <string>
 #include <vector>
 #include <map>
 #include <afxole.h>
@@ -593,10 +594,6 @@ namespace LibUIDK
 #define BNN_DRAWTEXT				(NM_FIRST-40)
 #define TVN_HIGHLIGHTCHANGING		(NM_FIRST-50)	// Parameter same as CSkinTreeCtrl::TVN_SELCHANGING
 #define TVN_HIGHLIGHTCHANGED		(NM_FIRST-51)	// Parameter same as CSkinTreeCtrl::TVN_SELCHANGED
-#define TVN_ANIMATE_INSERT_ITEM		(NM_FIRST-52)
-#define TVN_ANIMATION_END			(NM_FIRST-53)	// The animation of show list item of CSkinTreeCtrl finished.
-#define TVN_ANIMATION_INSERT_ITEM_END (NM_FIRST-54)	// The animation of insert item of CSkinTreeCtrl finished.
-#define TVN_ANIMATION_REMOVE_ITEM_END (NM_FIRST-55)
 #define TVN_INSTANTIATE_ITEM_TEMPLATE (NM_FIRST-56)	// Instantiate tree item template. LPARAM: NMTREEVIEW *
 #define LVN_INSTANTIATE_ITEM_TEMPLATE (NM_FIRST-57)	// Instantiate list view item template. LPARAM: NMLISTVIEW *
 #define WVN_SCROLLED				(NM_FIRST-60)
@@ -1493,7 +1490,6 @@ namespace LibUIDK
 		// No Add ref, Needn't release. If the image not exist, no create.
 		HIUIIMAGE GetIUIImage(LPCTSTR lpszImageFile);
 		int ReleaseIUIImage(HIUIIMAGE hIUIImage);
-		int ReleaseIUIImage(LPCTSTR lpszImageFile);
 	} // namespace ImageManager
 
 	namespace FontManager
@@ -5999,12 +5995,6 @@ return _messageEntries;\
 		int UpdateImageListCache();
 
 	public:
-		int SmoothScroll(BOOL bSmooth);
-		BOOL IsSmoothScroll() const;
-		// 设置鼠标滚轮滚动一次的进步
-		int SetVScrollMouseWhellStep(int nStep);
-		int GetVScrollMouseWhellStep() const;
-
 		int SetImages(UINT uMask, LPCTSTR lpszImageNameBkN, LPCTSTR lpszImageNameBkD);
 		int GetImages(UINT uMask,
 			BOOL *pbCombineImage,
@@ -6193,13 +6183,6 @@ return _messageEntries;\
 
 		// for drag & drop
 		int RegisterDropTarget();
-
-		// Animation mode
-		int AnimateContent(std::vector<int> &vAnimationData, int nElapse/*ms*/, BOOL bTogetherAnimate);
-		HTREEITEM AnimateInsertItem(LPCTSTR lpszItem, int nItemHeight, DWORD dwItemData, std::vector<DELETE_TREE_ITEM_ANIMATION> &vAnimationData, int nElapse/*ms*/, HTREEITEM hParent = TVI_ROOT, HTREEITEM hInsertAfter = TVI_LAST);
-		int AnimateRemoveItem(HTREEITEM hItem, std::vector<DELETE_TREE_ITEM_ANIMATION> &vAnimationData, int nElapse/*ms*/);	// Not delete item.
-		int AnimateDeleteItem(HTREEITEM hItem, std::vector<int> &vAnimationData, int nElapse/*ms*/);
-		int AnimateVerticalScroll(std::vector<int> &vAnimationData, int nElapse/*ms*/);
 
 		// Operations
 	public:
@@ -9068,7 +9051,7 @@ return _messageEntries;\
 		int GetClientAreaRect(LPRECT lpRect);
 		int ResizeRect(LPCRECT lpRectSrc, LPRECT lpRectResized);
 		CRectCtrl *GetRectChild(int nRectID);
-		CWLWnd *CUIWnd::GetDlgWLItem(int nItemID);	// WL means windowless
+		CWLWnd *GetDlgWLItem(int nItemID);	// WL means windowless
 
 		int SetWindowResizePoint(const LPPOINT lpPt);
 		int GetWindowResizePoint(LPPOINT lpPt) const;
@@ -10557,10 +10540,10 @@ return _messageEntries;\
 	protected:
 		friend class CNWUIOverItemWnd;
 		friend LRESULT NWUIElementWndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
-		friend VOID CALLBACK CNewWindowsUIPanel_OnTimer(HWND hwnd, UINT uMsg, UINT_PTR idEvent, DWORD dwTime);
 
 		afx_msg virtual int OnDeletedItem(int nRow, int nColumn, CWnd *pWndDeleted);
 		// Only LibUIDK call.
+		static VOID CALLBACK CNewWindowsUIPanel_OnTimer(HWND hwnd, UINT uMsg, UINT_PTR idEvent, DWORD dwTime);
 		afx_msg void OnTimer(HWND hwnd, UINT uMsg, UINT_PTR idEvent, DWORD dwTime);
 		virtual BOOL OnNotify(WPARAM wParam, LPARAM lParam, LRESULT *pResult);
 

@@ -12,12 +12,6 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 
-#define IDTT_ANIMATION_CONTENT				123
-#define IDTT_INSERT_ITEM					124
-#define IDTT_REMOVE_ITEM					125
-#define IDTT_DELETE_ITEM					126
-#define IDTT_VER_SCROLL						127
-
 #define TVM_GETITEMDATAINTERNAL				WM_TREECTRL + 6
 #define TVM_SETITEMDATAINTERNAL				WM_TREECTRL + 7
 
@@ -31,8 +25,6 @@ struct TV_ITEMDATA
 	{
 		lParam = 0;
 		pBindObject = NULL;
-		nItemHeight = 0;
-		nBranchHeight = 0;
 	}
 
 	~TV_ITEMDATA()
@@ -41,18 +33,7 @@ struct TV_ITEMDATA
 	}
 
 	LPARAM lParam;						// The user Item Data.
-	SItemBindObject *pBindObject;	// the bind object of the item.
-
-	// 行高，如果为0，使用tree的默认高度
-	int nItemHeight;
-
-	// 当本Item是展开状态时，表示所有可见（展开的，不一定在可视范围内）子孙Item的高度之和，不包括自己
-	// 当本Item是折叠状态时，表示展开时，能多展出来的高度。
-	// 当本item无子item时，nBranchHeight为零。
-	// 定义这个变量的目的是当展开或折叠某个Item时，能快速更新tree内容的总高度，而不需要遍历tree。
-	// 在垂直滚动Tree的时候，能快速设置第一个可见的Item m_hTop
-	// 当增加、删除、展开、折叠或修改item高度时，应该更新祖宗Item的这个值
-	int nBranchHeight;
+	SItemBindObject *pBindObject;		// the bind object of the item.
 };
 
 struct TREEMEMBER
@@ -60,19 +41,6 @@ struct TREEMEMBER
 	TREEMEMBER()
 	{
 		m_bCacheMode = FALSE;
-
-		m_bSmoothScroll = FALSE;
-		m_nVScrollMouseWhellStep = 20;
-		m_hTop = NULL;
-		m_nTopItemYOffset = 0;
-		m_nTopItemYScrollPos = 0;
-		m_bRedraw = TRUE;
-		m_cxState = 0;
-		m_cyState = 0;
-		m_cxImage = 0;
-		m_cyImage = 0;
-		m_cxMax = 0;
-		m_ptCapture.x = m_ptCapture.y = 0;
 
 		m_bTreeFirstShowed = FALSE;
 		m_hLevel1ResizedBkImage = NULL;
@@ -166,43 +134,12 @@ struct TREEMEMBER
 		m_dwHoverTime = HOVER_DEFAULT;
 		m_bHoverRepeat = FALSE;
 
-		// Animation
-		m_bAnimationMode = false;
-		m_bTogetherAnimation = FALSE;
-		m_nCurTimerTick = 0;
-
-		m_bAnimateRemoveMode = false;
-		m_hRemoveItem = NULL;
-		m_nCurRemoveItemTimerTick = 0;
-
-		m_hDeletedItem = NULL;
-		m_nCurDeleteItemTimerTick = 0;
-
-		m_nCurVerScrollTimerTick = 0;
-
-		m_bAnimationInsertItem = false;
-		m_hInsertItem = NULL;
-		m_nCurInsertItemTimerTick = 0;
-
 		m_bWindowlessNotCreateAsChild = false;
 	}
 
 	int Release()
 	{
 		m_bCacheMode = FALSE;
-
-		m_bSmoothScroll = FALSE;
-		m_nVScrollMouseWhellStep = 20;
-		m_hTop = NULL;
-		m_nTopItemYOffset = 0;
-		m_nTopItemYScrollPos = 0;
-		m_bRedraw = TRUE;
-		m_cxState = 0;
-		m_cyState = 0;
-		m_cxImage = 0;
-		m_cyImage = 0;
-		m_cxMax = 0;
-		m_ptCapture.x = m_ptCapture.y = 0;
 
 		m_bTreeFirstShowed = FALSE;
 		ReleaseIUIImage(m_hLevel1ResizedBkImage);
@@ -307,45 +244,12 @@ struct TREEMEMBER
 		m_dwHoverTime = HOVER_DEFAULT;
 		m_bHoverRepeat = FALSE;
 
-		// Animation
-		m_bAnimationMode = false;
-		m_bTogetherAnimation = FALSE;
-		m_nCurTimerTick = 0;
-
-		m_bAnimateRemoveMode = false;
-		m_hRemoveItem = NULL;
-		m_nCurRemoveItemTimerTick = 0;
-
-		m_hDeletedItem = NULL;
-		m_nCurDeleteItemTimerTick = 0;
-
-		m_nCurVerScrollTimerTick = 0;
-
-		m_bAnimationInsertItem = false;
-		m_hInsertItem = NULL;
-		m_nCurInsertItemTimerTick = 0;
-
 		m_bWindowlessNotCreateAsChild = false;
 
 		return 0;
 	}
 
 	BOOL m_bCacheMode;						// True: use cache mode to draw tree
-
-	BOOL m_bSmoothScroll;
-	int m_nVScrollMouseWhellStep;			// 鼠标滚轮滚动一次的步进
-	HTREEITEM m_hTop;						// 代替TREE::hTop. 第一个可见的Item
-	int m_nTopItemYOffset;					// 记录m_hTop相对父窗口的Y方向偏移
-	int m_nTopItemYScrollPos;				// 记录m_hTop的垂直滚动条位置
-	BOOL m_bRedraw;
-	int m_cxState;							// 状态Imagelist中图标宽度，代替TREE::cxState，因为TREE::cxState无法直接得到
-	int m_cyState;							// 状态Imagelist中图标高度，代替TREE::cyState
-	int m_cxImage;							// 常规Imagelist中图标宽度，代替TREE::cxImage
-	int m_cyImage;							// 常规Imagelist中图标高度，代替TREE::cyImage
-	POINT m_ptCapture;						// 代替TREE::ptCapture. Point where the mouse was capture
-
-	// 在hittest时，会用到这个变量
-	WORD m_cxMax;							// 最长Item的宽度，代替TREE::cxMax
 
 	// For cache draw
 	BOOL m_bTreeFirstShowed;				// Set to TRUE after the control first call WM_PAINT.
@@ -425,34 +329,9 @@ struct TREEMEMBER
 	DWORD m_dwHoverTime;
 	BOOL m_bHoverRepeat;
 
-	// The following variable for animating content. like windows 8.
-	bool m_bAnimationMode;
-	BOOL m_bTogetherAnimation;				// The items together move or not.
-	int m_nCurTimerTick;					// Times that timer implement. same as Frame.
-	std::vector<int> m_vAnimationData;
-
-	// For animate remove item.
-	bool m_bAnimateRemoveMode;
-	HTREEITEM m_hRemoveItem;
-	CBitmap m_bmpCachedRemovedItem;
-	int m_nCurRemoveItemTimerTick;
-	std::vector<DELETE_TREE_ITEM_ANIMATION> m_vRemoveItemAnimationData;
-
-	// For animate delete item.
-	HTREEITEM m_hDeletedItem;
-	int m_nCurDeleteItemTimerTick;
-	std::vector<int> m_vDeletedItemAnimationData;
-
 	//
 	int m_nCurVerScrollTimerTick;
 	std::vector<int> m_vVerScrollAnimationData;
-
-	//
-	bool m_bAnimationInsertItem;
-	HTREEITEM m_hInsertItem;
-	CBitmap m_bmpCachedInsertItem;
-	int m_nCurInsertItemTimerTick;
-	std::vector<DELETE_TREE_ITEM_ANIMATION> m_vInsertItemAnimationData;
 
 	// 对于Item绑定的windowless控件，由tree自己维护，不需要加入到WLMgr::vpWLChildren
 	// 这时，把m_bWindowlessNotCreateAsChild设置为true。
@@ -463,7 +342,6 @@ struct TREEMEMBER
 };
 
 TV_ITEMDATA *TreeView_GetItemData(HWND hwnd, TREEMEMBER *pMember, HTREEITEM hItem);
-BOOL NEAR _LibUIDK_TV_SmoothSetTopItem(HWND hTreeCtrl, TREEMEMBER *pMember, UINT wNewTop);
 
 int UpdateCustomScrollInfo(CSkinTreeCtrl *pTree)
 {
@@ -895,10 +773,6 @@ int CSkinTreeCtrl::BindStyle(const CTRLPROPERTIES *pCtrlProp)
 		{
 			SetImages(CONTROL_STATE_UNCHECKED_ALL, strImageName[1], strImageName[2]);
 		}
-		for (int i = 0; i < 1 + COMBINEIMAGESIZE2; ++i)
-		{
-			ReleaseIUIImage(strImageName[i]);
-		}
 
 		SetBkImageResizeMode(pCtrlProp->m_eBkImageResizeMode);
 		SetBkImageResizePoint(pCtrlProp->m_ptImageResize);
@@ -997,7 +871,7 @@ int CSkinTreeCtrl::BindStyle(const CTRLPROPERTIES *pCtrlProp)
 	}
 
 	// Highlight Item
-	EnableHighlightItemEffect(pTreeProp->m_bEnableHighlightItemEffect);
+	EnableHighlightItemEffect((bool)pTreeProp->m_bEnableHighlightItemEffect);
 	if (BKT_COLOR == (BACKGROUND_TYPE)pTreeProp->m_eHighlightItemBkType)
 	{
 		COLORREF cr = RGB(241, 241, 241);
@@ -1152,360 +1026,9 @@ BOOL CSkinTreeCtrl::OnChildNotify(UINT message, WPARAM wParam, LPARAM lParam, LR
 	return CTreeCtrl::OnChildNotify(message, wParam, lParam, pLResult);
 }
 
-BOOL _LibUIDK_TV_CalcScrollBars(HWND hTreeCtrl, TREEMEMBER *pMember)
-{
-	// UINT wMaxPos;
-	BOOL fChange = FALSE;
-	SCROLLINFO si;
-
-	DWORD dwStyle = (DWORD)IUIGetWindowLong(hTreeCtrl, GWL_STYLE);
-
-	if (dwStyle & TVS_NOSCROLL)
-	{
-		return FALSE;
-	}
-
-	si.cbSize = sizeof(SCROLLINFO);
-
-	int nTotalShowHeight = (int)SendMessage(hTreeCtrl, TVM_GET_TOTAL_SHOW_HEIGHT, 0, 0);
-	CRect rcClient;
-	GetClientRect(hTreeCtrl, rcClient);
-
-	if (nTotalShowHeight > rcClient.Height())
-	{
-		si.fMask = SIF_PAGE | SIF_RANGE;
-		si.nMin = 0;
-		si.nMax = nTotalShowHeight - 1;
-		si.nPage = rcClient.Height();
-
-		_LibUIDK_TV_SmoothSetTopItem(hTreeCtrl, pMember, (UINT)SetScrollInfo(hTreeCtrl, SB_VERT, &si, TRUE));
-	}
-	else
-	{
-		_LibUIDK_TV_SmoothSetTopItem(hTreeCtrl, pMember, 0);
-		SetScrollRange(hTreeCtrl, SB_VERT, 0, 0, TRUE);
-	}
-
-	return (TRUE);
-}
-
-// ----------------------------------------------------------------------------
-//
-//  Returns the first visible item below the given item in the tree.
-//
-// ----------------------------------------------------------------------------
-
-HTREEITEM _LibUIDK_TV_GetNextVisItem(HWND hTreeCtrl, HTREEITEM FAR hItem)
-{
-	if (hItem == NULL)
-	{
-		ASSERT(FALSE);
-		return NULL;
-	}
-
-	HTREEITEM hKids = TreeView_GetChild(hTreeCtrl, hItem);
-	int nState = TreeView_GetItemState(hTreeCtrl, hItem, TVIS_EXPANDED);
-	if (hKids != NULL && (nState & TVIS_EXPANDED))
-	{
-		return hKids;
-	}
-
-checkNext:
-	HTREEITEM hNext = TreeView_GetNextItem(hTreeCtrl, hItem, TVGN_NEXT);
-	if (hNext != NULL)
-	{
-		return hNext;
-	}
-
-	hItem = TreeView_GetParent(hTreeCtrl, hItem);
-	if (hItem)
-	{
-		goto checkNext;
-	}
-
-	return NULL;
-}
-
-// ----------------------------------------------------------------------------
-//
-//  根据当前垂直滚动信息，设置第一个可见Item的句柄，及这个item相对tree控件的垂直偏移
-//
-// ----------------------------------------------------------------------------
-
-HTREEITEM NEAR _LibUIDK_TV_GetShownIndexItem(TREEMEMBER *pMember, HTREEITEM hItem, HWND hTreeCtrl, int wNewScrollPos)
-{
-	HTREEITEM hRoot = (HTREEITEM)::SendMessage(hTreeCtrl, TVM_GETNEXTITEM, TVGN_ROOT, 0);
-	if (hRoot == NULL)
-	{
-		return NULL;
-	}
-
-	int nBranchHeight = (int)SendMessage(hTreeCtrl, TVM_GET_TOTAL_SHOW_HEIGHT, 0, 0);
-	CRect rcClient;
-	GetClientRect(hTreeCtrl, rcClient);
-
-	HTREEITEM hTop = NULL;
-
-	if (nBranchHeight <= rcClient.Height())
-	{
-		// 一屏可显示下
-		pMember->m_hTop = hRoot;
-		hTop = hRoot;
-		pMember->m_nTopItemYOffset = 0;
-		pMember->m_nTopItemYScrollPos = 0;
-	}
-	else
-	{
-		// 查询哪个Item的top小于tree的bottom，并且bottom大于tree的top
-		int nCountHeight = 0; // 已统计过的高度
-		HTREEITEM hCurItem = hRoot;
-		int nDefaultItemHeight = (SHORT)::SendMessage(hTreeCtrl, TVM_GETITEMHEIGHT, 0, 0L);
-
-		while (hCurItem != NULL)
-		{
-			if (nCountHeight > wNewScrollPos)
-			{
-				break;
-			}
-
-			//
-			// 如果整组不在视野范围内，整组跳过
-			//
-			TV_ITEMDATA *pTvItemData = TreeView_GetItemData(hTreeCtrl, pMember, hCurItem);
-
-
-			// 只有展开的Item，才统计它的branch高度。
-			int nBranchHeight = 0;
-			int nState = TreeView_GetItemState(hTreeCtrl, hCurItem, TVIS_EXPANDED);
-			if (IsIncludeFlag(nState, TVIS_EXPANDED))
-			{
-				nBranchHeight = pTvItemData->nBranchHeight;
-			}
-
-			int nItemHeight = (pTvItemData->nItemHeight == 0 ? nDefaultItemHeight : pTvItemData->nItemHeight);
-			if (nCountHeight + nItemHeight + nBranchHeight <= wNewScrollPos)
-			{
-				hCurItem = (HTREEITEM)::SendMessage(hTreeCtrl, TVM_GETNEXTITEM, TVGN_NEXT, (LPARAM)hCurItem);
-				nCountHeight += nItemHeight + nBranchHeight;
-				continue;
-			}
-
-			//
-			// 命中
-			//
-			if (nCountHeight <= wNewScrollPos && nCountHeight + nItemHeight > wNewScrollPos)
-			{
-				pMember->m_hTop = hCurItem;
-				hTop = hCurItem;
-				pMember->m_nTopItemYOffset = nCountHeight - wNewScrollPos;
-				pMember->m_nTopItemYScrollPos = wNewScrollPos;
-
-				break;
-			}
-
-			//
-			// 下一个可视Item
-			//
-			hCurItem = _LibUIDK_TV_GetNextVisItem(hTreeCtrl, hCurItem);
-			nCountHeight += nItemHeight;
-		}
-	}
-
-	return hTop;
-}
-
-// ----------------------------------------------------------------------------
-//
-//  与_LibUIDK_TV_GetShownIndexItem的作用相反，根据当前第一个可见Item，计算滚动位置
-//
-// ----------------------------------------------------------------------------
-
-int NEAR _LibUIDK_TV_GetTopItemScrollPos(TREEMEMBER *pMember, HTREEITEM hTopItem, HWND hTreeCtrl)
-{
-	HTREEITEM hRoot = (HTREEITEM)::SendMessage(hTreeCtrl, TVM_GETNEXTITEM, TVGN_ROOT, 0);
-	if (hRoot == NULL)
-	{
-		return 0;
-	}
-
-	int nBranchHeight = (int)SendMessage(hTreeCtrl, TVM_GET_TOTAL_SHOW_HEIGHT, 0, 0);
-	CRect rcClient;
-	GetClientRect(hTreeCtrl, rcClient);
-
-	if (nBranchHeight <= rcClient.Height())
-	{
-		// 一屏可显示下
-		return 0;
-	}
-	else
-	{
-		int nCountHeight = 0;
-		int nItemDefaultHeight = TreeView_GetItemHeight(hTreeCtrl);
-		HTREEITEM hItem = TreeView_GetRoot(hTreeCtrl);
-		while (hItem != NULL)
-		{
-			if (hItem == hTopItem)
-			{
-				pMember->m_nTopItemYScrollPos = nCountHeight - pMember->m_nTopItemYOffset;
-				break;
-			}
-
-			TV_ITEMDATA *pData = TreeView_GetItemData(hTreeCtrl, pMember, hItem);
-
-			if (pData->nItemHeight == 0)
-			{
-				nCountHeight += nItemDefaultHeight;
-			}
-			else
-			{
-				nCountHeight += pData->nItemHeight;
-			}
-
-			hItem = _LibUIDK_TV_GetNextVisItem(hTreeCtrl, hItem);
-		}
-
-		return pMember->m_nTopItemYScrollPos;
-	}
-
-	return 0;
-}
-
 BOOL TreeView_IsRedraw(HWND hTreeCtrl)
 {
 	return (BOOL)SendMessage(hTreeCtrl, WM_ISREDRAW, 0, 0);
-}
-
-// ----------------------------------------------------------------------------
-//
-//  Sets position of vertical scroll bar and scrolls window to match that
-//  position
-//
-//  每个树控件内部都定义了一个hTop变量，用来记录第一个肉眼可见的Item.
-//  本函数，会重新计算hTop
-//
-// ----------------------------------------------------------------------------
-
-BOOL NEAR _LibUIDK_TV_SmoothSetTopItem(HWND hTreeCtrl, TREEMEMBER *pMember, UINT wNewTop)
-{
-	HTREEITEM hItem = TreeView_GetRoot(hTreeCtrl);
-
-	if (!hItem)
-	{
-		return FALSE;
-	}
-
-	SCROLLINFO si;
-	si.cbSize = sizeof(SCROLLINFO);
-	si.fMask = SIF_ALL;
-	if (!GetScrollInfo(hTreeCtrl, SB_VERT, &si))
-	{
-		return FALSE;
-	}
-
-	DWORD dwStyle = (DWORD)IUIGetWindowLong(hTreeCtrl, GWL_STYLE);
-
-	if ((dwStyle & TVS_NOSCROLL) || (wNewTop == (UINT) - 1))
-	{
-		// we've wrapped around (treat as a negative index) -- use min pos
-		// or there aren't enough items to scroll
-		wNewTop = 0;
-	}
-
-	if (wNewTop > si.nMax - si.nPage + 1)
-	{
-		// we've gone too far down -- use max pos
-		wNewTop = si.nMax - si.nPage + 1;
-	}
-
-	hItem = _LibUIDK_TV_GetShownIndexItem(pMember, hItem, hTreeCtrl, wNewTop);
-
-	// BUGBUG (scotth): refreshing in regedit sometimes hits this case
-	ASSERT(hItem);
-
-	if (NULL == hItem)
-	{
-		return FALSE;
-	}
-
-	SetScrollPos(hTreeCtrl, SB_VERT, wNewTop, TRUE);
-
-	return (TRUE);
-}
-
-// ----------------------------------------------------------------------------
-//
-//  WM_VSCROLL的响应函数
-//  只设置Tree控件的第一个可视Item m_hTop。 m_hTop下面的可视Item，在绘制的时候布局。
-//
-// ----------------------------------------------------------------------------
-BOOL NEAR _LibUIDK_TV_VertScroll(HWND hTreeCtrl, TREEMEMBER *pMember, UINT wCode, UINT wOldPos, UINT wPos)
-{
-	int wNewPos = 0;
-	BOOL fChanged;
-
-	if (SendMessage(hTreeCtrl, TVM_GET_TOP_ITEM, 0, 0) == NULL)
-	{
-		return FALSE;
-	}
-
-	SCROLLINFO si;
-	si.cbSize = sizeof(SCROLLINFO);
-	si.fMask = SIF_ALL;
-	if (!GetScrollInfo(hTreeCtrl, SB_VERT, &si))
-	{
-		return FALSE;
-	}
-
-	switch (wCode)
-	{
-	case SB_BOTTOM:
-		wNewPos = si.nMax;
-		break;
-
-	case SB_ENDSCROLL:
-		wNewPos = wOldPos;
-		break;
-
-	case SB_LINEDOWN:
-		wNewPos = wOldPos + 1;
-		break;
-
-	case SB_LINEUP:
-		wNewPos = wOldPos - 1;
-		if (wNewPos < 0)
-		{
-			wNewPos = 0;
-		}
-		break;
-
-	case SB_PAGEDOWN:
-		wNewPos = wOldPos + si.nPage;
-		break;
-
-	case SB_PAGEUP:
-		wNewPos = wOldPos - si.nPage;
-		if (wNewPos < 0)
-		{
-			wNewPos = 0;
-		}
-		break;
-
-	case SB_THUMBPOSITION:
-	case SB_THUMBTRACK:
-		wNewPos = wPos;
-		break;
-
-	case SB_TOP:
-		wNewPos = 0;
-		break;
-	}
-
-	if (fChanged = _LibUIDK_TV_SmoothSetTopItem(hTreeCtrl, pMember, wNewPos))
-	{
-		InvalidateRect(hTreeCtrl, NULL, FALSE);
-		UpdateWindow(hTreeCtrl);
-	}
-	return (fChanged);
 }
 
 TV_ITEMDATA *TreeView_GetItemData(HWND hwnd, TREEMEMBER *pMember, HTREEITEM hItem)
@@ -1531,936 +1054,6 @@ TV_ITEMDATA *TreeView_GetItemData(HWND hwnd, TREEMEMBER *pMember, HTREEITEM hIte
 	return pItemData;
 }
 
-// 在tree控件插入item后，更新展开的item的总高度
-// 如果这是第一个被插入的item，把它设置为m_hTop
-int UpdateBranchHeightAfterAddItem(HWND hTreeCtrl, TREEMEMBER *pMember, HTREEITEM hNewItem)
-{
-	ASSERT(::IsWindow(hTreeCtrl));
-	if (hNewItem == NULL)
-	{
-		return -1;
-	}
-
-	TV_ITEMDATA *pItemData = TreeView_GetItemData(hTreeCtrl, pMember, hNewItem);
-	ASSERT(pItemData != NULL);
-
-	int nBranchHeightAdd = 0;
-	if (pItemData->nItemHeight == 0)
-	{
-		nBranchHeightAdd = (SHORT)::SendMessage(hTreeCtrl, TVM_GETITEMHEIGHT, 0, 0L);
-	}
-	else
-	{
-		nBranchHeightAdd = pItemData->nItemHeight;
-	}
-
-	// tree内容增加的总高度，与nBranchHeightAdd意义不一样。
-	// 当新的Item的父Item是折叠状态时，nTotalHeightAdd为0.
-	int nTotalHeightAdd = 0;
-
-	//
-	// 1. 向上一级级更新nBranchHeight
-	//
-	HTREEITEM hParent = (HTREEITEM)::SendMessage(hTreeCtrl, TVM_GETNEXTITEM, TVGN_PARENT, (LPARAM)hNewItem);
-
-	// 如果这是第一个被插入的item, 设置第一个可见的item m_hTop
-	if ((hParent == NULL) || (hParent == TVI_ROOT))
-	{
-		nTotalHeightAdd = (SHORT)::SendMessage(hTreeCtrl, TVM_GETITEMHEIGHT, 0, 0L);
-
-		HTREEITEM hTop = (HTREEITEM)::SendMessage(hTreeCtrl, TVM_GET_TOP_ITEM, 0, 0);
-		if (hTop == NULL)
-		{
-			::SendMessage(hTreeCtrl, TVM_SET_TOP_ITEM, 0, (LPARAM)hNewItem);
-		}
-	}
-
-	while (hParent != NULL)
-	{
-		TV_ITEMDATA *pParentItemData = TreeView_GetItemData(hTreeCtrl, pMember, hParent);
-
-		// 直接父Item,不论是不是折叠状态，nBranchHeight都增加
-		pParentItemData->nBranchHeight += nBranchHeightAdd;
-
-		// 碰到折叠的Item，就不再向上级父item更新了。
-		int nState = TreeView_GetItemState(hTreeCtrl, hParent, TVIS_EXPANDED);
-		if (IsIncludeFlag(nState, TVIS_EXPANDED))
-		{
-			nTotalHeightAdd = nBranchHeightAdd;
-		}
-		else
-		{
-			break;
-		}
-
-		hParent = TreeView_GetParent(hTreeCtrl, hParent);
-	}
-
-	//
-	// 2. 更新tree内容总高度
-	//
-	if (nTotalHeightAdd != 0)
-	{
-		SendMessage(hTreeCtrl, TVM_SET_TOTAL_SHOW_HEIGHT, TRUE, nTotalHeightAdd);
-	}
-
-	return 0;
-}
-
-// 在tree控件删除item后，更新展开的item的总高度
-int UpdateBranchHeightAfterDeleteItem(HWND hTreeCtrl, TREEMEMBER *pMember, HTREEITEM hDeleteItem)
-{
-	ASSERT(::IsWindow(hTreeCtrl));
-	if (hDeleteItem == NULL)
-	{
-		return -1;
-	}
-
-	TV_ITEMDATA *pItemData = TreeView_GetItemData(hTreeCtrl, pMember, hDeleteItem);
-	ASSERT(pItemData != NULL);
-
-	int nBranchHeightDelete = 0;
-	if (pItemData->nItemHeight == 0)
-	{
-		nBranchHeightDelete = (SHORT)::SendMessage(hTreeCtrl, TVM_GETITEMHEIGHT, 0, 0L);
-	}
-	else
-	{
-		nBranchHeightDelete = pItemData->nItemHeight;
-	}
-
-	int nState = TreeView_GetItemState(hTreeCtrl, hDeleteItem, TVIS_EXPANDED);
-	if (IsIncludeFlag(nState, TVIS_EXPANDED))
-	{
-		nBranchHeightDelete += pItemData->nBranchHeight;
-	}
-
-	// tree内容减小的总高度，与nBranchHeightDelete意义不一样。
-	// 当删除的Item的父Item是折叠状态时，nTotalHeighDelete为0.
-	int nTotalHeighDelete = 0;
-
-	//
-	// 1. 向上一级级更新nBranchHeight
-	//
-	HTREEITEM hParent = (HTREEITEM)::SendMessage(hTreeCtrl, TVM_GETNEXTITEM, TVGN_PARENT, (LPARAM)hDeleteItem);
-	while (hParent != NULL)
-	{
-		TV_ITEMDATA *pParentItemData = TreeView_GetItemData(hTreeCtrl, pMember, hParent);
-
-		// 不论父item是不是折叠状态，nBranchHeight都减小
-		pParentItemData->nBranchHeight -= nBranchHeightDelete;
-
-		// 碰到折叠的Item，就不再向上级父item更新了。
-		int nState = TreeView_GetItemState(hTreeCtrl, hParent, TVIS_EXPANDED);
-		if (IsIncludeFlag(nState, TVIS_EXPANDED))
-		{
-			nTotalHeighDelete = nBranchHeightDelete;
-		}
-		else
-		{
-			break;
-		}
-
-		hParent = TreeView_GetParent(hTreeCtrl, hParent);
-	}
-
-	//
-	// 2. 更新tree内容总高度
-	//
-	if (nTotalHeighDelete != 0)
-	{
-		SendMessage(hTreeCtrl, TVM_SET_TOTAL_SHOW_HEIGHT, TRUE, -nTotalHeighDelete);
-	}
-
-	return 0;
-}
-
-// 在tree控件的item高度发生变化后，更新可见的item的总高度
-int UpdateBranchHeightAfterItemHeightChanged(HWND hTreeCtrl, TREEMEMBER *pMember, HTREEITEM hItem,
-	int nItemOldHeight, int nItemNewHeight)
-{
-	ASSERT(::IsWindow(hTreeCtrl));
-	if (hItem == NULL)
-	{
-		return -1;
-	}
-
-	// 分支高度增加的值
-	int nBranchHeightAdd = nItemNewHeight - nItemOldHeight;
-
-	// tree内容增加的总高度，与nBranchHeightAdd意义不一样。
-	// 当新的Item的父Item是折叠状态时，nTotalHeightAdd为0.
-	int nTotalHeightAdd = 0;
-
-	HTREEITEM hParent = (HTREEITEM)::SendMessage(hTreeCtrl, TVM_GETNEXTITEM, TVGN_PARENT, (LPARAM)hItem);
-	if (hParent == NULL || hParent == TVI_ROOT)
-	{
-		nTotalHeightAdd = nBranchHeightAdd;
-	}
-
-	//
-	// 1. 向上一级级更新nBranchHeight
-	//
-	while (hParent != NULL)
-	{
-		TV_ITEMDATA *pParentItemData = TreeView_GetItemData(hTreeCtrl, pMember, hParent);
-
-		// 直接父Item,不论是不是折叠状态，nBranchHeight都增加
-		pParentItemData->nBranchHeight += nBranchHeightAdd;
-
-		// 碰到折叠的Item，就不再向上级父item更新了。
-		int nState = TreeView_GetItemState(hTreeCtrl, hParent, TVIS_EXPANDED);
-		if (IsIncludeFlag(nState, TVIS_EXPANDED))
-		{
-			nTotalHeightAdd = nBranchHeightAdd;
-		}
-		else
-		{
-			break;
-		}
-
-		hParent = TreeView_GetParent(hTreeCtrl, hParent);
-	}
-
-	//
-	// 2. 更新tree内容总高度
-	//
-	if (nTotalHeightAdd != 0)
-	{
-		SendMessage(hTreeCtrl, TVM_SET_TOTAL_SHOW_HEIGHT, TRUE, nTotalHeightAdd);
-	}
-
-	return 0;
-}
-
-// 在tree控件展开某个item后，更新可见的item的总高度
-int UpdateBranchHeightAfterExpand(HWND hTreeCtrl, TREEMEMBER *pMember, HTREEITEM hExpandItem, BOOL bOldExpand, BOOL bNewExpand)
-{
-	ASSERT(::IsWindow(hTreeCtrl));
-	if (hExpandItem == NULL)
-	{
-		return -1;
-	}
-
-	//
-	// 1. 被展开或合拢的Item的父Item增加的分支高度
-	//
-	int nParentBranchHeightAdd = 0;
-	BOOL fChange = FALSE; // 是否有高度的改变。
-
-	if (bOldExpand)
-	{
-		// 折叠了item
-		if (!bNewExpand)
-		{
-			TV_ITEMDATA *pData = TreeView_GetItemData(hTreeCtrl, pMember, hExpandItem);
-			nParentBranchHeightAdd = -pData->nBranchHeight;
-			fChange = TRUE;
-		}
-	}
-	else
-	{
-		// 展开了item
-		if (bNewExpand)
-		{
-			TV_ITEMDATA *pData = TreeView_GetItemData(hTreeCtrl, pMember, hExpandItem);
-			nParentBranchHeightAdd = pData->nBranchHeight;
-			fChange = TRUE;
-		}
-	}
-
-	if (!fChange)
-	{
-		return 0;
-	}
-
-	//
-	// Tree内容总高度是否增加，只有被展开或折叠的Item的所有父Item全部是展开状态，才增加。
-	//
-	BOOL bTotalHeightAdd = TRUE;
-
-	//
-	// 2. 向上一级级更新nBranchHeight, 被折叠或展开的item不需要更新nBranchHeight
-	//
-	HTREEITEM hParent = (HTREEITEM)::SendMessage(hTreeCtrl, TVM_GETNEXTITEM, TVGN_PARENT, (LPARAM)hExpandItem);
-
-	// 直接父Item，不论是否折叠，都要更新nBranchHeight
-	if (hParent != NULL)
-	{
-		TV_ITEMDATA *pParentItemData = TreeView_GetItemData(hTreeCtrl, pMember, hParent);
-		pParentItemData->nBranchHeight += nParentBranchHeightAdd;
-
-		UINT nState = TreeView_GetItemState(hTreeCtrl, hParent, TVIS_EXPANDED);
-		if (!IsIncludeFlag(nState, TVIS_EXPANDED))
-		{
-			bTotalHeightAdd = FALSE;
-		}
-	}
-
-	while (hParent != NULL)
-	{
-		hParent = (HTREEITEM)::SendMessage(hTreeCtrl, TVM_GETNEXTITEM, TVGN_PARENT, (LPARAM)hParent);
-		if (hParent == NULL)
-		{
-			break;
-		}
-
-		UINT nState = TreeView_GetItemState(hTreeCtrl, hParent, TVIS_EXPANDED);
-
-		// 碰到折叠的Item，就不再向上级父item更新了。
-		if (IsIncludeFlag(nState, TVIS_EXPANDED))
-		{
-			TV_ITEMDATA *pParentItemData = TreeView_GetItemData(hTreeCtrl, pMember, hParent);
-			pParentItemData->nBranchHeight += nParentBranchHeightAdd;
-		}
-		else
-		{
-			bTotalHeightAdd = FALSE;
-			break;
-		}
-	}
-
-	if (bTotalHeightAdd != 0)
-	{
-		SendMessage(hTreeCtrl, TVM_SET_TOTAL_SHOW_HEIGHT, TRUE, nParentBranchHeightAdd);
-	}
-
-	return 0;
-}
-
-// ----------------------------------------------------------------------------
-//
-//  Determine what part of what item is at the given (x,y) location in the
-//  tree's client area.  If the location is outside the client area, NULL is
-//  returned with the TVHT_TOLEFT, TVHT_TORIGHT, TVHT_ABOVE, and/or TVHT_BELOW
-//  flags set in the wHitCode as appropriate.  If the location is below the
-//  last item, NULL is returned with wHitCode set to TVHT_NOWHERE.  Otherwise,
-//  the item is returned with wHitCode set to either TVHT_ONITEMINDENT,
-//  TVHT_ONITEMBUTTON, TVHT_ONITEMICON, TVHT_ONITEMLABEL, or TVHT_ONITEMRIGHT
-//
-// ----------------------------------------------------------------------------
-
-HTREEITEM _LibUIDK_TV_CheckHit(HWND hTreeCtrl, TREEMEMBER *pMember, int x, int y, UINT FAR *wHitCode)
-{
-	HTREEITEM hItem = (HTREEITEM)SendMessage(hTreeCtrl, TVM_GET_TOP_ITEM, 0, 0);
-	int cxState;
-
-	TVITEMEX sItem;
-
-	*wHitCode = 0;
-
-	CRect rcWnd;
-	GetWindowRect(hTreeCtrl, rcWnd);
-
-	if (x < 0)
-	{
-		*wHitCode |= TVHT_TOLEFT;
-	}
-	else if (x > (int)rcWnd.Width())
-	{
-		*wHitCode |= TVHT_TORIGHT;
-	}
-
-	if (y < 0)
-	{
-		*wHitCode |= TVHT_ABOVE;
-	}
-	else if (y > (int)rcWnd.Height())
-	{
-		*wHitCode |= TVHT_BELOW;
-	}
-
-	if (*wHitCode)
-	{
-		return NULL;
-	}
-
-	HTREEITEM hItemRet = NULL;
-	HTREEITEM hWolk = hItem;
-	int nTopYOffset = (int)SendMessage(hTreeCtrl, TVM_GET_TOP_ITEM_YOFFSET, 0, 0);
-	int nCountHeight = 0;
-	int nDefaultItemHeight = TreeView_GetItemHeight(hTreeCtrl);
-	int cxIndent = TreeView_GetIndent(hTreeCtrl);
-	while (hWolk != NULL)
-	{
-		if (nCountHeight > y - nTopYOffset)
-		{
-			break;
-		}
-
-		// 如果整组不在视野范围内，整组跳过
-		TV_ITEMDATA *pTvItemData = TreeView_GetItemData(hTreeCtrl, pMember, hWolk);
-
-		int nBranchHeight = pTvItemData->nBranchHeight;
-		int nItemHeight = (pTvItemData->nItemHeight == 0 ? nDefaultItemHeight : pTvItemData->nItemHeight);
-		if (nCountHeight + nItemHeight + nBranchHeight <= y - nTopYOffset)
-		{
-			HTREEITEM hOldItem = hWolk;
-			hWolk = (HTREEITEM)::SendMessage(hTreeCtrl, TVM_GETNEXTITEM, TVGN_NEXT, (LPARAM)hWolk);
-
-			if (hWolk == NULL)
-			{
-				hWolk = _LibUIDK_TV_GetNextVisItem(hTreeCtrl, hOldItem);
-			}
-
-			nCountHeight += nItemHeight + nBranchHeight;
-			continue;
-		}
-
-		if (nCountHeight <= y - nTopYOffset && nCountHeight + nItemHeight > y - nTopYOffset)
-		{
-			hItemRet = hWolk;
-			break;
-		}
-
-		hWolk = _LibUIDK_TV_GetNextVisItem(hTreeCtrl, hWolk);
-		nCountHeight += nItemHeight;
-	}
-
-	if (!hItemRet)
-	{
-		*wHitCode = TVHT_NOWHERE;
-		return NULL;
-	}
-	CSize sizeBorder = (DWORD)SendMessage(hTreeCtrl, TVM_GETBORDER, 0, 0);
-	x -= (sizeBorder.cx + (hItemRet->iLevel * cxIndent));
-	x += GetScrollPos(hTreeCtrl, SB_HORZ);
-
-	LONG_PTR lStyle = IUIGetWindowLong(hTreeCtrl, GWL_STYLE);
-	if ((lStyle & (TVS_HASLINES | TVS_HASBUTTONS)) &&
-		(lStyle & TVS_LINESATROOT))
-	{
-		// Subtract some more to make up for the pluses at the root
-		x -= cxIndent;
-	}
-
-	// instead of TV_GetItem(pTree, hItemRet, TVIF_CHILDREN, &sItem);
-	sItem.mask = TVIF_CHILDREN;
-	sItem.hItem = hItemRet;
-	TreeView_GetItem(hTreeCtrl, &sItem);
-
-	CSize sizeState = (DWORD)SendMessage(hTreeCtrl, TVM_GET_STATE_IMAGE_SIZE, 0, 0);
-	CSize sizeImage = (DWORD)SendMessage(hTreeCtrl, TVM_GET_NORMAL_IMAGE_SIZE, 0, 0);
-	cxState = TV_StateIndex(&sItem) ? sizeState.cx : 0;
-	if (x <= (int)(hItemRet->iWidth + sizeImage.cx + cxState))
-	{
-		if (x >= 0)
-		{
-			if (TreeView_GetImageList(hTreeCtrl, TVSIL_STATE) != NULL && (x < cxState))
-			{
-				*wHitCode = TVHT_ONITEMSTATEICON;
-			}
-			else if (TreeView_GetImageList(hTreeCtrl, TVSIL_NORMAL) != NULL
-				&& (x < (int) sizeImage.cx + cxState))
-			{
-				*wHitCode = TVHT_ONITEMICON;
-			}
-			else
-			{
-				*wHitCode = TVHT_ONITEMLABEL;
-			}
-		}
-		else if ((x >= -cxIndent) && sItem.cChildren && (lStyle & TVS_HASBUTTONS))
-		{
-			*wHitCode = TVHT_ONITEMBUTTON;
-		}
-		else
-		{
-			*wHitCode = TVHT_ONITEMINDENT;
-		}
-	}
-	else
-	{
-		*wHitCode = TVHT_ONITEMRIGHT;
-	}
-
-	return hItemRet;
-}
-
-HTREEITEM NEAR _LibUIDK_TV_OnHitTest(HWND hTreeCtrl, TREEMEMBER *pMember, LPTV_HITTESTINFO lptvh)
-{
-	if (!lptvh)
-	{
-		return 0;    //BUGBUG: Validate LPTVHITTEST
-	}
-
-	lptvh->hItem = _LibUIDK_TV_CheckHit(hTreeCtrl, pMember, lptvh->pt.x, lptvh->pt.y, &lptvh->flags);
-
-	return lptvh->hItem;
-}
-
-void NEAR _LibUIDK_TV_CancelEditTimer(PTREE pTree)
-{
-	if (pTree->fNameEditPending)
-	{
-		KillTimer(pTree->ci.hwnd, IDT_NAMEEDIT);
-		pTree->fNameEditPending = FALSE;
-	}
-}
-
-//  This is tricky because CheckForDragBegin yields and the app may have
-//  destroyed the item we are thinking about dragging
-//
-//  To give the app some feedback, we give the hItem the drop highlight
-//  if it isn't already the caret.  This also allows us to check if the
-//  item got deleted behind our back - TV_DeleteItemRecurse makes sure
-//  that deleted items are never the hCaret or hDropTarget.
-//
-//  After TV_CheckForDragBegin, the caller must call TV_FinishCheckDrag
-//  to clean up the UI changes that TV_CheckForDragBegin temporarily
-//  performed.
-//
-BOOL _LibUIDK_TV_CheckForDragBegin(PTREE pTree, HWND hTreeCtrl, HTREEITEM hItem, int x, int y)
-{
-	BOOL fDrag;
-
-	//
-	//  If the item is not the caret, then make it the (temporary)
-	//  drop target so the user gets some feedback.
-	//
-	//  BUGBUG raymondc - If hItem == pTree->hCaret, it still might not
-	//  be visible if the control doesn't yet have focus and the treeview
-	//  is not marked showselalways.  Maybe we should just always set
-	//  hItem to DROPHILITE.
-	//
-	HTREEITEM hCaret = TreeView_GetNextItem(hTreeCtrl, NULL, TVGN_CARET);
-	if (hItem == hCaret)
-	{
-		pTree->hOldDrop = NULL;
-		pTree->fRestoreOldDrop = FALSE;
-	}
-	else
-	{
-		pTree->hOldDrop = pTree->hDropTarget;
-		pTree->fRestoreOldDrop = TRUE;
-		TV_SelectItem(pTree, TVGN_DROPHILITE, hItem, 0, TVC_BYMOUSE);
-		ASSERT(hItem == pTree->hDropTarget);
-	}
-
-	//
-	//  We are dragging the hItem if CheckForDragBegin says okay,
-	//  and TV_DeleteItemRecurse didn't wipe us out.
-	//
-	fDrag = CheckForDragBegin(hTreeCtrl, x, y) &&
-		(hItem == pTree->hDropTarget || hItem == hCaret);
-
-	return fDrag;
-}
-
-void _LibUIDK_TV_FinishCheckDrag(PTREE pTree)
-{
-	//
-	//  Clean up our temporary UI changes that happened when we started
-	//  dragging.
-	//
-	if (pTree->fRestoreOldDrop)
-	{
-		HTREEITEM hOldDrop = pTree->hOldDrop;
-		pTree->fRestoreOldDrop = FALSE;
-		pTree->hOldDrop = NULL;
-		TV_SelectItem(pTree, TVGN_DROPHILITE, hOldDrop, 0, TVC_BYMOUSE);
-	}
-}
-
-// ----------------------------------------------------------------------------
-//
-// If the tooltip bubble is up, then pop it.
-//
-// ----------------------------------------------------------------------------
-
-void _LibUIDK_TV_PopBubble(HWND hTreeCrl)
-{
-	HWND hToolTips = TreeView_GetToolTips(hTreeCrl);
-	if (hToolTips)
-	{
-		SendMessage(hToolTips, TTM_POP, 0L, 0L);
-	}
-}
-
-// ----------------------------------------------------------------------------
-//
-//  Sends a TVN_BEGINDRAG or TVN_BEGINRDRAG notification with information in the ptDrag and
-//  itemNew fields of an NM_TREEVIEW structure
-//
-// ----------------------------------------------------------------------------
-
-BOOL NEAR _LibUIDK_TV_SendBeginDrag(PTREE pTree, HWND hTreeCtrl, int code, TREEITEM FAR *hItem, int x, int y)
-{
-	NM_TREEVIEW nm;
-
-	_LibUIDK_TV_PopBubble(hTreeCtrl);            // dismiss the infotip if we start to drag
-
-	nm.itemNew.hItem = hItem;
-	nm.itemNew.state = hItem->state;
-	nm.itemNew.lParam = hItem->lParam;
-	nm.itemNew.mask = (TVIF_HANDLE | TVIF_STATE | TVIF_PARAM);
-	nm.itemOld.mask = 0;
-	nm.ptDrag.x = x;
-	nm.ptDrag.y = y;
-
-	return (BOOL)CCSendNotify(&pTree->ci, code, &nm.hdr);
-}
-
-void _LibUIDK_TV_HandleStateIconClick(HWND hTreeCtrl, HTREEITEM hItem)
-{
-	// instead of TV_GetItem(pTree, hItem, TVIF_STATE, &tvi);
-	TVITEMEX tvi;
-	tvi.mask = TVIF_STATE;
-	tvi.stateMask = TVIS_STATEIMAGEMASK;
-	tvi.hItem = hItem;
-	TreeView_GetItem(hTreeCtrl, &tvi);
-
-	int iState = STATEIMAGEMASKTOINDEX(tvi.state & tvi.stateMask);
-	iState %= (ImageList_GetImageCount(TreeView_GetImageList(hTreeCtrl, TVSIL_STATE)) - 1);
-	iState++;
-
-	tvi.mask = TVIF_STATE;
-	tvi.state = INDEXTOSTATEIMAGEMASK(iState);
-	tvi.hItem = hItem;
-
-	TreeView_SetItem(hTreeCtrl, &tvi);
-}
-
-// ----------------------------------------------------------------------------
-//
-//  WM_LBUTTONDBLCLK message -- toggle expand/collapse state of item's children
-//  WM_LBUTTONDOWN message -- on item's button, do same as WM_LBUTTONDBLCLK,
-//  otherwise select item and ensure that item is fully visible
-//
-// ----------------------------------------------------------------------------
-
-void NEAR _LibUIDK_TV_ButtonDown(PTREE pTree, HWND hTreeCtrl, UINT wMsg, UINT wFlags, int x, int y, UINT TVBD_flags)
-{
-	UINT wHitCode;
-	HTREEITEM hItem;
-	HWND hwndTree;
-	LRESULT lResult;
-#ifdef _X86_
-	NMEUDORA nmeu;
-	nmeu.MustBeNonzero = 1;
-	COMPILETIME_ASSERT(FIELD_OFFSET(NMEUDORA, MustBeNonzero) == 0x3C);
-#endif
-
-	POINT pt;
-	GetMessagePosClient(hTreeCtrl, &pt);
-	SendMessage(hTreeCtrl, TVM_SET_CAPTURE_POINT, 0, MAKELPARAM(pt.x, pt.y));
-
-	// instead of TV_DismissEdit(pTree, FALSE)
-	BOOL bRet = (BOOL)SendMessage(hTreeCtrl, TVM_ENDEDITLABELNOW, FALSE, 0);
-	if (!bRet)   // end any previous editing (accept it)
-	{
-		return;    // Something happened such that we should not process button down
-	}
-
-	// Instead of TV_CheckHit
-	TV_HITTESTINFO ht;
-	ht.pt = CPoint(x, y);
-	TreeView_HitTest(hTreeCtrl, &ht);
-	wHitCode = ht.flags;
-	hItem = ht.hItem;
-
-	// Excel likes to destroy the entire tree when it gets a double-click
-	// so we need to watch the item in case it vanishes behind our back.
-	hwndTree = hTreeCtrl;
-	LONG_PTR lStyle = IUIGetWindowLong(hTreeCtrl, GWL_STYLE);
-
-	if (wMsg == WM_LBUTTONDBLCLK)
-	{
-		//
-		// Cancel any name editing that might happen.
-		//
-
-		_LibUIDK_TV_CancelEditTimer(pTree);
-
-		int cxIndent = TreeView_GetIndent(hTreeCtrl);
-		if (wHitCode & (TVHT_ONITEM | TVHT_ONITEMBUTTON))
-		{
-			goto ExpandItem;
-		}
-
-		//
-		// Collapses node above the line double clicked on
-		//
-		else if ((lStyle & TVS_HASLINES) && (wHitCode & TVHT_ONITEMINDENT) &&
-			(abs(x % cxIndent - cxIndent / 2) <= g_cxDoubleClk))
-		{
-
-			int i;
-
-			for (i = hItem->iLevel - x / cxIndent + ((lStyle & TVS_LINESATROOT) ? 1 : 0); i > 1; i--)
-			{
-				hItem = hItem->hParent;
-			}
-
-ExpandItem:
-#ifdef _X86_
-			lResult = CCSendNotify(&pTree->ci, wFlags & MK_RBUTTON ? NM_RDBLCLK : NM_DBLCLK, &nmeu.nmhdr);
-#else
-			lResult = CCSendNotify(&pTree->ci, wFlags & MK_RBUTTON ? NM_RDBLCLK : NM_DBLCLK, NULL);
-#endif
-			if (!IsWindow(hwndTree))
-			{
-				goto bail;
-			}
-			if (!lResult)
-			{
-				// don't auto expand this if we're in single expand mode because the first click did it already
-				if (!(lStyle & TVS_SINGLEEXPAND))
-				{
-					TV_Expand(pTree, TVE_TOGGLE, hItem, TRUE);
-				}
-			}
-
-		}
-
-		pTree->fScrollWait = FALSE;
-	}
-	else        // WM_LBUTTONDOWN
-	{
-		if (wHitCode == TVHT_ONITEMBUTTON)
-		{
-			if (!CCSendNotify(&pTree->ci, NM_CLICK, NULL))
-			{
-				if (TVBD_flags & TVBD_FROMWHEEL)
-				{
-					TV_Expand(pTree, (TVBD_flags & TVBD_WHEELFORWARD) ? TVE_EXPAND : TVE_COLLAPSE, hItem, TRUE);
-				}
-				else
-				{
-					TV_Expand(pTree, TVE_TOGGLE, hItem, TRUE);
-				}
-			}
-		}
-		else if (wHitCode & TVHT_ONITEM ||
-			((lStyle & TVS_FULLROWSELECT) && (wHitCode & (TVHT_ONITEMRIGHT | TVHT_ONITEMINDENT))))
-		{
-			BOOL fSameItem, bDragging;
-
-			ASSERT(hItem);
-
-			HTREEITEM hCaret = TreeView_GetNextItem(hTreeCtrl, NULL, TVGN_CARET);
-			fSameItem = (hItem == hCaret);
-
-			if (TVBD_flags & TVBD_FROMWHEEL)
-			{
-				bDragging = FALSE;
-			}
-			else if (lStyle & TVS_DISABLEDRAGDROP)
-			{
-				bDragging = FALSE;
-			}
-			else
-			{
-				bDragging = _LibUIDK_TV_CheckForDragBegin(pTree, hTreeCtrl, hItem, x, y);
-				_LibUIDK_TV_FinishCheckDrag(pTree);
-			}
-
-			if (bDragging)
-			{
-				pTree->htiDrag = hItem;
-				_LibUIDK_TV_SendBeginDrag(pTree, hTreeCtrl, TVN_BEGINDRAG, hItem, x, y);
-				return;
-			}
-
-			if (!CCSendNotify(&pTree->ci, NM_CLICK, NULL))
-			{
-
-				if (wHitCode == TVHT_ONITEMSTATEICON &&
-					(lStyle & TVS_CHECKBOXES))
-				{
-					_LibUIDK_TV_HandleStateIconClick(hTreeCtrl, hItem);
-				}
-				else
-				{
-					// Only set the caret (selection) if not dragging
-					// instead of TV_SelectItem(pTree, TVGN_CARET, hItem, TVSIF_NOTIFY | TVSIF_UPDATENOW, TVC_BYMOUSE);
-					TreeView_SelectItem(hTreeCtrl, hItem);
-
-					if (fSameItem && (wHitCode & TVHT_ONITEMLABEL) && pTree->fFocus)
-					{
-						//
-						// The item and window are currently selected and user clicked
-						// on label.  Try to enter into name editing mode.
-						//
-						SetTimer(hTreeCtrl, IDT_NAMEEDIT, GetDoubleClickTime(), NULL);
-						pTree->fNameEditPending = TRUE;
-					}
-
-					if (fSameItem && lStyle & TVS_SINGLEEXPAND)
-					{
-						// single click on the focus item toggles expand state
-						TV_Expand(pTree, TVE_TOGGLE, hCaret, TRUE);
-					}
-				}
-			}
-		}
-		else
-		{
-			CCSendNotify(&pTree->ci, NM_CLICK, NULL);
-		}
-	}
-
-	if (!pTree->fFocus)
-	{
-		SetFocus(hTreeCtrl);
-	}
-
-bail:
-	;
-}
-
-// ----------------------------------------------------------------------------
-//
-//  Scroll window vertically as needed to make given item fully visible
-//  vertically
-//
-// ----------------------------------------------------------------------------
-
-BOOL NEAR _LibUIDK_TV_ScrollVertIntoView(PTREE pTree, TREEMEMBER *pMember, HWND hTreeCtrl, HTREEITEM hItem)
-{
-	// This function has crashed in stress before, so we need to assert the incoming parameters.
-	ASSERT(hItem);
-	ASSERT(pMember && pMember->m_hTop);
-
-	// Do nothing if the parameters are invalid
-	if (!hItem || pMember == NULL || pMember->m_hTop == NULL)
-	{
-		return FALSE;
-	}
-
-	// Do nothing if this item is not visible
-	if (!ITEM_VISIBLE(hItem))
-	{
-		return FALSE;
-	}
-
-	if (hItem->iShownIndex <= pMember->m_hTop->iShownIndex)
-	{
-		pMember->m_hTop = hItem;
-		pMember->m_nTopItemYOffset = 0;
-
-		// 更新滚动条
-		int nPos = _LibUIDK_TV_GetTopItemScrollPos(pMember, pMember->m_hTop, hTreeCtrl);
-		SetScrollPos(hTreeCtrl, SB_VERT, nPos, TRUE);
-		InvalidateRect(hTreeCtrl, NULL, FALSE);
-		return 0;
-	}
-
-	if (hItem->iShownIndex > pMember->m_hTop->iShownIndex)
-	{
-		CRect rcClient;
-		GetClientRect(hTreeCtrl, rcClient);
-
-		// 判断这个Item是不是完整的显示在tree中。
-		int nCountHeight = 0;
-		HTREEITEM hWolk = pMember->m_hTop;
-		// hItem是否完全在tree可见区域内
-		BOOL bFullInTree = FALSE;
-		do
-		{
-			TV_ITEMDATA *pData = TreeView_GetItemData(hTreeCtrl, pMember, hWolk);
-
-			int nItemHeight = pData->nItemHeight;
-			if (nItemHeight == 0)
-			{
-				nItemHeight = TreeView_GetItemHeight(hTreeCtrl);
-			}
-			nCountHeight += nItemHeight;
-
-			if (nCountHeight + pMember->m_nTopItemYOffset > rcClient.Height())
-			{
-				break;
-			}
-
-			if (hWolk == hItem)
-			{
-				bFullInTree = TRUE;
-				break;
-			}
-
-			hWolk = _LibUIDK_TV_GetNextVisItem(hTreeCtrl, hWolk);
-		}
-		while (hWolk != NULL);
-
-		if (bFullInTree)
-		{
-			InvalidateRect(hTreeCtrl, NULL, FALSE);
-			return 0;
-		}
-
-		// 如果hItem向下滚动时超出tree，则把它滚动条视频范围内，且与tree下对齐
-		// 向上遍历
-		hWolk = hItem;
-		nCountHeight = 0;
-		while (hWolk != NULL)
-		{
-			TV_ITEMDATA *pData = TreeView_GetItemData(hTreeCtrl, pMember, hWolk);
-
-			int nItemHeight = pData->nItemHeight;
-			if (nItemHeight == 0)
-			{
-				nItemHeight = TreeView_GetItemHeight(hTreeCtrl);
-			}
-			nCountHeight += nItemHeight;
-
-			if (rcClient.Height() - nCountHeight <= 0)
-			{
-				pMember->m_hTop = hWolk;
-				pMember->m_nTopItemYOffset = rcClient.Height() - nCountHeight;
-
-				// 计算垂直滚动条位置
-				int nPos = _LibUIDK_TV_GetTopItemScrollPos(pMember, pMember->m_hTop, hTreeCtrl);
-				SetScrollPos(hTreeCtrl, SB_VERT, nPos, TRUE);
-
-				break;
-			}
-
-			hWolk = TV_GetPrevVisItem(hWolk);
-		}
-
-		InvalidateRect(hTreeCtrl, NULL, FALSE);
-
-		return 0;
-	}
-
-	return FALSE;
-}
-
-LRESULT TreeParentWndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
-{
-	WNDPROC wndprocOld = CWndProcList::GetOldWndProc(hwnd, (WNDPROC)TreeParentWndProc);
-	if (wndprocOld == NULL)
-	{
-		return 0;
-	}
-
-	if (uMsg == WM_NOTIFY)
-	{
-		NMHDR *pnmhdr = (NMHDR *)lParam;
-
-		switch (pnmhdr->code)
-		{
-		// 双击父Item，或按方向键后展开或折叠父Item，不会触发TVM_EXPAND，只有调用代码Expand才会执行
-		// 所以，处理TVN_ITEMEXPANDED消息，代替处理鼠标、键盘或使用代码展开或折叠Item.
-		case TVN_ITEMEXPANDED:
-		{
-			NMTREEVIEW *pnmTree = (NMTREEVIEW *)lParam;
-			BOOL bNewExpand = ((pnmTree->itemNew.state & TVIS_EXPANDED) == TVIS_EXPANDED);
-			TREEMEMBER *pMember = (TREEMEMBER *)SendMessage(pnmhdr->hwndFrom, TVM_GET_MEMBER, 0, 0);
-			UpdateBranchHeightAfterExpand(pnmhdr->hwndFrom, pMember, pnmTree->itemNew.hItem,
-				!bNewExpand, bNewExpand);
-			_LibUIDK_TV_CalcScrollBars(pnmhdr->hwndFrom, pMember);
-		}
-		break;
-
-		default:
-			break;
-		}
-	}
-
-	return CallWindowProc(wndprocOld, hwnd, uMsg, wParam, lParam);
-}
-
 LRESULT CSkinTreeCtrl::WindowProc(UINT message, WPARAM wParam, LPARAM lParam)
 {
 	// TODO: Add your specialized code here and/or call the base class
@@ -2471,16 +1064,6 @@ LRESULT CSkinTreeCtrl::WindowProc(UINT message, WPARAM wParam, LPARAM lParam)
 	case WM_WINDOWPOSCHANGED:
 		Ctrl_OnWindowPosChanged(this, wParam, lParam);
 		break;
-
-	case WM_CREATE:
-	{
-
-		// Hook the parent.
-		WNDPROC procOld = (WNDPROC)IUISetWindowLong(GetParent()->GetSafeHwnd(),
-				GWLP_WNDPROC, (LONG_PTR)TreeParentWndProc);
-		CWndProcList::AddToMap(GetParent()->GetSafeHwnd(), procOld, (WNDPROC)TreeParentWndProc);
-	}
-	break;
 
 	case WM_GETBACKGROUND:
 	{
@@ -2516,322 +1099,6 @@ LRESULT CSkinTreeCtrl::WindowProc(UINT message, WPARAM wParam, LPARAM lParam)
 	PTREE pTree = (PTREE)GetWindowPtr(m_hWnd, 0);
 
 #define TVMP_CALCSCROLLBARS (TV_FIRST + 0x1000)
-
-	LRESULT lr = 0;
-	if (pTree != NULL && pMember->m_bSmoothScroll)
-	{
-		if (message == g_uDragImages)
-		{
-			lr = CTreeCtrl::WindowProc(message, wParam, lParam);
-			return lr;
-		}
-
-		switch (message)
-		{
-		case TVM_GETNEXTITEM:
-			if (wParam  == TVGN_FIRSTVISIBLE)
-			{
-				return (LRESULT)pMember->m_hTop;
-			}
-			break;
-
-		case TVM_INSERTITEM:
-			lr = CTreeCtrl::WindowProc(message, wParam, lParam);
-			UpdateBranchHeightAfterAddItem(m_hWnd, pMember, (HTREEITEM)lr);
-			_LibUIDK_TV_CalcScrollBars(m_hWnd, pMember);
-			return lr;
-
-		case TVM_DELETEITEM:
-		{
-			if (HTREEITEM(lParam) == pMember->m_hTop)
-			{
-				pMember->m_hTop = NULL;
-				pMember->m_nTopItemYOffset = 0;
-			}
-
-			ReleaseItemControl(HTREEITEM(lParam));
-
-			TV_ITEMDATA *pItemData = TreeView_GetItemData(m_hWnd, pMember, HTREEITEM(lParam));
-
-			UpdateBranchHeightAfterDeleteItem(m_hWnd, pMember, HTREEITEM(lParam));
-			lr = CTreeCtrl::WindowProc(message, wParam, lParam);
-			delete pItemData;
-
-			if (GetRootItem() == NULL)
-			{
-				pMember->m_cxMax = 0;
-			}
-			_LibUIDK_TV_CalcScrollBars(m_hWnd, pMember);
-		}
-
-		return lr;
-
-		case TVMP_CALCSCROLLBARS:
-			_LibUIDK_TV_CalcScrollBars(m_hWnd, pMember);
-			return 0;
-
-		case WM_SETREDRAW:
-			pMember->m_bRedraw = (BOOL)wParam;
-
-			// 这里不能调用CTreeCtrl::WindowProc(message, wParam, lParam);
-			// 因为基类在响应WM_SETREDRAW消息时，会调用TV_ScrollBarsAfterSetWidth
-			// 而TV_ScrollBarsAfterSetWidth会把滚动条位置设置成基于行的数值。
-			pTree->fRedraw = TRUE && pMember->m_bRedraw;
-			if (pTree->fRedraw)
-			{
-				// This use to only refresh the items from hTop down, this is bad as if items are inserted
-				// before the visible point within the tree then we would fail!
-				if (pTree->hRoot)
-				{
-					pTree->cShowing = TV_UpdateShownIndexes(pTree, pTree->hRoot);
-				}
-			}
-
-			if ((BOOL)wParam)
-			{
-				_LibUIDK_TV_CalcScrollBars(m_hWnd, pMember);
-				InvalidateRect(NULL, FALSE);
-			}
-			return lr;
-
-		case TVM_SETBORDER:
-			lr = CTreeCtrl::WindowProc(message, wParam, lParam);
-			_LibUIDK_TV_CalcScrollBars(m_hWnd, pMember);
-			return lr;
-
-		case WM_ISREDRAW:
-			return (LRESULT)pMember->m_bRedraw;
-
-		case WM_VSCROLL:
-		{
-			int nOldPos = GetScrollPos(SB_VERT);
-			// 仅在拖动滑块时有效, 因为WM_VSCROLL中保存的tackpos只有16位（最大值65535）
-			// 所以使用GetScrollInfo得到32位的track pos.
-			int nTrackPos = 0;
-			UINT uCode = GET_WM_VSCROLL_CODE(wParam, lParam);
-			if (uCode == SB_THUMBPOSITION || uCode == SB_THUMBTRACK)
-			{
-				SCROLLINFO si;
-				si.cbSize = sizeof(SCROLLINFO);
-				si.fMask = SIF_TRACKPOS;
-				GetScrollInfo(SB_VERT, &si, SIF_TRACKPOS);
-				nTrackPos = si.nTrackPos;
-			}
-			lr = CTreeCtrl::WindowProc(message, wParam, lParam);
-			_LibUIDK_TV_VertScroll(m_hWnd, pMember, uCode, nOldPos, nTrackPos);
-			return lr;
-		}
-
-		case WM_KEYDOWN:
-			lr = CTreeCtrl::WindowProc(message, wParam, lParam);
-			_LibUIDK_TV_ScrollVertIntoView(pTree, pMember, m_hWnd, TreeView_GetNextItem(m_hWnd, NULL, TVGN_CARET));
-			InvalidateRect(NULL);
-			return lr;
-
-		case TVM_HITTEST:
-			return (LRESULT)_LibUIDK_TV_OnHitTest(m_hWnd, pMember, (LPTV_HITTESTINFO)lParam);
-
-		case WM_LBUTTONDBLCLK:
-		case WM_LBUTTONDOWN:
-			_LibUIDK_TV_ButtonDown(pTree, m_hWnd, message, (UINT) wParam, GET_X_LPARAM(lParam), GET_Y_LPARAM(lParam), 0);
-			return 0;
-
-		case TVM_SETIMAGELIST:
-			lr = CTreeCtrl::WindowProc(message, wParam, lParam);
-
-			if (int(wParam) == TVSIL_STATE)
-			{
-				if (HIMAGELIST(lParam) != NULL)
-				{
-					ImageList_GetIconSize(HIMAGELIST(lParam), &pMember->m_cxState, &pMember->m_cyState);
-				}
-				else
-				{
-					pMember->m_cxState = 0;
-				}
-			}
-			else if (int(wParam) == TVSIL_NORMAL)
-			{
-				int cx = 0;
-				int cy = 0;
-				if (HIMAGELIST(lParam) != NULL
-					&& ImageList_GetIconSize(HIMAGELIST(lParam), &cx, &cy))
-				{
-					pMember->m_cxImage = (cx + MAGIC_INDENT);
-					pMember->m_cyImage = (SHORT)cy;
-				}
-				else
-				{
-					pMember->m_cxImage = pMember->m_cyImage = 0;
-				}
-			}
-
-			return lr;
-
-		case TVM_SELECTITEM:
-			SetRedraw(FALSE);
-			lr = CTreeCtrl::WindowProc(message, wParam, lParam);
-			SetRedraw(TRUE);
-			return lr;
-
-		case WM_MOUSEWHEEL:
-			if (pMember->m_bSmoothScroll)
-			{
-				LONG_PTR lStyle = IUIGetWindowLong(m_hWnd, GWL_STYLE);
-				BOOL bScroll = (!IsIncludeFlag(lStyle, TVS_NOSCROLL));
-
-				if (bScroll)
-				{
-					int nOldPos = GetScrollPos(SB_VERT);
-					short zDelta = HIWORD(wParam);
-					if (zDelta > 0)
-					{
-						_LibUIDK_TV_VertScroll(m_hWnd, pMember, SB_THUMBTRACK, nOldPos, max(0, nOldPos - GetVScrollMouseWhellStep()));
-					}
-					else
-					{
-						_LibUIDK_TV_VertScroll(m_hWnd, pMember, SB_THUMBTRACK, nOldPos, nOldPos + GetVScrollMouseWhellStep());
-					}
-				}
-			}
-			break;
-
-		// 支持平时隐藏滚动条，鼠标Hover时，显示滚动条
-		case WM_MOUSEMOVE:
-			if (pMember->m_bHoverScrollBarMode)
-			{
-				TRACKMOUSEEVENT tme;
-				tme.cbSize = sizeof(TRACKMOUSEEVENT);
-				tme.dwFlags = TME_LEAVE;
-				tme.hwndTrack = m_hWnd;
-				::TrackMouseEvent(&tme);
-
-				LONG_PTR lStyle = IUIGetWindowLong(m_hWnd, GWL_STYLE);
-				if (IsIncludeFlag(lStyle, TVS_NOSCROLL))
-				{
-					lStyle &= ~TVS_NOSCROLL;
-					IUISetWindowLong(m_hWnd, GWL_STYLE, lStyle);
-
-					int nOldPos = pMember->m_nTopItemYScrollPos;
-					::SendMessage(m_hWnd, TVMP_CALCSCROLLBARS, 0, 0);
-					::SetScrollPos(m_hWnd, SB_VERT, nOldPos, TRUE);
-					pMember->m_nTopItemYScrollPos = nOldPos;
-				}
-			}
-			break;
-
-		// 鼠标离开联系人列表后，隐藏滚动条
-		// 鼠标从Tree的滚动条移动到Tree的客户区后，也会收到WM_NCMOUSELEAVE
-		case WM_NCMOUSELEAVE:
-			if (pMember->m_bHoverScrollBarMode)
-			{
-				LONG_PTR lStyle = IUIGetWindowLong(m_hWnd, GWL_STYLE);
-				if (!IsIncludeFlag(lStyle, TVS_NOSCROLL))
-				{
-					POINT pt;
-					GetCursorPos(&pt);
-
-					CRect rcTree;
-					::GetWindowRect(m_hWnd, rcTree);
-
-					if (!rcTree.PtInRect(pt))
-					{
-						lStyle |= TVS_NOSCROLL;
-						IUISetWindowLong(m_hWnd, GWL_STYLE, lStyle);
-
-						::SetScrollRange(m_hWnd, SB_VERT, 0, 0, TRUE);
-					}
-				}
-			}
-			break;
-
-		// 鼠标离开联系人列表后，隐藏滚动条
-		// 鼠标移动到Tree的滚动条上后，也会收到WM_MOUSELEAVE
-		case WM_MOUSELEAVE:
-			if (pMember->m_bHoverScrollBarMode)
-			{
-				LONG_PTR lStyle = IUIGetWindowLong(m_hWnd, GWL_STYLE);
-				if (!IsIncludeFlag(lStyle, TVS_NOSCROLL))
-				{
-					POINT pt;
-					GetCursorPos(&pt);
-
-					CRect rcTree;
-					::GetWindowRect(m_hWnd, rcTree);
-
-					if (!rcTree.PtInRect(pt))
-					{
-						lStyle |= TVS_NOSCROLL;
-						IUISetWindowLong(m_hWnd, GWL_STYLE, lStyle);
-
-						::SetScrollRange(m_hWnd, SB_VERT, 0, 0, TRUE);
-					}
-				}
-			}
-			break;
-
-
-		// 自定义消息
-		case TVM_GET_TOTAL_SHOW_HEIGHT:
-			return (LRESULT)pMember->m_nTotalShowHeight;
-
-		case TVM_SET_TOTAL_SHOW_HEIGHT:
-			if ((BOOL)wParam)
-			{
-				pMember->m_nTotalShowHeight += (int)lParam;
-			}
-			else
-			{
-				pMember->m_nTotalShowHeight = (int)lParam;
-			}
-			break;
-
-		case TVM_SET_TOP_ITEM:
-			pMember->m_hTop = (HTREEITEM)lParam;
-			return 0;
-
-		case TVM_GET_TOP_ITEM:
-			return (LRESULT)pMember->m_hTop;
-
-		case TVM_SET_TOP_ITEM_YOFFSET:
-			pMember->m_nTopItemYOffset = (int)lParam;
-			return 0;
-
-		case TVM_GET_TOP_ITEM_YOFFSET:
-			return (LRESULT)pMember->m_nTopItemYOffset;
-
-		case TVM_GET_STATE_IMAGE_SIZE:
-			return (LRESULT)MAKEWORD(pMember->m_cxState, pMember->m_cyState);
-
-		case TVM_GET_NORMAL_IMAGE_SIZE:
-			return (LRESULT)MAKEWORD(pMember->m_cxImage, pMember->m_cyImage);
-
-		case TVM_SET_CXMAX:
-			pMember->m_cxMax = (WORD)wParam;
-			return 0;
-
-		case TVM_GET_CXMAX:
-			return pMember->m_cxMax;
-
-		case TVM_SET_CAPTURE_POINT:
-			pMember->m_ptCapture.x = GET_X_LPARAM(lParam);
-			pMember->m_ptCapture.y = GET_Y_LPARAM(lParam);
-			return 0;
-
-		case TVM_GET_CAPTURE_POINT:
-			return (LRESULT)MAKELPARAM(pMember->m_ptCapture.x, pMember->m_ptCapture.y);
-
-		case TVM_SET_TOPITEM_YSCROLLPOS:
-			pMember->m_nTopItemYScrollPos = (int)lParam;
-			return 0;
-
-		case TVM_GET_TOPITEM_YSCROLLPOS:
-			return pMember->m_nTopItemYScrollPos;
-
-		case WLNM_NOTCREATEASCHILD:
-			return pMember->m_bWindowlessNotCreateAsChild;
-		}
-	}
 
 	// the CTreeCtrl can't response SB_THUMBTRACK and SB_THUMBPOSITION message send by custom in Vista,
 	// but can response in XP.
@@ -3027,84 +1294,17 @@ LRESULT CSkinTreeCtrl::WindowProc(UINT message, WPARAM wParam, LPARAM lParam)
 
 			COLORREF cr = GetTextColor();
 			dcMem.SetTextColor(cr);
+			UINT uVisibleCount = GetVisibleCount();
 			HTREEITEM hTI = GetFirstVisibleItem();
-			TRACE(_T("========top %x, yOffset=%d, text=%s\n"), hTI, pMember->m_nTopItemYOffset, GetItemText(hTI));
-			int nDrawHeight = 0;// 已绘制完的item的总高度
-			int i = 0;
 			CRect rcItem;
-			rcItem.right = rcClient.right;
-			while (hTI != NULL)
+			for (UINT i = 0; (i < uVisibleCount + 1) && (hTI != NULL); ++i)
 			{
 				TV_ITEMDATA *pData = TreeView_GetItemData(m_hWnd, pMember, hTI);
-				int nItemHeight = pData->nItemHeight;
-				if (nItemHeight == 0)
-				{
-					nItemHeight = GetItemHeight();
-				}
 
-				// 第一次计算时，算上垂直偏移
-				if (nDrawHeight == 0)
-				{
-					nDrawHeight += pMember->m_nTopItemYOffset;
-				}
+				GetItemRect(hTI, rcItem, FALSE);
+				rcItem.right = rcClient.right;
 
-				rcItem.top = nDrawHeight;
-				rcItem.bottom = rcItem.top + nItemHeight;
-
-				// 超出控件，退出绘制
-				if (nDrawHeight > rcClient.Height())
-				{
-					// After the last item animation finish, kill the timer.
-					KillTimer(IDTT_ANIMATION_CONTENT);
-					pMember->m_bAnimationMode = false;
-					pMember->m_nCurTimerTick = 0;
-					pMember->m_vAnimationData.clear();
-
-					NMHDR nmhdr;
-					nmhdr.hwndFrom = m_hWnd;
-					nmhdr.idFrom = GetDlgCtrlID();
-					nmhdr.code = TVN_ANIMATION_END;
-					GetParent()->SendMessage(WM_NOTIFY, nmhdr.idFrom, LPARAM(&nmhdr));
-
-					break;
-				}
-
-				nDrawHeight += nItemHeight;
-
-				if (pMember->m_bAnimationMode)
-				{
-					// Each item's left margin is different.
-					int nFrameIndex = 0;
-					if (pMember->m_bTogetherAnimation)
-					{
-						nFrameIndex = pMember->m_nCurTimerTick;
-					}
-					else
-					{
-						if (pMember->m_nCurTimerTick - i >= 0)
-						{
-							nFrameIndex = pMember->m_nCurTimerTick - i;
-						}
-						else
-						{
-							nFrameIndex = 0;
-						}
-						if (nFrameIndex >= (int)pMember->m_vAnimationData.size())
-						{
-							nFrameIndex = (int)pMember->m_vAnimationData.size() - 1;
-						}
-					}
-
-					OnDrawItem(&dcMem, hTI, rcItem, pMember->m_vAnimationData[nFrameIndex]);
-				}
-				else if (pMember->m_bAnimateRemoveMode)
-				{
-					OnDrawItem(&dcMem, hTI, rcItem, 0);
-				}
-				else
-				{
-					OnDrawItem(&dcMem, hTI, rcItem, 0);
-				}
+				OnDrawItem(&dcMem, hTI, rcItem, 0);
 
 				hTI = GetNextVisibleItem(hTI);
 				i++;
@@ -3392,125 +1592,6 @@ LRESULT CSkinTreeCtrl::WindowProc(UINT message, WPARAM wParam, LPARAM lParam)
 		}
 	}
 
-	if (message == WM_TIMER)
-	{
-		if (wParam == IDTT_ANIMATION_CONTENT)
-		{
-			Invalidate();
-
-			pMember->m_nCurTimerTick++;
-
-			return 0;	// The List control default handle may Kill the timer.
-		}
-
-		else if (wParam == IDTT_INSERT_ITEM)
-		{
-			CRect rcItem;
-			GetItemRect(pMember->m_hInsertItem, rcItem, FALSE);
-
-			if (pMember->m_nCurInsertItemTimerTick >= (int)pMember->m_vInsertItemAnimationData.size())
-			{
-				KillTimer(IDTT_INSERT_ITEM);
-
-				pMember->m_bAnimationInsertItem = false;
-				pMember->m_hInsertItem = NULL;
-				pMember->m_nCurInsertItemTimerTick = 0;
-				pMember->m_vInsertItemAnimationData.clear();
-
-				NMHDR nmhdr;
-				nmhdr.hwndFrom = m_hWnd;
-				nmhdr.idFrom = GetDlgCtrlID();
-				nmhdr.code = TVN_ANIMATION_INSERT_ITEM_END;
-				GetParent()->SendMessage(WM_NOTIFY, nmhdr.idFrom, LPARAM(&nmhdr));
-
-				InvalidateRect(rcItem);
-
-				return 0;
-			}
-
-			InvalidateRect(rcItem);
-
-			pMember->m_nCurInsertItemTimerTick++;
-
-			return 0;
-		}
-
-		else if (wParam == IDTT_DELETE_ITEM)
-		{
-			if (pMember->m_nCurDeleteItemTimerTick >= (int)pMember->m_vDeletedItemAnimationData.size())
-			{
-				KillTimer(IDTT_DELETE_ITEM);
-				DeleteItem(pMember->m_hDeletedItem);
-
-				pMember->m_hDeletedItem = NULL;
-				pMember->m_nCurDeleteItemTimerTick = 0;
-				pMember->m_vDeletedItemAnimationData.clear();
-
-				return 0;
-			}
-
-			SetItemHeightEx(pMember->m_hDeletedItem, pMember->m_vDeletedItemAnimationData[pMember->m_nCurDeleteItemTimerTick]);
-
-			pMember->m_nCurDeleteItemTimerTick++;
-
-			return 0;
-		}
-
-		else if (wParam == IDTT_REMOVE_ITEM)
-		{
-			CRect rcItem;
-			GetItemRect(pMember->m_hRemoveItem, rcItem, FALSE);
-			InvalidateRect(rcItem);
-
-			if (pMember->m_nCurRemoveItemTimerTick == 0)
-			{
-				UpdateWindow();
-			}
-
-			pMember->m_nCurRemoveItemTimerTick++;
-
-			if (pMember->m_nCurRemoveItemTimerTick >= (int)pMember->m_vRemoveItemAnimationData.size())
-			{
-				KillTimer(IDTT_REMOVE_ITEM);
-
-				pMember->m_bAnimateRemoveMode = false;
-				pMember->m_nCurRemoveItemTimerTick = 0;
-				pMember->m_vRemoveItemAnimationData.clear();
-				pMember->m_bmpCachedRemovedItem.DeleteObject();
-
-				NMHDR nmhdr;
-				nmhdr.hwndFrom = m_hWnd;
-				nmhdr.idFrom = GetDlgCtrlID();
-				nmhdr.code = TVN_ANIMATION_REMOVE_ITEM_END;
-				NMTREEVIEW tv;
-				tv.hdr = nmhdr;
-				tv.itemNew.hItem = pMember->m_hRemoveItem;
-				GetParent()->SendMessage(WM_NOTIFY, nmhdr.idFrom, LPARAM(&tv));
-
-				return 0;
-			}
-		}
-
-		else if (wParam == IDTT_VER_SCROLL)
-		{
-			ScrollWindow(0, -pMember->m_vVerScrollAnimationData[pMember->m_nCurVerScrollTimerTick]);
-
-			pMember->m_nCurVerScrollTimerTick++;
-			if (pMember->m_nCurVerScrollTimerTick >= (int)pMember->m_vVerScrollAnimationData.size())
-			{
-				KillTimer(IDTT_VER_SCROLL);
-				SendMessage(WM_VSCROLL, MAKEWPARAM(SB_LINEDOWN, 0), (LPARAM)0);
-
-				pMember->m_nCurVerScrollTimerTick = 0;
-				pMember->m_vVerScrollAnimationData.clear();
-
-				return 0;
-			}
-
-			return 0;
-		}
-	}
-
 	if (message == TVM_GET_MEMBER)
 	{
 		return (LRESULT)pMember;
@@ -3642,45 +1723,6 @@ int CSkinTreeCtrl::UpdateImageListCache()
 }
 
 //////////////////////////////////////////////////////////////////////////
-
-int CSkinTreeCtrl::SmoothScroll(BOOL bSmooth)
-{
-	ASSERT(!::IsWindow(m_hWnd));
-
-	TREEMEMBER *pMember = (TREEMEMBER *)m_pMember;
-
-	pMember->m_bSmoothScroll = bSmooth;
-
-	return 0;
-}
-
-BOOL CSkinTreeCtrl::IsSmoothScroll() const
-{
-	TREEMEMBER *pMember = (TREEMEMBER *)m_pMember;
-
-	return pMember->m_bSmoothScroll;
-}
-
-int CSkinTreeCtrl::SetVScrollMouseWhellStep(int nStep)
-{
-	if (nStep <= 0)
-	{
-		return -1;
-	}
-
-	TREEMEMBER *pMember = (TREEMEMBER *)m_pMember;
-
-	pMember->m_nVScrollMouseWhellStep = nStep;
-
-	return 0;
-}
-
-int CSkinTreeCtrl::GetVScrollMouseWhellStep() const
-{
-	TREEMEMBER *pMember = (TREEMEMBER *)m_pMember;
-
-	return pMember->m_nVScrollMouseWhellStep;
-}
 
 // Set the images for background
 int CSkinTreeCtrl::SetImages(UINT uMask, LPCTSTR lpszImageNameN, LPCTSTR lpszImageNameD)
@@ -4462,18 +2504,13 @@ int CSkinTreeCtrl::SetItemHeightEx(HTREEITEM hItem, UINT cyItemHeight)
 		return -1;
 	}
 
-	int nItemOldHeight = pTvItemData->nItemHeight;
-	if (nItemOldHeight == 0)
-	{
-		nItemOldHeight = GetItemHeight();
-	}
+	int nItemOldHeight = GetItemHeight();
 
-	pTvItemData->nItemHeight = cyItemHeight;
-
-	UpdateBranchHeightAfterItemHeightChanged(m_hWnd, pMember, hItem,
-		nItemOldHeight, pTvItemData->nItemHeight);
-
-	_LibUIDK_TV_CalcScrollBars(m_hWnd, pMember);
+	TVITEMEX itemEx;
+	itemEx.mask = TVIF_INTEGRAL;
+	itemEx.hItem = hItem;
+	itemEx.iIntegral = cyItemHeight / nItemOldHeight;
+	BOOL bRet = (BOOL)::SendMessage(m_hWnd, TVM_SETITEM, 0, LPARAM(&itemEx));
 
 	// Must call SetRedraw(TRUE) to refresh the tree to update item rect and scroll bar.
 	SetRedraw(TRUE);
@@ -4491,7 +2528,14 @@ UINT CSkinTreeCtrl::GetItemHeightEx(HTREEITEM hItem) const
 		return 0;
 	}
 
-	return pTvItemData->nItemHeight;
+	TVITEMEX itemEx;
+	itemEx.mask = TVIF_INTEGRAL;
+	itemEx.hItem = hItem;
+	BOOL bRet = (BOOL)::SendMessage(m_hWnd, TVM_GETITEM, 0, LPARAM(&itemEx));
+
+	_ASSERT(FALSE);
+	int nItemOldHeight = GetItemHeight();
+	return itemEx.iIntegral * nItemOldHeight;
 }
 
 // Not include children's children.
@@ -4630,82 +2674,6 @@ int CSkinTreeCtrl::OnDrawItem(CDC *pDC, HTREEITEM hItem, LPCRECT lprcItem, int n
 	rcText = rcItem;
 	rcText.left = nTextLeft;
 
-	// Generate a bitmap by the item UI.
-	if (pMember->m_bAnimateRemoveMode
-		&& hItem == pMember->m_hRemoveItem
-		&& pMember->m_bmpCachedRemovedItem.GetSafeHandle() == NULL)
-	{
-		// Cache the item draw.
-		CDC dcMemDest;
-		dcMemDest.CreateCompatibleDC(pDC);
-
-		pMember->m_bmpCachedRemovedItem.CreateCompatibleBitmap(pDC, rcItem.Width(), rcItem.Height());
-		HBITMAP hBmpOld = (HBITMAP)::SelectObject(dcMemDest.GetSafeHdc(),
-				(HBITMAP)pMember->m_bmpCachedRemovedItem.GetSafeHandle());
-
-		// Copy pDC the cached bitmap
-		dcMemDest.BitBlt(0, 0, rcItem.Width(), rcItem.Height(),
-			pDC, rcItem.left, rcItem.top, SRCCOPY);
-
-		// Draw item background
-		CRect rcItemDraw = rcItem;
-		rcItemDraw.OffsetRect(-rcItem.left, -rcItem.top);
-		OnDrawItemBk(&dcMemDest, hItem, rcItemDraw);
-
-		// Draw button and image
-		CRect rcTextDraw = rcText;
-		rcTextDraw.OffsetRect(-rcItem.left, -rcItem.top);
-		OnDrawItemIcon(&dcMemDest, hItem, rcItemDraw, rcTextDraw, nLeftMargin);
-
-		// Draw text
-		OnDrawText(&dcMemDest, hItem, rcItemDraw, rcTextDraw, nLeftMargin);
-
-		::SelectObject(dcMemDest, hBmpOld);
-		//
-		// 		CWindowDC dc(NULL);
-		// 		BitBltG(dc.GetSafeHdc(), rcItem,
-		// (HBITMAP)pMember->m_bmpCachedRemovedItem.GetSafeHandle(), 0, 0, SRCCOPY);
-	}
-
-	// Generate a bitmap by the item UI.
-	if (pMember->m_bAnimationInsertItem
-		&& hItem == pMember->m_hInsertItem
-		&& pMember->m_bmpCachedInsertItem.GetSafeHandle() == NULL)
-	{
-		// Cache the item draw.
-		CDC dcMemDest;
-		dcMemDest.CreateCompatibleDC(pDC);
-
-		pMember->m_bmpCachedInsertItem.CreateCompatibleBitmap(pDC, rcItem.Width(), rcItem.Height());
-		HBITMAP hBmpOld = (HBITMAP)::SelectObject(dcMemDest.GetSafeHdc(),
-				(HBITMAP)pMember->m_bmpCachedInsertItem.GetSafeHandle());
-
-		// Copy pDC the cached bitmap
-		dcMemDest.BitBlt(0, 0, rcItem.Width(), rcItem.Height(),
-			pDC, rcItem.left, rcItem.top, SRCCOPY);
-
-		// Draw item background
-		CRect rcItemDraw = rcItem;
-		rcItemDraw.OffsetRect(-rcItem.left, -rcItem.top);
-		OnDrawItemBk(&dcMemDest, hItem, rcItemDraw);
-
-		// Draw item line
-		if (IsEnableItemLine())
-		{
-			OnDrawItemLine(&dcMemDest, hItem, rcItemDraw);
-		}
-
-		// Draw button and image
-		CRect rcTextDraw = rcText;
-		rcTextDraw.OffsetRect(-rcItem.left, -rcItem.top);
-		OnDrawItemIcon(&dcMemDest, hItem, rcItemDraw, rcTextDraw, nLeftMargin);
-
-		// Draw text
-		OnDrawText(&dcMemDest, hItem, rcItemDraw, rcTextDraw, nLeftMargin);
-
-		::SelectObject(dcMemDest, hBmpOld);
-	}
-
 	// Draw item background
 	OnDrawItemBk(pDC, hItem, rcItem);
 
@@ -4715,194 +2683,94 @@ int CSkinTreeCtrl::OnDrawItem(CDC *pDC, HTREEITEM hItem, LPCRECT lprcItem, int n
 		OnDrawItemLine(pDC, hItem, rcItem);
 	}
 
-	if (pMember->m_hRemoveItem == hItem)
+	pMember->m_bSetItemDataInternal = TRUE;
+	TV_ITEMDATA *pData = (TV_ITEMDATA *)GetItemData(hItem);
+	pMember->m_bSetItemDataInternal = FALSE;
+
+	if (pData != NULL && pData->pBindObject != NULL)
 	{
-		if (pMember->m_bAnimateRemoveMode)
+		if (pData->pBindObject->uBindWndID > 0)
 		{
-			if (pMember->m_nCurRemoveItemTimerTick > 0)
+			if (!pData->pBindObject->bAlreadyCreateChildren)
 			{
-				CRect rcDraw;
-				rcDraw.left = rcItem.CenterPoint().x
-					- rcItem.Width()
-					* pMember->m_vRemoveItemAnimationData[pMember->m_nCurRemoveItemTimerTick].nPercent
-					/ 200;
-				rcDraw.top = rcItem.CenterPoint().y
-					- rcItem.Height()
-					* pMember->m_vRemoveItemAnimationData[pMember->m_nCurRemoveItemTimerTick].nPercent
-					/ 200;
-				rcDraw.right = rcDraw.left
-					+ rcItem.Width()
-					* pMember->m_vRemoveItemAnimationData[pMember->m_nCurRemoveItemTimerTick].nPercent
-					/ 100;
-				rcDraw.bottom = rcDraw.top
-					+ rcItem.Height()
-					* pMember->m_vRemoveItemAnimationData[pMember->m_nCurRemoveItemTimerTick].nPercent
-					/ 100;
+				pMember->m_bWindowlessNotCreateAsChild = true;
+				_InstantiateItemBindTemplate(pData->pBindObject, this);
+				pMember->m_bWindowlessNotCreateAsChild = false;
 
-				// FadeInOut
-				float fAlpha = (float)pMember->m_vRemoveItemAnimationData[pMember->m_nCurRemoveItemTimerTick].nTransparent / (float)255;
-				ColorMatrix cm =
-				{
-					1.0f, 0.0f, 0.0f, 0.0f, 0.0f,
-					0.0f, 1.0f, 0.0f, 0.0f, 0.0f,
-					0.0f, 0.0f, 1.0f, 0.0f, 0.0f,
-					0.0f, 0.0f, 0.0f, fAlpha, 0.0f,
-					0.0f, 0.0f, 0.0f, 0.0f, 1.0f
-				};
-
-				ImageAttributes ia;
-				ia.SetColorMatrix(&cm);
-
-				Bitmap *bmp = Bitmap::FromHBITMAP((HBITMAP)pMember->m_bmpCachedRemovedItem.GetSafeHandle(), NULL);
-
-				Graphics g(pDC->GetSafeHdc());
-				g.DrawImage(bmp, Rect(rcDraw.left, rcDraw.top, rcDraw.Width(), rcDraw.Height()), 0, 0, rcItem.Width(), rcItem.Height(), UnitPixel, &ia);
+				// Do something on instantiating item template.
+				NMHDR nmhdr;
+				nmhdr.hwndFrom = m_hWnd;
+				nmhdr.idFrom = GetDlgCtrlID();
+				nmhdr.code = TVN_INSTANTIATE_ITEM_TEMPLATE;
+				NMTREEVIEW tvhdr;
+				tvhdr.hdr = nmhdr;
+				tvhdr.itemNew.hItem = hItem;
+				GetParent()->SendMessage(WM_NOTIFY, nmhdr.idFrom, LPARAM(&tvhdr));
 			}
-		}
-		else
-		{
-			// Remove item animation end, and Delete item animation not start. Don't show the item.
-		}
-	}
-	else if (pMember->m_hInsertItem == hItem)
-	{
-		if (pMember->m_bAnimationInsertItem
-			&& pMember->m_nCurInsertItemTimerTick < (int)pMember->m_vInsertItemAnimationData.size())
-		{
-			CRect rcDraw;
-			rcDraw.left = rcItem.CenterPoint().x
-				- rcItem.Width()
-				* pMember->m_vInsertItemAnimationData[pMember->m_nCurInsertItemTimerTick].nPercent
-				/ 200;
-			rcDraw.top = rcItem.CenterPoint().y
-				- rcItem.Height()
-				* pMember->m_vInsertItemAnimationData[pMember->m_nCurInsertItemTimerTick].nPercent
-				/ 200;
-			rcDraw.right = rcDraw.left
-				+ rcItem.Width()
-				* pMember->m_vInsertItemAnimationData[pMember->m_nCurInsertItemTimerTick].nPercent
-				/ 100;
-			rcDraw.bottom = rcDraw.top
-				+ rcItem.Height()
-				* pMember->m_vInsertItemAnimationData[pMember->m_nCurInsertItemTimerTick].nPercent
-				/ 100;
 
-			// FadeInOut
-			float fAlpha = (float)pMember->m_vInsertItemAnimationData[pMember->m_nCurInsertItemTimerTick].nTransparent / (float)255;
-			ColorMatrix cm =
+			if (pData->pBindObject->bAlreadyCreateChildren)
 			{
-				1.0f, 0.0f, 0.0f, 0.0f, 0.0f,
-				0.0f, 1.0f, 0.0f, 0.0f, 0.0f,
-				0.0f, 0.0f, 1.0f, 0.0f, 0.0f,
-				0.0f, 0.0f, 0.0f, fAlpha, 0.0f,
-				0.0f, 0.0f, 0.0f, 0.0f, 1.0f
-			};
-
-			ImageAttributes ia;
-			ia.SetColorMatrix(&cm);
-
-			Bitmap *bmp = Bitmap::FromHBITMAP((HBITMAP)pMember->m_bmpCachedInsertItem.GetSafeHandle(), NULL);
-
-			Graphics g(pDC->GetSafeHdc());
-			g.DrawImage(bmp, Rect(rcDraw.left, rcDraw.top, rcDraw.Width(), rcDraw.Height()),
-				0, 0, rcItem.Width(), rcItem.Height(), UnitPixel, &ia);
-		}
-		else
-		{
-
-		}
-	}
-	else
-	{
-		pMember->m_bSetItemDataInternal = TRUE;
-		TV_ITEMDATA *pData = (TV_ITEMDATA *)GetItemData(hItem);
-		pMember->m_bSetItemDataInternal = FALSE;
-
-		if (pData != NULL && pData->pBindObject != NULL)
-		{
-			if (pData->pBindObject->uBindWndID > 0)
-			{
-				if (!pData->pBindObject->bAlreadyCreateChildren)
+				if (!pData->pBindObject->vSubWLWnd.empty())
 				{
-					pMember->m_bWindowlessNotCreateAsChild = true;
-					_InstantiateItemBindTemplate(pData->pBindObject, this);
-					pMember->m_bWindowlessNotCreateAsChild = false;
-
-					// Do something on instantiating item template.
-					NMHDR nmhdr;
-					nmhdr.hwndFrom = m_hWnd;
-					nmhdr.idFrom = GetDlgCtrlID();
-					nmhdr.code = TVN_INSTANTIATE_ITEM_TEMPLATE;
-					NMTREEVIEW tvhdr;
-					tvhdr.hdr = nmhdr;
-					tvhdr.itemNew.hItem = hItem;
-					GetParent()->SendMessage(WM_NOTIFY, nmhdr.idFrom, LPARAM(&tvhdr));
-				}
-
-				if (pData->pBindObject->bAlreadyCreateChildren)
-				{
-					if (!pData->pBindObject->vSubWLWnd.empty())
+					// Relayout the children.
+					if (rcItem != pData->pBindObject->rcLastParentLayout)
 					{
-						// Relayout the children.
-						if (rcItem != pData->pBindObject->rcLastParentLayout)
-						{
-							_RelayoutItemBindObject(this, rcItem, pData->pBindObject);
-						}
+						_RelayoutItemBindObject(this, rcItem, pData->pBindObject);
+					}
 
-						// Draw windowless children.
-						std::vector<CChildInfo>::iterator it = pData->pBindObject->vSubWLWnd.begin();
-						for (; it != pData->pBindObject->vSubWLWnd.end(); ++it)
+					// Draw windowless children.
+					std::vector<CChildInfo>::iterator it = pData->pBindObject->vSubWLWnd.begin();
+					for (; it != pData->pBindObject->vSubWLWnd.end(); ++it)
+					{
+						CONTROL_TYPE eControlType = it->m_eControlType;
+						if (eControlType == CT_WL_RECTCTRL
+							|| eControlType == CT_WL_SPLITTER
+							|| eControlType == CT_WL_LINE
+							|| eControlType == CT_WL_TEXT
+							|| eControlType == CT_WL_PICTURE
+							|| eControlType == CT_WL_BUTTON
+							|| eControlType == CT_WL_CHECK
+							|| eControlType == CT_WL_RADIO
+							|| eControlType == CT_WL_SLIDER
+							|| eControlType == CT_WL_RICHEDIT
+							|| eControlType == CT_WL_RICHEDIT_IM
+							|| eControlType == CT_TASK_WND_MGR
+							|| eControlType == CT_PNL_DOCK
+							|| eControlType == CT_UNIFORM_GRID
+							|| eControlType == CT_PNL_STACK)
 						{
-							CONTROL_TYPE eControlType = it->m_eControlType;
-							if (eControlType == CT_WL_RECTCTRL
-								|| eControlType == CT_WL_SPLITTER
-								|| eControlType == CT_WL_LINE
-								|| eControlType == CT_WL_TEXT
-								|| eControlType == CT_WL_PICTURE
-								|| eControlType == CT_WL_BUTTON
-								|| eControlType == CT_WL_CHECK
-								|| eControlType == CT_WL_RADIO
-								|| eControlType == CT_WL_SLIDER
-								|| eControlType == CT_WL_RICHEDIT
-								|| eControlType == CT_WL_RICHEDIT_IM
-								|| eControlType == CT_TASK_WND_MGR
-								|| eControlType == CT_PNL_DOCK
-								|| eControlType == CT_UNIFORM_GRID
-								|| eControlType == CT_PNL_STACK)
+							CWLWnd *pWLWnd = (CWLWnd *)it->m_pChildCtrl;
+
+							if (!pWLWnd->IsCreated())
 							{
-								CWLWnd *pWLWnd = (CWLWnd *)it->m_pChildCtrl;
+								continue;
+							}
 
-								if (!pWLWnd->IsCreated())
-								{
-									continue;
-								}
+							if (pWLWnd->IsWindowVisible())
+							{
+								//pWLWnd->SetDrawOffset(rcItem.TopLeft());
 
-								if (pWLWnd->IsWindowVisible())
-								{
-									//pWLWnd->SetDrawOffset(rcItem.TopLeft());
+								// Apply child's region.
+								HRGN hOldRgn = ApplyWLRgn(this, pDC, pWLWnd);
 
-									// Apply child's region.
-									HRGN hOldRgn = ApplyWLRgn(this, pDC, pWLWnd);
+								DrawWLWindow(pDC->GetSafeHdc(), pWLWnd);
 
-									DrawWLWindow(pDC->GetSafeHdc(), pWLWnd);
-
-									::SelectClipRgn(pDC->GetSafeHdc(), hOldRgn);
-									DeleteObject(hOldRgn);
-								}
+								::SelectClipRgn(pDC->GetSafeHdc(), hOldRgn);
+								DeleteObject(hOldRgn);
 							}
 						}
 					}
 				}
 			}
 		}
-		else
-		{
-			// Draw button and image
-			OnDrawItemIcon(pDC, hItem, rcItem, rcText, nLeftMargin);
+	}
+	else
+	{
+		// Draw button and image
+		OnDrawItemIcon(pDC, hItem, rcItem, rcText, nLeftMargin);
 
-			// Draw text
-			OnDrawText(pDC, hItem, rcItem, rcText, nLeftMargin);
-		}
+		// Draw text
+		OnDrawText(pDC, hItem, rcItem, rcText, nLeftMargin);
 	}
 
 	// Draw focus rect
@@ -5685,123 +3553,4 @@ BOOL CSkinTreeCtrl::IsHoverScrollBarMode() const
 	TREEMEMBER *pMember = (TREEMEMBER *)m_pMember;
 
 	return pMember->m_bHoverScrollBarMode;
-}
-
-int CSkinTreeCtrl::AnimateContent(std::vector<int> &vAnimationData, int nElapse/*ms*/, BOOL bTogetherAnimate)
-{
-	TREEMEMBER *pMember = (TREEMEMBER *)m_pMember;
-
-	if (vAnimationData.size() == 0)
-	{
-		return -1;
-	}
-
-	pMember->m_bAnimationMode = true;
-	pMember->m_bTogetherAnimation = bTogetherAnimate;
-	pMember->m_nCurTimerTick = 0;
-	pMember->m_vAnimationData = vAnimationData;
-
-	SetTimer(IDTT_ANIMATION_CONTENT, nElapse, NULL);
-
-	return 0;
-}
-
-HTREEITEM CSkinTreeCtrl::AnimateInsertItem(LPCTSTR lpszItem, int nItemHeight,
-	DWORD dwItemData, std::vector<DELETE_TREE_ITEM_ANIMATION> &vAnimationData,
-	int nElapse/*ms*/, HTREEITEM hParent/* = TVI_ROOT*/, HTREEITEM hInsertAfter/* = TVI_LAST*/)
-{
-	TREEMEMBER *pMember = (TREEMEMBER *)m_pMember;
-
-	if (vAnimationData.size() == 0)
-	{
-		return NULL;
-	}
-
-	pMember->m_bAnimationInsertItem = true;
-	pMember->m_hInsertItem = InsertItem(lpszItem, hParent, hInsertAfter);
-	if (pMember->m_hInsertItem == NULL)
-	{
-		pMember->m_bAnimationInsertItem = false;
-		return NULL;
-	}
-	EnsureVisible(pMember->m_hInsertItem);
-
-	SetItemHeightEx(pMember->m_hInsertItem, nItemHeight);
-	SetItemData(pMember->m_hInsertItem, dwItemData);
-
-	pMember->m_vInsertItemAnimationData = vAnimationData;
-	SetTimer(IDTT_INSERT_ITEM, nElapse, NULL);
-
-	return pMember->m_hInsertItem;
-}
-
-// Not delete item.
-int CSkinTreeCtrl::AnimateRemoveItem(HTREEITEM hItem, std::vector<DELETE_TREE_ITEM_ANIMATION> &vAnimationData, int nElapse/*ms*/)
-{
-	TREEMEMBER *pMember = (TREEMEMBER *)m_pMember;
-
-	if (vAnimationData.size() == 0)
-	{
-		return -1;
-	}
-
-	pMember->m_bAnimateRemoveMode = true;
-	pMember->m_hRemoveItem = hItem;
-	pMember->m_vRemoveItemAnimationData = vAnimationData;
-	pMember->m_nCurRemoveItemTimerTick = 0;
-
-	SetTimer(IDTT_REMOVE_ITEM, nElapse, NULL);
-
-	return 0;
-}
-
-int CSkinTreeCtrl::AnimateDeleteItem(HTREEITEM hItem, std::vector<int> &vAnimationData, int nElapse/*ms*/)
-{
-	TREEMEMBER *pMember = (TREEMEMBER *)m_pMember;
-
-	if (vAnimationData.size() == 0)
-	{
-		return -1;
-	}
-
-	int nHeight = GetItemHeightEx(hItem);
-	if (nHeight == -1)
-	{
-		return -2;
-	}
-
-	pMember->m_hDeletedItem = hItem;
-	pMember->m_vDeletedItemAnimationData = vAnimationData;
-	pMember->m_nCurDeleteItemTimerTick = 0;
-
-	SetTimer(IDTT_DELETE_ITEM, nElapse, NULL);
-
-	return 0;
-}
-
-int CSkinTreeCtrl::AnimateVerticalScroll(std::vector<int> &vAnimationData, int nElapse/*ms*/)
-{
-	TREEMEMBER *pMember = (TREEMEMBER *)m_pMember;
-
-	if (vAnimationData.size() == 0)
-	{
-		return -1;
-	}
-
-	SCROLLINFO siv = {0};
-	siv.cbSize = sizeof(SCROLLINFO);
-	siv.fMask = SIF_ALL;
-	GetScrollInfo(SB_VERT, &siv);
-
-	if (siv.nPos + (int)siv.nPage >= siv.nMax - siv.nMin)
-	{
-		return -2;    // Already scroll to end.
-	}
-
-	pMember->m_nCurVerScrollTimerTick = 0;
-	pMember->m_vVerScrollAnimationData = vAnimationData;
-
-	SetTimer(IDTT_VER_SCROLL, nElapse, NULL);
-
-	return 0;
 }

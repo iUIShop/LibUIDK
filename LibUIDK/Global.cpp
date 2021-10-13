@@ -323,7 +323,7 @@ BOOL LibUIDK::IsWindowVisibleEx(HWND hWnd)
 {
 	BOOL bRet = FALSE;
 
-	LONG lStyle = GetWindowLong(hWnd, GWL_STYLE);
+	LONG_PTR lStyle = GetWindowLongPtr(hWnd, GWL_STYLE);
 	if ((lStyle & WS_VISIBLE) == WS_VISIBLE)
 	{
 		bRet = TRUE;
@@ -1924,14 +1924,16 @@ HFONT LibUIDK::CreateControlFont(__in FONTRESOURCEITEM *pResFontAs,
 			if (CUIMgr::IsEnableDPI())
 			{
 				LOGFONT lfDPI;
-				memcpy(&lfDPI, &(LOGFONT)pConditionFont->m_logFont, sizeof(LOGFONT));
+				LOGFONT logFont = (LOGFONT)pConditionFont->m_logFont;
+				memcpy(&lfDPI, &logFont, sizeof(LOGFONT));
 				GetDPILogFont(&lfDPI);
 
 				hFont = CreateFontIndirect(&lfDPI);
 			}
 			else
 			{
-				hFont = CreateFontIndirect(&(LOGFONT)pConditionFont->m_logFont);
+				LOGFONT logFont = (LOGFONT)pConditionFont->m_logFont;
+				hFont = CreateFontIndirect(&logFont);
 			}
 		}
 		else
@@ -1941,14 +1943,16 @@ HFONT LibUIDK::CreateControlFont(__in FONTRESOURCEITEM *pResFontAs,
 			if (CUIMgr::IsEnableDPI())
 			{
 				LOGFONT lfDPI;
-				memcpy(&lfDPI, &(LOGFONT)pResFontAs->m_pFontResProp->m_logFont, sizeof(LOGFONT));
+				LOGFONT logFont = (LOGFONT)pResFontAs->m_pFontResProp->m_logFont;
+				memcpy(&lfDPI, &logFont, sizeof(LOGFONT));
 				GetDPILogFont(&lfDPI);
 
 				hFont = CreateFontIndirect(&lfDPI);
 			}
 			else
 			{
-				hFont = CreateFontIndirect(&(LOGFONT)pResFontAs->m_pFontResProp->m_logFont);
+				LOGFONT logFont = (LOGFONT)pResFontAs->m_pFontResProp->m_logFont;
+				hFont = CreateFontIndirect(&logFont);
 			}
 		}
 	}

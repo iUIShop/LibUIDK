@@ -1,0 +1,66 @@
+/UIShop/Debug Unicode
+/UIShop/Release Unicode Static
+/LibUIDK/*.ncb
+/LibUIDK/*.opt
+/LibUIDK/*.plg
+*.sdf
+*.suo
+/LibUIDK/LibUIDK_VC140.VC.db
+/LibUIDK/LibUIDK_VC100.vcxproj.user
+*.aps
+/UIShop/UIShop_vs2010.opensdf
+/UIShop/UIShop_vs2010.vcxproj.user
+/UIShop/ipch/libuidk_vc100-bbcd57c9/libuidk100ud-c1e9d220.ipch
+/UIShop/ipch/uishop_vs2010-b27a1585/uishop_vs2010-4f852af6.ipch
+/LibUIDK/Debug100u
+/LibUIDK/Lib
+/UIShop/*.user
+/UIShop/ipch
+/UIShop/*.ncb
+/UIShop.1.0
+/LibUIDK/Debug2019u
+/LibUIDK/Debugu_vs2017
+/LibUIDK/Release2019su
+/UIShop/Debug
+/UIShop/Release
+/LibUIDK/.vs
+/UIShop/.vs
+/LibUIDK/Releasesu_vs2017
+/LibUIDK/Debug_vs2017
+/LibUIDK/Debugs_vs2017
+/LibUIDK/Debugsud_vs2017
+/LibUIDK/Release_vs2017
+/LibUIDK/Releases_vs2017
+/LibUIDK/Releaseu_vs2017
+/LibUIDK/x64
+/LibUIDK/ipch
+/UIShop/x64/Debug Unicode
+/UIShop/x64/Release Unicode Static
+/LibUIDK/LibUIDK_vs2017.vcxproj.user
+/LibUIDK/LibUIDK_vs2019.vcxproj.user
+/CombineImage
+/DirectHWND
+/Document
+/EnterpriseRegistryTool
+/Help/Images
+/Help/LibUIDK_CHS
+/Help/PreBuild
+/Help/UIShop Video Help
+/Help/UIShop_Help
+/Install
+/RegistryTool
+/Test
+/外包合作流程.txt
+/美工加皮肤编辑项目外包合同.doc
+/设置环境变量.bat
+/软件项目外包合同.doc
+/LibUIDK/Render回收代码.txt
+/LibUIDK/编译问题.txt
+/LibUIDK价格历史.txt
+/LibUIDK升级合同.doc
+/LibUIDK软件使用许可合同.doc
+/NT119Admin.exe
+/NT119用户使用参考手册.pdf
+/Help/Develop/UIWNDPROPERTIES内存布局.bmp
+/Help/LibUIDK函数改名.txt
+/LibUIDK/*.user

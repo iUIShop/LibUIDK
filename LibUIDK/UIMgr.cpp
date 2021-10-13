@@ -6532,71 +6532,71 @@ int GetExportProcAddress()
 #if (_MSC_VER <= 1310) // VC2003
 	HMODULE hComCtrl32 = LoadLibrary(_T("ComCtl32.dll"));
 
-	IUI_DPA_InsertPtr = (fnDPA_InsertPtr)GetProcAddress(hComCtrl32, "DPA_InsertPtr");
+	IUI_DPA_InsertPtr = (fnDPA_InsertPtr)GetProcAddress(hComCtrl32, _T("DPA_InsertPtr"));
 	_ASSERT(IUI_DPA_InsertPtr != NULL);
 
-	IUI_DPA_DeletePtr = (fnDPA_DeletePtr)GetProcAddress(hComCtrl32, "DPA_DeletePtr");
+	IUI_DPA_DeletePtr = (fnDPA_DeletePtr)GetProcAddress(hComCtrl32, _T("DPA_DeletePtr"));
 	_ASSERT(IUI_DPA_DeletePtr != NULL);
 
-	IUI_DPA_GetPtr = (fnDPA_GetPtr)GetProcAddress(hComCtrl32, "DPA_GetPtr");
+	IUI_DPA_GetPtr = (fnDPA_GetPtr)GetProcAddress(hComCtrl32, _T("DPA_GetPtr"));
 	_ASSERT(IUI_DPA_GetPtr != NULL);
 
-	IUI_DPA_SetPtr = (fnDPA_SetPtr)GetProcAddress(hComCtrl32, "DPA_SetPtr");
+	IUI_DPA_SetPtr = (fnDPA_SetPtr)GetProcAddress(hComCtrl32, _T("DPA_SetPtr"));
 	_ASSERT(IUI_DPA_SetPtr != NULL);
 
-	IUI_DPA_EnumCallback = (fnDPA_EnumCallback)GetProcAddress(hComCtrl32, "DPA_EnumCallback");
+	IUI_DPA_EnumCallback = (fnDPA_EnumCallback)GetProcAddress(hComCtrl32, _T("DPA_EnumCallback"));
 	_ASSERT(IUI_DPA_EnumCallback != NULL);
 
-	IUI_DPA_DeleteAllPtrs = (fnDPA_DeleteAllPtrs)GetProcAddress(hComCtrl32, "DPA_DeleteAllPtrs");
+	IUI_DPA_DeleteAllPtrs = (fnDPA_DeleteAllPtrs)GetProcAddress(hComCtrl32, _T("DPA_DeleteAllPtrs"));
 	_ASSERT(IUI_DPA_DeleteAllPtrs != NULL);
 
-	IUI_DPA_DestroyCallback = (fnDPA_DestroyCallback)GetProcAddress(hComCtrl32, "DPA_DestroyCallback");
+	IUI_DPA_DestroyCallback = (fnDPA_DestroyCallback)GetProcAddress(hComCtrl32, _T("DPA_DestroyCallback"));
 	_ASSERT(IUI_DPA_DestroyCallback != NULL);
 
-	IUI_DPA_Destroy = (fnDPA_Destroy)GetProcAddress(hComCtrl32, "DPA_Destroy");
+	IUI_DPA_Destroy = (fnDPA_Destroy)GetProcAddress(hComCtrl32, _T("DPA_Destroy"));
 	_ASSERT(IUI_DPA_Destroy != NULL);
 
-	IUI_DPA_Sort = (fnDPA_Sort)GetProcAddress(hComCtrl32, "DPA_Sort");
+	IUI_DPA_Sort = (fnDPA_Sort)GetProcAddress(hComCtrl32, _T("DPA_Sort"));
 	_ASSERT(IUI_DPA_Sort != NULL);
 
-	IUI_DPA_Create = (fnDPA_Create)GetProcAddress(hComCtrl32, "DPA_Create");
+	IUI_DPA_Create = (fnDPA_Create)GetProcAddress(hComCtrl32, _T("DPA_Create"));
 	_ASSERT(IUI_DPA_Create != NULL);
 
-	IUI_DPA_CreateEx = (fnDPA_CreateEx)GetProcAddress(hComCtrl32, "DPA_CreateEx");
+	IUI_DPA_CreateEx = (fnDPA_CreateEx)GetProcAddress(hComCtrl32, _T("DPA_CreateEx"));
 	_ASSERT(IUI_DPA_CreateEx != NULL);
 
-	IUI_DPA_Grow = (fnDPA_Grow)GetProcAddress(hComCtrl32, "DPA_Grow");
+	IUI_DPA_Grow = (fnDPA_Grow)GetProcAddress(hComCtrl32, _T("DPA_Grow"));
 	_ASSERT(IUI_DPA_Grow != NULL);
 
-	IUI_DPA_Clone = (fnDPA_Clone)GetProcAddress(hComCtrl32, "DPA_Clone");
+	IUI_DPA_Clone = (fnDPA_Clone)GetProcAddress(hComCtrl32, _T("DPA_Clone"));
 	_ASSERT(IUI_DPA_Clone != NULL);
 
-	IUI_DPA_GetPtrIndex = (fnDPA_GetPtrIndex)GetProcAddress(hComCtrl32, "DPA_GetPtrIndex");
+	IUI_DPA_GetPtrIndex = (fnDPA_GetPtrIndex)GetProcAddress(hComCtrl32, _T("DPA_GetPtrIndex"));
 	_ASSERT(IUI_DPA_GetPtrIndex != NULL);
 
 	// DSA_*
-	IUI_DSA_Destroy = (fnDSA_Destroy)GetProcAddress(hComCtrl32, "DSA_Destroy");
+	IUI_DSA_Destroy = (fnDSA_Destroy)GetProcAddress(hComCtrl32, _T("DSA_Destroy"));
 	_ASSERT(IUI_DSA_Destroy != NULL);
 
-	IUI_DSA_GetItemPtr = (fnDSA_GetItemPtr)GetProcAddress(hComCtrl32, "DSA_GetItemPtr");
+	IUI_DSA_GetItemPtr = (fnDSA_GetItemPtr)GetProcAddress(hComCtrl32, _T("DSA_GetItemPtr"));
 	_ASSERT(IUI_DSA_GetItemPtr != NULL);
 
-	IUI_DSA_InsertItem = (fnDSA_InsertItem)GetProcAddress(hComCtrl32, "DSA_InsertItem");
+	IUI_DSA_InsertItem = (fnDSA_InsertItem)GetProcAddress(hComCtrl32, _T("DSA_InsertItem"));
 	_ASSERT(IUI_DSA_InsertItem != NULL);
 
-	IUI_DSA_Create = (fnDSA_Create)GetProcAddress(hComCtrl32, "DSA_Create");
+	IUI_DSA_Create = (fnDSA_Create)GetProcAddress(hComCtrl32, _T("DSA_Create"));
 	_ASSERT(IUI_DSA_Create != NULL);
 
-	IUI_DSA_GetItem = (fnDSA_GetItem)GetProcAddress(hComCtrl32, "DSA_GetItem");
+	IUI_DSA_GetItem = (fnDSA_GetItem)GetProcAddress(hComCtrl32, _T("DSA_GetItem"));
 	_ASSERT(IUI_DSA_GetItem != NULL);
 
-	IUI_DSA_SetItem = (fnDSA_SetItem)GetProcAddress(hComCtrl32, "DSA_SetItem");
+	IUI_DSA_SetItem = (fnDSA_SetItem)GetProcAddress(hComCtrl32, _T("DSA_SetItem"));
 	_ASSERT(IUI_DSA_SetItem != NULL);
 
-	IUI_DSA_DeleteItem = (fnDSA_DeleteItem)GetProcAddress(hComCtrl32, "DSA_DeleteItem");
+	IUI_DSA_DeleteItem = (fnDSA_DeleteItem)GetProcAddress(hComCtrl32, _T("DSA_DeleteItem"));
 	_ASSERT(IUI_DSA_DeleteItem != NULL);
 
-	IUI_DSA_DestroyCallback = (fnDSA_DestroyCallback)GetProcAddress(hComCtrl32, "DSA_DestroyCallback");
+	IUI_DSA_DestroyCallback = (fnDSA_DestroyCallback)GetProcAddress(hComCtrl32, _T("DSA_DestroyCallback"));
 	_ASSERT(IUI_DSA_DestroyCallback != NULL);
 
 	FreeLibrary(hComCtrl32);
@@ -6604,7 +6604,7 @@ int GetExportProcAddress()
 
 	HMODULE hKernel32 = LoadLibrary(_T("Kernel32.dll"));
 
-	IUI_ReleaseActCtx = (fnReleaseActCtx)GetProcAddress(hKernel32, "ReleaseActCtx");
+	IUI_ReleaseActCtx = (fnReleaseActCtx)GetProcAddress(hKernel32, _T("ReleaseActCtx"));
 	_ASSERT(IUI_ReleaseActCtx != NULL);
 
 	FreeLibrary(hKernel32);
@@ -6644,32 +6644,19 @@ int CUIMgr::SetUIPath(LPCTSTR lpszUIPath, BOOL bCheckVersion/* = TRUE*/)
 	ASSERT(lpszUIPath != NULL);
 	ASSERT(AfxIsValidString(lpszUIPath));
 
-	BOOL bIsAbsolutePath = FALSE;
-	int nLen = (int)_tcslen(lpszUIPath);
-	int i = 0;
-	for (i = 0; i < nLen; ++i)
-	{
-		if (lpszUIPath[i] == ':')
-		{
-			bIsAbsolutePath = TRUE;
-			break;
-		}
-	}
+	BOOL bIsRelativePath = PathIsRelative(lpszUIPath);
 
-	if (bIsAbsolutePath)
-	{
-		m_strUIPath = lpszUIPath;
-	}
-	else
+	if (bIsRelativePath)
 	{
 		TCHAR szFullName[MAX_PATH] = {0};
 		GetModuleFileName(NULL, szFullName, MAX_PATH - 1);
-		TCHAR szDisc[_MAX_PATH] = {0};
-		TCHAR szPath[_MAX_PATH] = {0};
-		TSPLITPATH(szFullName, szDisc, _MAX_PATH, szPath, _MAX_PATH, NULL, 0, NULL, 0);
-		TSTRCAT(szDisc, _MAX_PATH, szPath);
-		m_strUIPath = szDisc;
-		m_strUIPath += lpszUIPath;
+		PathRemoveFileSpec(szFullName);
+		PathAppend(szFullName, lpszUIPath);
+		m_strUIPath = szFullName;
+	}
+	else
+	{
+		m_strUIPath = lpszUIPath;
 	}
 
 	if (!PathFileExists(m_strUIPath))

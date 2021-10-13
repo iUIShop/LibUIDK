@@ -280,8 +280,8 @@ void CIMMsg::Copy(const CIMMsg &rSrc)
 	m_nMsgEndCp = rSrc.m_nMsgEndCp;
 	m_nMsgParagraphCount = rSrc.m_nMsgParagraphCount;
 
-	int nCount = rSrc.m_vpStrRichMsg.size();
-	for (int i = 0; i < nCount ; i++)
+	size_t nCount = rSrc.m_vpStrRichMsg.size();
+	for (size_t i = 0; i < nCount ; i++)
 	{
 		const CRichMsgItem *p = rSrc.m_vpStrRichMsg[i];
 
@@ -353,8 +353,8 @@ int CIMRichEditCtrlBase::ReleaseObject()
 	}
 
 	// 释放消息
-	int nMsgCount = m_vMsg.size();
-	for (i = 0; i < nMsgCount; ++i)
+	size_t nMsgCount = m_vMsg.size();
+	for (size_t i = 0; i < nMsgCount; ++i)
 	{
 		const CIMMsg *pMsg = m_vMsg[i];
 		delete pMsg;
@@ -461,10 +461,6 @@ int CIMRichEditCtrlBase::BindStyle(const CTRLPROPERTIES *pCtrlProp)
 		{
 			IMRE_CALL_FUN(SetImages(CONTROL_STATE_UNCHECKED_ALL,
 					strImageName[1], strImageName[2], strImageName[3], strImageName[4]));
-		}
-		for (int i = 0; i < 1 + COMBINEIMAGESIZE4; ++i)
-		{
-			ReleaseIUIImage(strImageName[i]);
 		}
 	}
 
@@ -1420,7 +1416,7 @@ int CIMRichEditCtrlBase::OnDrawFace(CDC *pMemDCParent, int nMsgIndex, LPCRECT lp
 
 			GraphicsPath gp;
 			//gp.AddEllipse(0, 0, 40, 40);
-			gp.AddEllipse(rcNew.left, rcNew.top,
+			gp.AddEllipse((int)rcNew.left, rcNew.top,
 				rcNew.right - rcNew.left, rcNew.bottom - rcNew.top);
 
 			g.FillPath(&tBrush, &gp);
@@ -1442,8 +1438,8 @@ int CIMRichEditCtrlBase::GetMsgPosInGroup(int nMsgIndex)
 	const CIMMsg *pMsg = m_vMsg[nMsgIndex];
 
 #ifdef _DEBUG
-	int nc = pMsg->m_vpStrRichMsg.size();
-	for (int j = 0; j < nc ; j++)
+	size_t nc = pMsg->m_vpStrRichMsg.size();
+	for (size_t j = 0; j < nc ; j++)
 	{
 		CRichMsgItem *pitem = pMsg->m_vpStrRichMsg[j];
 		if (pitem->m_strMsgContent.Find(_T("不够再说")) >= 0)

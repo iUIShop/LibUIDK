@@ -132,7 +132,7 @@
 			</File>
 $$IF(DLG)
 			<File
-				RelativePath=".\MainWndHandler.cpp">
+				RelativePath=".\MainWnd.cpp">
 			</File>
 $$ENDIF // DLG
 			<File
@@ -203,7 +203,7 @@ $$ENDIF // IM
 			</File>
 $$IF(DLG)
 			<File
-				RelativePath=".\MainWndHandler.h">
+				RelativePath=".\MainWnd.h">
 			</File>
 $$ENDIF // DLG
 			<File

@@ -371,7 +371,7 @@ int LibUIDK::Render::DrawControlText(
 		CRect rcTest(rcText);
 		if (bMultiLine)
 		{
-			int nHeight = ::DrawText(hDstDC, lpszText, TSTRLEN(lpszText),
+			int nHeight = ::DrawText(hDstDC, lpszText, (int)TSTRLEN(lpszText),
 					rcTest, uFormat | DT_CALCRECT);
 			int nAdjustHeight = (rcText.Height() - nHeight) / 2;
 			rcText.DeflateRect(0, nAdjustHeight, 0, 0);
@@ -390,7 +390,7 @@ int LibUIDK::Render::DrawControlText(
 		CRect rcTest(rcText);
 		if (bMultiLine)
 		{
-			int nHeight = ::DrawText(hDstDC, lpszText, TSTRLEN(lpszText),
+			int nHeight = ::DrawText(hDstDC, lpszText, (int)TSTRLEN(lpszText),
 					rcTest, uFormat | DT_CALCRECT);
 			rcText.top += (rcText.Height() - nHeight);
 		}
@@ -402,7 +402,7 @@ int LibUIDK::Render::DrawControlText(
 
 	::SetBkMode(hDstDC, TRANSPARENT);
 
-	::DrawText(hDstDC, lpszText, TSTRLEN(lpszText), rcText, uFormat);
+	::DrawText(hDstDC, lpszText, (int)TSTRLEN(lpszText), rcText, uFormat);
 
 	if (hOldFont != NULL)
 	{

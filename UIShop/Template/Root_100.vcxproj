@@ -158,8 +158,8 @@ $$IF(IM)
     <ClInclude Include="StartMenu.h" />
 $$ENDIF // IM
 $$IF(DLG)
-    <ClInclude Include="ChildWndHandler.h" />
-    <ClInclude Include="MainWndHandler.h" />
+    <ClInclude Include="ChildWnd.h" />
+    <ClInclude Include="MainWnd.h" />
 $$ENDIF // DLG
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
@@ -187,8 +187,8 @@ $$IF(MDI)
     <ClCompile Include="MainFrm.cpp" />
 $$ENDIF // MDI
 $$IF(DLG)
-    <ClCompile Include="ChildWndHandler.cpp" />
-    <ClCompile Include="MainWndHandler.cpp" />
+    <ClCompile Include="ChildWnd.cpp" />
+    <ClCompile Include="MainWnd.cpp" />
 $$ENDIF // DLG
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

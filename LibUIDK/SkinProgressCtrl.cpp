@@ -148,10 +148,7 @@ int CSkinProgressCtrl::BindStyle(const CTRLPROPERTIES *pCtrlProp)
 	{
 		SetImages(CONTROL_STATE_UNCHECKED_ND, strImageName[1], strImageName[2]);
 	}
-	for (int i = 0; i < 1 + COMBINEIMAGESIZE2; ++i)
-	{
-		ReleaseIUIImage(strImageName[i]);
-	}
+
 	SetBkImageResizeMode(pCtrlProp->m_eBkImageResizeMode);
 	SetBkImageResizePoint(pCtrlProp->m_ptImageResize);
 

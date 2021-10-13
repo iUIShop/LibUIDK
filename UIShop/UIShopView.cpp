@@ -625,7 +625,9 @@ void CUIShopView::SwitchWindow(CUIDesignWnd *pwndUIDesign)
 		m_pFocusCtrlProp = NULL;
 	}
 
+#ifdef ADV
 	g_pFrm->GetStoryboardPanel()->SetBindUIWnd(m_pWndUIDesign);
+#endif
 }
 
 void CUIShopView::SwitchCtrlProperties(CTRLPROPERTIES *pCtrlResource)

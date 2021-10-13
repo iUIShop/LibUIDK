@@ -169,7 +169,8 @@ int CSkinMenu::BindStyle(const CTRLPROPERTIES *pCtrlProp)
 
 	// Set normal menu item
 	SetNormalItemTextColor(pMenuProp->m_crNormalItemText);
-	SetNormalItemFont(&(LOGFONT)pMenuProp->m_lfNormalItemText);
+	LOGFONT logFont = (LOGFONT)pMenuProp->m_lfNormalItemText;
+	SetNormalItemFont(&logFont);
 	SetNormalItemBkType(pMenuProp->m_eNormalItemBkType);
 	SetNormalItemBkColor(pMenuProp->m_crNormalItemBkColor);
 	if (m_MenuMember.m_NormalItemProp.m_eBackgroundType == BKT_IMAGE)
@@ -181,7 +182,8 @@ int CSkinMenu::BindStyle(const CTRLPROPERTIES *pCtrlProp)
 
 	// Set highlight menu item
 	SetHighlightItemTextColor(pMenuProp->m_crHighlightItemText);
-	SetHighlightItemFont(&(LOGFONT)pMenuProp->m_lfHighlightItemText);
+	logFont = (LOGFONT)pMenuProp->m_lfHighlightItemText;
+	SetHighlightItemFont(&logFont);
 	SetHighlightItemBkType(pMenuProp->m_eHighlightItemBkType);
 	SetHighlightItemBkColor(pMenuProp->m_crHighlightItemBkColor);
 	if (m_MenuMember.m_HighlightItemProp.m_eBackgroundType == BKT_IMAGE)
@@ -193,7 +195,8 @@ int CSkinMenu::BindStyle(const CTRLPROPERTIES *pCtrlProp)
 
 	// Set disabled menu item
 	SetDisabledItemTextColor(pMenuProp->m_crDisabledItemText);
-	SetDisabledItemFont(&(LOGFONT)pMenuProp->m_lfDisabledItemText);
+	logFont = (LOGFONT)pMenuProp->m_lfDisabledItemText;
+	SetDisabledItemFont(&logFont);
 	SetDisabledItemBkType(pMenuProp->m_eDisabledItemBkType);
 	SetDisabledItemBkColor(pMenuProp->m_crDisabledItemBkColor);
 	if (m_MenuMember.m_DisabledItemProp.m_eBackgroundType == BKT_IMAGE)

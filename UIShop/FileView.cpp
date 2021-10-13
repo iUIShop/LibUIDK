@@ -209,8 +209,10 @@ BEGIN_MESSAGE_MAP(CFileView, CDockablePane)
 	ON_UPDATE_COMMAND_UI(IDSM_ADD_CLASS, &CFileView::OnUpdateAddClass)
 	ON_COMMAND(IDSM_ADD_ALL_CLASSES, &CFileView::OnAddAllClasses)
 	ON_UPDATE_COMMAND_UI(IDSM_ADD_ALL_CLASSES, &CFileView::OnUpdateAddAllClasses)
+#ifdef ADV
 	ON_COMMAND(IDSM_ADD_EVENT_HANDLER_CLASS, &CFileView::OnAddEventHandlerClass)
 	ON_UPDATE_COMMAND_UI(IDSM_ADD_EVENT_HANDLER_CLASS, &CFileView::OnUpdateAddEventHandlerClass)
+#endif
 	ON_COMMAND(IDSM_ADD_ALL_EVENT_HANDLER_CLASSES, &CFileView::OnAddAllEventHandlerClasses)
 	ON_UPDATE_COMMAND_UI(IDSM_ADD_ALL_EVENT_HANDLER_CLASSES, &CFileView::OnUpdateAddAllEventHandlerClasses)
 	ON_COMMAND(IDSM_INSERT_GENERAL_FONT, &CFileView::OnInsertGeneralFont)
@@ -1606,8 +1608,10 @@ void CFileView::OnTestCurFrame()
 		break;
 	}
 
+#ifdef ADV
 	int nCurFrame = g_pFrm->GetStoryboardPanel()->GetCurFrame();
 	pData->wndTest.SeekToFrame(nCurFrame);
+#endif // ADV
 }
 
 void CFileView::OnDeleteWindow()
@@ -1796,19 +1800,6 @@ void CFileView::OnAddClass()
 
 	// .cpp File
 	classGen.m_Dictionary[_T("CppFile")] = dlg.m_strCppFile;
-
-	// Code Style
-	switch (dlg.m_uCodeStyle)
-	{
-	case IDC_RAD_VC6:
-		classGen.m_Dictionary[_T("CODESTYLE_VC60")] = _T("1");
-		break;
-	case IDC_RAD_VC_NET:
-		classGen.m_Dictionary[_T("CODESTYLE_VCNET")] = _T("1");
-		break;
-	default:
-		break;
-	}
 
 	// Generate event handler
 	if (dlg.m_bGenEventHandler)
@@ -2118,19 +2109,6 @@ void CFileView::OnAddEventHandlerClass()
 
 	// .cpp File
 	eventHandlerGen.m_Dictionary[_T("CppFile")] = dlg.m_strCppFile;
-
-	// Code Style
-	switch (dlg.m_uCodeStyle)
-	{
-	case IDC_RAD_VC6:
-		eventHandlerGen.m_Dictionary[_T("CODESTYLE_VC60")] = _T("1");
-		break;
-	case IDC_RAD_VC_NET:
-		eventHandlerGen.m_Dictionary[_T("CODESTYLE_VCNET")] = _T("1");
-		break;
-	default:
-		break;
-	}
 
 	eventHandlerGen.GenerateEventHandlerFile();
 }

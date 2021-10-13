@@ -183,10 +183,6 @@ int CSkinHeaderCtrl::BindStyle(const CTRLPROPERTIES *pCtrlProp)
 		SetButtonImages(CONTROL_STATE_UNCHECKED_ALL,
 			strHeaderButton[1], strHeaderButton[2], strHeaderButton[3], strHeaderButton[4]);
 	}
-	for (int i = 0; i < 1 + COMBINEIMAGESIZE4; ++i)
-	{
-		ReleaseIUIImage(strHeaderButton[i]);
-	}
 
 	SetButtonBkImageResizePoint(pCtrlProp->m_ptImageResize);
 	SetButtonBkImageRepeatX(pCtrlProp->m_uXRepeatPixel);

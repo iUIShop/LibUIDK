@@ -1,91 +1,102 @@
-#include "StdAfx.h"
-#include "MainWndHandler.h"
-#include "ChildWndHandler.h"
+// MainWnd.cpp : implementation of the CMainWnd class
+//
+
+#include "stdafx.h"
+#include "MainWnd.h"
 
 #ifdef _DEBUG
 #define new	IUI_DEBUG_NEW
 #endif // _DEBUG
 
+// CMainWnd
 
-IUI_BEGIN_MESSAGE_MAP(CMainWndHandler)
-	IUI_ON_MESSAGE(WM_CREATE, &CMainWndHandler::OnCreate)
-	IUI_ON_MESSAGE(WM_DESTROY, &CMainWndHandler::OnDestroy)
-	IUI_ON_MESSAGE(WM_GETCHILDMSGHANDLER, &CMainWndHandler::OnGetChildMsgHandler)
-	IUI_ON_MESSAGE(WM_RELEASECHILDMSGHANDLER, &CMainWndHandler::OnReleaseChildMsgHandler)
-	IUI_ON_BN_CLICKED(IDC_BTN_OK, &CMainWndHandler::OnBtnOk)
-IUI_END_MESSAGE_MAP()
+BEGIN_MESSAGE_MAP(CMainWnd, CUIWnd)
+	ON_WM_CREATE()
+	ON_BN_CLICKED(IDC_BTN_MIN, OnBtnMin)
+	ON_BN_CLICKED(IDC_CHK_MAX, OnChkMax)
+	ON_BN_CLICKED(IDC_BTN_CLOSE, OnBtnClose)
+	ON_BN_CLICKED(IDC_BTN_OK, OnBtnOk)
+END_MESSAGE_MAP()
 
+// CMainWnd construction/destruction
 
-CMainWndHandler::CMainWndHandler(UINT uWinID)
-	: CUIWndHandler(uWinID)
+CMainWnd::CMainWnd()
 {
+	m_pStaTitle = NULL;
+	m_pBtnMin = NULL;
+	m_pChkMax = NULL;
+	m_pBtnClose = NULL;
+	m_pStaMsg = NULL;
+	m_pBtnOk = NULL;
+	m_pRcChild = NULL;
 
+	m_bMax = FALSE;
 }
 
-CMainWndHandler::~CMainWndHandler()
+CMainWnd::~CMainWnd()
 {
-
 }
+
+void CMainWnd::DoDataExchange(CDataExchange* pDX)
+{
+	CUIWnd::DoDataExchange(pDX);
+
+	DDX_Check(pDX, IDC_CHK_MAX, m_bMax);
+}
+
 
 //////////////////////////////////////////////////////////////////////////
-// Messages
+// protected
 
-LRESULT CMainWndHandler::OnCreate(CUIWnd *pUIWnd, WPARAM wParam, LPARAM lParam)
+int CMainWnd::InitControls()
 {
-	return 0;
-}
-
-LRESULT CMainWndHandler::OnDestroy(CUIWnd *pUIWnd, WPARAM wParam, LPARAM lParam)
-{
-	return 0;
-}
-
-// 为控件绑定的窗口指定消息映射类
-LRESULT CMainWndHandler::OnGetChildMsgHandler(CUIWnd *pUIWnd, WPARAM wParam, LPARAM lParam)
-{
-	UINT uWinID = (UINT)wParam;
-	CHILDMSGHANDLER *pChildMsgHandler = (CHILDMSGHANDLER *)lParam;
-	if (pChildMsgHandler == NULL)
-	{
-		return 0;
-	}
-
-	if (uWinID == IDW_CHILD)
-	{
-		pChildMsgHandler->pUIWndHandler = new CChildWndHandler(uWinID);
-	}
+	m_pStaTitle = (CSkinStatic *)GetDlgItem(IDC_STA_TITLE);
+	ASSERT(m_pStaTitle->GetSafeHwnd() != NULL);
+	m_pBtnMin = (CSkinButton *)GetDlgItem(IDC_BTN_MIN);
+	ASSERT(m_pBtnMin->GetSafeHwnd() != NULL);
+	m_pChkMax = (CSkinButton *)GetDlgItem(IDC_CHK_MAX);
+	ASSERT(m_pChkMax->GetSafeHwnd() != NULL);
+	m_pBtnClose = (CSkinButton *)GetDlgItem(IDC_BTN_CLOSE);
+	ASSERT(m_pBtnClose->GetSafeHwnd() != NULL);
+	m_pStaMsg = (CSkinStatic *)GetDlgItem(IDC_STA_MSG);
+	ASSERT(m_pStaMsg->GetSafeHwnd() != NULL);
+	m_pBtnOk = (CSkinButton *)GetDlgItem(IDC_BTN_OK);
+	ASSERT(m_pBtnOk->GetSafeHwnd() != NULL);
+	m_pRcChild = GetRectChild(IDC_WL_RECT_CHILD);
+	ASSERT(m_pRcChild->IsCreated());
 
 	return 0;
 }
 
-// 释放控件绑定的窗口对应的消息映射类, 释放后返回TRUE，否则返回FALSE
-LRESULT CMainWndHandler::OnReleaseChildMsgHandler(CUIWnd *pUIWnd, WPARAM wParam, LPARAM lParam)
+/////////////////////////////////////////////////////////////////////////////
+// CMainWnd message handlers
+
+int CMainWnd::OnCreate(LPCREATESTRUCT lpCreateStruct)
 {
-	UINT uWinID = (UINT)wParam;
-	CHILDMSGHANDLER *pChildMsgHandler = (CHILDMSGHANDLER *)lParam;
-	if (pChildMsgHandler == NULL)
-	{
-		return (LRESULT)FALSE;
-	}
+	if (CUIWnd::OnCreate(lpCreateStruct) == -1)
+		return -1;
 
-	if (uWinID == IDW_CHILD)
-	{
-		ASSERT(pChildMsgHandler->pUIWndHandler != NULL);
-		SafeDelete(pChildMsgHandler->pUIWndHandler);
+	if (InitControls() != 0)
+		return -1;
 
-		return (LRESULT)TRUE;
-	}
+	m_wndChild.Create(NULL, WS_VISIBLE, m_pRcChild, this, IDW_CHILD);
 
-	return (LRESULT)FALSE;
+	return 0;
 }
 
-LRESULT CMainWndHandler::OnBtnOk(CUIWnd *pUIWnd, WPARAM wParam, LPARAM lParam)
+void CMainWnd::OnBtnMin()
 {
-	CWnd *pWnd = pUIWnd->GetDlgItem(IDC_STA_MSG);
+}
 
+void CMainWnd::OnChkMax()
+{
+}
+
+void CMainWnd::OnBtnClose()
+{
+}
+
+void CMainWnd::OnBtnOk()
+{
 	AfxMessageBox(_T("IDC_BTN_OK"));
-
-	pWnd->SetWindowText(_T("点击按钮后，文本就成这样了。"));
-
-	return 0;
 }

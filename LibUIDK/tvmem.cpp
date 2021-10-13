@@ -320,7 +320,7 @@ BOOL NEAR PASCAL TV_CreateRoot(PTREE pTree)
 
 void NEAR DumpItem(TREEITEM FAR *hItem)
 {
-	LPTSTR p;
+	LPCTSTR p;
 
 	if (hItem->lpstr == LPSTR_TEXTCALLBACK)
 	{

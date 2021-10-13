@@ -160,7 +160,8 @@ int CSkinEdit::BindStyle(const CTRLPROPERTIES *pCtrlProp)
 	SetTextFont(strResFontID);
 
 	// Alignment
-	SetTextMargin(&((RECT)pEdtProp->m_rcPadding));
+	RECT rect = (RECT)pEdtProp->m_rcPadding;
+	SetTextMargin(&rect);
 
 	// Set bitmaps for background
 	bool bSpecifyBackgroundImages = pEdtProp->m_bSpecifyBackgroundImages;
@@ -178,10 +179,7 @@ int CSkinEdit::BindStyle(const CTRLPROPERTIES *pCtrlProp)
 			SetImages(CONTROL_STATE_UNCHECKED_ALL,
 				strImageName[1], strImageName[2], strImageName[3], strImageName[4]);
 		}
-		for (int i = 0; i < 1 + COMBINEIMAGESIZE4; ++i)
-		{
-			ReleaseIUIImage(strImageName[i]);
-		}
+
 		SetBkImageResizePoint(pEdtProp->m_ptImageResize);
 
 		UpdateBackgroundBrush();

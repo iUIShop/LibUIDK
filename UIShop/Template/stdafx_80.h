@@ -311,7 +311,7 @@ using namespace Render;
 		#endif // end _UNICODE
 	#endif
 #endif
-#if (_MSC_VER >= 1910)	// VC2017
+#if (_MSC_VER == 1910)	// VC2017
 	#ifdef _DEBUG
 		#ifdef _UNICODE
 			#ifdef _AFXDLL
@@ -338,6 +338,37 @@ using namespace Render;
 				#pragma comment (lib, "LibUIDK_vs2017.lib")
 			#else // Static
 				#pragma comment (lib, "LibUIDKs_vs2017.lib")
+			#endif
+		#endif // end _UNICODE
+	#endif
+#endif
+#if (_MSC_VER == 1927)	// VC2019
+	#ifdef _DEBUG
+		#ifdef _UNICODE
+			#ifdef _AFXDLL
+				#pragma comment (lib, "LibUIDK_vs2019ud.lib")
+			#else // Static
+				#pragma comment (lib, "LibUIDK_vs2019sud.lib")
+			#endif
+		#else // ANSI
+			#ifdef _AFXDLL
+				#pragma comment (lib, "LibUIDK_vs2019d.lib")
+			#else // Static
+				#pragma comment (lib, "LibUIDK_vs2019sd.lib")
+			#endif
+		#endif // end _UNICODE
+	#else // Release
+		#ifdef _UNICODE
+			#ifdef _AFXDLL
+				#pragma comment (lib, "LibUIDK_vs2019u.lib")
+			#else // Static
+				#pragma comment (lib, "LibUIDK_vs2019su.lib")
+			#endif
+		#else // ANSI
+			#ifdef _AFXDLL
+				#pragma comment (lib, "LibUIDK_vs2019.lib")
+			#else // Static
+				#pragma comment (lib, "LibUIDK_vs2019s.lib")
 			#endif
 		#endif // end _UNICODE
 	#endif

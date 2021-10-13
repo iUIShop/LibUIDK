@@ -1,0 +1,307 @@
+	ON_NOTIFY(NM_CLICK, IDC_LIST1, OnClickList1)
+	ON_NOTIFY(NM_DBLCLK, IDC_LIST1, OnDblclkList1)
+	ON_NOTIFY(NM_KILLFOCUS, IDC_LIST1, OnKillfocusList1)
+	ON_NOTIFY(NM_OUTOFMEMORY, IDC_LIST1, OnOutofmemoryList1)
+	ON_NOTIFY(NM_RCLICK, IDC_LIST1, OnRclickList1)
+	ON_NOTIFY(NM_RDBLCLK, IDC_LIST1, OnRdblclkList1)
+	ON_NOTIFY(NM_RETURN, IDC_LIST1, OnReturnList1)
+	ON_NOTIFY(NM_SETFOCUS, IDC_LIST1, OnSetfocusList1)
+	ON_NOTIFY(LVN_BEGINDRAG, IDC_LIST1, OnBegindragList1)
+	ON_NOTIFY(LVN_BEGINLABELEDIT, IDC_LIST1, OnBeginlabeleditList1)
+	ON_NOTIFY(LVN_BEGINRDRAG, IDC_LIST1, OnBeginrdragList1)
+	ON_NOTIFY(LVN_COLUMNCLICK, IDC_LIST1, OnColumnclickList1)
+	ON_NOTIFY(LVN_DELETEALLITEMS, IDC_LIST1, OnDeleteallitemsList1)
+	ON_NOTIFY(LVN_DELETEITEM, IDC_LIST1, OnDeleteitemList1)
+	ON_NOTIFY(LVN_ENDLABELEDIT, IDC_LIST1, OnEndlabeleditList1)
+	ON_NOTIFY(LVN_GETDISPINFO, IDC_LIST1, OnGetdispinfoList1)
+	ON_NOTIFY(LVN_INSERTITEM, IDC_LIST1, OnInsertitemList1)
+	ON_NOTIFY(LVN_ITEMCHANGED, IDC_LIST1, OnItemchangedList1)
+	ON_NOTIFY(LVN_ITEMCHANGING, IDC_LIST1, OnItemchangingList1)
+	ON_NOTIFY(LVN_KEYDOWN, IDC_LIST1, OnKeydownList1)
+	ON_NOTIFY(LVN_SETDISPINFO, IDC_LIST1, OnSetdispinfoList1)
+	ON_NOTIFY(LVN_ODCACHEHINT, IDC_LIST1, OnOdcachehintList1)
+	ON_NOTIFY(LVN_ODFINDITEM, IDC_LIST1, OnOdfinditemList1)
+	ON_NOTIFY(LVN_ODSTATECHANGED, IDC_LIST1, OnOdstatechangedList1)
+	ON_NOTIFY(HDN_ITEMCHANGED, IDC_LIST1, OnItemchangedList1)
+	ON_NOTIFY(HDN_ITEMCHANGING, IDC_LIST1, OnItemchangingList1)
+	ON_NOTIFY(HDN_TRACK, IDC_LIST1, OnTrackList1)
+	ON_NOTIFY(HDN_ITEMCLICK, IDC_LIST1, OnItemclickList1)
+	ON_NOTIFY(HDN_ITEMDBLCLICK, IDC_LIST1, OnItemdblclickList1)
+	ON_NOTIFY(HDN_BEGINTRACK, IDC_LIST1, OnBegintrackList1)
+	ON_NOTIFY(HDN_ENDTRACK, IDC_LIST1, OnEndtrackList1)
+	ON_NOTIFY(HDN_DIVIDERDBLCLICK, IDC_LIST1, OnDividerdblclickList1)
+	ON_NOTIFY(HDN_BEGINDRAG, IDC_LIST1, OnBegindragList1)
+	ON_NOTIFY(HDN_ENDDRAG, IDC_LIST1, OnEnddragList1)
+	ON_NOTIFY(HDN_GETDISPINFO, IDC_LIST1, OnGetdispinfoList1)
+
+	afx_msg void OnClickList1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnDblclkList1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnKillfocusList1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnOutofmemoryList1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnRclickList1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnRdblclkList1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnReturnList1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnSetfocusList1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnBegindragList1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnBeginlabeleditList1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnBeginrdragList1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnColumnclickList1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnDeleteallitemsList1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnDeleteitemList1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnEndlabeleditList1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnGetdispinfoList1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnInsertitemList1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnItemchangedList1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnItemchangingList1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnKeydownList1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnSetdispinfoList1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnOdcachehintList1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnOdfinditemList1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnOdstatechangedList1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnTrackList1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnItemclickList1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnItemdblclickList1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnBegintrackList1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnEndtrackList1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnDividerdblclickList1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnEnddragList1(NMHDR* pNMHDR, LRESULT* pResult);
+
+	void CDDlg::OnClickList1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnDblclkList1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnKillfocusList1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnOutofmemoryList1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnRclickList1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnRdblclkList1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnReturnList1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnSetfocusList1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnBegindragList1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		NM_LISTVIEW* pNMListView = (NM_LISTVIEW*)pNMHDR;
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnBeginlabeleditList1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		LV_DISPINFO* pDispInfo = (LV_DISPINFO*)pNMHDR;
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnBeginrdragList1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		NM_LISTVIEW* pNMListView = (NM_LISTVIEW*)pNMHDR;
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnColumnclickList1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		NM_LISTVIEW* pNMListView = (NM_LISTVIEW*)pNMHDR;
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnDeleteallitemsList1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		NM_LISTVIEW* pNMListView = (NM_LISTVIEW*)pNMHDR;
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnDeleteitemList1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		NM_LISTVIEW* pNMListView = (NM_LISTVIEW*)pNMHDR;
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnEndlabeleditList1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		LV_DISPINFO* pDispInfo = (LV_DISPINFO*)pNMHDR;
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnGetdispinfoList1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		LV_DISPINFO* pDispInfo = (LV_DISPINFO*)pNMHDR;
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnInsertitemList1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		NM_LISTVIEW* pNMListView = (NM_LISTVIEW*)pNMHDR;
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnItemchangedList1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		NM_LISTVIEW* pNMListView = (NM_LISTVIEW*)pNMHDR;
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnItemchangingList1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		NM_LISTVIEW* pNMListView = (NM_LISTVIEW*)pNMHDR;
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnKeydownList1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		LV_KEYDOWN* pLVKeyDow = (LV_KEYDOWN*)pNMHDR;
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnSetdispinfoList1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		LV_DISPINFO* pDispInfo = (LV_DISPINFO*)pNMHDR;
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnOdcachehintList1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		NMLVCACHEHINT* pCacheHint = (NMLVCACHEHINT*)pNMHDR;
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnOdfinditemList1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		NMLVFINDITEM* pFindInfo = (NMLVFINDITEM*)pNMHDR;
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnOdstatechangedList1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		NMLVODSTATECHANGE* pStateChanged = (NMLVODSTATECHANGE*)pNMHDR;
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnTrackList1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		HD_NOTIFY *phdn = (HD_NOTIFY *) pNMHDR;
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnItemclickList1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		HD_NOTIFY *phdn = (HD_NOTIFY *) pNMHDR;
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnItemdblclickList1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		HD_NOTIFY *phdn = (HD_NOTIFY *) pNMHDR;
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnBegintrackList1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		HD_NOTIFY *phdn = (HD_NOTIFY *) pNMHDR;
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnEndtrackList1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		HD_NOTIFY *phdn = (HD_NOTIFY *) pNMHDR;
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnDividerdblclickList1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		HD_NOTIFY *phdn = (HD_NOTIFY *) pNMHDR;
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnEnddragList1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		HD_NOTIFY * phdn = (HD_NOTIFY *) pNMHDR;
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}

@@ -93,10 +93,6 @@ int CSliderCtrlEx::BindStyle(const CTRLPROPERTIES *pCtrlProp)
 			SetImages(CONTROL_STATE_UNCHECKED_ALL,
 				strImageName[1], strImageName[2], strImageName[3], strImageName[4]);
 		}
-		for (int i = 0; i < 1 + COMBINEIMAGESIZE4; ++i)
-		{
-			ReleaseIUIImage(strImageName[i]);
-		}
 
 		SetBkImageResizeMode(pCtrlProp->m_eBkImageResizeMode);
 		SetBkImageResizePoint(pCtrlProp->m_ptImageResize);

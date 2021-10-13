@@ -511,7 +511,7 @@ LRESULT LibUIDK::CPictureCtrl::WindowProc(UINT message, WPARAM wParam, LPARAM lP
 
 		AddCustomImage((LPCTSTR)_bstr_t(wszName), hBmp);
 		pMember->m_hBackground = CreateIUIImage((LPCTSTR)_bstr_t(wszName));
-		ReleaseIUIImage((LPCTSTR)_bstr_t(wszName));
+		ReleaseIUIImage(pMember->m_hBackground);
 
 		if (bRedraw)
 		{

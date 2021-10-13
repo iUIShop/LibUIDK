@@ -1,0 +1,197 @@
+CSkinTreeCtrl
+	// 消息映射表
+	ON_NOTIFY(NM_CLICK, IDC_TREE1, OnClickTree1)
+	ON_NOTIFY(NM_DBLCLK, IDC_TREE1, OnDblclkTree1)
+	ON_NOTIFY(NM_KILLFOCUS, IDC_TREE1, OnKillfocusTree1)
+	ON_NOTIFY(NM_OUTOFMEMORY, IDC_TREE1, OnOutofmemoryTree1)
+	ON_NOTIFY(NM_RCLICK, IDC_TREE1, OnRclickTree1)
+	ON_NOTIFY(NM_RDBLCLK, IDC_TREE1, OnRdblclkTree1)
+	ON_NOTIFY(NM_RETURN, IDC_TREE1, OnReturnTree1)
+	ON_NOTIFY(NM_SETFOCUS, IDC_TREE1, OnSetfocusTree1)
+	ON_NOTIFY(TVN_BEGINDRAG, IDC_TREE1, OnBegindragTree1)
+	ON_NOTIFY(TVN_BEGINLABELEDIT, IDC_TREE1, OnBeginlabeleditTree1)
+	ON_NOTIFY(TVN_BEGINRDRAG, IDC_TREE1, OnBeginrdragTree1)
+	ON_NOTIFY(TVN_DELETEITEM, IDC_TREE1, OnDeleteitemTree1)
+	ON_NOTIFY(TVN_ENDLABELEDIT, IDC_TREE1, OnEndlabeleditTree1)
+	ON_NOTIFY(TVN_GETDISPINFO, IDC_TREE1, OnGetdispinfoTree1)
+	ON_NOTIFY(TVN_ITEMEXPANDED, IDC_TREE1, OnItemexpandedTree1)
+	ON_NOTIFY(TVN_ITEMEXPANDING, IDC_TREE1, OnItemexpandingTree1)
+	ON_NOTIFY(TVN_KEYDOWN, IDC_TREE1, OnKeydownTree1)
+	ON_NOTIFY(TVN_SELCHANGED, IDC_TREE1, OnSelchangedTree1)
+	ON_NOTIFY(TVN_SELCHANGING, IDC_TREE1, OnSelchangingTree1)
+	ON_NOTIFY(TVN_SETDISPINFO, IDC_TREE1, OnSetdispinfoTree1)
+
+	// 头文件
+	afx_msg void OnClickTree1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnDblclkTree1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnKillfocusTree1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnOutofmemoryTree1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnRclickTree1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnRdblclkTree1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnReturnTree1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnSetfocusTree1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnBegindragTree1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnBeginlabeleditTree1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnBeginrdragTree1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnDeleteitemTree1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnEndlabeleditTree1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnGetdispinfoTree1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnItemexpandedTree1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnItemexpandingTree1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnKeydownTree1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnSelchangedTree1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnSelchangingTree1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnSetdispinfoTree1(NMHDR* pNMHDR, LRESULT* pResult);
+
+	// 实现
+	void CDDlg::OnClickTree1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnDblclkTree1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnKillfocusTree1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnOutofmemoryTree1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnRclickTree1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnRdblclkTree1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnReturnTree1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnSetfocusTree1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnBegindragTree1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		NM_TREEVIEW* pNMTreeView = (NM_TREEVIEW*)pNMHDR;
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnBeginlabeleditTree1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		TV_DISPINFO* pTVDispInfo = (TV_DISPINFO*)pNMHDR;
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnBeginrdragTree1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		NM_TREEVIEW* pNMTreeView = (NM_TREEVIEW*)pNMHDR;
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnDeleteitemTree1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		NM_TREEVIEW* pNMTreeView = (NM_TREEVIEW*)pNMHDR;
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnEndlabeleditTree1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		TV_DISPINFO* pTVDispInfo = (TV_DISPINFO*)pNMHDR;
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnGetdispinfoTree1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		TV_DISPINFO* pTVDispInfo = (TV_DISPINFO*)pNMHDR;
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnItemexpandedTree1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		NM_TREEVIEW* pNMTreeView = (NM_TREEVIEW*)pNMHDR;
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnItemexpandingTree1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		NM_TREEVIEW* pNMTreeView = (NM_TREEVIEW*)pNMHDR;
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnKeydownTree1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		TV_KEYDOWN* pTVKeyDown = (TV_KEYDOWN*)pNMHDR;
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnSelchangedTree1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		NM_TREEVIEW* pNMTreeView = (NM_TREEVIEW*)pNMHDR;
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnSelchangingTree1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		NM_TREEVIEW* pNMTreeView = (NM_TREEVIEW*)pNMHDR;
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}
+
+	void CDDlg::OnSetdispinfoTree1(NMHDR* pNMHDR, LRESULT* pResult) 
+	{
+		TV_DISPINFO* pTVDispInfo = (TV_DISPINFO*)pNMHDR;
+		// TODO: Add your control notification handler code here
+		
+		*pResult = 0;
+	}

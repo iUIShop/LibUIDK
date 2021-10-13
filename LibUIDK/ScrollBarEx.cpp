@@ -222,10 +222,7 @@ int CScrollBarEx::BindHorzScrollbarStyle(const HORSBPROPERTIES *pHorzScrollbarPr
 		SetBkBitmaps(CONTROL_STATE_UNCHECKED_ALL,
 			strImageName[1], strImageName[2], strImageName[3], strImageName[4]);
 	}
-	for (int i = 0; i < 1 + COMBINEIMAGESIZE4; ++i)
-	{
-		ReleaseIUIImage(strImageName[i]);
-	}
+
 	SetBkImageResizeMode(pHorzScrollbarProp->m_eBkImageResizeMode);
 	SetBkImageResizePoint(pHorzScrollbarProp->m_ptImageResize);
 	SetBkImageRepeatX(pHorzScrollbarProp->m_uXRepeatPixel);
@@ -296,10 +293,7 @@ int CScrollBarEx::BindVertScrollbarStyle(const VERSBPROPERTIES *pVertScrollbarPr
 		SetBkBitmaps(CONTROL_STATE_UNCHECKED_ALL,
 			strImageName[1], strImageName[2], strImageName[3], strImageName[4]);
 	}
-	for (int i = 0; i < 1 + COMBINEIMAGESIZE4; ++i)
-	{
-		ReleaseIUIImage(strImageName[i]);
-	}
+
 	SetBkImageResizeMode(pVertScrollbarProp->m_eBkImageResizeMode);
 	SetBkImageResizePoint(pVertScrollbarProp->m_ptImageResize);
 	SetBkImageRepeatX(pVertScrollbarProp->m_uXRepeatPixel);

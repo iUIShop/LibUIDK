@@ -147,7 +147,7 @@ int CDockPanel::RelayoutElements(BOOL bRedraw/* = FALSE*/)
 			{
 				CWnd *pWnd = (CWnd *)pItem->m_pElement;
 
-				// Skip the invisible element. The IsWindowVisible can't get the visible state at WM_CREATE message of parent, so use IsWindowVisibleEx(GetWindowLong) instead.
+				// Skip the invisible element. The IsWindowVisible can't get the visible state at WM_CREATE message of parent, so use IsWindowVisibleEx(GetWindowLongPtr) instead.
 				if (!IsWindowVisibleEx(pWnd->GetSafeHwnd()))
 				{
 					continue;
