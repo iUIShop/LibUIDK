@@ -93,7 +93,6 @@ struct LISTCTRLMEMBER
 		m_nEditingItem = -1;
 
 		// Background
-		m_bEnableOwnerDraw = FALSE;
 		m_bUseBitmap = TRUE;
 		int i = 0;
 		for (i = 0; i < 2; ++i)
@@ -105,6 +104,7 @@ struct LISTCTRLMEMBER
 
 		// Grid line
 		m_bDraw0Row = FALSE;
+		m_bVerLineTo0Row = FALSE;
 		m_ptLineOffset = CPoint(0, 0);
 		m_crGridLine = RGB(212, 208, 200);
 
@@ -181,7 +181,6 @@ struct LISTCTRLMEMBER
 		m_nEditingItem = -1;
 
 		// Background
-		m_bEnableOwnerDraw = FALSE;
 		m_bUseBitmap = TRUE;
 		int i = 0;
 		for (i = 0; i < 2; ++i)
@@ -194,6 +193,7 @@ struct LISTCTRLMEMBER
 
 		// Grid line
 		m_bDraw0Row = FALSE;
+		m_bVerLineTo0Row = FALSE;
 		m_ptLineOffset = CPoint(0, 0);
 		m_crGridLine = RGB(212, 208, 200);
 
@@ -283,7 +283,6 @@ struct LISTCTRLMEMBER
 	LV_SORTDATA m_LibUIDKSortData;
 
 	// Background
-	BOOL m_bEnableOwnerDraw;
 	BOOL m_bUseBitmap;
 	HIUIIMAGE m_himgBk[2];				// 0: Enabled; 1: Disabled.
 
@@ -292,15 +291,16 @@ struct LISTCTRLMEMBER
 
 	// for grid line
 	BOOL m_bDraw0Row;
+	BOOL m_bVerLineTo0Row; // TRUE: to 0 row; FALSE: to header bottom.
 	CPoint m_ptLineOffset;
 	COLORREF m_crGridLine;
 
 	// for normal item
-	BOOL m_bEnableNormalItemEffect;		// valid when m_bEnableOwnerDraw is set to TRUE
+	BOOL m_bEnableNormalItemEffect;
 	LV_ITEMPROPERTIES m_lvpItemN;
 
 	// for highlight item
-	BOOL m_bEnableHighlightItemEffect;	// valid when m_bEnableOwnerDraw is set to TRUE
+	BOOL m_bEnableHighlightItemEffect;
 	int m_nCurHighlightItem;
 	LV_ITEMPROPERTIES m_lvpItemH;
 
@@ -309,11 +309,11 @@ struct LISTCTRLMEMBER
 	LV_ITEMPROPERTIES m_lvpItemS;
 
 	// for normal disabled item
-	BOOL m_bEnableNormalDisabledItemEffect;		// valid when m_bEnableOwnerDraw is set to TRUE
+	BOOL m_bEnableNormalDisabledItemEffect;
 	LV_ITEMPROPERTIES m_lvpItemND;
 
 	// for select disabled item
-	BOOL m_bEnableSelectedDisabledItemEffect;		// valid when m_bEnableOwnerDraw is set to TRUE
+	BOOL m_bEnableSelectedDisabledItemEffect;
 	LV_ITEMPROPERTIES m_lvpItemSD;
 
 	// for thumbnail view
@@ -443,45 +443,24 @@ int _LibUIDK_CSkinListCtrl_UpdateLevel2(CSkinListCtrl *pListCtrl, BOOL bListFirs
 	//
 	// Draw content
 	//
-	if (pListCtrl->IsEnableOwnerDraw())
+
+	// Draw grid line of list with report style.
+	pListCtrl->SendMessage(LVM_DRAW_GRIDLINE, (WPARAM)&memBkDC, 0);
+
+	// draw all of the items that are completely visible
+	int nItem = pListCtrl->GetTopIndex();
+	int nLast = nItem + pListCtrl->GetCountPerPage() + 1;
+	int nCount = pListCtrl->GetItemCount();
+	if (nLast > nCount)
 	{
-		// Draw grid line of list with report style.
-		pListCtrl->SendMessage(LVM_DRAW_GRIDLINE, (WPARAM)&memBkDC, 0);
-
-		// draw all of the items that are completely visible
-		int nItem = pListCtrl->GetTopIndex();
-		int nLast = nItem + pListCtrl->GetCountPerPage() + 1;
-		int nCount = pListCtrl->GetItemCount();
-		if (nLast > nCount)
-		{
-			nLast = nCount;
-		}
-
-		memBkDC.SetBkMode(TRANSPARENT);
-
-		for (; nItem < nLast; nItem++)
-		{
-			pListCtrl->SendMessage(LVM_DRAW_ITEM, (WPARAM)&memBkDC, nItem);
-		}
+		nLast = nCount;
 	}
-	else
-	{
-		// Draw the default content to the dcText
-		CDC dcText;
-		dcText.CreateCompatibleDC(&dc);
-		CBitmap bmpText;
-		bmpText.CreateCompatibleBitmap(&dc, rcClient.Width(), rcClient.Height());
-		ASSERT(bmpText.GetSafeHandle() != NULL);
-		CBitmap *pbmpTextOld = dcText.SelectObject(&bmpText);
-		COLORREF crTextBk = pListCtrl->GetTextBkColor();
-		dcText.FillSolidRect(rcClient, crTextBk);
-		HFONT hFontOld = (HFONT)::GetCurrentObject(dcText.GetSafeHdc(), OBJ_FONT); // store the Font object before call DefWindowProc
-		pListCtrl->SendMessage(LVM_DRAW_DEFAULT, (WPARAM)dcText.m_hDC, 0);
 
-		// draw the text to memBkDC by erase background text color
-		TransparentBlt2(memBkDC.m_hDC, 0, 0, rcClient.Width(), rcClient.Height(), dcText.m_hDC, 0, 0, rcClient.Width(), rcClient.Height(), crTextBk);
-		dcText.SelectObject(pbmpTextOld);
-		dcText.SelectObject(hFontOld);
+	memBkDC.SetBkMode(TRANSPARENT);
+
+	for (; nItem < nLast; nItem++)
+	{
+		pListCtrl->SendMessage(LVM_DRAW_ITEM, (WPARAM)&memBkDC, nItem);
 	}
 
 	//
@@ -519,12 +498,6 @@ int _LibUIDK_CSkinListCtrl_UpdateLevel3(CSkinListCtrl *pListCtrl, BOOL bListFirs
 	HBITMAP hOldBmpBk = (HBITMAP)::SelectObject(memBkDC.GetSafeHdc(), hLevel3Background);
 
 	BitBltG(memBkDC.GetSafeHdc(), 0, 0, rcClient.Width(), rcClient.Height(),  hLevel2BlendBkTextImage, 0, 0, SRCCOPY);
-
-	if (!pListCtrl->IsEnableOwnerDraw())
-	{
-		memBkDC.SelectObject(hOldBmpBk);
-		return 1;
-	}
 
 	//
 	// Draw changed content(highlight item)
@@ -685,8 +658,6 @@ int CSkinListCtrl::BindStyle(const CTRLPROPERTIES *pCtrlProp)
 	}
 
 	SetExtendedStyle(dwExStyle);
-
-	EnableOwnerDraw(pLstProp->m_bEnableOwnerDraw);
 
 	// Set background images
 	if (pLstProp->m_bSpecifyBackgroundImages)
@@ -877,6 +848,7 @@ int CSkinListCtrl::BindStyle(const CTRLPROPERTIES *pCtrlProp)
 	{
 		ShowGridLine(TRUE);
 		DrawFirstRow(pLstProp->m_bDraw0Row);
+		GridVerLineToFirstRow(pLstProp->m_bVerLineTo0Row);
 		POINT ptOffset;
 		ptOffset.x = (LONG)pLstProp->m_lXOffset;
 		ptOffset.y = 0;
@@ -1075,6 +1047,63 @@ int CSkinListCtrl::OnDrawBackground(CDC *pDC)
 	return 0;
 }
 
+// 奇偶行不同背景色
+int CSkinListCtrl::OnDrawItemInterlacedHighlight(CDC *pDC)
+{
+	LISTCTRLMEMBER *pMember = (LISTCTRLMEMBER *)m_pMember;
+
+	CRect rcClient;
+	GetClientRect(rcClient);
+
+	LONG lStyle = GetWindowLong(m_hWnd, GWL_STYLE);
+	if ((lStyle & LVS_REPORT) != LVS_REPORT)
+	{
+		return 1;
+	}
+
+	int nIndex = 0;
+	while (true)
+	{
+		CPoint pt;
+		BOOL bOK = GetItemPosition(nIndex, &pt);
+		if (!bOK)
+		{
+			break;
+		}
+
+		int nY = pt.y - 1;
+		if (nY >= rcClient.Height())
+		{
+			break;
+		}
+
+		CPoint pt2;
+		BOOL bOK2 = GetItemPosition(nIndex + 1, &pt2);
+		if (!bOK2)
+		{
+			break;
+		}
+
+		CRect rcItem;
+		rcItem.left = 0;
+		rcItem.top = nY;
+		rcItem.right = rcClient.right;
+		rcItem.bottom = rcItem.top + (pt2.y - pt.y);
+
+		pDC->FillSolidRect(rcItem, (nIndex % 2 == 0) ? RGB(255, 0, 0) : RGB(255, 255, 0));
+
+		// Fixed bug: scroll the vertical scroll bot to bottom, the while loop can't break.
+		if (nIndex > 0 && pt.y == 0)
+		{
+			break;
+		}
+
+		++nIndex;
+	}
+
+	return 0;
+}
+
 int CSkinListCtrl::OnDrawGridLine(CDC *pDC)
 {
 	LISTCTRLMEMBER *pMember = (LISTCTRLMEMBER *)m_pMember;
@@ -1114,7 +1143,6 @@ int CSkinListCtrl::OnDrawGridLine(CDC *pDC)
 		CPen *pPenOld = pDC->SelectObject(pPen);
 
 		int nIndex = pMember->m_bDraw0Row ? 0 : 1;
-		int nItemCount = GetItemCount();
 		while (true)
 		{
 			CPoint pt;
@@ -1165,6 +1193,9 @@ int CSkinListCtrl::OnDrawGridLine(CDC *pDC)
 		}
 		CPen *pPenOld = pDC->SelectObject(pPen);
 
+		CPoint pt;
+		BOOL bOK = GetItemPosition(0, &pt);
+
 		int nHeaderItemCount = pMember->m_wndHeader.GetItemCount();
 		for (int nCloumn = 0; nCloumn < nHeaderItemCount; ++nCloumn)
 		{
@@ -1173,7 +1204,7 @@ int CSkinListCtrl::OnDrawGridLine(CDC *pDC)
 			pMember->m_wndHeader.ClientToScreen(rcHeaderItem);
 			ScreenToClient(rcHeaderItem);
 
-			pDC->MoveTo(rcHeaderItem.right + pMember->m_ptLineOffset.x, rcHeaderItem.Height());
+			pDC->MoveTo(rcHeaderItem.right + pMember->m_ptLineOffset.x, pMember->m_bVerLineTo0Row ? pt.y : rcHeaderItem.Height());
 			pDC->LineTo(rcHeaderItem.right + pMember->m_ptLineOffset.x, rcClient.bottom);
 		}
 
@@ -2415,98 +2446,74 @@ LRESULT CSkinListCtrl::WindowProc(UINT message, WPARAM wParam, LPARAM lParam)
 			OnDrawBackground(&memBkDC);
 
 			// Draw content
-			if (pMember->m_bEnableOwnerDraw)
+
+			// Draw 
+			OnDrawItemInterlacedHighlight(&memBkDC);
+			// Draw grid line of list with report style.
+			OnDrawGridLine(&memBkDC);
+
+			// draw all of the items that are completely visible
+			int nItem = GetTopIndex();
+			int nLast = nItem + GetCountPerPage() + 1;
+			int nCount = GetItemCount();
+			if (nLast > nCount)
 			{
-				// Draw grid line of list with report style.
-				OnDrawGridLine(&memBkDC);
+				nLast = nCount;
+			}
 
-				// draw all of the items that are completely visible
-				int nItem = GetTopIndex();
-				int nLast = nItem + GetCountPerPage() + 1;
-				int nCount = GetItemCount();
-				if (nLast > nCount)
+			memBkDC.SetBkMode(TRANSPARENT);
+
+			for (; nItem < nLast; nItem++)
+			{
+				if (pMember->m_bAnimationMode)
 				{
-					nLast = nCount;
-				}
-
-				memBkDC.SetBkMode(TRANSPARENT);
-
-				for (; nItem < nLast; nItem++)
-				{
-					if (pMember->m_bAnimationMode)
+					// Each item's left margin is different.
+					int nIndex = 0;
+					if (pMember->m_bTogetherAnimation)
 					{
-						// Each item's left margin is different.
-						int nIndex = 0;
-						if (pMember->m_bTogetherAnimation)
-						{
-							nIndex = pMember->m_nCurTimerTick;
-						}
-						else
-						{
-							if (pMember->m_nCurTimerTick - nItem >= 0)
-							{
-								nIndex = pMember->m_nCurTimerTick - nItem;
-							}
-							else
-							{
-								nIndex = 0;
-							}
-							if (nIndex >= (int)pMember->m_vAnimationData.size())
-							{
-								nIndex = (int)pMember->m_vAnimationData.size() - 1;
-							}
-						}
-
-						OnDrawItemEx(&memBkDC, nItem, pMember->m_vAnimationData[nIndex]);
-
-						// After the last item animation finish, kill the timer.
-						if (nItem == nLast - 1 && nIndex == pMember->m_vAnimationData.size() - 1)
-						{
-							KillTimer(IDT_WIN8);
-							pMember->m_bAnimationMode = false;
-							pMember->m_nCurTimerTick = 0;
-							pMember->m_vAnimationData.clear();
-
-							NMHDR nmhdr;
-							nmhdr.hwndFrom = m_hWnd;
-							nmhdr.idFrom = GetDlgCtrlID();
-							nmhdr.code = LVN_ANIMATION_END;
-							GetParent()->SendMessage(WM_NOTIFY, nmhdr.idFrom, LPARAM(&nmhdr));
-						}
+						nIndex = pMember->m_nCurTimerTick;
 					}
 					else
 					{
-						OnDrawItemEx(&memBkDC, nItem, 0);
+						if (pMember->m_nCurTimerTick - nItem >= 0)
+						{
+							nIndex = pMember->m_nCurTimerTick - nItem;
+						}
+						else
+						{
+							nIndex = 0;
+						}
+						if (nIndex >= (int)pMember->m_vAnimationData.size())
+						{
+							nIndex = (int)pMember->m_vAnimationData.size() - 1;
+						}
+					}
+
+					OnDrawItemEx(&memBkDC, nItem, pMember->m_vAnimationData[nIndex]);
+
+					// After the last item animation finish, kill the timer.
+					if (nItem == nLast - 1 && nIndex == pMember->m_vAnimationData.size() - 1)
+					{
+						KillTimer(IDT_WIN8);
+						pMember->m_bAnimationMode = false;
+						pMember->m_nCurTimerTick = 0;
+						pMember->m_vAnimationData.clear();
+
+						NMHDR nmhdr;
+						nmhdr.hwndFrom = m_hWnd;
+						nmhdr.idFrom = GetDlgCtrlID();
+						nmhdr.code = LVN_ANIMATION_END;
+						GetParent()->SendMessage(WM_NOTIFY, nmhdr.idFrom, LPARAM(&nmhdr));
 					}
 				}
-
-				dc.BitBlt(0, 0, rcClient.Width(), rcClient.Height(), &memBkDC, 0, 0, SRCCOPY);
-				memBkDC.SelectObject(pbmpBkOld);
+				else
+				{
+					OnDrawItemEx(&memBkDC, nItem, 0);
+				}
 			}
-			else
-			{
-				// Draw the default content to the dcText
-				CDC dcText;
-				dcText.CreateCompatibleDC(&dc);
-				CBitmap bmpText;
-				bmpText.CreateCompatibleBitmap(&dc, rcClient.Width(), rcClient.Height());
-				ASSERT(bmpText.GetSafeHandle() != NULL);
-				CBitmap *pbmpTextOld = dcText.SelectObject(&bmpText);
-				COLORREF crTextBk = GetTextBkColor(); // RGB(0, 0, 0)
-				dcText.FillSolidRect(rcClient, crTextBk);
-				HFONT hFontOld = (HFONT)::GetCurrentObject(dcText.GetSafeHdc(), OBJ_FONT); // store the Font object before call DefWindowProc
-				CWnd::DefWindowProc(WM_PAINT, (WPARAM)dcText.m_hDC, 0);
 
-				// draw the text to memBkDC by erase background text color
-				TransparentBlt2(memBkDC.m_hDC, 0, 0, rcClient.Width(), rcClient.Height(), dcText.m_hDC, 0, 0, rcClient.Width(), rcClient.Height(), crTextBk);
-
-				// draw the memBkDC to dc.
-				dc.BitBlt(0, 0, rcClient.Width(), rcClient.Height(), &memBkDC, 0, 0, SRCCOPY);
-				memBkDC.SelectObject(pbmpBkOld);
-
-				dcText.SelectObject(pbmpTextOld);
-				dcText.SelectObject(hFontOld);
-			}
+			dc.BitBlt(0, 0, rcClient.Width(), rcClient.Height(), &memBkDC, 0, 0, SRCCOPY);
+			memBkDC.SelectObject(pbmpBkOld);
 
 			UpdateCustomScrollBar();
 		}
@@ -3707,22 +3714,6 @@ int CSkinListCtrl::GetImages(
 	return 0;
 }
 
-int CSkinListCtrl::EnableOwnerDraw(BOOL bEnable)
-{
-	LISTCTRLMEMBER *pMember = (LISTCTRLMEMBER *)m_pMember;
-
-	pMember->m_bEnableOwnerDraw = bEnable;
-
-	return 0;
-}
-
-BOOL CSkinListCtrl::IsEnableOwnerDraw() const
-{
-	LISTCTRLMEMBER *pMember = (LISTCTRLMEMBER *)m_pMember;
-
-	return pMember->m_bEnableOwnerDraw;
-}
-
 int CSkinListCtrl::ShowGridLine(BOOL bShow)
 {
 	LISTCTRLMEMBER *pMember = (LISTCTRLMEMBER *)m_pMember;
@@ -3756,6 +3747,22 @@ BOOL CSkinListCtrl::IsDrawFirstRow() const
 	LISTCTRLMEMBER *pMember = (LISTCTRLMEMBER *)m_pMember;
 
 	return pMember->m_bDraw0Row;
+}
+
+int CSkinListCtrl::GridVerLineToFirstRow(BOOL bTo0Row)
+{
+	LISTCTRLMEMBER *pMember = (LISTCTRLMEMBER *)m_pMember;
+
+	pMember->m_bVerLineTo0Row = bTo0Row;
+
+	return 0;
+}
+
+BOOL CSkinListCtrl::IsGridVerLineToFirstRow() const
+{
+	LISTCTRLMEMBER *pMember = (LISTCTRLMEMBER *)m_pMember;
+
+	return pMember->m_bVerLineTo0Row;
 }
 
 int CSkinListCtrl::SetGridLineOffset(const LPPOINT lpPtOffset)

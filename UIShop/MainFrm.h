@@ -39,7 +39,7 @@ public:
 	const CTRLPROPERTIES *GetFormatBrushProp() const;
 	int SetFormatBrushProp(const CTRLPROPERTIES *pProp);
 	int AddFormatBrushPropIndex(int nIndex);
-	const std::vector<int> *GetFormatBrushPropIndex() const;
+	const std::vector<INT_PTR> *GetFormatBrushPropIndex() const;
 
 	STORY_FRAME *InsertFrame();
 
@@ -209,5 +209,5 @@ protected:  // control bar embedded members
 
 	BOOL m_bFormatBrush;
 	const CTRLPROPERTIES *m_pFormatBrushProp;
-	std::vector<int> m_vBrushPropIndex;
+	std::vector<INT_PTR> m_vBrushPropIndex;
 };

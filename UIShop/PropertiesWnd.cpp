@@ -40,7 +40,7 @@ int InitWindowIDOptions(CMFCPropertyGridProperty *pProp, BOOL bIncludeSelf)
 	CString strCurWinID = (LPCTSTR)pWndProp->m_strID;
 
 	std::vector<UIWNDPROPERTIES *> *pWindows = CUIMgr::GetUIWndPropertiesList();
-	int nCount = pWindows->size();
+	size_t nCount = pWindows->size();
 	for (int i = 0; i < nCount; ++i)
 	{
 		UIWNDPROPERTIES *pWindow = (*pWindows)[i];

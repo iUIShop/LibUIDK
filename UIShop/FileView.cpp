@@ -127,7 +127,7 @@ int OpenFolderAndSelectItems(LPCWSTR lpsFolder, LPCWSTR *lpsItems, int nCount)
 		HINSTANCE hRet = ShellExecute(NULL, TEXT("open"), TEXT("explorer.exe"), strParam, NULL,
 				SW_SHOWNORMAL);
 
-		if ((UINT)hRet <= HINSTANCE_ERROR)
+		if ((UINT_PTR)hRet <= HINSTANCE_ERROR)
 		{
 			return -1;
 		}

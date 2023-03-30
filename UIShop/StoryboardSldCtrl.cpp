@@ -42,7 +42,7 @@ void CStoryboardSldCtrl::DrawHorzSlider(CDC *pMemDC)
 	// Set frame position.
 	if (m_pUIDesignWnd != NULL)
 	{
-		int nStoryCount = m_pUIDesignWnd->GetUIWndProperties()->m_vStoryFrame.size();
+		size_t nStoryCount = m_pUIDesignWnd->GetUIWndProperties()->m_vStoryFrame.size();
 		for (int i = 0; i < nStoryCount; ++i)
 		{
 			STORY_FRAME *pFrame = m_pUIDesignWnd->GetUIWndProperties()->m_vStoryFrame[i];

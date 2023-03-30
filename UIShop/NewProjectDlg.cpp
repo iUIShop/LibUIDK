@@ -139,7 +139,7 @@ void CNewProjectDlg::OnBnClickedBtnGoto()
 	if (!bRet)
 		return;
 
-	int nRet = (int)ShellExecute(NULL, _T("open"), m_strLocation, NULL, NULL, SW_SHOW);
+	INT_PTR nRet = (INT_PTR)ShellExecute(NULL, _T("open"), m_strLocation, NULL, NULL, SW_SHOW);
 	if (nRet > 32)
 		return;		// Successful.
 

@@ -735,7 +735,7 @@ int CMainFrame::AddFormatBrushPropIndex(int nIndex)
 	return 0;
 }
 
-const std::vector<int> *CMainFrame::GetFormatBrushPropIndex() const
+const std::vector<INT_PTR> *CMainFrame::GetFormatBrushPropIndex() const
 {
 	return &m_vBrushPropIndex;
 }
@@ -2112,7 +2112,7 @@ void CMainFrame::OnDesignBackgroundShow()
 		return;
 	}
 
-	int nCtrlCount = pUIDesignWnd->m_listCtrl.size();
+	size_t nCtrlCount = pUIDesignWnd->m_listCtrl.size();
 
 	if (pUIDesignWnd->m_bBackgroundShow)
 	{

@@ -68,7 +68,7 @@ void CTransformDialogDlg::OnBnClickedBtnGoSource()
 	if (!bRet)
 		return;
 
-	int nRet = (int)ShellExecute(NULL, _T("open"), GetFilePath(m_strResSource), NULL, NULL, SW_SHOW);
+	INT_PTR nRet = (INT_PTR)ShellExecute(NULL, _T("open"), GetFilePath(m_strResSource), NULL, NULL, SW_SHOW);
 	if (nRet > 32)
 		return;		// Successful.
 
@@ -103,7 +103,7 @@ void CTransformDialogDlg::OnBnClickedBtnGoTarget()
 	if (!bRet)
 		return;
 
-	int nRet = (int)ShellExecute(NULL, _T("open"), GetFilePath(m_strXUITarget), NULL, NULL, SW_SHOW);
+	INT_PTR nRet = (INT_PTR)ShellExecute(NULL, _T("open"), GetFilePath(m_strXUITarget), NULL, NULL, SW_SHOW);
 	if (nRet > 32)
 		return;		// Successful.
 

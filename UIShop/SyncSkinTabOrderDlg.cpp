@@ -68,7 +68,7 @@ int CSyncSkinTabOrderDlg::SyncSkinTabOrder(const CString &strSkinSource, const C
 	std::vector<UIWNDPROPERTIES *> *pvSourceWindowList = CUIMgr::GetUIWndPropertiesList();
 
 	std::vector<CSyncWindow> vSourceWindows;
-	int nSourceWindowCount = pvSourceWindowList->size();
+	size_t nSourceWindowCount = pvSourceWindowList->size();
 	for (int i = 0; i < nSourceWindowCount; ++i)
 	{
 		UIWNDPROPERTIES *pWindow = (*pvSourceWindowList)[i];
@@ -76,7 +76,7 @@ int CSyncSkinTabOrderDlg::SyncSkinTabOrder(const CString &strSkinSource, const C
 		CSyncWindow syncWin;
 		syncWin.m_strWindowName = (LPCTSTR)pWindow->m_strID;
 
-		int nChildCount = pWindow->m_vControls.size();
+		size_t nChildCount = pWindow->m_vControls.size();
 		for (int j = 0; j < nChildCount; ++j)
 		{
 			CTRLPROPERTIES *pCtrlProp = pWindow->m_vControls[j];
@@ -95,14 +95,14 @@ int CSyncSkinTabOrderDlg::SyncSkinTabOrder(const CString &strSkinSource, const C
 	strSourceTree += _T("WindowTree.txt");
 	FILE *fpSource = TFOPEN(strSourceTree.GetBuffer(0), _T("wb"));
 
-	int nSourceCount = vSourceWindows.size();
+	size_t nSourceCount = vSourceWindows.size();
 	for (int i = 0; i < nSourceCount; ++i)
 	{
 		CStringA strWindowID = _bstr_t(vSourceWindows[i].m_strWindowName.GetBuffer(0));
 		fputs(strWindowID, fpSource);
 		fputs("\r\n", fpSource);
 
-		int nChildCount = vSourceWindows[i].m_vControls.size();
+		size_t nChildCount = vSourceWindows[i].m_vControls.size();
 		for (int j = 0; j < nChildCount; ++j)
 		{
 			CStringA strCtrlID = _bstr_t(vSourceWindows[i].m_vControls[j].GetBuffer(0));
@@ -121,7 +121,7 @@ int CSyncSkinTabOrderDlg::SyncSkinTabOrder(const CString &strSkinSource, const C
 	// Load target skin
 	CUIMgr::SetUIPath(strSkinTarget);
 	std::vector<UIWNDPROPERTIES *> *pvTargetWindowList = CUIMgr::GetUIWndPropertiesList();
-	int nTargetWindowCount = pvTargetWindowList->size();
+	size_t nTargetWindowCount = pvTargetWindowList->size();
 	for (int i = 0; i < nSourceWindowCount; ++i)
 	{
 		CString strWindowID = vSourceWindows[i].m_strWindowName;
@@ -144,7 +144,7 @@ int CSyncSkinTabOrderDlg::SyncSkinTabOrder(const CString &strSkinSource, const C
 		UIWNDPROPERTIES *pTargetUIWnd = CUIMgr::GetWindowItem(i);
 		ASSERT(strWindowID == (LPCTSTR)pTargetUIWnd->m_strID);
 
-		int nChildCount = vSourceWindows[i].m_vControls.size();
+		size_t nChildCount = vSourceWindows[i].m_vControls.size();
 		for (int j = 0; j < nChildCount; ++j)
 		{
 			CString strCtrlID = vSourceWindows[i].m_vControls[j];
@@ -169,7 +169,7 @@ int CSyncSkinTabOrderDlg::SyncSkinTabOrder(const CString &strSkinSource, const C
 	strTargetTree += _T("WindowTree.txt");
 	FILE *fpTarget = TFOPEN(strTargetTree.GetBuffer(0), _T("wb"));
 
-	int nTargetCount = pvTargetWindowList->size();
+	size_t nTargetCount = pvTargetWindowList->size();
 	for (int i = 0; i < nTargetCount; ++i)
 	{
 		UIWNDPROPERTIES *pUIWnd = (*pvTargetWindowList)[i];
@@ -178,7 +178,7 @@ int CSyncSkinTabOrderDlg::SyncSkinTabOrder(const CString &strSkinSource, const C
 		fputs(strWindowID, fpTarget);
 		fputs("\r\n", fpTarget);
 
-		int nChildCount = pUIWnd->m_vControls.size();
+		size_t nChildCount = pUIWnd->m_vControls.size();
 		for (int j = 0; j < nChildCount; ++j)
 		{
 			CStringA strCtrlID = (LPCSTR)pUIWnd->m_vControls[j]->m_strID;
