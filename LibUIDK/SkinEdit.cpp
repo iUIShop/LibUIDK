@@ -26,7 +26,6 @@ struct EDITMEMBER
 			m_himgBk[i] = NULL;
 		}
 
-		m_bFirstInitBrush = true;
 		m_brush = NULL;
 		m_nDeflateRight = 0;
 		m_bHasBorder = FALSE;
@@ -49,7 +48,6 @@ struct EDITMEMBER
 			m_himgBk[i] = NULL;
 		}
 
-		m_bFirstInitBrush = true;
 		::DeleteObject(m_brush);
 		m_brush = NULL;
 
@@ -68,7 +66,6 @@ struct EDITMEMBER
 	BOOL m_bSingleLineTopBottomMargin;
 
 	HIUIIMAGE m_himgBk[4]; // The Highlight state is for Combo Box, the Selected state is not used.
-	bool m_bFirstInitBrush;
 	HBRUSH m_brush;
 
 	// For child of CCombobBox
@@ -709,11 +706,13 @@ HBRUSH CSkinEdit::CtlColor(CDC *pDC, UINT nCtlColor)
 {
 	EDITMEMBER *pMember = (EDITMEMBER *)m_pMember;
 
-	// 如果Edit的父窗口没有指定背景图，在第一次调用CtlColor之前生成的brush，可能是黑色的。
-	if (pMember->m_bFirstInitBrush)
+	// 经测试，在Win11上，
+	// 多行Edit的CtlColor早于父CUIWnd的WM_PAINT消息，父CUIWnd的WM_PAINT消息早于Edit的WM_PAINT消息。
+	// 所以，多行Edit在第一次CtlColor的时候，调用UpdateBackgroundBrush（内部会使用父窗口背景），
+	// 其实这个时候，父窗口背景还未准备好。
+	if (NULL == pMember->m_brush)
 	{
-		UpdateBackgroundBrush();
-		pMember->m_bFirstInitBrush = false;
+		int nRet = UpdateBackgroundBrush();
 	}
 
 	// TODO: Change any attributes of the DC here
@@ -1201,7 +1200,11 @@ int CSkinEdit::UpdateBackgroundBrush()
 			pBackgroundParent->ScreenToClient(rcClientNon00);
 		}
 
-		DrawParentPart(this, &dcMem, rcClientNon00, NULL, pBackgroundParent);
+		int nRet = DrawParentPart(this, &dcMem, rcClientNon00, NULL, pBackgroundParent);
+		if (0 != nRet)
+		{
+			return -2;
+		}
 	}
 
 	//
