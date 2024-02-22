@@ -1288,12 +1288,12 @@ void CControlWnd::OnNcLButtonDown(UINT nHitTest, CPoint point)
 			}
 			else
 			{
-				const std::vector<int> *pPropIndex = g_pFrm->GetFormatBrushPropIndex();
+				const std::vector<INT_PTR> *pPropIndex = g_pFrm->GetFormatBrushPropIndex();
 
-				int nIndexCount = pPropIndex->size();
+				size_t nIndexCount = pPropIndex->size();
 				for (int i = 0; i < nIndexCount; ++i)
 				{
-					int nIndex = (*pPropIndex)[i];		// The nIndex prop need be format.
+					INT nIndex = (INT)(INT_PTR)(*pPropIndex)[i];		// The nIndex prop need be format.
 					const IUI_VARIANT *pVar = pFormatBrush->GetProperty(nIndex);
 					m_pCtrlProperties->SetProperty(nIndex, pVar);
 				}

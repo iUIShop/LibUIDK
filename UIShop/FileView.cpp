@@ -127,7 +127,7 @@ int OpenFolderAndSelectItems(LPCWSTR lpsFolder, LPCWSTR *lpsItems, int nCount)
 		HINSTANCE hRet = ShellExecute(NULL, TEXT("open"), TEXT("explorer.exe"), strParam, NULL,
 				SW_SHOWNORMAL);
 
-		if ((UINT)hRet <= HINSTANCE_ERROR)
+		if ((UINT_PTR)hRet <= HINSTANCE_ERROR)
 		{
 			return -1;
 		}
@@ -244,7 +244,7 @@ int CFileView::InsertWindowsGroup(HTREEITEM hRoot)
 		// set item data to tree item
 		TREE_ITEMDATA *pData = new TREE_ITEMDATA;
 		pData->eTreeItemType = WINDOWS_ROOT;
-		m_treeWindow.SetItemData(m_hWindowsRoot, (DWORD)pData);
+		m_treeWindow.SetItemData(m_hWindowsRoot, (DWORD_PTR)pData);
 
 		UpdateUIWindowsCount();
 	}
@@ -262,7 +262,7 @@ int CFileView::InsertWindowsGroup(HTREEITEM hRoot)
 		// set item data to tree item
 		TREE_ITEMDATA *pData = new TREE_ITEMDATA;
 		pData->eTreeItemType = WINDOWS_NODE;
-		m_treeWindow.SetItemData(hItem, (DWORD)pData);
+		m_treeWindow.SetItemData(hItem, (DWORD_PTR)pData);
 
 		// create the CUIDesignWnd
 		pData->wndUIDesign.SetUIWndProperties(pUIWndProp);
@@ -282,7 +282,7 @@ int CFileView::InitFontResourceBranch()
 	m_hResDefaultFontBranch = m_treeWindow.InsertItem(_T("Default Font"), m_hResourceRoot);
 	TREE_ITEMDATA *pData = new TREE_ITEMDATA;
 	pData->eTreeItemType = RES_DEFAULT_FONT_BRANCH;
-	m_treeWindow.SetItemData(m_hResDefaultFontBranch, (DWORD)pData);
+	m_treeWindow.SetItemData(m_hResDefaultFontBranch, (DWORD_PTR)pData);
 
 	//
 	// Insert default font
@@ -309,7 +309,7 @@ int CFileView::InitFontResourceBranch()
 	m_hResFontBranch = m_treeWindow.InsertItem(_T("Font"), m_hResourceRoot);
 	pData = new TREE_ITEMDATA;
 	pData->eTreeItemType = RES_FONT_BRANCH;
-	m_treeWindow.SetItemData(m_hResFontBranch, (DWORD)pData);
+	m_treeWindow.SetItemData(m_hResFontBranch, (DWORD_PTR)pData);
 
 	int nCount = CUIMgr::GetResourceCount(REST_FONT);
 	for (int i = 0; i < nCount; ++i)
@@ -339,7 +339,7 @@ HTREEITEM CFileView::InsertConditionFont(HTREEITEM hParentItem, FONTRESOURCEITEM
 	TREE_ITEMDATA *pData = new TREE_ITEMDATA;
 	pData->eTreeItemType = RES_CONDITION_FONT_NODE;
 	pData->pResFont = pConditionFont;
-	m_treeWindow.SetItemData(hRetItem, (DWORD)pData);
+	m_treeWindow.SetItemData(hRetItem, (DWORD_PTR)pData);
 
 	InsertConditionFontChildren(hRetItem, pConditionFont);
 
@@ -356,7 +356,7 @@ int CFileView::InsertConditionFontChildren(HTREEITEM hParentItem, FONTRESOURCEIT
 		TREE_ITEMDATA *pData = new TREE_ITEMDATA;
 		pData->eTreeItemType = RES_CONDITION_CHILD_FONT_NODE;
 		pData->pResourceOrStyle = it->second;
-		m_treeWindow.SetItemData(hFont, (DWORD)pData);
+		m_treeWindow.SetItemData(hFont, (DWORD_PTR)pData);
 	}
 
 	return 0;
@@ -382,7 +382,7 @@ HTREEITEM CFileView::InsertGeneralFont(HTREEITEM hParentItem, FONTRESOURCEITEM *
 	TREE_ITEMDATA *pData = new TREE_ITEMDATA;
 	pData->eTreeItemType = RES_GENERAL_FONT_NODE;
 	pData->pResFont = pGeneralFont;
-	m_treeWindow.SetItemData(hRetItem, (DWORD)pData);
+	m_treeWindow.SetItemData(hRetItem, (DWORD_PTR)pData);
 
 	return hRetItem;
 }
@@ -395,7 +395,7 @@ int CFileView::InitColorResourceBranch()
 	m_hResDefaultColorBranch = m_treeWindow.InsertItem(_T("Default Color"), m_hResourceRoot);
 	TREE_ITEMDATA *pData = new TREE_ITEMDATA;
 	pData->eTreeItemType = RES_DEFAULT_COLOR_BRANCH;
-	m_treeWindow.SetItemData(m_hResDefaultColorBranch, (DWORD)pData);
+	m_treeWindow.SetItemData(m_hResDefaultColorBranch, (DWORD_PTR)pData);
 
 	// Insert default resource to tree
 	RESCOLORPROPERTIES *pResDefaultColor = CUIMgr::GetDefaultColorResource();
@@ -405,7 +405,7 @@ int CFileView::InitColorResourceBranch()
 	pData = new TREE_ITEMDATA;
 	pData->eTreeItemType = RES_COLOR_NODE;
 	pData->pResourceOrStyle = pResDefaultColor;
-	m_treeWindow.SetItemData(m_hResDefaultColor, (DWORD)pData);
+	m_treeWindow.SetItemData(m_hResDefaultColor, (DWORD_PTR)pData);
 
 	//
 	// Insert Color resource
@@ -413,7 +413,7 @@ int CFileView::InitColorResourceBranch()
 	m_hResColorBranch = m_treeWindow.InsertItem(_T("Color"), m_hResourceRoot);
 	pData = new TREE_ITEMDATA;
 	pData->eTreeItemType = RES_COLOR_BRANCH;
-	m_treeWindow.SetItemData(m_hResColorBranch, (DWORD)pData);
+	m_treeWindow.SetItemData(m_hResColorBranch, (DWORD_PTR)pData);
 
 	int nCount = CUIMgr::GetResourceCount(REST_COLOR);
 	for (int i = 0; i < nCount; ++i)
@@ -429,7 +429,7 @@ int CFileView::InitColorResourceBranch()
 
 		// set item data to tree item
 		pData->pResourceOrStyle = pResProp;
-		m_treeWindow.SetItemData(hItem, (DWORD)pData);
+		m_treeWindow.SetItemData(hItem, (DWORD_PTR)pData);
 	}
 
 	return 0;
@@ -441,7 +441,7 @@ HTREEITEM CFileView::InsertEachStyle(LPCTSTR lpszNode, TREE_ITEM_TYPE eTreeItemT
 	hItemRet = m_treeWindow.InsertItem(lpszNode, m_hStyleRoot);
 	TREE_ITEMDATA *pData = new TREE_ITEMDATA;
 	pData->eTreeItemType = eTreeItemTypeRoot;
-	m_treeWindow.SetItemData(hItemRet, (DWORD)pData);
+	m_treeWindow.SetItemData(hItemRet, (DWORD_PTR)pData);
 
 	int nCount = CUIMgr::GetStyleCount(eStyleType);
 	for (int i = 0; i < nCount; ++i)
@@ -457,7 +457,7 @@ HTREEITEM CFileView::InsertEachStyle(LPCTSTR lpszNode, TREE_ITEM_TYPE eTreeItemT
 
 		// set item data to tree item
 		pData->pResourceOrStyle = pStyleProp;
-		m_treeWindow.SetItemData(hItem, (DWORD)pData);
+		m_treeWindow.SetItemData(hItem, (DWORD_PTR)pData);
 	}
 
 	return hItemRet;
@@ -468,7 +468,7 @@ int CFileView::InitStyleBrach()
 	m_hStyleRoot = m_treeWindow.InsertItem(_T("Style"));
 	TREE_ITEMDATA *pData = new TREE_ITEMDATA;
 	pData->eTreeItemType = STYLE_ROOT;
-	m_treeWindow.SetItemData(m_hStyleRoot, (DWORD)pData);
+	m_treeWindow.SetItemData(m_hStyleRoot, (DWORD_PTR)pData);
 
 	// Insert each style
 	m_hStylePushButtonRoot = InsertEachStyle(_T("PushButton"), STYLE_PUSHBUTTON_ROOT, STYLE_PUSHBUTTON_NODE, STYLET_PUSHBUTTON, CT_STYLE_PUSHBUTTON);
@@ -577,7 +577,7 @@ BOOL CFileView::OnOpenFile()
 	m_hResourceRoot = m_treeWindow.InsertItem(_T("Resource"));
 	TREE_ITEMDATA *pData = new TREE_ITEMDATA;
 	pData->eTreeItemType = RESOURCE_ROOT;
-	m_treeWindow.SetItemData(m_hResourceRoot, (DWORD)pData);
+	m_treeWindow.SetItemData(m_hResourceRoot, (DWORD_PTR)pData);
 
 	InitFontResourceBranch();
 	InitColorResourceBranch();
@@ -830,7 +830,7 @@ int CFileView::InsertResource(TREE_ITEM_TYPE eTreeItemType)
 
 		// Set Item data
 		pData->pResFont = pFri;
-		m_treeWindow.SetItemData(hItem, (DWORD)pData);
+		m_treeWindow.SetItemData(hItem, (DWORD_PTR)pData);
 	}
 	else if (eTreeItemType == RES_COLOR_NODE)
 	{
@@ -844,7 +844,7 @@ int CFileView::InsertResource(TREE_ITEM_TYPE eTreeItemType)
 		CUIMgr::AddColorResourceItem(pResProp);
 
 		// Set Item data
-		m_treeWindow.SetItemData(hItem, (DWORD)pData);
+		m_treeWindow.SetItemData(hItem, (DWORD_PTR)pData);
 	}
 	else if (eTreeItemType == STYLE_MENU_NODE)
 	{
@@ -855,7 +855,7 @@ int CFileView::InsertResource(TREE_ITEM_TYPE eTreeItemType)
 		hItem = m_treeWindow.InsertItem(strResID, hRoot);
 
 		// Set Item data
-		m_treeWindow.SetItemData(hItem, (DWORD)pData);
+		m_treeWindow.SetItemData(hItem, (DWORD_PTR)pData);
 	}
 	else if (eTreeItemType == STYLE_HEADERCTRL_NODE)
 	{
@@ -866,7 +866,7 @@ int CFileView::InsertResource(TREE_ITEM_TYPE eTreeItemType)
 		hItem = m_treeWindow.InsertItem(strResID, hRoot);
 
 		// Set Item data
-		m_treeWindow.SetItemData(hItem, (DWORD)pData);
+		m_treeWindow.SetItemData(hItem, (DWORD_PTR)pData);
 	}
 	else if (eTreeItemType == STYLE_HORSCROLLBAR_NODE)
 	{
@@ -877,7 +877,7 @@ int CFileView::InsertResource(TREE_ITEM_TYPE eTreeItemType)
 		hItem = m_treeWindow.InsertItem(strResID, hRoot);
 
 		// Set Item data
-		m_treeWindow.SetItemData(hItem, (DWORD)pData);
+		m_treeWindow.SetItemData(hItem, (DWORD_PTR)pData);
 	}
 	else if (eTreeItemType == STYLE_VERSCROLLBAR_NODE)
 	{
@@ -888,7 +888,7 @@ int CFileView::InsertResource(TREE_ITEM_TYPE eTreeItemType)
 		hItem = m_treeWindow.InsertItem(strResID, hRoot);
 
 		// Set Item data
-		m_treeWindow.SetItemData(hItem, (DWORD)pData);
+		m_treeWindow.SetItemData(hItem, (DWORD_PTR)pData);
 	}
 	else if (eTreeItemType == STYLE_SPLITTER_NODE)
 	{
@@ -899,7 +899,7 @@ int CFileView::InsertResource(TREE_ITEM_TYPE eTreeItemType)
 		hItem = m_treeWindow.InsertItem(strResID, hRoot);
 
 		// Set Item data
-		m_treeWindow.SetItemData(hItem, (DWORD)pData);
+		m_treeWindow.SetItemData(hItem, (DWORD_PTR)pData);
 	}
 	else if (eTreeItemType == STYLE_WL_LINE_NODE)
 	{
@@ -910,7 +910,7 @@ int CFileView::InsertResource(TREE_ITEM_TYPE eTreeItemType)
 		hItem = m_treeWindow.InsertItem(strResID, hRoot);
 
 		// Set Item data
-		m_treeWindow.SetItemData(hItem, (DWORD)pData);
+		m_treeWindow.SetItemData(hItem, (DWORD_PTR)pData);
 	}
 	else if (eTreeItemType == STYLE_WL_PIC_NODE)
 	{
@@ -921,7 +921,7 @@ int CFileView::InsertResource(TREE_ITEM_TYPE eTreeItemType)
 		hItem = m_treeWindow.InsertItem(strResID, hRoot);
 
 		// Set Item data
-		m_treeWindow.SetItemData(hItem, (DWORD)pData);
+		m_treeWindow.SetItemData(hItem, (DWORD_PTR)pData);
 	}
 	else
 	{
@@ -1028,7 +1028,7 @@ int CFileView::InsertStyle(TREE_ITEM_TYPE eTreeItemType)
 	// Set item data to tree item
 	TREE_ITEMDATA *pData = new TREE_ITEMDATA;
 	pData->eTreeItemType = eTreeItemType;
-	m_treeWindow.SetItemData(hItem, (DWORD)pData);
+	m_treeWindow.SetItemData(hItem, (DWORD_PTR)pData);
 
 	pStyleProp->m_strID = strResID;
 
@@ -1257,7 +1257,7 @@ void CFileView::OnInsertWindow()
 	// set item data to tree item
 	TREE_ITEMDATA *pData = new TREE_ITEMDATA;
 	pData->eTreeItemType = WINDOWS_NODE;
-	m_treeWindow.SetItemData(hItem, (DWORD)pData);
+	m_treeWindow.SetItemData(hItem, (DWORD_PTR)pData);
 
 	pUIProp = CUIMgr::AllocUIWNDPROPERTIES();
 	pUIProp->m_strID = strWindowID;
@@ -2325,7 +2325,7 @@ void CFileView::OnInsertConditionFontChild()
 
 	// Insert to tree
 	HTREEITEM hItem = m_treeWindow.InsertItem(strID, 3, 3, hParentItem);
-	m_treeWindow.SetItemData(hItem, (DWORD)pData);
+	m_treeWindow.SetItemData(hItem, (DWORD_PTR)pData);
 
 	// Insert to CUIMgr
 	pParentData->pResFont->m_mapConditionFont[strID] = pFontProp;

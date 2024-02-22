@@ -851,7 +851,6 @@ int CTestWnd::OnCreate(LPCREATESTRUCT lpCreateStruct)
 			{
 				CSkinListCtrl *pWnd = (CSkinListCtrl *)CWnd::FromHandle(hWnd);
 				pWnd->SetImageList(&m_imgList, LVSIL_NORMAL);
-				pWnd->EnableOwnerDraw(TRUE);
 				pWnd->EnableToolTips(TRUE);
 
 				if (!bOwnerData)

@@ -89,8 +89,8 @@ void CFormatBrushDlg::OnBnClickedOk()
 
 		if (bCheck)
 		{
-			int nIndexInProp = m_lstFormatBrush.GetItemData(i);
-			g_pFrm->AddFormatBrushPropIndex(nIndexInProp);
+			DWORD_PTR nIndexInProp = m_lstFormatBrush.GetItemData(i);
+			g_pFrm->AddFormatBrushPropIndex((int)(INT_PTR)nIndexInProp);
 		}
 	}
 

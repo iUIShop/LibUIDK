@@ -101,7 +101,7 @@ BOOL CImageSymbolsDlg::OnInitDialog()
 		// Delete duplicate elements.
 		std::vector<CString> vImageFiles;
 
-		int nImageCount = vImages.size();
+		size_t nImageCount = vImages.size();
 		for (int i = 0; i < nImageCount; ++i)
 		{
 			CString strImage = vImages[i];
@@ -151,7 +151,7 @@ void CImageSymbolsDlg::OnBnClickedBtnMoveToUnused()
 	}
 
 	// Move unused files to 'Unused' folder
-	int nCount = m_vFiles.size();
+	size_t nCount = m_vFiles.size();
 	for (int i = 0; i < nCount; ++i)
 	{
 		CString strFile = m_vFiles[i];

@@ -180,7 +180,7 @@ void CUIDesignWnd::DrawBkImage(CDC *pMemDC)
 void CUIDesignWnd::DrawBackgroundShowControls(CDC *pMemDC)
 {
 	// The hidden window less picture controls need 'Backgournd Show'.
-	int nCtrlCount = m_listCtrl.size();
+	size_t nCtrlCount = m_listCtrl.size();
 	for (int i = 0; i < nCtrlCount; ++i)
 	{
 		CControlWnd *pCtrlWnd = m_listCtrl[i];
@@ -229,21 +229,21 @@ void CUIDesignWnd::OnLButtonDown(UINT nFlags, CPoint point)
 
 	if (rcRightBorder.PtInRect(point))
 	{
-		LONG lNew = (LONG)LoadCursor(NULL, IDC_SIZEWE);
+		LONG_PTR lNew = (LONG_PTR)LoadCursor(NULL, IDC_SIZEWE);
 		SetClassLongPtr(this->GetSafeHwnd(), GCLP_HCURSOR, lNew);
 
 		m_nHitTestRet = HTRIGHT;
 	}
 	else if (rcBottomBorder.PtInRect(point))
 	{
-		LONG lNew = (LONG)LoadCursor(NULL, IDC_SIZENS);
+		LONG_PTR lNew = (LONG_PTR)LoadCursor(NULL, IDC_SIZENS);
 		SetClassLongPtr(this->GetSafeHwnd(), GCLP_HCURSOR, lNew);
 
 		m_nHitTestRet = HTBOTTOM;
 	}
 	else if (rcRightBottom.PtInRect(point))
 	{
-		LONG lNew = (LONG)LoadCursor(NULL, IDC_SIZENWSE);
+		LONG_PTR lNew = (LONG_PTR)LoadCursor(NULL, IDC_SIZENWSE);
 		SetClassLongPtr(this->GetSafeHwnd(), GCLP_HCURSOR, lNew);
 
 		m_nHitTestRet = HTBOTTOMRIGHT;
@@ -318,12 +318,12 @@ void CUIDesignWnd::OnMouseMove(UINT nFlags, CPoint point)
 	CONTROL_TYPE eControlType = g_pFrm->GetCurSelControlType();
 	if (eControlType != CT_ARROW)
 	{
-		LONG lNew = (LONG)LoadCursor(NULL, IDC_CROSS);
+		LONG_PTR lNew = (LONG_PTR)LoadCursor(NULL, IDC_CROSS);
 		SetClassLongPtr(this->GetSafeHwnd(), GCLP_HCURSOR, lNew);
 	}
 	else
 	{
-		LONG lNew = (LONG)LoadCursor(NULL, IDC_ARROW);
+		LONG_PTR lNew = (LONG_PTR)LoadCursor(NULL, IDC_ARROW);
 		SetClassLongPtr(this->GetSafeHwnd(), GCLP_HCURSOR, lNew);
 	}
 
@@ -1622,7 +1622,7 @@ int CUIDesignWnd::GetSelectedControlsCount()
 
 int CUIDesignWnd::HighlightControl(const CTRLPROPERTIES *pCtrlProp)
 {
-	int nCount = m_listCtrl.size();
+	size_t nCount = m_listCtrl.size();
 	for (int i = 0; i < nCount; ++i)
 	{
 		CControlWnd *pWnd = m_listCtrl[i];
@@ -1789,7 +1789,7 @@ int CUIDesignWnd::SetCurStoryFrame(int nFrame)
 	}
 
 	// Update view to story frame
-	int nCtrlCount = m_listCtrl.size();
+	size_t nCtrlCount = m_listCtrl.size();
 	for (int i = 0; i < nCtrlCount; ++i)
 	{
 		CControlWnd *pWnd = m_listCtrl[i];
@@ -1906,7 +1906,7 @@ int CUIDesignWnd::MoveSelectedControls(CControlWnd *pSender, int nXOffset, int n
 
 int CUIDesignWnd::GetControlIndex(const CTRLPROPERTIES *pCtrlProp)
 {
-	int nChildCount = m_pUIWndProperties->m_vControls.size();
+	size_t nChildCount = m_pUIWndProperties->m_vControls.size();
 
 	int nIndex = -1;
 	for (int i = 0; i < nChildCount; ++i)

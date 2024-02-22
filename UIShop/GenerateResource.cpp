@@ -138,7 +138,7 @@ int CGenerateResource::GetUIFileList(std::vector<CString> *pvImageList, std::vec
 
 	// Sort
 #ifdef _DEBUG
-	int nCount = pvImageList->size();
+	size_t nCount = pvImageList->size();
 	for (int i = 0; i < nCount; ++i)
 	{
 		CString s = *(pvImageList->begin() + i);
@@ -152,7 +152,7 @@ int CGenerateResource::GetUIFileList(std::vector<CString> *pvImageList, std::vec
 	std::sort(pvBmpList->begin(), pvBmpList->end(), ImageNameCompare);
 
 #ifdef _DEBUG
-	int nCount2 = pvImageList->size();
+	size_t nCount2 = pvImageList->size();
 	for (int i = 0; i < nCount2; ++i)
 	{
 		CString s = *(pvImageList->begin() + i);
@@ -167,7 +167,7 @@ int CGenerateResource::GetUIFileList(std::vector<CString> *pvImageList, std::vec
 	std::vector<CString>::iterator posBmp = unique(pvBmpList->begin(), pvBmpList->end(), ImageNameCompare2);
 
 #ifdef _DEBUG
-	int nCount3 = pvImageList->size();
+	size_t nCount3 = pvImageList->size();
 	for (int i = 0; i < nCount3; ++i)
 	{
 		CString s = *(pvImageList->begin() + i);
@@ -181,7 +181,7 @@ int CGenerateResource::GetUIFileList(std::vector<CString> *pvImageList, std::vec
 	pvBmpList->erase(posBmp, pvBmpList->end());
 
 #ifdef _DEBUG
-	int nCount4 = pvImageList->size();
+	size_t nCount4 = pvImageList->size();
 	for (int i = 0; i < nCount4; ++i)
 	{
 		CString s = *(pvImageList->begin() + i);

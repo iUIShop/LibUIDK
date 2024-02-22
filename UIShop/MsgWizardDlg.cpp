@@ -88,7 +88,7 @@ void CMsgWizardDlg::OnTvnItemChangedTreeControls(NMHDR *pNMHDR, LRESULT *pResult
 		strCode = "In *.h file:\r\n";
 		strCode += "\r\n";
 
-		int nSelControlCount = vSelControls.size();
+		size_t nSelControlCount = vSelControls.size();
 
 		// CSkinButton *m_pBtn1;
 		for (int i = 0; i < nSelControlCount; ++i)

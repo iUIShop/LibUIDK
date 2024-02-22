@@ -3968,10 +3968,6 @@ LSTCTRLPROPERTIES::LSTCTRLPROPERTIES()
 	m_bTwoClickActivate.strXUIElementName = _T("IsTwoClickActivate");
 	m_bTwoClickActivate.strPropWndName = _T("Two Click Activate");
 
-	m_bEnableOwnerDraw.varDefaultValue = m_bEnableOwnerDraw = false;
-	m_bEnableOwnerDraw.strXUIElementName = _T("IsEnableOwnerDraw");
-	m_bEnableOwnerDraw.strPropWndName = _T("Enable Owner Draw");
-
 	m_strTag.varDefaultValue = m_strTag = _T("");
 	m_strTag.strUIKeyName = m_strTag.strXUIElementName = _T("Tag");
 	m_strTag.strPropWndName = _T("Tag");
@@ -4021,6 +4017,11 @@ LSTCTRLPROPERTIES::LSTCTRLPROPERTIES()
 	m_bDraw0Row.strXUIElementName = m_bShowGridLine.strXUIElementName;
 	m_bDraw0Row.strXUIAttributeName = _T("Draw0Row");
 	m_bDraw0Row.strPropWndName = _T("Draw First Row");
+
+	m_bVerLineTo0Row.varDefaultValue = m_bVerLineTo0Row = false;
+	m_bVerLineTo0Row.strXUIElementName = m_bShowGridLine.strXUIElementName;
+	m_bVerLineTo0Row.strXUIAttributeName = _T("VerDrawTo0Row");
+	m_bVerLineTo0Row.strPropWndName = _T("Vert Draw To First Row");
 
 	m_lXOffset.varDefaultValue = m_lXOffset = (LONG)0;
 	m_lXOffset.strXUIElementName = m_bShowGridLine.strXUIElementName;

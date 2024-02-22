@@ -1307,7 +1307,6 @@ LRESULT CSkinTreeCtrl::WindowProc(UINT message, WPARAM wParam, LPARAM lParam)
 				OnDrawItem(&dcMem, hTI, rcItem, 0);
 
 				hTI = GetNextVisibleItem(hTI);
-				i++;
 			}
 
 			// Draw windowless children control.
@@ -1330,6 +1329,9 @@ LRESULT CSkinTreeCtrl::WindowProc(UINT message, WPARAM wParam, LPARAM lParam)
 			dcMem.SelectObject(pbmpMemOld);
 
 			UpdateCustomScrollBar();
+
+			// 如果不返回0，在Win11上，Tree控件如果有内容，初次显示时，会显示旧的Tree的内容
+			return 0;
 		}
 	}
 

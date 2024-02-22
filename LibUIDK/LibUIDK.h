@@ -2637,7 +2637,6 @@ return _messageEntries;\
 		IUI_VARIANT m_bInfoTooltip;
 		IUI_VARIANT m_bTrackSelect;
 		IUI_VARIANT m_bTwoClickActivate;
-		IUI_VARIANT m_bEnableOwnerDraw;
 		IUI_VARIANT m_strTag;
 
 		// Only for report style
@@ -2653,6 +2652,7 @@ return _messageEntries;\
 		// Grid line
 		IUI_VARIANT m_bShowGridLine;
 		IUI_VARIANT m_bDraw0Row;		// Draw 0 row or not. Only valid while bEnableOwnerDraw is true.
+		IUI_VARIANT m_bVerLineTo0Row;	// TRUE: grid ver line draw to first item top. otherwise to header's bottom.
 		IUI_VARIANT m_lXOffset;		// The horizontal offset of the line. Only valid while bEnableOwnerDraw is true.
 		IUI_VARIANT m_crGridLine;		// Only valid while bEnableOwnerDraw is true.
 
@@ -5776,9 +5776,6 @@ return _messageEntries;\
 			CString *pstrCombineImageName,
 			CString *pstrImageNameBkN, CString *pstrImageNameBkD) const;
 
-		int EnableOwnerDraw(BOOL bEnable);
-		BOOL IsEnableOwnerDraw() const;
-
 		// For grid line
 		;
 		int ShowGridLine(BOOL bShow);
@@ -5786,6 +5783,9 @@ return _messageEntries;\
 
 		int DrawFirstRow(BOOL bDraw0Row);
 		BOOL IsDrawFirstRow() const;
+
+		int GridVerLineToFirstRow(BOOL bTo0Row);
+		BOOL IsGridVerLineToFirstRow() const;
 
 		int SetGridLineOffset(const LPPOINT lpPtOffset);
 		int GetGridLineOffset(LPPOINT lpPtOffset) const;
@@ -5951,6 +5951,7 @@ return _messageEntries;\
 
 	protected:
 		virtual int OnDrawBackground(CDC *pDC);
+		virtual int OnDrawItemInterlacedHighlight(CDC *pDC);
 		virtual int OnDrawGridLine(CDC *pDC);
 		virtual int OnDrawItemEx(CDC *pDC, int nItem, int nLeftMargin = 0);
 		virtual int OnDrawReportItem(CDC *pDC, int nItem, const CRect &rcItem, int nLeftMargin = 0);
