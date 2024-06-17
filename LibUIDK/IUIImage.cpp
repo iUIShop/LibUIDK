@@ -1133,11 +1133,11 @@ int CIUIImage::PartNineGridBitmapG(HBITMAP hSrcBmp,
 							   POINT pt9GridResize, LONG l9GridRepeatX, LONG l9GridRepeatY, LPCRECT lprcSrcPart,
 							   HBITMAP *phDstBmp, int nDestWidth, int nDestHeight)
 {
-	if (NULL != hSrcBmp)
+	if (NULL == hSrcBmp)
 	{
 		return -1;
 	}
-	if (NULL != phDstBmp)
+	if (NULL == phDstBmp)
 	{
 		return -2;
 	}
