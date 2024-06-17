@@ -76,13 +76,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(VCToolsInstallDir)atlmfc\lib\x86</OutDir>
+    <OutDir>$(VCToolsInstallDir)atlmfc\lib\x86\</OutDir>
     <IntDir>Debug2019u\</IntDir>
     <TargetName>$(ProjectName)ud</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Unicode Static|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(VCToolsInstallDir)atlmfc\lib\x86</OutDir>
+    <OutDir>$(VCToolsInstallDir)atlmfc\lib\x86\</OutDir>
     <IntDir>Release2019su\</IntDir>
     <TargetName>$(ProjectName)su</TargetName>
   </PropertyGroup>
@@ -90,7 +90,7 @@
     <LinkIncremental>true</LinkIncremental>
     <TargetName>$(ProjectName)ud</TargetName>
     <IntDir>$(Platform)\Debug2019u\</IntDir>
-    <OutDir>$(VCToolsInstallDir)atlmfc\lib\x64</OutDir>
+    <OutDir>$(VCToolsInstallDir)atlmfc\lib\x64\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Unicode Static|x64'">
     <LinkIncremental>false</LinkIncremental>
