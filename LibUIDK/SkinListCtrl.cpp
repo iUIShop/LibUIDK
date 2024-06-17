@@ -1699,82 +1699,85 @@ int CSkinListCtrl::OnDrawReportItem(CDC *pDC, int nItem, const CRect &rcItem, in
 			SelectObject(pDC->GetSafeHdc(), hFontOld);
 		}
 
-		// Draw windowless sub item.
-		std::map<int, SItemBindObject *>::iterator it = pData->mapSubItemObject.find(nColumn);
-		if (it != pData->mapSubItemObject.end())
+		// Draw windowless sub item. owner data list not set item data.
+		if (nullptr != pData)
 		{
-			SItemBindObject *pSubItemObject = it->second;
-
-			if (pSubItemObject->uBindWndID > 0)
+			std::map<int, SItemBindObject*>::iterator it = pData->mapSubItemObject.find(nColumn);
+			if (it != pData->mapSubItemObject.end())
 			{
-				if (!pSubItemObject->bAlreadyCreateChildren)
-				{
-					_InstantiateItemBindTemplate(pSubItemObject, this);
+				SItemBindObject* pSubItemObject = it->second;
 
-					// Do something on instantiating item template.
-					NMHDR nmhdr;
-					nmhdr.hwndFrom = m_hWnd;
-					nmhdr.idFrom = GetDlgCtrlID();
-					nmhdr.code = LVN_INSTANTIATE_ITEM_TEMPLATE;
-					NMLISTVIEW lvhdr;
-					lvhdr.hdr = nmhdr;
-					lvhdr.iItem = nItem;
-					lvhdr.iSubItem = nColumn;
-					GetParent()->SendMessage(WM_NOTIFY, nmhdr.idFrom, LPARAM(&lvhdr));
-				}
-
-				if (pSubItemObject->bAlreadyCreateChildren)
+				if (pSubItemObject->uBindWndID > 0)
 				{
-					if (!pSubItemObject->vSubWLWnd.empty())
+					if (!pSubItemObject->bAlreadyCreateChildren)
 					{
-						CRect rcSubItem = rcItem;
-						rcSubItem.left = rcHeaderItem.left;
-						rcSubItem.right = rcHeaderItem.right;
+						_InstantiateItemBindTemplate(pSubItemObject, this);
 
-						// Relayout the children.
-						if (rcSubItem != pSubItemObject->rcLastParentLayout)
-						{
-							_RelayoutItemBindObject(this, rcSubItem, pSubItemObject);
-						}
+						// Do something on instantiating item template.
+						NMHDR nmhdr;
+						nmhdr.hwndFrom = m_hWnd;
+						nmhdr.idFrom = GetDlgCtrlID();
+						nmhdr.code = LVN_INSTANTIATE_ITEM_TEMPLATE;
+						NMLISTVIEW lvhdr;
+						lvhdr.hdr = nmhdr;
+						lvhdr.iItem = nItem;
+						lvhdr.iSubItem = nColumn;
+						GetParent()->SendMessage(WM_NOTIFY, nmhdr.idFrom, LPARAM(&lvhdr));
+					}
 
-						// Draw windowless children.
-						std::vector<CChildInfo>::iterator itChild = pSubItemObject->vSubWLWnd.begin();
-						std::vector<CChildInfo>::iterator itChildEnd = pSubItemObject->vSubWLWnd.end();
-						for (; itChild != itChildEnd; ++itChild)
+					if (pSubItemObject->bAlreadyCreateChildren)
+					{
+						if (!pSubItemObject->vSubWLWnd.empty())
 						{
-							CONTROL_TYPE eControlType = itChild->m_eControlType;
-							if (eControlType == CT_WL_RECTCTRL
-								|| eControlType == CT_WL_SPLITTER
-								|| eControlType == CT_WL_LINE
-								|| eControlType == CT_WL_TEXT
-								|| eControlType == CT_WL_PICTURE
-								|| eControlType == CT_WL_BUTTON
-								|| eControlType == CT_WL_CHECK
-								|| eControlType == CT_WL_RADIO
-								|| eControlType == CT_WL_SLIDER
-								|| eControlType == CT_WL_RICHEDIT
-								|| eControlType == CT_WL_RICHEDIT_IM
-								|| eControlType == CT_TASK_WND_MGR
-								|| eControlType == CT_PNL_DOCK
-								|| eControlType == CT_UNIFORM_GRID
-								|| eControlType == CT_PNL_STACK)
+							CRect rcSubItem = rcItem;
+							rcSubItem.left = rcHeaderItem.left;
+							rcSubItem.right = rcHeaderItem.right;
+
+							// Relayout the children.
+							if (rcSubItem != pSubItemObject->rcLastParentLayout)
 							{
-								CWLWnd *pWLWnd = (CWLWnd *)itChild->m_pChildCtrl;
+								_RelayoutItemBindObject(this, rcSubItem, pSubItemObject);
+							}
 
-								if (!pWLWnd->IsCreated())
+							// Draw windowless children.
+							std::vector<CChildInfo>::iterator itChild = pSubItemObject->vSubWLWnd.begin();
+							std::vector<CChildInfo>::iterator itChildEnd = pSubItemObject->vSubWLWnd.end();
+							for (; itChild != itChildEnd; ++itChild)
+							{
+								CONTROL_TYPE eControlType = itChild->m_eControlType;
+								if (eControlType == CT_WL_RECTCTRL
+									|| eControlType == CT_WL_SPLITTER
+									|| eControlType == CT_WL_LINE
+									|| eControlType == CT_WL_TEXT
+									|| eControlType == CT_WL_PICTURE
+									|| eControlType == CT_WL_BUTTON
+									|| eControlType == CT_WL_CHECK
+									|| eControlType == CT_WL_RADIO
+									|| eControlType == CT_WL_SLIDER
+									|| eControlType == CT_WL_RICHEDIT
+									|| eControlType == CT_WL_RICHEDIT_IM
+									|| eControlType == CT_TASK_WND_MGR
+									|| eControlType == CT_PNL_DOCK
+									|| eControlType == CT_UNIFORM_GRID
+									|| eControlType == CT_PNL_STACK)
 								{
-									continue;
-								}
+									CWLWnd* pWLWnd = (CWLWnd*)itChild->m_pChildCtrl;
 
-								if (pWLWnd->IsWindowVisible())
-								{
-									// Apply child's region.
-									HRGN hOldRgn = ApplyWLRgn(this, pDC, pWLWnd);
+									if (!pWLWnd->IsCreated())
+									{
+										continue;
+									}
 
-									DrawWLWindow(pDC->GetSafeHdc(), pWLWnd);
+									if (pWLWnd->IsWindowVisible())
+									{
+										// Apply child's region.
+										HRGN hOldRgn = ApplyWLRgn(this, pDC, pWLWnd);
 
-									::SelectClipRgn(pDC->GetSafeHdc(), hOldRgn);
-									DeleteObject(hOldRgn);
+										DrawWLWindow(pDC->GetSafeHdc(), pWLWnd);
+
+										::SelectClipRgn(pDC->GetSafeHdc(), hOldRgn);
+										DeleteObject(hOldRgn);
+									}
 								}
 							}
 						}
